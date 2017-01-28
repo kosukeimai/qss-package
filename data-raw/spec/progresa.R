@@ -1,0 +1,22 @@
+cols(
+  treatment = col_integer(),
+  pri2000s = col_double(),
+  pri2000v = col_double(),
+  t2000 = col_double(),
+  t2000r = col_double(),
+  pri1994 = col_integer(),
+  pan1994 = col_integer(),
+  prd1994 = col_integer(),
+  pri1994s = col_double(),
+  pri1994v = col_double(),
+  pan1994s = col_double(),
+  pan1994v = col_double(),
+  prd1994s = col_double(),
+  prd1994v = col_double(),
+  t1994 = col_double(),
+  t1994r = col_double(),
+  votos1994 = col_integer(),
+  avgpoverty = col_double(),
+  pobtot1994 = col_integer(),
+  villages = col_integer()
+)
