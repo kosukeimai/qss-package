@@ -1,3 +1,8 @@
+This package simply re-packages the supplementary materials (data and
+code) for **[Quantitative Social Science: An
+Introduction](http://press.princeton.edu/titles/11025.html)**, available
+a [kosukeimai/qss](https://github.com/kosukeimai/qss) as an R package.
+
 Install
 =======
 
@@ -402,3 +407,12 @@ are included in `extdata/`
 </tr>
 </tbody>
 </table>
+
+Build Package and Documentation
+===============================
+
+The site for the package is built using
+[pkgdown](https://github.com/hadley/pkgdown).
+
+    # devtools::install_github("hadley/pkgdown")
+    pkgdown::build_site()

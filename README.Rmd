@@ -48,5 +48,14 @@ read.csv(system.file("extdata", "data_files", "UNpop.csv", package = "qss"))
 read.dta(system.file("extdata", "data_files", "UNpop.dta", package = "qss"))
 ```
 
-# Build Package
+# Build Package and Documentation
+
+The site for the package is built using [pkgdown](https://github.com/hadley/pkgdown).
+```{r eval=FALSE}
+# devtools::install_github("hadley/pkgdown")
+pkgdown::build_site()
+```
+
+
+
 

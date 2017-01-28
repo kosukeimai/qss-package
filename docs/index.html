@@ -48,6 +48,7 @@
     
     
 <div class="contents">
+<p>This package simply re-packages the supplementary materials (data and code) for <strong><a href="http://press.princeton.edu/titles/11025.html">Quantitative Social Science: An Introduction</a></strong>, available a <a href="https://github.com/kosukeimai/qss">kosukeimai/qss</a> as an R package.</p>
 <div id="install" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#install" class="anchor"> </a>Install</h1></div>
@@ -423,6 +424,13 @@ corpus.raw</code></pre></div>
 </tr>
 </tbody>
 </table>
+</div>
+<div id="build-package-and-documentation" class="section level1">
+<h1 class="hasAnchor">
+<a href="#build-package-and-documentation" class="anchor"> </a>Build Package and Documentation</h1>
+<p>The site for the package is built using <a href="https://github.com/hadley/pkgdown">pkgdown</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># devtools::install_github("hadley/pkgdown")</span>
+pkgdown::<span class="kw">build_site</span>()</code></pre></div>
 </div>
 </div>
   </div>
