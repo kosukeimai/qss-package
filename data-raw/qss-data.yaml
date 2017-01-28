@@ -53,7 +53,7 @@
   name: fraud
   title: Russian and Canadian Election Data
 - inbook: [Table 3.5]
-  name: gayreshape
+  name: gayreshaped
   title: Reshaped Gay Marrige Study Data
 - inbook: [Table 4.9]
   name: intrade08
@@ -62,7 +62,7 @@
   name: intrade12
   title: Intrade Prediction Market Data
 - inbook: [Table 1.4]
-  name: kenya
+  name: Kenya
   title: Fertility and Mortality estimates data (Kenya)
 - inbook: [Table 2.8]
   name: leaders
@@ -78,7 +78,13 @@
   title: Analysis of the 1932 German Election
 - inbook: [Table 4.2]
   name: polls08
-  title: 2008 US Presidential Polls Data
+  title: 2008 US Presidential State Polls Data
+- inbook: [Table 4.2]
+  name: pollsUS08
+  title: 2008 US Presidential National Polls Data
+- inbook: [Table 4.2]
+  name: polls12
+  title: 2012 US Presidential Polls Data
 - inbook: [Table 4.1]
   name: pres08
   title: 2008 US Presidential Election Data
@@ -91,12 +97,14 @@
 - inbook: [Table 7.6]
   name: published
   title: Published Journal Article Data
-- {inbook: Table 2.1, name: resume, title: Resume Experiment Data}
+- inbook: Table 2.1
+  name: resume
+  title: Resume Experiment Data
 - inbook: [Table 2.4]
   name: social
   title: Social Pressure Experiment Data
 - inbook: [Table 1.4]
-  name: sweden
+  name: Sweden
   title: Fertility and Mortality estimates data (Sweden)
 - inbook: [Table 5.7]
   name: trade
@@ -126,5 +134,29 @@
   name: women
   title: Women as Policy Makers Experiment
 - inbook: [Table 1.4]
-  name: world
+  name: World
   title: Fertility and Mortality estimates data (World)
+- title: "Russian Election Data (2011)"
+  name: russia2011
+  inbook: ["Table 6.5"]
+- title: "Russian Election Data (2003)"
+  name: russia2003
+  inbook: ["Table 6.5"]
+- title: "Russian Election Data (2012)"
+  name: russia2012
+  inbook: ["Table 6.5"]
+- title: "Canada Election Data (2011)"
+  name: canada2011
+  inbook: ["Table 6.5"]
+- name: chechen
+  title: Insurgent attacks and Russian shelling in Chechnya
+  inbook: null
+- name: FLVoters
+  title: Florida Registered Voter List Sample Data
+  inbook: ["Table 6.1"]
+- name: gay
+  title: Gay Marriage Study Data
+  inbook: ["Table 2.7"]
+- name: resources
+  title: "Oil, Democracy, and Development"
+  inbook: null

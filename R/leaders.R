@@ -1,0 +1,17 @@
+#' Leader Assassination Data
+#'
+#' @format A data frame with 250 rows and 11 variables:
+#' \describe{
+#'  \item{ year }{ integer }  \item{ country }{ character }  \item{ leadername }{ character }  \item{ age }{ integer }  \item{ politybefore }{ numeric }  \item{ polityafter }{ numeric }  \item{ interwarbefore }{ integer }  \item{ interwarafter }{ integer }  \item{ civilwarbefore }{ integer }  \item{ civilwarafter }{ integer }  \item{ result }{ character } 
+#' }
+#'
+#' 
+#' @details
+#' See \emph{QSS} Table 2.8.
+#' 
+#'
+#' @references
+#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+#'
+"leaders"

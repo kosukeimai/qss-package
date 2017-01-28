@@ -1,0 +1,17 @@
+#' Progresa Program Data
+#'
+#' @format A data frame with 417 rows and 20 variables:
+#' \describe{
+#'  \item{ treatment }{ integer }  \item{ pri2000s }{ numeric }  \item{ pri2000v }{ numeric }  \item{ t2000 }{ numeric }  \item{ t2000r }{ numeric }  \item{ pri1994 }{ integer }  \item{ pan1994 }{ integer }  \item{ prd1994 }{ integer }  \item{ pri1994s }{ numeric }  \item{ pri1994v }{ numeric }  \item{ pan1994s }{ numeric }  \item{ pan1994v }{ numeric }  \item{ prd1994s }{ numeric }  \item{ prd1994v }{ numeric }  \item{ t1994 }{ numeric }  \item{ t1994r }{ numeric }  \item{ votos1994 }{ integer }  \item{ avgpoverty }{ numeric }  \item{ pobtot1994 }{ integer }  \item{ villages }{ integer } 
+#' }
+#'
+#' 
+#' @details
+#' See \emph{QSS} Table 4.11.
+#' 
+#'
+#' @references
+#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+#'
+"progresa"

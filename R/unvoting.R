@@ -1,0 +1,17 @@
+#' UN Voting Data
+#'
+#' @format A data frame with 9120 rows and 6 variables:
+#' \describe{
+#'  \item{ Year }{ integer }  \item{ CountryAbb }{ character }  \item{ CountryName }{ character }  \item{ idealpoint }{ numeric }  \item{ PctAgreeUS }{ numeric }  \item{ PctAgreeRUSSIA }{ numeric } 
+#' }
+#'
+#' 
+#' @details
+#' See \emph{QSS} Table 3.8.
+#' 
+#'
+#' @references
+#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+#'
+"unvoting"
