@@ -2,3 +2,4 @@
 ^qss$
 ^data-raw$
 ^\.Rproj\.user$
+^README.Rmd$

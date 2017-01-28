@@ -41,10 +41,11 @@ for (fn in dir(csv_dir, pattern = "\\.csv$", full.names = TRUE)) {
     .data <- read_csv(fn,
                       skip = 1,
                       col_types = col_types,
-                      col_names = names(col_types$cols))
+                      col_names = names(col_types$cols)) %>%
+      as.data.frame()
   } else {
     cat("File ", spec_file, " does not exist.\n")
-    .data <- read_csv(fn)
+    .data <- read_csv(fn) %>% as.data.frame()
     cat("Writing col_type specs to ", spec_file, ".\n")
     cat(format(spec(.data)), file = spec_file)
   }
@@ -103,10 +104,13 @@ file.copy("qss/DISCOVERY/federalist/", "inst/extdata/",
 
 # Copy some other non-csv files to inst/extdata
 # --------------------------------------------------
-otherfiles <- c("qss/INTRO/UNpop.RData", "qss/INTRO/UNpop.dta")
-for (fn in otherfiles) {
-  file.copy(fn, "inst/extdata/")
-  cat("Copy ", fn, " to inst/extdata.\n")
+data_files <- c("qss/INTRO/UNpop.RData", "qss/INTRO/UNpop.dta",
+                "qss/INTRO/UNpop.csv")
+dir.create("inst/extdata/data_files/", showWarnings = FALSE,
+           recursive = TRUE)
+for (fn in data_files) {
+  file.copy(fn, "inst/extdata/data_files")
+  cat("Copy ", fn, " to inst/extdata/data_files\n")
 }
 
 #' Copy all R scripts into demo directory
