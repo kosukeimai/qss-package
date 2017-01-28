@@ -112,10 +112,15 @@ for (fn in otherfiles) {
 #' Copy all R scripts into demo directory
 #' Is this the right spot?
 dir.create("demo", showWarnings = FALSE)
-rscripts <- dir("qss", pattern = ".*\\.R$", full.names = TRUE)
+rscripts <- dir("qss", pattern = "\\.[Rr]$", full.names = TRUE,
+                recursive = TRUE)
 for (fn in rscripts) {
   file.copy(fn, file.path("demo", basename(fn)))
+  cat("Copy ", fn, " to demo\n")
 }
 
 # Create book Documentation
 devtools::document()
+
+# Check package
+devtools::check()
