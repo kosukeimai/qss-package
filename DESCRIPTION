@@ -1,10 +1,11 @@
 Package: qss
 Title: Data for "Quantitative Social Science: An Introduction"
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: c(person("Jeffey", "Arnold", email = "jeffrey.arnold@gmail.com",
-                  role = c("aut", "cre"),
+                  role = c("aut"),
                   comment = "Packaged data and code from QSS repo"),
-             person("Kosuke", "Imai", role = c("cph"),
+             person("Kosuke", "Imai", role = c("aut", "cre"),
+                    email = "kimai@princeton.edu",
                     comment = "All data and code originally from QSS"))
 Description: Data for Kosuke Imai, "Quantitative Social Science: An
     Introduction". This packages the supplementary materials in https://github.com/
@@ -26,4 +27,4 @@ Remotes:
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1
+RoxygenNote: 5.0.1.9000
