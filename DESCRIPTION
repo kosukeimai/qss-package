@@ -1,6 +1,6 @@
 Package: qss
 Title: Data for "Quantitative Social Science: An Introduction"
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: c(person("Jeffey", "Arnold", email = "jeffrey.arnold@gmail.com",
                   role = c("aut"),
                   comment = "Packaged data and code from QSS repo"),
