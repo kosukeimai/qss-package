@@ -12,15 +12,15 @@ Description: Data for Kosuke Imai, "Quantitative Social Science: An
     kosukeimai/qss into an R package.
 Depends:
     R (>= 3.3.2)
-Suggests:
-    devtools,
-    pkgdown,
-    printr,
-    readr,
-    stringr,
-    whisker,
+Imports:
+    SnowballC,
+    animation,
+    igraph,
+    lintr,
+    maps,
+    swirl,
     tm,
-    yaml
+    wordcloud
 Remotes:
   hadley/pkgdown,
   yihui/printr
