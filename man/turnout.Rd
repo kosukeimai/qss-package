@@ -6,7 +6,15 @@
 \title{US election turnout data}
 \format{A data frame with 14 rows and 9 variables:
 \describe{
- \item{ year }{ integer }  \item{ VEP }{ integer }  \item{ VAP }{ integer }  \item{ total }{ integer }  \item{ ANES }{ integer }  \item{ felons }{ integer }  \item{ noncit }{ integer }  \item{ overseas }{ integer }  \item{ osvoters }{ integer } 
+ \item{ year }{ integer: election year }
+ \item{ VEP }{ integer: voting eligible population (in thousands) }
+ \item{ VAP }{ integer: voting age population (in thousands) }
+ \item{ total }{ integer: total ballots cast for highest office (in thousands) }
+ \item{ ANES }{ integer: ANES estimated turnout rate }
+ \item{ felons }{ integer: total ineligible felons (in thousands) }
+ \item{ noncit }{ integer: total noncitizens (in thousands) }
+ \item{ overseas }{ integer: total eligible overseas voters (in thousands) }
+ \item{ osvoters }{ integer: total ballots counted by overseas voters (in thousands) }
 }}
 \usage{
 turnout
