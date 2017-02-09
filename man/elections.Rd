@@ -6,7 +6,12 @@
 \title{County-Level US Presidential Election Data}
 \format{A data frame with 43494 rows and 6 variables:
 \describe{
- \item{ year }{ integer }  \item{ state }{ character }  \item{ county }{ character }  \item{ rep }{ integer }  \item{ dem }{ integer }  \item{ other }{ integer } 
+ \item{ year }{ integer: election year }
+ \item{ state }{ character: full name of the 48 states (excluding Alaska, Hawaii, and the District of Columbia) }
+ \item{ county }{ character: county name }
+ \item{ rep }{ integer: popular votes for the Republican candidate }
+ \item{ dem }{ integer: popular votes for the Democratic candidate }
+ \item{ other }{ integer: popular votes for other candidates }
 }}
 \usage{
 elections

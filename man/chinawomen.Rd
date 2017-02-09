@@ -6,7 +6,15 @@
 \title{Sex Ratio and the Price of Agricultural Crops in China}
 \format{A data frame with 51766 rows and 9 variables:
 \describe{
- \item{ admin }{ integer }  \item{ biryr }{ integer }  \item{ birpop }{ integer }  \item{ han }{ numeric }  \item{ sex }{ numeric }  \item{ teasown }{ numeric }  \item{ orch }{ numeric }  \item{ cashcrop }{ numeric }  \item{ post }{ integer } 
+ \item{ admin }{ integer: unique county identifier }
+ \item{ biryr }{ integer: year of cohort (birth year) }
+ \item{ birpop }{ integer: birth population in a given year }
+ \item{ han }{ numeric }
+ \item{ sex }{ numeric: proportion of males in the birth cohort }
+ \item{ teasown }{ numeric: quantity of tea sown in the county }
+ \item{ orch }{ numeric: quantity of orchard-type crops planted in the county }
+ \item{ cashcrop }{ numeric: quantity of cash crops planted in the county }
+ \item{ post }{ integer: indicator variable for the introduction of price reforms }
 }}
 \usage{
 chinawomen

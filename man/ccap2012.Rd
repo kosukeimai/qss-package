@@ -6,7 +6,9 @@
 \title{Cooperative Campaign Analysis Project (CCAP) Data}
 \format{A data frame with 43998 rows and 3 variables:
 \describe{
- \item{ .row }{ integer }  \item{ caseid }{ integer }  \item{ gaytherm }{ integer } 
+ \item{ .row }{ integer: row number }
+ \item{ caseid }{ integer: unique respondent ID }
+ \item{ gaytherm }{ integer: survey thermometer rating of feeling towards gay couples (0–100) }
 }}
 \usage{
 ccap2012

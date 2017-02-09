@@ -6,7 +6,9 @@
 \title{US Gini Coefficient Data}
 \format{A data frame with 67 rows and 3 variables:
 \describe{
- \item{ .row }{ integer }  \item{ year }{ integer }  \item{ gini }{ numeric } 
+ \item{ .row }{ integer: row number }
+ \item{ year }{ integer: year }
+ \item{ gini }{ numeric: US Gini coefficient }
 }}
 \usage{
 USGini

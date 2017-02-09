@@ -2,13 +2,17 @@
 #'
 #' @format A data frame with 51 rows and 5 variables:
 #' \describe{
-#'  \item{ state.name }{ character }  \item{ state }{ character }  \item{ Obama }{ integer }  \item{ McCain }{ integer }  \item{ EV }{ integer } 
+#'  \item{ state.name }{ character: unabbreviated name of the state }
+#'  \item{ state }{ character: abbreviated name of the state }
+#'  \item{ Obama }{ integer: Obama’s vote share (percentage) }
+#'  \item{ McCain }{ integer: McCain’s vote share (percentage) }
+#'  \item{ EV }{ integer: number of Electoral College votes for the state }
 #' }
 #'
-#' 
+#'
 #' @details
 #' See \emph{QSS} Table 4.1.
-#' 
+#'
 #'
 #' @references
 #' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.

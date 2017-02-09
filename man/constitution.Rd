@@ -6,7 +6,9 @@
 \title{Analyzing the Preambles of Constitutions}
 \format{A data frame with 155 rows and 3 variables:
 \describe{
- \item{ country }{ character }  \item{ year }{ integer }  \item{ preamble }{ character } 
+ \item{ country }{ character: country name with words separated by underscores }
+ \item{ year }{ integer: year the constitution was created }
+ \item{ preamble }{ character: raw text of the preamble to the constitution }
 }}
 \usage{
 constitution

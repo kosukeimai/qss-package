@@ -6,7 +6,10 @@
 \title{Senator Information Data}
 \format{A data frame with 91 rows and 4 variables:
 \describe{
- \item{ screen_name }{ character }  \item{ name }{ character }  \item{ party }{ character }  \item{ state }{ character } 
+ \item{ screen_name }{ character: Twitter screen name }
+ \item{ name }{ character: name of senator }
+ \item{ party }{ character: party (D = Democrat, R = Republican, I = Independent) }
+ \item{ state }{ character: state abbreviation }
 }}
 \usage{
 twitter.senator

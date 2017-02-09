@@ -2,13 +2,19 @@
 #'
 #' @format A data frame with 14552 rows and 7 variables:
 #' \describe{
-#'  \item{ congress }{ integer }  \item{ district }{ integer }  \item{ state }{ character }  \item{ party }{ character }  \item{ name }{ character }  \item{ dwnom1 }{ numeric }  \item{ dwnom2 }{ numeric } 
+#'  \item{ congress }{ integer: congressional session number }
+#'  \item{ district }{ integer: district number of the congressional representative }
+#'  \item{ state }{ character: state of the congressional representative }
+#'  \item{ party }{ character: party of the congressional representative }
+#'  \item{ name }{ character: name of the congressional representative }
+#'  \item{ dwnom1 }{ numeric: DW-NOMINATE score (first dimension) }
+#'  \item{ dwnom2 }{ numeric: DW-NOMINATE score (second dimension) }
 #' }
 #'
-#' 
+#'
 #' @details
 #' See \emph{QSS} Table 3.3.
-#' 
+#'
 #'
 #' @references
 #' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.

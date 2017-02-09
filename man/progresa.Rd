@@ -6,7 +6,26 @@
 \title{Progresa Program Data}
 \format{A data frame with 417 rows and 20 variables:
 \describe{
- \item{ treatment }{ integer }  \item{ pri2000s }{ numeric }  \item{ pri2000v }{ numeric }  \item{ t2000 }{ numeric }  \item{ t2000r }{ numeric }  \item{ pri1994 }{ integer }  \item{ pan1994 }{ integer }  \item{ prd1994 }{ integer }  \item{ pri1994s }{ numeric }  \item{ pri1994v }{ numeric }  \item{ pan1994s }{ numeric }  \item{ pan1994v }{ numeric }  \item{ prd1994s }{ numeric }  \item{ prd1994v }{ numeric }  \item{ t1994 }{ numeric }  \item{ t1994r }{ numeric }  \item{ votos1994 }{ integer }  \item{ avgpoverty }{ numeric }  \item{ pobtot1994 }{ integer }  \item{ villages }{ integer } 
+ \item{ treatment }{ integer: whether an electoral precinct contains a village where households received early Progresa }
+ \item{ pri2000s }{ numeric: PRI votes in the 2000 election as a share of precinct population above 18 }
+ \item{ pri2000v }{ numeric: official PRI vote share in the 2000 election }
+ \item{ t2000 }{ numeric: turnout in the 2000 election as a share of precinct population above 18 }
+ \item{ t2000r }{ numeric: official turnout in the 2000 election }
+ \item{ pri1994 }{ integer: total PRI votes in the 1994 presidential election }
+ \item{ pan1994 }{ integer: total PAN votes in the 1994 presidential election }
+ \item{ prd1994 }{ integer: total PRD votes in the 1994 presidential election }
+ \item{ pri1994s }{ numeric: total PRI votes in the 1994 election as a share of precinct population above 18 }
+ \item{ pri1994v }{ numeric: official PRI vote share in the 1994 election }
+ \item{ pan1994s }{ numeric: total PAN votes in the 1994 election as a share of precinct population above 18 }
+ \item{ pan1994v }{ numeric: official PAN vote share in the 1994 election }
+ \item{ prd1994s }{ numeric: total PRD votes in the 1994 election as a share of precinct population above 18 }
+ \item{ prd1994v }{ numeric: official PRD vote share in the 1994 election }
+ \item{ t1994 }{ numeric: turnout in the 1994 election as a share of precinct population above 18 }
+ \item{ t1994r }{ numeric: official turnout in the 1994 election }
+ \item{ votos1994 }{ integer: total votes cast in the 1994 presidential election }
+ \item{ avgpoverty }{ numeric: precinct average of village poverty index }
+ \item{ pobtot1994 }{ integer: total population in the precinct }
+ \item{ villages }{ integer: number of villages in the precinct }
 }}
 \usage{
 progresa

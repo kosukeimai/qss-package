@@ -6,7 +6,14 @@
 \title{Minimum Wage Study Data}
 \format{A data frame with 358 rows and 8 variables:
 \describe{
- \item{ chain }{ character }  \item{ location }{ character }  \item{ wageBefore }{ numeric }  \item{ wageAfter }{ numeric }  \item{ fullBefore }{ numeric }  \item{ fullAfter }{ numeric }  \item{ partBefore }{ numeric }  \item{ partAfter }{ numeric } 
+ \item{ chain }{ character: name of the fast-food restaurant chain }
+ \item{ location }{ character: location of the restaurants (centralNJ, northNJ, PA, shoreNJ, southNJ) }
+ \item{ wageBefore }{ numeric: wage before the minimum-wage increase }
+ \item{ wageAfter }{ numeric: wage after the minimum-wage increase }
+ \item{ fullBefore }{ numeric: number of full-time employees before the minimum-wage increase }
+ \item{ fullAfter }{ numeric: number of full-time employees after the minimum-wage increase }
+ \item{ partBefore }{ numeric: number of part-time employees before the minimum-wage increase }
+ \item{ partAfter }{ numeric: number of part-time employees after the minimum-wage increase }
 }}
 \usage{
 minwage

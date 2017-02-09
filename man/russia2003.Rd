@@ -6,7 +6,9 @@
 \title{Russian Election Data (2003)}
 \format{A data frame with 94972 rows and 3 variables:
 \describe{
- \item{ N }{ numeric }  \item{ turnout }{ numeric }  \item{ votes }{ numeric } 
+ \item{ N }{ integer: total number of voters in a precinct }
+ \item{ turnout }{ integer: total turnout in a precinct }
+ \item{ votes }{ integer: total number of votes for the winner in a precinct }
 }}
 \usage{
 russia2003

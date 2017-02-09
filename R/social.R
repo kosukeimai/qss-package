@@ -2,13 +2,18 @@
 #'
 #' @format A data frame with 305866 rows and 6 variables:
 #' \describe{
-#'  \item{ sex }{ character }  \item{ yearofbirth }{ integer }  \item{ primary2004 }{ integer }  \item{ messages }{ character }  \item{ primary2006 }{ integer }  \item{ hhsize }{ integer } 
+#'  \item{ sex }{ character: sex of the voter (female or male) }
+#'  \item{ yearofbirth }{ integer: year of birth of the voter }
+#'  \item{ primary2004 }{ integer: whether the voter voted in the 2004 primary election (1=voted, 0=abstained) }
+#'  \item{ messages }{ character: GOTV messages the voter received (Civic Duty, Control, Neighbors, Hawthorne) }
+#'  \item{ primary2006 }{ integer: whether the voter turned out in the 2006 primary election (1=voted, 0=abstained) }
+#'  \item{ hhsize }{ integer: household size of the voter }
 #' }
 #'
-#' 
+#'
 #' @details
 #' See \emph{QSS} Table 2.4.
-#' 
+#'
 #'
 #' @references
 #' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.

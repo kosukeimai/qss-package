@@ -6,7 +6,13 @@
 \title{Walmart Store Opening Data}
 \format{A data frame with 3251 rows and 7 variables:
 \describe{
- \item{ opendate }{ Date }  \item{ st.address }{ character }  \item{ city }{ character }  \item{ state }{ character }  \item{ long }{ numeric }  \item{ lat }{ numeric }  \item{ type }{ character } 
+ \item{ opendate }{ Date: opening date for the store }
+ \item{ st.address }{ character: street address of the store }
+ \item{ city }{ character: city of the store }
+ \item{ state }{ character: state of the store }
+ \item{ long }{ numeric: longitude of the store }
+ \item{ lat }{ numeric: latitude of the store }
+ \item{ type }{ character: store type (Wal-MartStore, SuperCenter, DistributionCenter) }
 }}
 \usage{
 walmart

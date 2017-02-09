@@ -6,7 +6,17 @@
 \title{Afghanistan Survey Data}
 \format{A data frame with 2754 rows and 11 variables:
 \describe{
- \item{ province }{ character }  \item{ district }{ character }  \item{ village.id }{ integer }  \item{ age }{ integer }  \item{ educ.years }{ integer }  \item{ employed }{ integer }  \item{ income }{ character }  \item{ violent.exp.ISAF }{ integer }  \item{ violent.exp.taliban }{ integer }  \item{ list.group }{ character }  \item{ list.response }{ integer } 
+ \item{ province }{ character: province where the respondent lives }
+ \item{ district }{ character: district where the respondent lives }
+ \item{ village.id }{ integer: ID of the village where the respondent lives }
+ \item{ age }{ integer: age of the respondent }
+ \item{ educ.years }{ integer: years of education of the respondent }
+ \item{ employed }{ integer: whether the respondent is employed }
+ \item{ income }{ character: monthly income of the respondent (five levels) }
+ \item{ violent.exp.ISAF }{ integer: whether the respondent experienced violence by ISAF }
+ \item{ violent.exp.taliban }{ integer: whether the respondent experienced violence by the Taliban }
+ \item{ list.group }{ character: randomly assigned group for the list experiment (control, ISAF, taliban) }
+ \item{ list.response }{ integer: response to the list experiment question (0–4) }
 }}
 \usage{
 afghan

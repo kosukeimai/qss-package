@@ -6,7 +6,17 @@
 \title{Leader Assassination Data}
 \format{A data frame with 250 rows and 11 variables:
 \describe{
- \item{ year }{ integer }  \item{ country }{ character }  \item{ leadername }{ character }  \item{ age }{ integer }  \item{ politybefore }{ numeric }  \item{ polityafter }{ numeric }  \item{ interwarbefore }{ integer }  \item{ interwarafter }{ integer }  \item{ civilwarbefore }{ integer }  \item{ civilwarafter }{ integer }  \item{ result }{ character } 
+ \item{ year }{ integer: year }
+ \item{ country }{ character: name of the country }
+ \item{ leadername }{ character: name of the leader who was targeted }
+ \item{ age }{ integer: age of the targeted leader }
+ \item{ politybefore }{ numeric: average polity score of the country during the three-year period prior to the attempt }
+ \item{ polityafter }{ numeric: average polity score of the country during the three-year period after the attempt }
+ \item{ interwarbefore }{ integer:  1 if the country is in international war during the three-year period prior to the attempt, 0 otherwise }
+ \item{ interwarafter }{ integer:  1 if the country is in international war during the three-year period after the attempt, 0 otherwise }
+ \item{ civilwarbefore }{ integer: 1 if the country is in civil war during the three-year period prior to the attempt, 0 otherwise }
+ \item{ civilwarafter }{ integer: 1 if the country is in civil war during the three-year period after the attempt, 0 otherwise }
+ \item{ result }{ character: result of the assassination attempt }
 }}
 \usage{
 leaders

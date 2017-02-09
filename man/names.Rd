@@ -6,7 +6,13 @@
 \title{US Census Bureau Surname List Data}
 \format{A data frame with 151671 rows and 7 variables:
 \describe{
- \item{ surname }{ character }  \item{ count }{ integer }  \item{ pctwhite }{ numeric }  \item{ pctblack }{ numeric }  \item{ pctapi }{ numeric }  \item{ pcthispanic }{ numeric }  \item{ pctothers }{ numeric } 
+ \item{ surname }{ character: surname }
+ \item{ count }{ integer: number of individuals with a specific surname }
+ \item{ pctwhite }{ numeric: percentage of non-Hispanic whites among those who have a specific surname }
+ \item{ pctblack }{ numeric: percentage of non-Hispanic blacks among those who have a specific surname }
+ \item{ pctapi }{ numeric: percentage of non-Hispanic Asians and Pacific Islanders among those who have a specific surname }
+ \item{ pcthispanic }{ numeric: percentage of Hispanic origin among those who have a specific surname }
+ \item{ pctothers }{ numeric: percentage of the other racial groups among those who have a specific surname }
 }}
 \usage{
 names

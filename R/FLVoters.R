@@ -2,13 +2,18 @@
 #'
 #' @format A data frame with 10000 rows and 6 variables:
 #' \describe{
-#'  \item{ surname }{ character }  \item{ county }{ integer }  \item{ VTD }{ integer }  \item{ age }{ integer }  \item{ gender }{ character }  \item{ race }{ character } 
+#'  \item{ surname }{ character: surname }
+#'  \item{ county }{ integer: county ID of the voter’s residence }
+#'  \item{ VTD }{ integer: voting district ID of the voter’s residence }
+#'  \item{ age }{ integer: age }
+#'  \item{ gender }{ character: gender: m = male and f = female }
+#'  \item{ race }{ character: self-reported race }
 #' }
 #'
-#' 
+#'
 #' @details
 #' See \emph{QSS} Table 6.1.
-#' 
+#'
 #'
 #' @references
 #' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
