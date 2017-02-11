@@ -17,7 +17,11 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item {Michael J. LaCour and Donald P. Green (2015) “When contact changes minds:
+#' An experiment on transmission of support for gay equality.” \emph{Science}, vol. 346,
+#' no. 6215, pp. 1366–1369. doi: 10.1126/science.1256151 }
+#'}
 "gay"

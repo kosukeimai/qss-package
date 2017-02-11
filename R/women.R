@@ -19,7 +19,11 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item {Raghabendra Chattopadhyay and Esther Duflo (2004) “Women as policy makers:
+#' Evidence from a randomized policy experiment in India.” \emph{Econometrica}, vol. 72,
+#' no. 5, pp. 1409–1443. doi: 10.1111/j.1468-0262.2004.00539.x }
+#'}
 "women"

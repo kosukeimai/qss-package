@@ -20,7 +20,10 @@ Contains election results for 2011 Canadian election.
 See \emph{QSS} Table 6.5.
 }
 \references{
-Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+\itemize{
+\item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+\item { Arturas Rozenas (2016) “Inferring election fraud from distributions of voteproportions.” }
+}
 }
 \keyword{datasets}

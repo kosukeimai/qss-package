@@ -33,7 +33,13 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item {Ana de la O (2013) “Do conditional cash transfers affect voting behavior?
+#' Evidence from a randomized experiment in Mexico.” \emph{American Journal of Political Science},
+#' vol. 57, no. 1, pp. 1–14 doi: 10.1111/j.1540-5907.2012.00617.x }
+#' \item { Kosuke Imai, Gary King, and Carlos Velasco (2015) “Do nonpartisan programmatic policies
+#' have partisan electoral effects? Evidence from two large scale randomized experiments.”  }
+#'}
 "progresa"

@@ -18,7 +18,14 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item { Annie Franco, Neil Malhotra, and Gabor Simonovits (2014) “Publication bias in the
+#' social sciences: Unlocking the file drawer.” \emph{Science}, vol. 345, no. 6203, pp. 1502–1505.
+#' doi = 10.1126/science.1255484 }
+#' \item { Annie Franco, Neil Malhotra, and Gabor Simonovits (2015) “Underreporting in political
+#' science survey experiments: Comparing questionnaires to published results.” \emph{Political Analysis},
+#' vol. 23, pp. 206–312. doi = 10.1093/pan/mpv006 }
+#'}
 "published"

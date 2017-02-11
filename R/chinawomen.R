@@ -21,7 +21,11 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item { Missing women and the price of tea in China: The effect of sex-specific earnings
+#' on sex imbalance.” \emph{Quarterly Journal of Economics}, vol. 123, no. 3, pp. 1251–1285.
+#' }
+#'}
 "chinawomen"

@@ -19,7 +19,11 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item { Michael A. Bailey, Anton Strezhnev, and Erik Voeten (2015) “Estimating dynamic
+#' state preferences from United Nations voting data.” \emph{Journal of Conflict Resolution},
+#' doi = 10.1177/0022002715595700. }
+#'}
 "unvoting"

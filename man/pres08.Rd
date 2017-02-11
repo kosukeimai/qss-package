@@ -22,7 +22,12 @@ pres08
 See \emph{QSS} Table 4.1.
 }
 \references{
-Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+\itemize{
+\item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+\item { David Rothschild (2009) “Forecasting elections: Comparing prediction markets,
+polls, and their biases.” \emph{Public Opinion Quarterly}, vol. 73, no. 5, pp. 895–916.
+doi = 10.1093/poq/nfp082 }
+}
 }
 \keyword{datasets}

@@ -18,7 +18,12 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item { Gary King, Christopher J.L. Murray, Joshua A. Salomon, and Ajay Tandon (2004)
+#' “Enhancing the validity and cross-cultural comparability of measurement in survey research.”
+#' \emph{American Political Science Review}, vol. 98, no. 1 (February), pp. 191–207.
+#' doi: 10.1017/S000305540400108X }
+#'}
 "vignettes"

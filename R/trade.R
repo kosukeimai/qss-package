@@ -17,7 +17,10 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item { Luca De Benedictis and Lucia Tajoli. (2011). 'The World Trade Network.'
+#' \emph{The World Economy}, 34:8, pp.1417-1454. doi = 10.1111/j.1467-9701.2011.01360.x }
+#'}
 "trade"

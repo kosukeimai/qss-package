@@ -15,7 +15,13 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item { David S. Law and Mila Versteeg. (2012). 'The Declining Influence of the United States
+#' Constitution', \emph{New York University Law Review} Vol. 87, No. 3, pp. 762--858,
+#' and Zachary Elkins, Tom Ginsburg. }
+#' \item { James Melton. (2012). 'Comments on Law And Versteeg's the Declining Influence of the United
+#' States Constitution.' \emph{New York University Law Review} Vol. 87, No. 6, pp. 2088--2101 }
+#'}
 "constitution"

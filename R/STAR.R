@@ -20,7 +20,11 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item { Mosteller, Frederick. 1997. “The Tennessee Study of Class Size in the Early School
+#' Grades.” \emph{Bulletin of the American Academy of Arts and Sciences} 50(7): 14-25.
+#' doi = 10.2307/3824562 }
+#'}
 "STAR"

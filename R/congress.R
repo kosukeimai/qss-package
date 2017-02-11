@@ -20,7 +20,10 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item {Nolan McCarty, Keith T. Poole, and Howard Rosenthal (2006) \emph{Polarized America: The
+#' Dance of Ideology and Unequal Riches. MIT Press.} doi: 10.1017/S1537592707071873 }
+#'}
 "congress"

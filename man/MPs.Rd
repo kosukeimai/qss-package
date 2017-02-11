@@ -28,7 +28,12 @@ Parliament in the United Kingdom on one's personal wealth.
 See \emph{QSS} Table 4.8.
 }
 \references{
-Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+\itemize{
+\item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+\item { Andrew C. Eggers and Jens Hainmueller (2009) “MPs for sale? Returns to office
+in postwar British politics.” \emph{American Political Science Review}, vol. 103,
+no. 4, pp. 513–533. doi = 10.1017/S0003055409990190 }
+}
 }
 \keyword{datasets}

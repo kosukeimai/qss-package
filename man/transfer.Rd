@@ -28,7 +28,12 @@ attainment, literacy, and poverty rates.
 See \emph{QSS} Table 4.12.
 }
 \references{
-Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+\itemize{
+\item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+\item { Stephan Litschig and Kevin M. Morrison (2013) “The impact of intergovernmental
+transfers on education outcomes and poverty reduction.” \emph{American Economic Journal: Applied Economics},
+vol. 5, no. 4, pp. 206–240. doi = 10.1257/app.5.4.206 }
+}
 }
 \keyword{datasets}

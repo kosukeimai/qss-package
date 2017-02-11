@@ -20,7 +20,10 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item { United Nations, Department of Economic and Social Affairs, Population Division (2013).
+#' \emph{World Population Prospects: The 2012 Revision, DVD Edition.} }
+#'}
 "Kenya"

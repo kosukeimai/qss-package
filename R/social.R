@@ -18,7 +18,12 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item {Alan S. Gerber, Donald P. Green, and Christopher W. Larimer (2008) “Social pressure and
+#' voter turnout: Evidence from a large-scale field experiment.” \emph{American Political Science Review},
+#' vol. 102, no. 1, pp. 33–48. doi: 10.1017/S000305540808009X }
+#'}
 #'
 "social"

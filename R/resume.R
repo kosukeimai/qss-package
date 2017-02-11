@@ -15,7 +15,10 @@
 #' See \emph{QSS} Table 2.1.
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item {Marianne Bertrand and Sendhil Mullainathan (2004) “Are Emily and Greg more employable than Lakisha and Jamal?
+#' A field experiment on labor market discrimination.” \emph{American Economic Review}, vol. 94, no. 4, pp. 991–1013. doi: 10.3386/w9873 }
+#'}
 "resume"

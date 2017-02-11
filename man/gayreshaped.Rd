@@ -24,7 +24,10 @@ in which every observation corresponds to a unique respondent.
 See \emph{QSS} Table 3.5.
 }
 \references{
-Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+\itemize{
+\item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+\item { “Irregularities in LaCour (2014)” by David Broockman, Joshua Kalla, and Peter Aronow. }
+}
 }
 \keyword{datasets}
