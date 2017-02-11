@@ -15,7 +15,7 @@
 pollsUS08
 }
 \description{
-2008 US Presidential National Polls Data
+Contains national polling data for 2008 United States Presidential Election
 }
 \details{
 See \emph{QSS} Table 4.2.

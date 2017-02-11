@@ -17,7 +17,7 @@
 elections
 }
 \description{
-County-Level US Presidential Election Data
+US Presidential Election Data by county for each state between 1960 and 2012.
 }
 \details{
 See \emph{QSS} Table 5.8.

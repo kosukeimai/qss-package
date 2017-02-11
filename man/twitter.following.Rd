@@ -13,7 +13,7 @@
 twitter.following
 }
 \description{
-Senator Follow / Following Data
+Lists pairs of the Twitter screen names of following and followed politicians.
 }
 \details{
 See \emph{QSS} Table 5.4.

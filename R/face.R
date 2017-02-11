@@ -1,5 +1,8 @@
 #' Facial Appearanace Experiment Data
 #'
+#' Contains data from an experiment using competence measures (self-reported
+#' based on brief exposure to image of a candidate's face) to predict election outcomes.
+#'
 #' @format A data frame with 119 rows and 10 variables:
 #' \describe{
 #'  \item{ year }{ integer: year of the election }

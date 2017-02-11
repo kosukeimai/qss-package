@@ -18,7 +18,8 @@
 congress
 }
 \description{
-Legislative Ideal Points Data
+Contains the estimated ideal points of all legislators who served in
+the House of Representatives from the 80th (1947–1948) to the 112th (2011–2012) Congresses.
 }
 \details{
 See \emph{QSS} Table 3.3.

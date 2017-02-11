@@ -15,7 +15,7 @@
 pres12
 }
 \description{
-2012 US Presidential Election Data
+2012 US presidential election outcomes by state.
 }
 \details{
 See \emph{QSS} Table 4.5.

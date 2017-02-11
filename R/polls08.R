@@ -1,5 +1,7 @@
 #' 2008 US Presidential State Polls Data
 #'
+#' Polling data for each state for 2008 United States Presidential Election.
+#'
 #' @format A data frame with 1332 rows and 5 variables:
 #' \describe{
 #'  \item{ state }{ character: abbreviated name of the state in which the poll was conducted }

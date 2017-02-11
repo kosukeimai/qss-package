@@ -16,7 +16,7 @@
 trade
 }
 \description{
-International Trade Network Data
+Contains international trade data; value of exports from one country to another in a given year.
 }
 \details{
 See \emph{QSS} Table 5.7.

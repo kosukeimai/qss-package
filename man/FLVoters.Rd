@@ -17,7 +17,7 @@
 FLVoters
 }
 \description{
-Florida Registered Voter List Sample Data
+Sample of 10000 from registered Florida voters.
 }
 \details{
 See \emph{QSS} Table 6.1.

@@ -17,7 +17,7 @@
 polls12
 }
 \description{
-2012 US Presidential Polls Data
+Polling data for each state for 2012 United States Presidential Election.
 }
 \details{
 See \emph{QSS} Table 4.2.

@@ -1,5 +1,7 @@
 #' Analyzing the Preambles of Constitutions
 #'
+#' Contains Preamble text for 155 countries.
+#'
 #' @format A data frame with 155 rows and 3 variables:
 #' \describe{
 #'  \item{ country }{ character: country name with words separated by underscores }

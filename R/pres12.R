@@ -1,5 +1,7 @@
 #' 2012 US Presidential Election Data
 #'
+#' 2012 US presidential election outcomes by state.
+#'
 #' @format A data frame with 51 rows and 4 variables:
 #' \describe{
 #'  \item{ state }{ character: abbreviated name of the state }

@@ -16,7 +16,8 @@
 filedrawer
 }
 \description{
-TESS Program Academic Research Data
+Contains information about 221 research projects funded by the TESS program
+(Time-Sharing Experiments in the Social Sciences).
 }
 \details{
 See \emph{QSS} Table 7.5.

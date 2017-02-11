@@ -1,5 +1,8 @@
 #' Women as Policy Makers Experiment
 #'
+#' Data set from experiment analyzing the causal effects of having female
+#' politicians in government on policy outcomes
+#'
 #' @format A data frame with 322 rows and 6 variables:
 #' \describe{
 #'  \item{ GP }{ integer: identifier for the Gram Panchayat (GP) }

@@ -1,5 +1,7 @@
 #' Russian Election Data (2012)
 #'
+#' Contains the election results for the 2012 Russian presidential election.
+#'
 #' @format A data frame with 95552 rows and 3 variables:
 #' \describe{
 #'  \item{ N }{ integer: total number of voters in a precinct }

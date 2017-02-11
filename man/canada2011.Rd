@@ -14,7 +14,7 @@
 canada2011
 }
 \description{
-Canada Election Data (2011)
+Contains election results for 2011 Canadian election.
 }
 \details{
 See \emph{QSS} Table 6.5.

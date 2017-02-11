@@ -1,5 +1,7 @@
 #' US election turnout data
 #'
+#' Turnout estimates from American National Election Studies (ANES) from 1980-2008.
+#'
 #' @format A data frame with 14 rows and 9 variables:
 #' \describe{
 #'  \item{ year }{ integer: election year }

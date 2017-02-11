@@ -1,5 +1,7 @@
 #' County-Level US Presidential Election Data
 #'
+#' US Presidential Election Data by county for each state between 1960 and 2012.
+#'
 #' @format A data frame with 43494 rows and 6 variables:
 #' \describe{
 #'  \item{ year }{ integer: election year }

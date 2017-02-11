@@ -1,4 +1,6 @@
-#' World population estimates data
+#' United Nations Population Estimates
+#'
+#' World population estimates data from the United Nations.
 #'
 #' @format A data frame with 7 rows and 2 variables:
 #' \describe{

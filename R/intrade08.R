@@ -1,5 +1,8 @@
 #' Intrade Betting Market Data
 #'
+#' Data from Intrade, an online prediction market, in days leading up to the 2008 United
+#' States Presidential Election.
+#'
 #' @format A data frame with 36891 rows and 10 variables:
 #' \describe{
 #'  \item{ .row }{ integer: row number }

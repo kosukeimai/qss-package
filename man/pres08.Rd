@@ -16,7 +16,7 @@
 pres08
 }
 \description{
-2008 US Presidential Election Data
+2008 US presidential election outcomes by state.
 }
 \details{
 See \emph{QSS} Table 4.1.

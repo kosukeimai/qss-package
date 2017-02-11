@@ -1,5 +1,7 @@
 #' Sex Ratio and the Price of Agricultural Crops in China
 #'
+#' Demographic and agricultural crop data for individual counties in China.
+#'
 #' @format A data frame with 51766 rows and 9 variables:
 #' \describe{
 #'  \item{ admin }{ integer: unique county identifier }

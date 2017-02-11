@@ -1,5 +1,7 @@
 #' Florida Registered Voter List Sample Data
 #'
+#' Sample of 10000 from registered Florida voters.
+#'
 #' @format A data frame with 10000 rows and 6 variables:
 #' \describe{
 #'  \item{ surname }{ character: surname }

@@ -1,5 +1,8 @@
 #' Progresa Program Data
 #'
+#' Data set from experiment which seeks to estimate the electoral impact of Progresa,
+#' Mexico’s conditional cash transfer program (CCT program).
+#'
 #' @format A data frame with 417 rows and 20 variables:
 #' \describe{
 #'  \item{ treatment }{ integer: whether an electoral precinct contains a village where households received early Progresa }

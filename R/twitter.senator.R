@@ -1,5 +1,8 @@
 #' Senator Information Data
 #'
+#' Contains information about each US Senator in the Twitter network analysis from
+#' \emph{QSS} Section 5.2.3.
+#'
 #' @format A data frame with 91 rows and 4 variables:
 #' \describe{
 #'  \item{ screen_name }{ character: Twitter screen name }

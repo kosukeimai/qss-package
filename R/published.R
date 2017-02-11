@@ -1,5 +1,8 @@
 #' Published Journal Article Data
 #'
+#' Contains information about 53 published journal articles based on TESS
+#' (Time-Sharing Experiments in the Social Sciences) projects.
+#'
 #' @format A data frame with 53 rows and 5 variables:
 #' \describe{
 #'  \item{ id.p }{ integer: paper identifier }

@@ -1,5 +1,8 @@
 #' Reshaped Gay Marrige Study Data
 #'
+#' A reshaped version of the dataset from \emph{QSS} section 2.8.2
+#' in which every observation corresponds to a unique respondent.
+#'
 #' @format A data frame with 11948 rows and 6 variables:
 #' \describe{
 #'  \item{ study }{ integer: which study the data set is from (1 = study 1, 2 = study 2) }

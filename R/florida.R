@@ -1,5 +1,7 @@
 #' 1996 and 2000 US Presidential Election Data for Florida Counties
 #'
+#' 1996 and 2000 election outcomes in each Florida county by candidate.
+#'
 #' @format A data frame with 67 rows and 7 variables:
 #' \describe{
 #'  \item{ county }{ character: county name }

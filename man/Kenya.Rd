@@ -19,7 +19,7 @@
 Kenya
 }
 \description{
-Fertility and Mortality estimates data (Kenya)
+Data set containing basic demographic quantities during two time periods: 1950-1955 and 2005-2010.
 }
 \details{
 See \emph{QSS} Table 1.4.

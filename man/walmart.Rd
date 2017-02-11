@@ -18,7 +18,8 @@
 walmart
 }
 \description{
-Walmart Store Opening Data
+Contains spatial and temporal information about Walmart store openings,
+from the first opening on March 1, 1962 until August 1, 2006.
 }
 \details{
 See \emph{QSS} Table 5.5.

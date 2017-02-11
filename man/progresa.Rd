@@ -31,7 +31,8 @@
 progresa
 }
 \description{
-Progresa Program Data
+Data set from experiment which seeks to estimate the electoral impact of Progresa,
+Mexico’s conditional cash transfer program (CCT program).
 }
 \details{
 See \emph{QSS} Table 4.11.

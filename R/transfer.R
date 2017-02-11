@@ -1,5 +1,9 @@
 #' Brazilian Government Transfer Data
 #'
+#' Data set used in experiment to estimate the
+#' effects of increased Brazilian government spending on educational
+#' attainment, literacy, and poverty rates.
+#'
 #' @format A data frame with 1787 rows and 9 variables:
 #' \describe{
 #'  \item{ .row }{ integer: row number }

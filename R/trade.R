@@ -1,5 +1,7 @@
 #' International Trade Network Data
 #'
+#' Contains international trade data; value of exports from one country to another in a given year.
+#'
 #' @format A data frame with 114980 rows and 5 variables:
 #' \describe{
 #'  \item{ .row }{ integer: row number }

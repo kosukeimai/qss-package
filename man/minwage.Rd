@@ -19,7 +19,7 @@
 minwage
 }
 \description{
-Minimum Wage Study Data
+Data set used to investigate the effect of a minimum wage increase on full-time employment.
 }
 \details{
 See \emph{QSS} Table 2.5.

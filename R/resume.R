@@ -1,5 +1,7 @@
 #' Resume Experiment Data
 #'
+#' Resume dataset to analyze racial discrimination in the labor market.
+#'
 #' @format A data frame with 4870 rows and 4 variables:
 #' \describe{
 #'  \item{ firstname }{ character: first name of the fictitious job applicant }
@@ -11,7 +13,6 @@
 #'
 #' @details
 #' See \emph{QSS} Table 2.1.
-#'
 #'
 #' @references
 #' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.

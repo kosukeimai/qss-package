@@ -1,5 +1,7 @@
 #' Fertility and Mortality estimates data (World)
 #'
+#' Data set containing basic demographic quantities during two time periods: 1950-1955 and 2005-2010.
+#'
 #' @format A data frame with 30 rows and 7 variables:
 #' \describe{
 #'  \item{ country }{ character: abbreviated country name }

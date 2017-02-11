@@ -20,7 +20,7 @@
 chinawomen
 }
 \description{
-Sex Ratio and the Price of Agricultural Crops in China
+Demographic and agricultural crop data for individual counties in China.
 }
 \details{
 See \emph{QSS} Table 7.4.

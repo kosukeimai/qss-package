@@ -22,7 +22,8 @@
 leaders
 }
 \description{
-Leader Assassination Data
+Dataset for a natural experiment that studied whether assassinations of political leaders had an
+effect on institutions and war.
 }
 \details{
 See \emph{QSS} Table 2.8.

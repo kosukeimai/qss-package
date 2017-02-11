@@ -1,5 +1,7 @@
 #' Afghanistan Survey Data
 #'
+#' Survey data containing questions on support for various combatants during wartime.
+#'
 #' @format A data frame with 2754 rows and 11 variables:
 #' \describe{
 #'  \item{ province }{ character: province where the respondent lives }

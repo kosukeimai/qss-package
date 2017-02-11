@@ -14,7 +14,7 @@
 afghan.village
 }
 \description{
-Afghanistan Village Data
+Altitude and population info for villages in Afghanistan survey.
 }
 \details{
 See \emph{QSS} Table 3.2.

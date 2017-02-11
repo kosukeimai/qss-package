@@ -15,7 +15,8 @@
 twitter.senator
 }
 \description{
-Senator Information Data
+Contains information about each US Senator in the Twitter network analysis from
+\emph{QSS} Section 5.2.3.
 }
 \details{
 See \emph{QSS} Table 5.4.

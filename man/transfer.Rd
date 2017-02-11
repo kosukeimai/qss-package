@@ -20,7 +20,9 @@
 transfer
 }
 \description{
-Brazilian Government Transfer Data
+Data set used in experiment to estimate the
+effects of increased Brazilian government spending on educational
+attainment, literacy, and poverty rates.
 }
 \details{
 See \emph{QSS} Table 4.12.

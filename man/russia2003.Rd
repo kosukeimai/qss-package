@@ -14,7 +14,7 @@
 russia2003
 }
 \description{
-Russian Election Data (2003)
+Contains the election results from the 2003 Russian Duma election.
 }
 \details{
 See \emph{QSS} Table 6.5.

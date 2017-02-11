@@ -1,5 +1,7 @@
 #' Florida Census Data at the Voting District Level
 #'
+#' Florida Census Data at the Voting District Level.
+#'
 #' @format A data frame with 8871 rows and 8 variables:
 #' \describe{
 #'  \item{ county }{ integer: county census ID of the voting district }

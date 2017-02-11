@@ -17,7 +17,7 @@
 social
 }
 \description{
-Social Pressure Experiment Data
+Dataset used to study the effect of social pressure on voter turnout.
 }
 \details{
 See \emph{QSS} Table 2.4.

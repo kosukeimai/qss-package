@@ -1,5 +1,8 @@
 #' UN Voting Data
 #'
+#' Dataset used to analyze how states’ ideological positions, as captured by their
+#' votes on UN resolutions, have changed since the fall of communism.
+#'
 #' @format A data frame with 9120 rows and 6 variables:
 #' \describe{
 #'  \item{ Year }{ integer: year for which the ideal point is estimated }

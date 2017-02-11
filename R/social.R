@@ -1,5 +1,7 @@
 #' Social Pressure Experiment Data
 #'
+#' Dataset used to study the effect of social pressure on voter turnout.
+#'
 #' @format A data frame with 305866 rows and 6 variables:
 #' \describe{
 #'  \item{ sex }{ character: sex of the voter (female or male) }

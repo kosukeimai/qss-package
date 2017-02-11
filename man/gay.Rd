@@ -15,7 +15,8 @@
 gay
 }
 \description{
-Gay Marriage Study Data
+Data from an experiment that analyzed whether contact with a gay canvasser affected
+opinions on gay marriage.
 }
 \details{
 See \emph{QSS} Table 2.7.

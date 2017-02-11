@@ -19,7 +19,7 @@
 FLCensusVTD
 }
 \description{
-Florida Census Data at the Voting District Level
+Florida Census Data at the Voting District Level.
 }
 \details{
 See \emph{QSS} Table 6.4.

@@ -22,7 +22,7 @@
 afghan
 }
 \description{
-Afghanistan Survey Data
+Survey data containing questions on support for various combatants during wartime.
 }
 \details{
 See \emph{QSS} Table 3.1.

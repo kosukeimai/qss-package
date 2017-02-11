@@ -20,7 +20,7 @@
 turnout
 }
 \description{
-US election turnout data
+Turnout estimates from American National Election Studies (ANES) from 1980-2008.
 }
 \details{
 See \emph{QSS} Table 1.3.

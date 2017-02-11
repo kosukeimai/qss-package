@@ -16,7 +16,8 @@
 published
 }
 \description{
-Published Journal Article Data
+Contains information about 53 published journal articles based on TESS
+(Time-Sharing Experiments in the Social Sciences) projects.
 }
 \details{
 See \emph{QSS} Table 7.6.

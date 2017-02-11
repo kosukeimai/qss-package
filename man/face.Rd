@@ -21,7 +21,8 @@
 face
 }
 \description{
-Facial Appearanace Experiment Data
+Contains data from an experiment using competence measures (self-reported
+based on brief exposure to image of a candidate's face) to predict election outcomes.
 }
 \details{
 See \emph{QSS} Table 4.4.

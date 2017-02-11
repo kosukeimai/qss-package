@@ -1,5 +1,7 @@
 #' 2008 US Presidential Election Data
 #'
+#' 2008 US presidential election outcomes by state.
+#'
 #' @format A data frame with 51 rows and 5 variables:
 #' \describe{
 #'  \item{ state.name }{ character: unabbreviated name of the state }

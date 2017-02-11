@@ -1,5 +1,7 @@
 #' Political Efficacy Data
 #'
+#' Data from survey on political efficacy using various vignettes.
+#'
 #' @format A data frame with 781 rows and 6 variables:
 #' \describe{
 #'  \item{ self }{ integer: self-assessment response }

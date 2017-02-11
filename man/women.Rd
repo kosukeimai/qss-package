@@ -17,7 +17,8 @@
 women
 }
 \description{
-Women as Policy Makers Experiment
+Data set from experiment analyzing the causal effects of having female
+politicians in government on policy outcomes
 }
 \details{
 See \emph{QSS} Table 4.7.

@@ -14,7 +14,8 @@
 ccap2012
 }
 \description{
-Cooperative Campaign Analysis Project (CCAP) Data
+CCAP data set alleged to have been used as the basis for the gay marriage study results
+from \emph{QSS} section 2.8.2
 }
 \details{
 See \emph{QSS} Table 3.6.

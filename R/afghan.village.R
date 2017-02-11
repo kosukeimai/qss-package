@@ -1,5 +1,7 @@
 #' Afghanistan Village Data
 #'
+#' Altitude and population info for villages in Afghanistan survey.
+#'
 #' @format A data frame with 1864 rows and 3 variables:
 #' \describe{
 #'  \item{ altitude }{ numeric: altitude of the village }

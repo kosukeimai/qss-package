@@ -1,5 +1,7 @@
 #' US Census Bureau Surname List Data
 #'
+#' Contains total count and racial breakdown data for surnames in the United States.
+#'
 #' @format A data frame with 151671 rows and 7 variables:
 #' \describe{
 #'  \item{ surname }{ character: surname }

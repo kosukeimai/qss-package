@@ -1,5 +1,8 @@
 #' TESS Program Academic Research Data
 #'
+#' Contains information about 221 research projects funded by the TESS program
+#' (Time-Sharing Experiments in the Social Sciences).
+#'
 #' @format A data frame with 221 rows and 5 variables:
 #' \describe{
 #'  \item{ id }{ integer: study identifier }

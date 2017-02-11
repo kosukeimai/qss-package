@@ -17,7 +17,8 @@
 gayreshaped
 }
 \description{
-Reshaped Gay Marrige Study Data
+A reshaped version of the dataset from \emph{QSS} section 2.8.2
+in which every observation corresponds to a unique respondent.
 }
 \details{
 See \emph{QSS} Table 3.5.

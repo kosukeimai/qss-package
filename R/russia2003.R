@@ -1,5 +1,7 @@
 #' Russian Election Data (2003)
 #'
+#' Contains the election results from the 2003 Russian Duma election.
+#'
 #' @format A data frame with 94972 rows and 3 variables:
 #' \describe{
 #'  \item{ N }{ integer: total number of voters in a precinct }

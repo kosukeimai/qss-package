@@ -18,7 +18,7 @@
 florida
 }
 \description{
-1996 and 2000 US Presidential Election Data for Florida Counties
+1996 and 2000 election outcomes in each Florida county by candidate.
 }
 \details{
 See \emph{QSS} Table 4.6.

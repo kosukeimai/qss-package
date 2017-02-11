@@ -17,7 +17,9 @@
 STAR
 }
 \description{
-STAR Project Data
+Contains data from the STAR (Student–Teacher Achievement Ratio) Project,
+a four-year longitudinal study examining the effect of class size in early grade levels on educational
+performance and personal development
 }
 \details{
 See \emph{QSS} Table 2.6.

@@ -1,5 +1,7 @@
 #' 2008 US Presidential National Polls Data
 #'
+#' Contains national polling data for 2008 United States Presidential Election
+#'
 #' @format A data frame with 526 rows and 4 variables:
 #' \describe{
 #'  \item{ Pollster }{ character: name of the organization conducting the poll }

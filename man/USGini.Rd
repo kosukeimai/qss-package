@@ -14,7 +14,7 @@
 USGini
 }
 \description{
-US Gini Coefficient Data
+Contains the Gini coefficient for the United States from 1947 to 2013.
 }
 \details{
 See \emph{QSS} Table 3.4.

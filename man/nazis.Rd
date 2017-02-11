@@ -18,7 +18,7 @@
 nazis
 }
 \description{
-Analysis of the 1932 German Election
+1932 German election data.
 }
 \details{
 See \emph{QSS} Table 7.7.

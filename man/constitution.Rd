@@ -14,7 +14,7 @@
 constitution
 }
 \description{
-Analyzing the Preambles of Constitutions
+Contains Preamble text for 155 countries.
 }
 \details{
 See \emph{QSS} Table 5.6.

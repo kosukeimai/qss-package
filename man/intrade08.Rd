@@ -21,7 +21,8 @@
 intrade08
 }
 \description{
-Intrade Betting Market Data
+Data from Intrade, an online prediction market, in days leading up to the 2008 United
+States Presidential Election.
 }
 \details{
 See \emph{QSS} Table 4.9.

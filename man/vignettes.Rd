@@ -17,7 +17,7 @@
 vignettes
 }
 \description{
-Political Efficacy Data
+Data from survey on political efficacy using various vignettes.
 }
 \details{
 See \emph{QSS} Table 3.7.

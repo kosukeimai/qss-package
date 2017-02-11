@@ -17,7 +17,8 @@
 unvoting
 }
 \description{
-UN Voting Data
+Dataset used to analyze how states’ ideological positions, as captured by their
+votes on UN resolutions, have changed since the fall of communism.
 }
 \details{
 See \emph{QSS} Table 3.8.

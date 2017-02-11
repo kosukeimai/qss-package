@@ -18,7 +18,7 @@
 names
 }
 \description{
-US Census Bureau Surname List Data
+Contains total count and racial breakdown data for surnames in the United States.
 }
 \details{
 See \emph{QSS} Table 6.3.

@@ -1,5 +1,8 @@
 #' Leader Assassination Data
 #'
+#' Dataset for a natural experiment that studied whether assassinations of political leaders had an
+#' effect on institutions and war.
+#'
 #' @format A data frame with 250 rows and 11 variables:
 #' \describe{
 #'  \item{ year }{ integer: year }

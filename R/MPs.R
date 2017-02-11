@@ -1,5 +1,8 @@
 #' British Parliament Personal Wealth Data
 #'
+#' Data set used in experiment to analyze the causal effect of being elected to
+#' Parliament in the United Kingdom on one's personal wealth.
+#'
 #' @format A data frame with 427 rows and 10 variables:
 #' \describe{
 #'  \item{ surname }{ character: surname of the candidate }

@@ -1,5 +1,7 @@
 #' Senator Follow / Following Data
 #'
+#' Lists pairs of the Twitter screen names of following and followed politicians.
+#'
 #' @format A data frame with 3859 rows and 2 variables:
 #' \describe{
 #'  \item{ following }{ character: Twitter screen name of the following senator }

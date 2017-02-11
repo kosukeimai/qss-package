@@ -1,5 +1,8 @@
 #' Gay Marriage Study Data
 #'
+#' Data from an experiment that analyzed whether contact with a gay canvasser affected
+#' opinions on gay marriage.
+#'
 #' @format A data frame with 69592 rows and 4 variables:
 #' \describe{
 #'  \item{ study }{ integer: source of the data (1 = study 1, 2 = study 2) }

@@ -1,5 +1,8 @@
 #' Legislative Ideal Points Data
 #'
+#' Contains the estimated ideal points of all legislators who served in
+#' the House of Representatives from the 80th (1947–1948) to the 112th (2011–2012) Congresses.
+#'
 #' @format A data frame with 14552 rows and 7 variables:
 #' \describe{
 #'  \item{ congress }{ integer: congressional session number }

@@ -1,5 +1,7 @@
 #' Minimum Wage Study Data
 #'
+#' Data set used to investigate the effect of a minimum wage increase on full-time employment.
+#'
 #' @format A data frame with 358 rows and 8 variables:
 #' \describe{
 #'  \item{ chain }{ character: name of the fast-food restaurant chain }

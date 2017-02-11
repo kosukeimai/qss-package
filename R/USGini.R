@@ -1,5 +1,7 @@
 #' US Gini Coefficient Data
 #'
+#' Contains the Gini coefficient for the United States from 1947 to 2013.
+#'
 #' @format A data frame with 67 rows and 3 variables:
 #' \describe{
 #'  \item{ .row }{ integer: row number }

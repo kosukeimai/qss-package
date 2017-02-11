@@ -1,14 +1,18 @@
 #' Florence Marriage Network Data
 #'
+#' Contains an adjacency matrix whose entries represent the existence of
+#' relationships between two families (one unit
+#' represented by the row and the other represented by the column)
+#'
 #' @format A data frame with 16 rows and 17 variables:
 #' \describe{
-#'  \item{ FAMILY }{ character }  \item{ ACCIAIUOL }{ integer }  \item{ ALBIZZI }{ integer }  \item{ BARBADORI }{ integer }  \item{ BISCHERI }{ integer }  \item{ CASTELLAN }{ integer }  \item{ GINORI }{ integer }  \item{ GUADAGNI }{ integer }  \item{ LAMBERTES }{ integer }  \item{ MEDICI }{ integer }  \item{ PAZZI }{ integer }  \item{ PERUZZI }{ integer }  \item{ PUCCI }{ integer }  \item{ RIDOLFI }{ integer }  \item{ SALVIATI }{ integer }  \item{ STROZZI }{ integer }  \item{ TORNABUON }{ integer } 
+#'  \item{ FAMILY }{ character }  \item{ ACCIAIUOL }{ integer }  \item{ ALBIZZI }{ integer }  \item{ BARBADORI }{ integer }  \item{ BISCHERI }{ integer }  \item{ CASTELLAN }{ integer }  \item{ GINORI }{ integer }  \item{ GUADAGNI }{ integer }  \item{ LAMBERTES }{ integer }  \item{ MEDICI }{ integer }  \item{ PAZZI }{ integer }  \item{ PERUZZI }{ integer }  \item{ PUCCI }{ integer }  \item{ RIDOLFI }{ integer }  \item{ SALVIATI }{ integer }  \item{ STROZZI }{ integer }  \item{ TORNABUON }{ integer }
 #' }
 #'
-#' 
+#'
 #' @details
 #' See \emph{QSS} Table 5.3.
-#' 
+#'
 #'
 #' @references
 #' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.

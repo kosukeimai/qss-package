@@ -1,5 +1,7 @@
 #' Canada Election Data (2011)
 #'
+#' Contains election results for 2011 Canadian election.
+#'
 #' @format A data frame with 66060 rows and 3 variables:
 #' \describe{
 #'  \item{ N }{ integer: total number of voters in a precinct }

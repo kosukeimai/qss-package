@@ -21,7 +21,8 @@
 intrade12
 }
 \description{
-Intrade Prediction Market Data
+Data from Intrade, an online prediction market, in days leading up to the 2012 United
+States Presidential Election.
 }
 \details{
 See \emph{QSS} Table 4.9.

@@ -1,5 +1,8 @@
 #' Cooperative Campaign Analysis Project (CCAP) Data
 #'
+#' CCAP data set alleged to have been used as the basis for the gay marriage study results
+#' from \emph{QSS} section 2.8.2
+#'
 #' @format A data frame with 43998 rows and 3 variables:
 #' \describe{
 #'  \item{ .row }{ integer: row number }

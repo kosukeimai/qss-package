@@ -14,7 +14,7 @@
 russia2012
 }
 \description{
-Russian Election Data (2012)
+Contains the election results for the 2012 Russian presidential election.
 }
 \details{
 See \emph{QSS} Table 6.5.

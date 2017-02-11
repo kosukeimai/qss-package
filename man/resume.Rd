@@ -15,7 +15,7 @@
 resume
 }
 \description{
-Resume Experiment Data
+Resume dataset to analyze racial discrimination in the labor market.
 }
 \details{
 See \emph{QSS} Table 2.1.

@@ -21,7 +21,8 @@
 MPs
 }
 \description{
-British Parliament Personal Wealth Data
+Data set used in experiment to analyze the causal effect of being elected to
+Parliament in the United Kingdom on one's personal wealth.
 }
 \details{
 See \emph{QSS} Table 4.8.

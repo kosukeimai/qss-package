@@ -1,5 +1,7 @@
 #' 2012 US Presidential Polls Data
 #'
+#' Polling data for each state for 2012 United States Presidential Election.
+#'
 #' @format A data frame with 1227 rows and 6 variables:
 #' \describe{
 #'  \item{ .row }{ integer: row number }

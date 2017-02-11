@@ -1,5 +1,9 @@
 #' STAR Project Data
 #'
+#' Contains data from the STAR (Student–Teacher Achievement Ratio) Project,
+#' a four-year longitudinal study examining the effect of class size in early grade levels on educational
+#' performance and personal development
+#'
 #' @format A data frame with 6325 rows and 6 variables:
 #' \describe{
 #'  \item{ race }{ integer: student’s race (white = 1, black = 2, Asian = 3, Hispanic = 4, Native American = 5, others = 6) }
