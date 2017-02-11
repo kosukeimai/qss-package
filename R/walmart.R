@@ -20,7 +20,10 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item { Thomas J. Holmes (2011) “The diffusion of Wal-Mart and economies of density.”
+#' \emph{Econometrica}, vol. 79, no. 1, pp. 253–302. doi = 10.3982/ECTA7699 }
+#'}
 "walmart"
