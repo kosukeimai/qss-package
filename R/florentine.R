@@ -15,7 +15,11 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item {John F. Padgett and Christopher K. Ansell (1993) “Robust action and the rise of the
+#' Medici, 1400–1434.” \emph{American Journal of Sociology}, vol. 98, no. 6, pp. 1259–1319.
+#' doi: https://doi.org/10.1086/230190 }
+#'}
 "florentine"

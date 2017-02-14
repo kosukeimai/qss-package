@@ -17,7 +17,11 @@
 #'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item {Pablo Barberá; Birds of the Same Feather Tweet Together:
+#' Bayesian Ideal Point Estimation Using Twitter Data. \emph{Political Analysis} 2015;
+#' 23 (1): 76-91. doi: 10.1093/pan/mpu011 }
+#'}
 "twitter.senator"
