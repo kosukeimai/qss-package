@@ -1,14 +1,21 @@
 #' County-Level US Presidential Election Data
 #'
+#' US Presidential Election Data by county for each state between 1960 and 2012.
+#'
 #' @format A data frame with 43494 rows and 6 variables:
 #' \describe{
-#'  \item{ year }{ integer }  \item{ state }{ character }  \item{ county }{ character }  \item{ rep }{ integer }  \item{ dem }{ integer }  \item{ other }{ integer } 
+#'  \item{ year }{ integer: election year }
+#'  \item{ state }{ character: full name of the 48 states (excluding Alaska, Hawaii, and the District of Columbia) }
+#'  \item{ county }{ character: county name }
+#'  \item{ rep }{ integer: popular votes for the Republican candidate }
+#'  \item{ dem }{ integer: popular votes for the Democratic candidate }
+#'  \item{ other }{ integer: popular votes for other candidates }
 #' }
 #'
-#' 
+#'
 #' @details
 #' See \emph{QSS} Table 5.8.
-#' 
+#'
 #'
 #' @references
 #' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.

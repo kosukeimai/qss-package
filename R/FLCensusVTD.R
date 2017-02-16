@@ -1,17 +1,30 @@
 #' Florida Census Data at the Voting District Level
 #'
+#' Florida Census Data at the Voting District Level.
+#'
 #' @format A data frame with 8871 rows and 8 variables:
 #' \describe{
-#'  \item{ county }{ integer }  \item{ VTD }{ integer }  \item{ total.pop }{ integer }  \item{ white }{ numeric }  \item{ black }{ numeric }  \item{ hispanic }{ numeric }  \item{ api }{ numeric }  \item{ others }{ numeric } 
+#'  \item{ county }{ integer: county census ID of the voting district }
+#'  \item{ VTD }{ integer: voting district census ID (only unique within the county) }
+#'  \item{ total.pop }{ integer: total population of the voting district }
+#'  \item{ white }{ numeric: proportion of non-Hispanic whites in the voting district }
+#'  \item{ black }{ numeric: proportion of non-Hispanic blacks in the voting district }
+#'  \item{ hispanic }{ numeric: proportion of voters of Hispanic origin in the voting district }
+#'  \item{ api }{ numeric: proportion of non-Hispanic Asians and Pacific Islanders in the voting district }
+#'  \item{ others }{ numeric: proportion of the other racial groups in the voting district }
 #' }
 #'
-#' 
+#'
 #' @details
 #' See \emph{QSS} Table 6.4.
-#' 
+#'
 #'
 #' @references
-#' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
-#'
+#' \itemize{
+#' \item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+#' Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+#' \item {Kosuke Imai and Kabir Khanna (2016) “Improving ecological inference by
+#' predicting individual ethnicity from voter registration records.” \emph{Political Analysis},
+#' vol. 24, no. 2 (Spring), pp. 263–272. doi: https://doi.org/10.1093/pan/mpw001 }
+#'}
 "FLCensusVTD"

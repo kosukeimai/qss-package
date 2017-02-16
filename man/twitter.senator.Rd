@@ -6,19 +6,28 @@
 \title{Senator Information Data}
 \format{A data frame with 91 rows and 4 variables:
 \describe{
- \item{ screen_name }{ character }  \item{ name }{ character }  \item{ party }{ character }  \item{ state }{ character } 
+ \item{ screen_name }{ character: Twitter screen name }
+ \item{ name }{ character: name of senator }
+ \item{ party }{ character: party (D = Democrat, R = Republican, I = Independent) }
+ \item{ state }{ character: state abbreviation }
 }}
 \usage{
 twitter.senator
 }
 \description{
-Senator Information Data
+Contains information about each US Senator in the Twitter network analysis from
+\emph{QSS} Section 5.2.3.
 }
 \details{
 See \emph{QSS} Table 5.4.
 }
 \references{
-Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+\itemize{
+\item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+\item {Pablo Barberá; Birds of the Same Feather Tweet Together:
+Bayesian Ideal Point Estimation Using Twitter Data. \emph{Political Analysis} 2015;
+23 (1): 76-91. doi: 10.1093/pan/mpu011 }
+}
 }
 \keyword{datasets}

@@ -1,14 +1,22 @@
 #' 1996 and 2000 US Presidential Election Data for Florida Counties
 #'
+#' 1996 and 2000 election outcomes in each Florida county by candidate.
+#'
 #' @format A data frame with 67 rows and 7 variables:
 #' \describe{
-#'  \item{ county }{ character }  \item{ Clinton96 }{ integer }  \item{ Dole96 }{ integer }  \item{ Perot96 }{ integer }  \item{ Bush00 }{ integer }  \item{ Gore00 }{ integer }  \item{ Buchanan00 }{ integer } 
+#'  \item{ county }{ character: county name }
+#'  \item{ Clinton96 }{ integer: Clinton’s votes in 1996 }
+#'  \item{ Dole96 }{ integer: Dole’s votes in 1996 }
+#'  \item{ Perot96 }{ integer: Perot’s votes in 1996 }
+#'  \item{ Bush00 }{ integer: Bush’s votes in 2000 }
+#'  \item{ Gore00 }{ integer: Gore’s votes in 2000 }
+#'  \item{ Buchanan00 }{ integer: Buchanan’s votes in 2000 }
 #' }
 #'
-#' 
+#'
 #' @details
 #' See \emph{QSS} Table 4.6.
-#' 
+#'
 #'
 #' @references
 #' Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.

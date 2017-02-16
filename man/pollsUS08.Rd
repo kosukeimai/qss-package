@@ -6,19 +6,25 @@
 \title{2008 US Presidential National Polls Data}
 \format{A data frame with 526 rows and 4 variables:
 \describe{
- \item{ Pollster }{ character }  \item{ McCain }{ integer }  \item{ Obama }{ integer }  \item{ middate }{ Date } 
+ \item{ Pollster }{ character: name of the organization conducting the poll }
+ \item{ McCain }{ integer: predicted support for McCain (percentage) }
+ \item{ Obama }{ integer: predicted support for Obama (percentage) }
+ \item{ middate }{ Date: middate of the period when the poll was conducted }
 }}
 \usage{
 pollsUS08
 }
 \description{
-2008 US Presidential National Polls Data
+Contains national polling data for 2008 United States Presidential Election
 }
 \details{
 See \emph{QSS} Table 4.2.
 }
 \references{
-Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+#' \itemize{
+\item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+\item { Huffington Post: \href{http://elections.huffingtonpost.com/pollster}{Pollster} }
+}
 }
 \keyword{datasets}

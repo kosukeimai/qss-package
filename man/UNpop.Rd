@@ -3,16 +3,17 @@
 \docType{data}
 \name{UNpop}
 \alias{UNpop}
-\title{World population estimates data}
+\title{United Nations Population Estimates}
 \format{A data frame with 7 rows and 2 variables:
 \describe{
- \item{ year }{ integer }  \item{ world.pop }{ integer } 
+ \item{ year }{ integer: year }
+ \item{ world.pop }{ integer: world population at year }
 }}
 \usage{
 UNpop
 }
 \description{
-World population estimates data
+World population estimates data from the United Nations.
 }
 \details{
 See \emph{QSS} Table 1.2.

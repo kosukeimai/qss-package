@@ -6,13 +6,18 @@
 \title{Florida Registered Voter List Sample Data}
 \format{A data frame with 10000 rows and 6 variables:
 \describe{
- \item{ surname }{ character }  \item{ county }{ integer }  \item{ VTD }{ integer }  \item{ age }{ integer }  \item{ gender }{ character }  \item{ race }{ character } 
+ \item{ surname }{ character: surname }
+ \item{ county }{ integer: county ID of the voter’s residence }
+ \item{ VTD }{ integer: voting district ID of the voter’s residence }
+ \item{ age }{ integer: age }
+ \item{ gender }{ character: gender: m = male and f = female }
+ \item{ race }{ character: self-reported race }
 }}
 \usage{
 FLVoters
 }
 \description{
-Florida Registered Voter List Sample Data
+Sample of 10000 from registered Florida voters.
 }
 \details{
 See \emph{QSS} Table 6.1.

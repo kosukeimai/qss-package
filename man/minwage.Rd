@@ -6,19 +6,31 @@
 \title{Minimum Wage Study Data}
 \format{A data frame with 358 rows and 8 variables:
 \describe{
- \item{ chain }{ character }  \item{ location }{ character }  \item{ wageBefore }{ numeric }  \item{ wageAfter }{ numeric }  \item{ fullBefore }{ numeric }  \item{ fullAfter }{ numeric }  \item{ partBefore }{ numeric }  \item{ partAfter }{ numeric } 
+ \item{ chain }{ character: name of the fast-food restaurant chain }
+ \item{ location }{ character: location of the restaurants (centralNJ, northNJ, PA, shoreNJ, southNJ) }
+ \item{ wageBefore }{ numeric: wage before the minimum-wage increase }
+ \item{ wageAfter }{ numeric: wage after the minimum-wage increase }
+ \item{ fullBefore }{ numeric: number of full-time employees before the minimum-wage increase }
+ \item{ fullAfter }{ numeric: number of full-time employees after the minimum-wage increase }
+ \item{ partBefore }{ numeric: number of part-time employees before the minimum-wage increase }
+ \item{ partAfter }{ numeric: number of part-time employees after the minimum-wage increase }
 }}
 \usage{
 minwage
 }
 \description{
-Minimum Wage Study Data
+Data set used to investigate the effect of a minimum wage increase on full-time employment.
 }
 \details{
 See \emph{QSS} Table 2.5.
 }
 \references{
-Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+\itemize{
+\item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+\item {David Card and Alan Krueger (1994) “Minimum wages and employment: A case study of the
+fast-food industry in New Jersey and Pennsylvania.” \emph{American Economic Review}, vol. 84,
+no. 4, pp. 772–793 doi: 10.3386/w4509 }
+}
 }
 \keyword{datasets}

@@ -6,13 +6,15 @@
 \title{US Gini Coefficient Data}
 \format{A data frame with 67 rows and 3 variables:
 \describe{
- \item{ .row }{ integer }  \item{ year }{ integer }  \item{ gini }{ numeric } 
+ \item{ .row }{ integer: row number }
+ \item{ year }{ integer: year }
+ \item{ gini }{ numeric: US Gini coefficient }
 }}
 \usage{
 USGini
 }
 \description{
-US Gini Coefficient Data
+Contains the Gini coefficient for the United States from 1947 to 2013.
 }
 \details{
 See \emph{QSS} Table 3.4.

@@ -6,19 +6,25 @@
 \title{Cooperative Campaign Analysis Project (CCAP) Data}
 \format{A data frame with 43998 rows and 3 variables:
 \describe{
- \item{ .row }{ integer }  \item{ caseid }{ integer }  \item{ gaytherm }{ integer } 
+ \item{ .row }{ integer: row number }
+ \item{ caseid }{ integer: unique respondent ID }
+ \item{ gaytherm }{ integer: survey thermometer rating of feeling towards gay couples (0–100) }
 }}
 \usage{
 ccap2012
 }
 \description{
-Cooperative Campaign Analysis Project (CCAP) Data
+CCAP data set alleged to have been used as the basis for the gay marriage study results
+from \emph{QSS} section 2.8.2
 }
 \details{
 See \emph{QSS} Table 3.6.
 }
 \references{
-Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+\itemize{
+\item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+\item { “Irregularities in LaCour (2014)” by David Broockman, Joshua Kalla, and Peter Aronow. }
+}
 }
 \keyword{datasets}

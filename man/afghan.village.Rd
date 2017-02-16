@@ -6,19 +6,29 @@
 \title{Afghanistan Village Data}
 \format{A data frame with 1864 rows and 3 variables:
 \describe{
- \item{ altitude }{ numeric }  \item{ population }{ integer }  \item{ village.surveyed }{ integer } 
+ \item{ altitude }{ numeric: altitude of the village }
+ \item{ population }{ integer: population of the village }
+ \item{ village.surveyed }{ integer: whether a village is sampled for survey }
 }}
 \usage{
 afghan.village
 }
 \description{
-Afghanistan Village Data
+Altitude and population info for villages in Afghanistan survey.
 }
 \details{
 See \emph{QSS} Table 3.2.
 }
 \references{
-Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
-Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}.
+\itemize{
+\item{ Imai, Kosuke. 2017. \emph{Quantitative Social Science: An Introduction}.
+Princeton University Press. \href{http://press.princeton.edu/titles/11025.html}{URL}. }
+\item {Jason Lyall, Graeme Blair, and Kosuke Imai (2013) “Explaining support for combatants
+during wartime: A survey experiment in Afghanistan.” \emph{American Political Science Review},
+vol. 107, no. 4 (November), pp. 679–705. doi: 10.1017/S0003055413000403 }
+\item {Graeme Blair, Kosuke Imai, and Jason Lyall (2014) “Comparing and combining list
+and endorsement experiments: Evidence from Afghanistan.” American Journal of Political
+Science, vol. 58, no. 4 (October), pp. 1043–1063. doi: 10.1111/ajps.12086 }
+}
 }
 \keyword{datasets}
