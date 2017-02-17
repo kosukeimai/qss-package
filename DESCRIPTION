@@ -1,5 +1,5 @@
 Package: qss
-Title: Data for "Quantitative Social Science: An Introduction"
+Title: Data and Code for "Quantitative Social Science: An Introduction"
 Version: 0.1.0.9000
 Authors@R: c(person("Jeffey", "Arnold", email = "jeffrey.arnold@gmail.com",
                   role = c("aut"),
@@ -10,9 +10,9 @@ Authors@R: c(person("Jeffey", "Arnold", email = "jeffrey.arnold@gmail.com",
              person("Tyler", "Simko", role = c("aut"),
                     email = "tsimko@princeton.edu",
                     comment = "Data maintenace and documentation"))
-Description: Data for Kosuke Imai, "Quantitative Social Science: An
-    Introduction". This packages the supplementary materials in https://github.com/
-    kosukeimai/qss into an R package.
+Description: Data and code for Kosuke Imai, "Quantitative Social Science: An Introduction" 
+    (Princeton University Press, 2017). This packages the supplementary materials in
+    https://github.com/kosukeimai/qss into an R package.
 Depends:
     R (>= 3.3.2)
 Imports:
