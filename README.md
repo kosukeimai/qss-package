@@ -10,7 +10,7 @@ Install
 with:
 
     # install.packages("devtools")
-    devtools::install_github("jrnold/qss-data")
+    devtools::install_github("kosukeimai/qss-data")
 
 Usage
 =====
