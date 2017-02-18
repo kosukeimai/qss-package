@@ -1,9 +1,12 @@
 ---
 output: md_document
 ---
+<!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
+
 # Quantitative Social Science: An Introduction: An R Package
 
-<!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
+[![Travis-CI Build Status](https://travis-ci.org/kosukeimai/qss-data.svg?branch=master)](https://travis-ci.org/kosukeimai/qss-data)
+
 
 ```{r, include=FALSE}
 library("printr")
