@@ -36,7 +36,7 @@ summary(est.error)
 
 ## PATE simulation
 PATE <- mu1 - mu0
-diff.means <- rep(NA, sims)  
+diff.means <- rep(NA, sims)
 for (i in 1:sims) {
     ## generate a sample for each simulation: this used to be outside of loop
     Y0 <- rnorm(n, mean = mu0, sd = sd0)
@@ -48,13 +48,13 @@ for (i in 1:sims) {
 ## estimation error for PATE
 est.error <- diff.means - PATE
 
-## unbiased 
-summary(est.error) 
+## unbiased
+summary(est.error)
 
 ### Section 7.1.2: Standard Error
 
-par(cex = 1.5) 
-hist(diff.means, freq = FALSE, xlab = "Difference-in-means estimator", 
+par(cex = 1.5)
+hist(diff.means, freq = FALSE, xlab = "Difference-in-means estimator",
      main = "Sampling distribution")
 abline(v = SATE, col = "red") # true value of SATE
 text(0.6, 2.4, "true SATE", col = "red")
@@ -63,7 +63,7 @@ sd(diff.means)
 sqrt(mean((diff.means - SATE)^2))
 
 ## PATE simulation with standard error
-sims <- 5000 
+sims <- 5000
 diff.means <- se <- rep(NA, sims)  # container for standard error added
 for (i in 1:sims) {
     ## generate a sample
@@ -73,13 +73,13 @@ for (i in 1:sims) {
     treat <- sample(c(rep(1, n / 2), rep(0, n / 2)), size = n, replace = FALSE)
     diff.means[i] <- mean(Y1[treat == 1]) - mean(Y0[treat == 0])
     ## standard error
-    se[i] <- sqrt(var(Y1[treat == 1]) / (n / 2) + var(Y0[treat == 0]) / (n / 2)) 
+    se[i] <- sqrt(var(Y1[treat == 1]) / (n / 2) + var(Y0[treat == 0]) / (n / 2))
 }
 
 ## standard deviation of difference-in-means
 sd(diff.means)
 ## mean of standard errors
-mean(se) 
+mean(se)
 
 ### Section 7.1.3: Confidence Intervals
 
@@ -110,12 +110,12 @@ mean(ci90[, 1] <= 1 & ci90[, 2] >= 1)
 
 p <- 0.6 # true parameter value
 n <- c(50, 100, 1000) # 3 sample sizes to be examined
-alpha <- 0.05 
+alpha <- 0.05
 sims <- 5000 # number of simulations
 results <- rep(NA, length(n)) # a container for results
 
 ## loop for different sample sizes
-for (i in 1:length(n)) { 
+for (i in 1:length(n)) {
     ci.results <- rep(NA, sims) # a container for whether CI includes truth
     ## loop for repeated hypothetical survey sampling
     for (j in 1:sims) {
@@ -124,7 +124,7 @@ for (i in 1:length(n)) {
         s.e. <- sqrt(x.bar * (1 - x.bar) / n[i]) # standard errors
         ci.lower <- x.bar - qnorm(1 - alpha/2) * s.e.
         ci.upper <- x.bar + qnorm(1 - alpha/2) * s.e.
-        ci.results[j] <- (p >= ci.lower) & (p <= ci.upper) 
+        ci.results[j] <- (p >= ci.lower) & (p <= ci.upper)
     }
     ## proportion of CIs that contain the true value
     results[i] <- mean(ci.results)
@@ -133,21 +133,21 @@ results
 
 ### Scetion 7.1.4: Margin of Error and Sample Size Calculation in Polls
 
-par(cex = 1.5, lwd = 2) 
+par(cex = 1.5, lwd = 2)
 MoE <- c(0.01, 0.03, 0.05)  # the desired margin of error
 p <- seq(from = 0.01, to = 0.99, by = 0.01)
 n <- 1.96^2 * p * (1 - p) / MoE[1]^2
-plot(p, n, ylim = c(-1000, 11000), xlab = "Population proportion", 
+plot(p, n, ylim = c(-1000, 11000), xlab = "Population proportion",
      ylab = "Sample size", type = "l")
 lines(p, 1.96^2 * p * (1 - p) / MoE[2]^2, lty = "dashed")
 lines(p, 1.96^2 * p * (1 - p) / MoE[3]^2, lty = "dotted")
 text(0.4, 10000, "margin of error = 0.01")
-text(0.4, 1800, "margin of error = 0.03") 
-text(0.6, -200, "margin of error = 0.05") 
+text(0.4, 1800, "margin of error = 0.03")
+text(0.6, -200, "margin of error = 0.05")
 
 ## election and polling results, by state
-pres08 <- read.csv("pres08.csv")
-polls08 <- read.csv("polls08.csv")
+data(pres08)
+data(polls08)
 
 ## convert to a Date object
 polls08$middate <- as.Date(polls08$middate)
@@ -167,12 +167,12 @@ for (i in 1:51){
     ## subset the ith state
     state.data <- subset(polls08, subset = (state == st.names[i]))
     ## subset the latest polls within the state
-    latest <- state.data$DaysToElection == min(state.data$DaysToElection) 
+    latest <- state.data$DaysToElection == min(state.data$DaysToElection)
     ## compute the mean of latest polls and store it
     poll.pred[i, 1] <- mean(state.data$Obama[latest]) / 100
 }
 
-## upper and lower confidence limits 
+## upper and lower confidence limits
 n <- 1000 # sample size
 alpha <- 0.05
 s.e. <- sqrt(poll.pred[, 1] * (1 - poll.pred[, 1]) / n) # standard error
@@ -190,7 +190,7 @@ for (i in 1:51) {
     lines(rep(pres08$Obama[i] / 100, 2), c(poll.pred[i, 2], poll.pred[i, 3]))
 }
 ## proportion of confidence intervals that contain the election day outcome
-mean((poll.pred[, 2] <= pres08$Obama / 100) & 
+mean((poll.pred[, 2] <= pres08$Obama / 100) &
          (poll.pred[, 3] >= pres08$Obama / 100))
 
 ## bias
@@ -199,53 +199,53 @@ bias
 
 ## bias corrected estimate
 poll.bias <- poll.pred[, 1] - bias
-## bias-corrected standard error 
+## bias-corrected standard error
 s.e.bias <- sqrt(poll.bias * (1 - poll.bias) / n)
 ## bias-corrected 95% confidence interval
 ci.bias.lower <- poll.bias - qnorm(1 - alpha / 2) * s.e.bias
 ci.bias.upper <- poll.bias + qnorm(1 - alpha / 2) * s.e.bias
 
 ## proportion of bias-corrected CIs that contain the election day outcome
-mean((ci.bias.lower <= pres08$Obama / 100) & 
+mean((ci.bias.lower <= pres08$Obama / 100) &
          (ci.bias.upper >= pres08$Obama / 100))
 
 ### Section 7.1.5: Analysis of Randomized Controlled Trials
 
 par(cex = 1.5)
 ## read in data
-STAR <- read.csv("STAR.csv", head = TRUE)
+data(STAR)
 hist(STAR$g4reading[STAR$classtype == 1], freq = FALSE, xlim = c(500, 900),
      ylim = c(0, 0.01), main = "Small class",
      xlab = "Fourth-grade reading test score")
-abline(v = mean(STAR$g4reading[STAR$classtype == 1], na.rm = TRUE), 
+abline(v = mean(STAR$g4reading[STAR$classtype == 1], na.rm = TRUE),
        col = "red")
 
 hist(STAR$g4reading[STAR$classtype == 2], freq = FALSE, xlim = c(500, 900),
      ylim = c(0, 0.01), main = "Regular class",
      xlab = "Fourth-grade reading test score")
-abline(v = mean(STAR$g4reading[STAR$classtype == 2], na.rm = TRUE), 
+abline(v = mean(STAR$g4reading[STAR$classtype == 2], na.rm = TRUE),
        col = "red")
 
 ## estimate and standard error for small class
 n.small <- sum(STAR$classtype == 1 & !is.na(STAR$g4reading))
 est.small <- mean(STAR$g4reading[STAR$classtype == 1], na.rm = TRUE)
-se.small <- sd(STAR$g4reading[STAR$classtype == 1], na.rm = TRUE) / 
+se.small <- sd(STAR$g4reading[STAR$classtype == 1], na.rm = TRUE) /
     sqrt(n.small)
 est.small
 se.small
 
 ## estimate and standard error for regular class
-n.regular <- sum(STAR$classtype == 2 & !is.na(STAR$classtype) & 
+n.regular <- sum(STAR$classtype == 2 & !is.na(STAR$classtype) &
                      !is.na(STAR$g4reading))
 est.regular <- mean(STAR$g4reading[STAR$classtype == 2], na.rm = TRUE)
-se.regular <- sd(STAR$g4reading[STAR$classtype == 2], na.rm = TRUE) / 
+se.regular <- sd(STAR$g4reading[STAR$classtype == 2], na.rm = TRUE) /
     sqrt(n.regular)
 est.regular
 se.regular
 
 alpha <- 0.05
 ## 95% confidence intervals for small class
-ci.small <- c(est.small - qnorm(1 - alpha / 2) * se.small, 
+ci.small <- c(est.small - qnorm(1 - alpha / 2) * se.small,
               est.small + qnorm(1 - alpha / 2) * se.small)
 ci.small
 
@@ -268,21 +268,21 @@ ate.ci
 
 ### Section 7.1.6: Analysis Based on Student's t-Distribution
 
-## 95% CI for small class  
-c(est.small - qt(0.975, df = n.small - 1) * se.small, 
+## 95% CI for small class
+c(est.small - qt(0.975, df = n.small - 1) * se.small,
   est.small + qt(0.975, df = n.small - 1) * se.small)
 
 ## 95% CI based on the central limit theorem
 ci.small
 
 ## 95% CI for regular class
-c(est.regular - qt(0.975, df = n.regular - 1) * se.regular, 
+c(est.regular - qt(0.975, df = n.regular - 1) * se.regular,
   est.regular + qt(0.975, df = n.regular - 1) * se.regular)
 
 ## 95% CI based on the central limit theorem
 ci.regular
 
-t.ci <- t.test(STAR$g4reading[STAR$classtype == 1], 
+t.ci <- t.test(STAR$g4reading[STAR$classtype == 1],
                STAR$g4reading[STAR$classtype == 2])
 t.ci
 
@@ -291,15 +291,15 @@ t.ci
 ### Section 7.2.1: Tea-Testing Experiment
 
 ## truth: enumerate the number of assignment combinations
-true <- c(choose(4, 0) * choose(4, 4), 
-          choose(4, 1) * choose(4, 3), 
-          choose(4, 2) * choose(4, 2), 
-          choose(4, 3) * choose(4, 1), 
+true <- c(choose(4, 0) * choose(4, 4),
+          choose(4, 1) * choose(4, 3),
+          choose(4, 2) * choose(4, 2),
+          choose(4, 3) * choose(4, 1),
           choose(4, 4) * choose(4, 0))
 true
 
 ## compute probability: divide it by the total number of events
-true <- true / sum(true) 
+true <- true / sum(true)
 ## number of correctly classified cups as labels
 names(true) <- c(0, 2, 4, 6, 8)
 true
@@ -307,7 +307,7 @@ true
 ## simulations
 sims <- 1000
 ## lady's guess: M stands for `Milk first,' T stands for `Tea first'
-guess <- c("M", "T", "T", "M", "M", "T", "T", "M") 
+guess <- c("M", "T", "T", "M", "M", "T", "T", "M")
 correct <- rep(NA, sims) # place holder for number of correct guesses
 for (i in 1:sims) {
     ## randomize which cups get Milk/Tea first
@@ -315,7 +315,7 @@ for (i in 1:sims) {
     correct[i] <- sum(guess == cups) # number of correct guesses
 }
 ## estimated probability for each number of correct guesses
-prop.table(table(correct)) 
+prop.table(table(correct))
 ## comparison with analytical answers; the differences are small
 prop.table(table(correct)) - true
 
@@ -332,10 +332,10 @@ x
 y
 
 ## one-sided test for 8 correct guesses
-fisher.test(x, alternative = "greater") 
+fisher.test(x, alternative = "greater")
 
 ## two-sided test for 6 correct guesses
-fisher.test(y) 
+fisher.test(y)
 
 ### Section 7.2.3: One-Sample Tests
 
@@ -344,10 +344,10 @@ x.bar <- 550 / n
 se <- sqrt(0.5 * 0.5 / n) # standard deviation of sampling distribution
 
 ## upper red area in the figure
-upper <- pnorm(x.bar, mean = 0.5, sd = se, lower.tail = FALSE)  
+upper <- pnorm(x.bar, mean = 0.5, sd = se, lower.tail = FALSE)
 
 ## lower red area in the figure; identical to the upper area
-lower <- pnorm(0.5 - (x.bar - 0.5), mean = 0.5, sd = se)  
+lower <- pnorm(0.5 - (x.bar - 0.5), mean = 0.5, sd = se)
 
 ## two-side p-value
 upper + lower
@@ -387,16 +387,16 @@ pnorm(-abs(ate.est), mean = 0, sd = ate.se)
 2 * pnorm(-abs(ate.est), mean = 0, sd = ate.se)
 
 ## testing the null of zero average treatment effect
-t.test(STAR$g4reading[STAR$classtype == 1], 
+t.test(STAR$g4reading[STAR$classtype == 1],
        STAR$g4reading[STAR$classtype == 2])
 
-resume <- read.csv("resume.csv")
+data(resume)
 
 ## organize the data in tables
 x <- table(resume$race, resume$call)
 x
 
-## one-sided test 
+## one-sided test
 prop.test(x, alternative = "greater")
 
 ## sample size
@@ -423,7 +423,7 @@ zstat
 ## one-sided p-value
 pnorm(-abs(zstat))
 
-prop.test(x, alternative = "greater", correct = FALSE) 
+prop.test(x, alternative = "greater", correct = FALSE)
 
 ### Section 7.2.5: Pitfalls of Hypothesis Testing
 
@@ -436,16 +436,16 @@ p <- 0.5 # null value
 alpha <- 0.05
 
 ## critical value
-cr.value <- qnorm(1 - alpha / 2) 
+cr.value <- qnorm(1 - alpha / 2)
 
 ## standard errors under the hypothetical data generating process
 se.star <- sqrt(p.star * (1 - p.star) / n)
 
 ## standard error under the null
-se <- sqrt(p * (1 - p) / n)  
+se <- sqrt(p * (1 - p) / n)
 
 ## power
-pnorm(p - cr.value * se, mean = p.star, sd = se.star) + 
+pnorm(p - cr.value * se, mean = p.star, sd = se.star) +
     pnorm(p + cr.value * se, mean = p.star, sd = se.star, lower.tail = FALSE)
 
 ## parameters
@@ -455,28 +455,28 @@ p1.star <- 0.05
 p0.star <- 0.1
 
 ## overall call back rate as a weighted average
-p <- (n1 * p1.star + n0 * p0.star) / (n1 + n0) 
+p <- (n1 * p1.star + n0 * p0.star) / (n1 + n0)
 ## standard error under the null
-se <- sqrt(p * (1 - p) * (1 / n1 + 1 / n0)) 
+se <- sqrt(p * (1 - p) * (1 / n1 + 1 / n0))
 ## standard error under the hypothetical data generating process
 se.star <- sqrt(p1.star * (1 - p1.star) / n1 + p0.star * (1 - p0.star) / n0)
 
-pnorm(-cr.value * se, mean = p1.star - p0.star, sd = se.star) + 
-    pnorm(cr.value * se, mean = p1.star - p0.star, sd = se.star, 
+pnorm(-cr.value * se, mean = p1.star - p0.star, sd = se.star) +
+    pnorm(cr.value * se, mean = p1.star - p0.star, sd = se.star,
           lower.tail = FALSE)
 
 power.prop.test(n = 500, p1 = 0.05, p2 = 0.1, sig.level = 0.05)
 power.prop.test(p1 = 0.05, p2 = 0.1, sig.level = 0.05, power = 0.9)
 power.t.test(n = 100, delta = 0.25, sd = 1, type = "one.sample")
 power.t.test(power = 0.9, delta = 0.25, sd = 1, type = "one.sample")
-power.t.test(delta = 0.25, sd = 1, type = "two.sample", 
+power.t.test(delta = 0.25, sd = 1, type = "two.sample",
              alternative = "one.sided", power = 0.9)
 
 #### Section 7.3: Linear Regression Model with Uncertainty
 
 ### Section 7.3.1: Linear Regression as a Generative Model
 
-minwage <- read.csv("minwage.csv")
+data(minwage)
 
 ## compute proportion of full employment before minimum wage increase
 minwage$fullPropBefore <- minwage$fullBefore /
@@ -489,13 +489,13 @@ minwage$fullPropAfter <- minwage$fullAfter /
 ## an indicator for NJ: 1 if it's located in NJ and 0 if in PA
 minwage$NJ <- ifelse(minwage$location == "PA", 0, 1)
 
-fit.minwage <- lm(fullPropAfter ~ -1 + NJ + fullPropBefore + 
+fit.minwage <- lm(fullPropAfter ~ -1 + NJ + fullPropBefore +
                       wageBefore + chain, data = minwage)
 
 ## regression result
 fit.minwage
 
-fit.minwage1 <- lm(fullPropAfter ~ NJ + fullPropBefore + 
+fit.minwage1 <- lm(fullPropAfter ~ NJ + fullPropBefore +
                        wageBefore + chain, data = minwage)
 fit.minwage1
 
@@ -508,7 +508,7 @@ predict(fit.minwage1, newdata = minwage[1, ])
 
 ### Section 7.3.4: Inference About Coefficients
 
-women <- read.csv("women.csv")
+data(women, package = "qss")
 fit.women <- lm(water ~ reserved, data = women)
 summary(fit.women)
 
@@ -517,31 +517,31 @@ confint(fit.women) # 95% confidence intervals
 summary(fit.minwage)
 
 ## confidence interval just for the `NJ' variable
-confint(fit.minwage)["NJ", ] 
+confint(fit.minwage)["NJ", ]
 
 ### Section 7.3.5: Inference About Predictions
 
 ## load the data and subset them into two parties
-MPs <- read.csv("MPs.csv")
-MPs.labour <- subset(MPs, subset = (party == "labour")) 
+data(MPs)
+MPs.labour <- subset(MPs, subset = (party == "labour"))
 MPs.tory <- subset(MPs, subset = (party == "tory"))
 
 ## two regressions for labour: negative and positive margin
 labour.fit1 <- lm(ln.net ~ margin,
                   data = MPs.labour[MPs.labour$margin < 0, ])
 labour.fit2 <- lm(ln.net ~ margin,
-                  data = MPs.labour[MPs.labour$margin > 0, ]) 
+                  data = MPs.labour[MPs.labour$margin > 0, ])
 
 ## two regressions for tory: negative and positive margin
 tory.fit1 <- lm(ln.net ~ margin, data = MPs.tory[MPs.tory$margin < 0, ])
 tory.fit2 <- lm(ln.net ~ margin, data = MPs.tory[MPs.tory$margin > 0, ])
 
 ## tory party: prediction at the threshold
-tory.y0 <- predict(tory.fit1, interval = "confidence", 
+tory.y0 <- predict(tory.fit1, interval = "confidence",
                    newdata = data.frame(margin = 0))
 tory.y0
 
-tory.y1 <- predict(tory.fit2, interval = "confidence", 
+tory.y1 <- predict(tory.fit2, interval = "confidence",
                    newdata = data.frame(margin = 0))
 tory.y1
 
@@ -550,12 +550,12 @@ y1.range <- seq(from = 0, to = min(MPs.tory$margin), by = -0.01)
 y2.range <- seq(from = 0, to = max(MPs.tory$margin), by = 0.01)
 
 ## prediction using all the values
-tory.y0 <- predict(tory.fit1, interval = "confidence", 
+tory.y0 <- predict(tory.fit1, interval = "confidence",
                    newdata = data.frame(margin = y1.range))
-tory.y1 <- predict(tory.fit2, interval = "confidence", 
+tory.y1 <- predict(tory.fit2, interval = "confidence",
                    newdata = data.frame(margin = y2.range))
 
-par(cex = 1.5)   
+par(cex = 1.5)
 ## plotting the first regression with losers
 plot(y1.range, tory.y0[, "fit"], type = "l", xlim = c(-0.5, 0.5),
      ylim = c(10, 15), xlab = "Margin of victory", ylab = "log net wealth")
@@ -565,11 +565,11 @@ lines(y1.range, tory.y0[, "upr"], lty = "dashed") # upper CI
 
 ## plotting the second regression with winners
 lines(y2.range, tory.y1[, "fit"], lty = "solid")  # point estimates
-lines(y2.range, tory.y1[, "lwr"], lty = "dashed") # lower CI 
+lines(y2.range, tory.y1[, "lwr"], lty = "dashed") # lower CI
 lines(y2.range, tory.y1[, "upr"], lty = "dashed") # upper CI
 
 ## re-compute the predicted value and return standard errors
-tory.y0 <- predict(tory.fit1, interval = "confidence", se.fit = TRUE, 
+tory.y0 <- predict(tory.fit1, interval = "confidence", se.fit = TRUE,
                    newdata = data.frame(margin = 0))
 tory.y0
 

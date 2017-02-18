@@ -10,7 +10,7 @@
 
 #' ## Section 2.1: Racial Discrimination in the Labor Market
 
-resume <- read.csv("resume.csv")
+data(resume)
 
 dim(resume)
 head(resume)
@@ -162,7 +162,7 @@ resume[1, ]
 
 #' ### Section 2.4.2: Social Pressure and Voter Turnout
 
-social <- read.csv("social.csv") # load the data
+data(social) # load the data
 
 summary(social) # summarize the data
 
@@ -185,7 +185,7 @@ tapply(social$hhsize, social$messages, mean)
 
 #' ### Section 2.5.1: Minimum Wage and Unemployment
 
-minwage <- read.csv("minwage.csv") # load the data
+data(minwage) # load the data
 
 dim(minwage) # dimension of data
 summary(minwage) # summary of data
