@@ -10,10 +10,10 @@ This package simply re-packages the supplementary materials (data and code) for 
 
 # Install
 
-**qss** is not available from CRAN, install the version from github with:
+**qss** is not available from CRAN, install the package from github with:
 ```{r eval=FALSE}
 # install.packages("devtools")
-devtools::install_github("jrnold/qss-data")
+devtools::install_github("jrnold/qss-package")
 ```
 
 # Usage
