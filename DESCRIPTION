@@ -24,9 +24,6 @@ Imports:
     swirl,
     tm,
     wordcloud
-Remotes:
-  hadley/pkgdown,
-  yihui/printr
 License: GPL-2
 Encoding: UTF-8
 LazyData: false

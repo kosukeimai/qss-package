@@ -1,22 +1,30 @@
 ---
 output: md_document
 ---
+# Quantitative Social Science: An Introduction: An R Package
+
+<!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
 
 ```{r, include=FALSE}
 library("printr")
 ```
 
-This package simply re-packages the supplementary materials (data and code) for **[Quantitative Social Science: An Introduction](http://press.princeton.edu/titles/11025.html)**, available a [kosukeimai/qss](https://github.com/kosukeimai/qss) as an R package.
+An R package containing the datasets used in
 
-# Install
+> Kosuke Imai. 2017. **[Quantitative Social Science: An Introduction](http://press.princeton.edu/titles/11025.html)**. Princeton University Press.
+
+See [kosukeimai/qss](https://github.com/kosukeimai/qss) for other supplementary materials
+and the original data sets.
+
+## Install
 
 **qss** is not available from CRAN, install the package from github with:
 ```{r eval=FALSE}
 # install.packages("devtools")
-devtools::install_github("jrnold/qss-package")
+devtools::install_github("kosuke/qss-package")
 ```
 
-# Usage
+## Usage
 
 The QSS package contains the following datasets:
 ```{r}
@@ -25,7 +33,7 @@ data(package = "qss")
 
 
 The Federalist papers text files are in the `extdata/federalist` directory of the installed package.
-```{r}
+```{r eval=FALSE}
 library("tm")
 federalist_dir <- system.file("extdata", "federalist", package = "qss")
 dir(federalist_dir)
@@ -40,7 +48,7 @@ demo(package = "qss")
 
 In 1.3.5 "Data Files", several types of data files are discussed.
 These are included in `extdata/`
-```{r}
+```{r eval=FALSE}
 library("foreign")
 dir(system.file("extdata", "data_files", package = "qss"))
 load(system.file("extdata", "data_files", "UNpop.RData", package = "qss"))
@@ -50,12 +58,13 @@ read.dta(system.file("extdata", "data_files", "UNpop.dta", package = "qss"))
 
 # Build Package and Documentation
 
+To rebuild `README.md` from `README.Rmd`,
+```{r eval=FALSE}
+rmarkdown::render("README.Rmd")
+```
+
 The site for the package is built using [pkgdown](https://github.com/hadley/pkgdown).
 ```{r eval=FALSE}
 # devtools::install_github("hadley/pkgdown")
 pkgdown::build_site()
 ```
-
-
-
-

@@ -1,9 +1,10 @@
 # Compile and save rdata
 library("readr")
 library("stringr")
-library("whisker")
-library("yaml")
 library("purrr")
+
+# Do not include these
+IGNORES <- c("chechen", "resources")
 
 # copy csv files from qss/ to data-raw/
 # ----------------------------------------
@@ -33,6 +34,14 @@ dir.create(spec_dir, showWarnings = FALSE, recursive = TRUE)
 qss_data <- new.env()
 for (fn in dir(csv_dir, pattern = "\\.csv$", full.names = TRUE)) {
   dataname <- make.names(tools::file_path_sans_ext(basename(fn)))
+  if (dataname %in% IGNORES) {
+    message("Ignoring", dataname)
+    next
+  }
+  if (dataname == "names") {
+    message("For names, using cnames instead")
+    dataname <- "cnames"
+  }
   spec_file <- file.path(spec_dir, paste0(dataname, ".R"))
   spec_file_exists <- file.exists(spec_file)
   if (spec_file_exists) {
@@ -56,43 +65,11 @@ for (fn in dir(csv_dir, pattern = "\\.csv$", full.names = TRUE)) {
 #' copy some RData files
 load("qss/PROBABILITY/fraud.RData", envir = qss_data)
 
-# load documentation template
-template <- paste0(readLines("data-raw/doc-template.R"),
-                   collapse = "\n")
-qss_metadata <- yaml.load_file("data-raw/qss-data.yaml")
-
 for (dataset in ls(qss_data)) {
   rda_name <- file.path("data", paste0(dataset, ".rda"))
   save(list = dataset, file = rda_name, envir = qss_data,
       compress = "bzip2")
   cat("Saving ", rda_name, "\n")
-  metadata <- keep(qss_metadata, function(x, y) {x[["name"]] == dataset},
-                   y = dataset)
-  if (length(metadata) != 1) {
-    stop("Metadata for ", dataset, " not found.", call. = FALSE)
-  } else {
-    metadata <- metadata[[1]]
-  }
-  if (is.null(metadata$title)) {
-    print(metadata)
-    stop("Title not found for ", dataset, ".", call. = FALSE)
-  }
-  .data <- qss_data[[dataset]]
-  tpl_data <- list(
-    title = metadata$title,
-    nrow = nrow(.data),
-    ncol = ncol(.data),
-    name = dataset,
-    inbook = str_c(metadata$inbook, collapse = ", "),
-    variables = map(names(.data),
-                    function(x) {
-                      list(name = x,
-                           description =
-                             str_c(class(.data[[x]]), collapse = ", "))
-                    })
-  )
-  cat(whisker.render(template, tpl_data),
-      file = file.path("R", paste0(dataset, ".R")))
 }
 
 # Copy federalist papers
@@ -113,15 +90,6 @@ for (fn in data_files) {
   cat("Copy ", fn, " to inst/extdata/data_files\n")
 }
 
-#' Copy all R scripts into demo directory
-#' Is this the right spot?
-dir.create("demo", showWarnings = FALSE)
-rscripts <- dir("qss", pattern = "\\.[Rr]$", full.names = TRUE,
-                recursive = TRUE)
-for (fn in rscripts) {
-  file.copy(fn, file.path("demo", basename(fn)))
-  cat("Copy ", fn, " to demo\n")
-}
 
 # Create book Documentation
 devtools::document()
