@@ -26,4 +26,4 @@
 #' predicting individual ethnicity from voter registration records.” \emph{Political Analysis},
 #' vol. 24, no. 2 (Spring), pp. 263–272. doi: https://doi.org/10.1093/pan/mpw001 }
 #'}
-"names"
+"cnames"
