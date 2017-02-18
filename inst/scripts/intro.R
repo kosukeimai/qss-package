@@ -1,8 +1,8 @@
 ##### Chapter 1: Introduction
 
-#### Section 1.1: Overview of the Book
+#' ## Section 1.1: Overview of the Book
 
-#### Section 1.2: How to Use this Book
+#' ## Section 1.2: How to Use this Book
 
 ## install.packages("swirl") # install the package
 ## library(swirl) # load the package
@@ -10,9 +10,9 @@
 ## library(swirl)
 ## swirl()
 
-#### Section 1.3: Introduction to R
+#' ## Section 1.3: Introduction to R
 
-### Section 1.3.1: Arithmetic Operations
+#' ### Section 1.3.1: Arithmetic Operations
 
 5 + 3
 5 - 3
@@ -21,7 +21,7 @@
 5 * (10 - 3)
 sqrt(4)
 
-### Section 1.3.2: Objects
+#' ### Section 1.3.2: Objects
 
 result <- 5 + 3
 result
@@ -43,7 +43,7 @@ Result
 class(Result)
 class(sqrt)
 
-### Section 1.3.3: Vectors
+#' ### Section 1.3.3: Vectors
 
 world.pop <- c(2525779, 3026003, 3691173, 4449049, 5320817, 6127700, 6916183)
 world.pop
@@ -70,7 +70,7 @@ percent.increase
 percent.increase[c(1, 2)] <- c(20, 22)
 percent.increase
 
-### Section 1.3.4: Functions
+#' ### Section 1.3.4: Functions
 
 length(world.pop)
 min(world.pop)
@@ -112,7 +112,7 @@ z <- 1:10
 my.summary(z)
 my.summary(world.pop)
 
-### Section 1.3.5: Data Files
+#' ### Section 1.3.5: Data Files
 
 ## setwd("qss/INTRO")
 ## getwd()
@@ -142,7 +142,7 @@ world.pop
 mean(world.pop)
 mean(world.pop, na.rm = TRUE)
 
-### Section 1.3.6: Saving Objects
+#' ### Section 1.3.6: Saving Objects
 
 ## save.image("qss/INTRO/Chapter1.RData")
 
@@ -153,7 +153,7 @@ mean(world.pop, na.rm = TRUE)
 
 ## load("Chapter1.RData")
 
-### Section 1.3.7: Packages
+#' ### Section 1.3.7: Packages
 
 ## install.packages("foreign") # install package
 ## library("foreign") # load package
@@ -163,7 +163,7 @@ mean(world.pop, na.rm = TRUE)
 
 ## write.dta(UNpop, file = "UNpop.dta")
 
-### Section 1.3.8: Programming and Learning Tips
+#' ### Section 1.3.8: Programming and Learning Tips
 
 ## source("UNpop.R")
 

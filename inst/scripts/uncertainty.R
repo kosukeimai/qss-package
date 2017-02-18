@@ -1,8 +1,8 @@
 ##### Chapter 7: Uncertainty
 
-#### Section 7.1: Estimation
+#' ## Section 7.1: Estimation
 
-### Section 7.1.1: Unbiasedness and Consistency
+#' ### Section 7.1.1: Unbiasedness and Consistency
 
 ## simulation parameters
 n <- 100 # sample size
@@ -51,7 +51,7 @@ est.error <- diff.means - PATE
 ## unbiased
 summary(est.error)
 
-### Section 7.1.2: Standard Error
+#' ### Section 7.1.2: Standard Error
 
 par(cex = 1.5)
 hist(diff.means, freq = FALSE, xlab = "Difference-in-means estimator",
@@ -81,7 +81,7 @@ sd(diff.means)
 ## mean of standard errors
 mean(se)
 
-### Section 7.1.3: Confidence Intervals
+#' ### Section 7.1.3: Confidence Intervals
 
 n <- 1000 # sample size
 x.bar <- 0.6 # point estimate
@@ -131,7 +131,7 @@ for (i in 1:length(n)) {
 }
 results
 
-### Scetion 7.1.4: Margin of Error and Sample Size Calculation in Polls
+#' ### Scetion 7.1.4: Margin of Error and Sample Size Calculation in Polls
 
 par(cex = 1.5, lwd = 2)
 MoE <- c(0.01, 0.03, 0.05)  # the desired margin of error
@@ -209,7 +209,7 @@ ci.bias.upper <- poll.bias + qnorm(1 - alpha / 2) * s.e.bias
 mean((ci.bias.lower <= pres08$Obama / 100) &
          (ci.bias.upper >= pres08$Obama / 100))
 
-### Section 7.1.5: Analysis of Randomized Controlled Trials
+#' ### Section 7.1.5: Analysis of Randomized Controlled Trials
 
 par(cex = 1.5)
 ## read in data
@@ -266,7 +266,7 @@ ate.ci <- c(ate.est - qnorm(1 - alpha / 2) * ate.se,
             ate.est + qnorm(1 - alpha / 2) * ate.se)
 ate.ci
 
-### Section 7.1.6: Analysis Based on Student's t-Distribution
+#' ### Section 7.1.6: Analysis Based on Student's t-Distribution
 
 ## 95% CI for small class
 c(est.small - qt(0.975, df = n.small - 1) * se.small,
@@ -286,9 +286,9 @@ t.ci <- t.test(STAR$g4reading[STAR$classtype == 1],
                STAR$g4reading[STAR$classtype == 2])
 t.ci
 
-#### Section 7.2: Hypothesis Testing
+#' ## Section 7.2: Hypothesis Testing
 
-### Section 7.2.1: Tea-Testing Experiment
+#' ### Section 7.2.1: Tea-Testing Experiment
 
 ## truth: enumerate the number of assignment combinations
 true <- c(choose(4, 0) * choose(4, 4),
@@ -319,7 +319,7 @@ prop.table(table(correct))
 ## comparison with analytical answers; the differences are small
 prop.table(table(correct)) - true
 
-### Section 7.2.2: The General Framework
+#' ### Section 7.2.2: The General Framework
 
 ## all correct
 x <- matrix(c(4, 0, 0, 4), byrow = TRUE, ncol = 2, nrow = 2)
@@ -337,7 +337,7 @@ fisher.test(x, alternative = "greater")
 ## two-sided test for 6 correct guesses
 fisher.test(y)
 
-### Section 7.2.3: One-Sample Tests
+#' ### Section 7.2.3: One-Sample Tests
 
 n <- 1018
 x.bar <- 550 / n
@@ -379,7 +379,7 @@ prop.test(550, n = n, p = 0.5, conf.level = 0.99)
 ## two-sided one-sample t-test
 t.test(STAR$g4reading, mu = 710)
 
-### Section 7.2.4: Two-Sample Tests
+#' ### Section 7.2.4: Two-Sample Tests
 
 ## one-sided p-value
 pnorm(-abs(ate.est), mean = 0, sd = ate.se)
@@ -425,9 +425,9 @@ pnorm(-abs(zstat))
 
 prop.test(x, alternative = "greater", correct = FALSE)
 
-### Section 7.2.5: Pitfalls of Hypothesis Testing
+#' ### Section 7.2.5: Pitfalls of Hypothesis Testing
 
-### Section 7.2.6: Power Analysis
+#' ### Section 7.2.6: Power Analysis
 
 ## set the parameters
 n <- 250
@@ -472,9 +472,9 @@ power.t.test(power = 0.9, delta = 0.25, sd = 1, type = "one.sample")
 power.t.test(delta = 0.25, sd = 1, type = "two.sample",
              alternative = "one.sided", power = 0.9)
 
-#### Section 7.3: Linear Regression Model with Uncertainty
+#' ## Section 7.3: Linear Regression Model with Uncertainty
 
-### Section 7.3.1: Linear Regression as a Generative Model
+#' ### Section 7.3.1: Linear Regression as a Generative Model
 
 data(minwage)
 
@@ -502,11 +502,11 @@ fit.minwage1
 predict(fit.minwage, newdata = minwage[1, ])
 predict(fit.minwage1, newdata = minwage[1, ])
 
-### Section 7.3.2: Unbiasedness of Estimated Coefficients
+#' ### Section 7.3.2: Unbiasedness of Estimated Coefficients
 
-### Section 7.3.3: Standard Errors of Estimated Coefficients
+#' ### Section 7.3.3: Standard Errors of Estimated Coefficients
 
-### Section 7.3.4: Inference About Coefficients
+#' ### Section 7.3.4: Inference About Coefficients
 
 data(women, package = "qss")
 fit.women <- lm(water ~ reserved, data = women)
@@ -519,7 +519,7 @@ summary(fit.minwage)
 ## confidence interval just for the `NJ' variable
 confint(fit.minwage)["NJ", ]
 
-### Section 7.3.5: Inference About Predictions
+#' ### Section 7.3.5: Inference About Predictions
 
 ## load the data and subset them into two parties
 data(MPs)
@@ -596,4 +596,4 @@ z.score <- diff.est / se.diff
 p.value <- 2 * pnorm(abs(z.score), lower.tail = FALSE) # two-sided p-value
 p.value
 
-#### Section 7.4: Summary
+#' ## Section 7.4: Summary

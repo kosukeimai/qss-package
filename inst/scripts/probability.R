@@ -1,12 +1,12 @@
 ##### Chapter 6: Probability
 
-#### Section 6.1: Probability
+#' ## Section 6.1: Probability
 
-### Section 6.1.1: Frequentist versus Bayesian
+#' ### Section 6.1.1: Frequentist versus Bayesian
 
-### Section 6.1.2: Definition and Axioms
+#' ### Section 6.1.2: Definition and Axioms
 
-### Section 6.1.3: Permutations
+#' ### Section 6.1.3: Permutations
 
 par(cex = 1.5, mar = c(5, 5, 4, 2))
 birthday <- function(k) {
@@ -25,7 +25,7 @@ plot(k, bday, xlab = "Number of people", xlim = c(0, 50), ylim = c(0, 1),
 abline(h = 0.5) # horizontal 0.5 line
 bday[20:25]
 
-### Section 6.1.4: Sampling With and Without Replacement
+#' ### Section 6.1.4: Sampling With and Without Replacement
 
 k <- 23 # number of people
 sims <- 1000 # number of simulations
@@ -45,13 +45,13 @@ for (i in 1:sims) {
 answer <- event / sims
 answer
 
-### Section 6.1.5: Combinations
+#' ### Section 6.1.5: Combinations
 
 choose(84, 6)
 
-#### Section 6.2: Conditional Probability
+#' ## Section 6.2: Conditional Probability
 
-### Section 6.2.1: Conditional, Marginal, and Joint Probabilities
+#' ### Section 6.2.1: Conditional, Marginal, and Joint Probabilities
 
 FLVoters <- read.csv("FLVoters.csv")
 dim(FLVoters) # before removal of missing data
@@ -100,7 +100,7 @@ joint2[4, "f"] # P(above 60 and female)
 ## P(black | female and above 60)
 joint3["black", 4, "f"] / joint2[4, "f"]
 
-### Section 6.2.2: Independence
+#' ### Section 6.2.2: Independence
 
 par(cex = 1.5)
 plot(c(margin.race * margin.gender["f"]), # product of marginal probs.
@@ -146,7 +146,7 @@ for (i in 1:sims) {
 mean(result.noswitch == "car")
 mean(result.switch == "car")
 
-### Section 6.2.4: Predicting Race Using Surname and Residence Location
+#' ### Section 6.2.4: Predicting Race Using Surname and Residence Location
 
 cnames <- read.csv("names.csv")
 dim(cnames)
@@ -304,11 +304,11 @@ summary(FLVoters$pre.black[FLVoters$surname == "WHITE"])
 1 - mean(FLVoters$race[apply(FLVoters[, vars1], 1, max) ==
                            FLVoters$pre.asian] == "asian")
 
-#### Section 6.3: Random Variables and Probability Distributions
+#' ## Section 6.3: Random Variables and Probability Distributions
 
-### Section 6.3.1: Random Variables
+#' ### Section 6.3.1: Random Variables
 
-### Section 6.3.2: Bernoulli and Uniform Distributions
+#' ### Section 6.3.2: Bernoulli and Uniform Distributions
 
 ## uniform PDF: x = 0.5, interval = [0, 1]
 dunif(0.5, min = 0, max = 1)
@@ -325,7 +325,7 @@ y <- as.integer(x <= p) # Bernoulli; turn TRUE/FALSE to 1/0
 head(y)
 mean(y) # close to success probability p, proportion of 1's vs. 0's
 
-### Section 6.3.3: Binomial Distribution
+#' ### Section 6.3.3: Binomial Distribution
 
 ## PMF when x = 2, n = 3, p = 0.5
 dbinom(2, size = 3, prob = 0.5)
@@ -337,7 +337,7 @@ pbinom(1, size = 3, prob = 0.5)
 voters <- c(1000, 10000, 100000)
 dbinom(voters / 2, size = voters, prob = 0.5)
 
-### Section 6.3.4: Normal Distribution
+#' ### Section 6.3.4: Normal Distribution
 
 ## plus minus one standard deviation from the mean
 pnorm(1) - pnorm(-1)
@@ -396,7 +396,7 @@ TX.mean2012
 
 pnorm(TX.2008, mean = TX.mean2012, sd = e.sd, lower.tail = FALSE)
 
-### Section 6.3.5: Expectation and Variance
+#' ### Section 6.3.5: Expectation and Variance
 
 ## theoretical variance: p was set to 0.5 earlier
 p * (1-p)
@@ -404,7 +404,7 @@ p * (1-p)
 ## sample variance using `y' generated earlier
 var(y)
 
-### Section 6.3.6: Predicting Election Outcomes with Uncertainty
+#' ### Section 6.3.6: Predicting Election Outcomes with Uncertainty
 
 pres08 <- read.csv("pres08.csv")
 
@@ -450,9 +450,9 @@ sd(Obama.ev)
 ## theoretical standard deviation
 sqrt(V)
 
-#### Section 6.4: Large Sample Theorems
+#' ## Section 6.4: Large Sample Theorems
 
-### Section 6.4.1: The Law of Large Numbers
+#' ### Section 6.4.1: The Law of Large Numbers
 
 sims <- 1000
 
@@ -477,7 +477,7 @@ plot(1:sims, mean.unif, type = "l", ylim = c(0, 1),
      xlab = "Sample size", ylab = "Sample mean", main = "Uniform(0, 1)")
 abline(h = 0.5, lty = "dashed") # expectation
 
-### Section 6.4.2: The Central Limit Theorem
+#' ### Section 6.4.2: The Central Limit Theorem
 
 par(cex = 1.5)
 ## sims = number of simulations
@@ -501,4 +501,4 @@ hist(z.unif, freq = FALSE, nclass = 40, xlim = c(-4, 4), ylim = c(0, 0.6),
      xlab = "z-score", main = "Uniform(0, 1)")
 lines(x, dnorm(x))
 
-#### Section 6.5: Summary
+#' ## Section 6.5: Summary

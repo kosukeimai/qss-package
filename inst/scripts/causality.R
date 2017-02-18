@@ -33,7 +33,7 @@ race.call.tab[, 2]  # the second column
 
 mean(resume$call)
 
-#### Section 2.2: Subsetting the Data in R
+#' ## Section 2.2: Subsetting the Data in R
 
 class(TRUE)
 
@@ -118,14 +118,14 @@ resumeWm <- subset(resume, subset = (race == "white") & (sex == "male"))
 mean(resumeWf$call) - mean(resumeBf$call) # among females
 mean(resumeWm$call) - mean(resumeBm$call) # among males
 
-### Section 2.2.4: Simple Conditional Statements
+#' ### Section 2.2.4: Simple Conditional Statements
 
 resume$BlackFemale <- ifelse(resume$race == "black" &
                                  resume$sex == "female", 1, 0)
 table(race = resume$race, sex = resume$sex,
       BlackFemale = resume$BlackFemale)
 
-### Section 2.2.5: Factor Variables
+#' ### Section 2.2.5: Factor Variables
 
 resume$type <- NA
 resume$type[resume$race == "black" & resume$sex == "female"] <- "BlackFemale"

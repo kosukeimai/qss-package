@@ -1,6 +1,6 @@
 ##### Chapter 3: Measurement
 
-#### Section 3.1: Measuring Civilian Victimization during Wartime
+#' ## Section 3.1: Measuring Civilian Victimization during Wartime
 
 ## load data
 data(afghan)
@@ -14,7 +14,7 @@ summary(afghan$income)
 prop.table(table(ISAF = afghan$violent.exp.ISAF,
                  Taliban = afghan$violent.exp.taliban))
 
-#### Section 3.2: Handling Missing Data in R
+#' ## Section 3.2: Handling Missing Data in R
 
 ## print income data for first 10 respondents
 head(afghan$income, n = 10)
@@ -35,9 +35,9 @@ afghan.sub <- na.omit(afghan)  # listwise deletion
 nrow(afghan.sub)
 length(na.omit(afghan$income))
 
-#### Section 3.3: Visualizating the Univariate Distribution
+#' ## Section 3.3: Visualizating the Univariate Distribution
 
-### Section 3.3.1: Bar Plot
+#' ### Section 3.3.1: Bar Plot
 
 par(cex = 1.5)
 
@@ -62,7 +62,7 @@ barplot(Taliban.ptable,
         xlab = "Response category",
         ylab = "Proportion of the respondents", ylim = c(0, 0.7))
 
-### Section 3.3.2: Histogram
+#' ### Section 3.3.2: Histogram
 
 par(cex = 1.5)
 hist(afghan$age, freq = FALSE, ylim = c(0, 0.04), xlab = "Age",
@@ -84,7 +84,7 @@ abline(v = median(afghan$educ.years))
 ## adding a vertical line representing median
 lines(x = rep(median(afghan$educ.years), 2), y = c(0, 0.5))
 
-### Section 3.3.3: Box Plot
+#' ### Section 3.3.3: Box Plot
 par(cex = 1.25)
 boxplot(educ.years ~ province, data = afghan,
         main = "Education by province", ylab = "Years of education")
@@ -111,9 +111,9 @@ tapply(afghan$violent.exp.ISAF, afghan$province, mean, na.rm = TRUE)
 ##      main = "Distribution of Respondent's Education")
 ## dev.off()
 
-#### Section 3.4: Survey Sampling
+#' ## Section 3.4: Survey Sampling
 
-### Section 3.4.1: The Role of Randomization
+#' ### Section 3.4.1: The Role of Randomization
 
 par(cex = 1.5)
 
@@ -128,7 +128,7 @@ boxplot(altitude ~ village.surveyed, data = afghan.village,
 boxplot(log(population) ~ village.surveyed, data = afghan.village,
         ylab = "log population", names = c("Nonsampled", "Sampled"))
 
-### Section 3.4.2: Nonresponse and Other Sources of Bias
+#' ### Section 3.4.2: Nonresponse and Other Sources of Bias
 
 tapply(is.na(afghan$violent.exp.taliban), afghan$province, mean)
 tapply(is.na(afghan$violent.exp.ISAF), afghan$province, mean)
@@ -138,11 +138,11 @@ mean(afghan$list.response[afghan$list.group == "ISAF"]) -
 
 table(response = afghan$list.response, group = afghan$list.group)
 
-#### Section 3.5: Measuring Political Polarization
+#' ## Section 3.5: Measuring Political Polarization
 
-#### Section 3.6: Summarizing Bivariate Relationships
+#' ## Section 3.6: Summarizing Bivariate Relationships
 
-### Section 3.6.1: Scatter Plot
+#' ### Section 3.6.1: Scatter Plot
 
 data(congress)
 
@@ -190,7 +190,7 @@ lines(names(rep.median), rep.median, col = "red")
 text(110, -0.6, "Democratic\n Party")
 text(110, 0.85, "Republican\n Party")
 
-### Section 3.6.2: Correlation
+#' ### Section 3.6.2: Correlation
 
 par(cex = 1.5)
 ## Gini coefficient data
@@ -208,7 +208,7 @@ plot(USGini$year, USGini$gini, ylim = c(0.35, 0.45), xlab = "Year",
 cor(USGini$gini[seq(from = 2, to = nrow(USGini), by = 2)],
     rep.median - dem.median)
 
-### Section 3.6.3: Quantile-Quantile Plot
+#' ### Section 3.6.3: Quantile-Quantile Plot
 par(cex = 1.5)
 hist(dem112$dwnom2, freq = FALSE, main = "Democrats",
      xlim = c(-1.5, 1.5), ylim = c(0, 1.75),
@@ -223,7 +223,7 @@ qqplot(dem112$dwnom2, rep112$dwnom2, xlab = "Democrats",
        main = "Racial liberalism/conservatism dimension")
 abline(0, 1) # 45 degree line
 
-#### Section 3.7: Clustering
+#' ## Section 3.7: Clustering
 
 ## 3x4 matrix filled by row; first argument take actual entries
 x <- matrix(1:12, nrow = 3, ncol = 4, byrow = TRUE)
@@ -252,7 +252,7 @@ apply(x, 1, mean)
 ## standard deviation for each row
 apply(x, 1, sd)
 
-### Section 3.7.2: List in R
+#' ### Section 3.7.2: List in R
 
 ## create a list
 x <- list(y1 = 1:10, y2 = c("hi", "hello", "hey"),
@@ -262,7 +262,7 @@ x$y1 # first element
 x[[2]] # second element
 x[["y3"]] # third element
 
-### Section 3.7.3: The k-Means Algorithm
+#' ### Section 3.7.3: The k-Means Algorithm
 
 names(x)  # names of all elements
 length(x) # number of elements

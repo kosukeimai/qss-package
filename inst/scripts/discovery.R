@@ -1,8 +1,8 @@
 ##### Chapter 5: Discovery
 
-#### Section 5.1: Textual Data
+#' ## Section 5.1: Textual Data
 
-### Section 5.1.1: The Disputed Authorship of 'The Federalist Papers'
+#' ### Section 5.1.1: The Disputed Authorship of 'The Federalist Papers'
 
 ## load two required libraries
 library(tm, SnowballC)
@@ -32,7 +32,7 @@ corpus <- tm_map(corpus, stemDocument)
 ## the output is truncated here to save space
 content(corpus[[10]]) # Essay No. 10
 
-### Section 5.1.2: Document-Term Matrix
+#' ### Section 5.1.2: Document-Term Matrix
 
 dtm <- DocumentTermMatrix(corpus)
 dtm
@@ -41,7 +41,7 @@ inspect(dtm[1:5, 1:8])
 
 dtm.mat <- as.matrix(dtm)
 
-### Section 5.1.3: Topic Discovery
+#' ### Section 5.1.3: Topic Discovery
 
 library(wordcloud)
 
@@ -82,7 +82,7 @@ for (i in 1:k) { # loop for each cluster
     cat("\n")
 }
 
-### Section 5.1.4: Authorship Prediction
+#' ### Section 5.1.4: Authorship Prediction
 
 ## document-term matrix converted to matrix for manipulation
 dtm1 <- as.matrix(DocumentTermMatrix(corpus.prep))
@@ -118,7 +118,7 @@ hm.fit
 hm.fitted <- fitted(hm.fit) # fitted values
 sd(hm.fitted)
 
-### Section 5.1.5: Cross-Validation
+#' ### Section 5.1.5: Cross-Validation
 
 ## proportion of correctly classified essays by Hamilton
 mean(hm.fitted[author.data$author == 1] > 0)
@@ -164,9 +164,9 @@ points(madison, hm.fitted[author.data$author == -1],
 ## disputed authorship; black triangles
 points(disputed, pred, pch = 17)
 
-#### Section 5.2: Network Data
+#' ## Section 5.2: Network Data
 
-### Section 5.2.1: Marriage Network in Renaissance Florence
+#' ### Section 5.2.1: Marriage Network in Renaissance Florence
 
 ## the first column "FAMILY" of the CSV file represents row names
 data("florentine")
@@ -176,7 +176,7 @@ florence <- data.frame(florentine, row.names = "FAMILY")
 florence[1:5, 1:5]
 rowSums(florence)
 
-### Section 5.2.2: Undirected Graph and Centrality Measures
+#' ### Section 5.2.2: Undirected Graph and Centrality Measures
 
 par(cex = 1.25)
 
@@ -199,7 +199,7 @@ plot(florence, vertex.size = closeness(florence) * 1000,
 plot(florence, vertex.size = betweenness(florence),
      main = "Betweenness")
 
-### Section 5.2.3: Twitter-Following Network
+#' ### Section 5.2.3: Twitter-Following Network
 
 data(twitter.following)
 data(twitter.senator)
@@ -219,7 +219,7 @@ for (i in 1:nrow(twitter)) {
 
 twitter.adj <- graph.adjacency(twitter.adj, mode = "directed", diag = FALSE)
 
-### Section 5.2.4: Directed Graph and Centrality
+#' ### Section 5.2.4: Directed Graph and Centrality
 
 twitter.senator$indegree <- degree(twitter.adj, mode = "in")
 twitter.senator$outdegree <- degree(twitter.adj, mode = "out")
@@ -295,11 +295,11 @@ while (diff > 0.001) {
 
 pr
 
-#### Section 5.3: Spatial Data
+#' ## Section 5.3: Spatial Data
 
-### Section 5.3.1: The 1854 Cholera Outbreak in Action
+#' ### Section 5.3.1: The 1854 Cholera Outbreak in Action
 
-### Section 5.3.2: Spatial Data in R
+#' ### Section 5.3.2: Spatial Data in R
 
 library(maps)
 data(us.cities)
@@ -337,7 +337,7 @@ names(usa)  # list elements
 length(usa$x)
 head(cbind(usa$x, usa$y)) # first five coordinates of a polygon
 
-### Section 5.3.3: Colors in R
+#' ### Section 5.3.3: Colors in R
 
 allcolors <- colors()
 
@@ -372,7 +372,7 @@ points(x = c(3, 3), y = c(3, 3.2), pch = 16, cex = 5, col = blue)
 points(x = c(2, 2), y = c(2, 2.2), pch = 16, cex = 5, col = black.trans)
 points(x = c(4, 4), y = c(4, 4.2), pch = 16, cex = 5, col = blue.trans)
 
-### Section 5.3.4: US Presidential Elections
+#' ### Section 5.3.4: US Presidential Elections
 
 data(pres08)
 ## two-party vote share
@@ -416,7 +416,7 @@ for (i in 1:nrow(pres08)) {
     }
 }
 
-### Section 5.3.5: Expansion of Walmart
+#' ### Section 5.3.5: Expansion of Walmart
 
 data(walmart)
 
@@ -445,7 +445,7 @@ legend(x = -120, y = 32, bty = "n",
        col = c("red", "green", "blue"), pch = 19, # solid circles
        pt.cex = c(0.5, 0.5, 1)) # size of circles
 
-### Section 5.3.6: Animation in R
+#' ### Section 5.3.6: Animation in R
 
 walmart.map <- function(data, date) {
     walmart <- subset(data, subset = (opendate <= date))
@@ -482,4 +482,4 @@ dates <- seq(from = min(walmart$opendate),
 ## }, title = "Expansion of Walmart", htmlfile = "walmart.html",
 ##          outdir = getwd(), autobrowse = FALSE)
 
-#### 5.4: Summary
+#' ## 5.4: Summary

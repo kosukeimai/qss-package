@@ -1,8 +1,8 @@
 ##### Chapter 5: Prediction
 
-#### Section 4.1: Predicting Election Outcomes
+#' ## Section 4.1: Predicting Election Outcomes
 
-### Section 4.1.1: Loops in R
+#' ### Section 4.1.1: Loops in R
 
 values <- c(2, 4, 6)
 n <- length(values) # number of elements in `values'
@@ -22,7 +22,7 @@ i <- 1
 x <- values[i] * 2
 cat(values[i], "times 2 is equal to", x, "\n")
 
-### Section 4.1.2: General Conditional Statements in R
+#' ### Section 4.1.2: General Conditional Statements in R
 
 ## define the operation to be executed
 operation <- "add"
@@ -77,7 +77,7 @@ for (i in 1:n) {
 }
 results
 
-### Section 4.1.3: Poll Predictions
+#' ### Section 4.1.3: Poll Predictions
 
 ## load election results, by state
 pres08 <- read.csv("pres08.csv")
@@ -189,9 +189,9 @@ abline(v = 0)
 text(80, 48, "Obama", col = "blue")
 text(80, 41, "McCain", col = "red")
 
-#### Section 4.2: Linear Regression
+#' ## Section 4.2: Linear Regression
 
-### Section 4.2.1: Facial Appearance and Election Outcomes
+#' ### Section 4.2.1: Facial Appearance and Election Outcomes
 
 ## load the data
 face <- read.csv("face.csv")
@@ -208,11 +208,11 @@ plot(face$d.comp, face$diff.share, pch = 16,
      ylab = "Democratic margin in vote share",
      main = "Facial competence and vote share")
 
-### Section 4.2.2: Correlation and Scatter Plots
+#' ### Section 4.2.2: Correlation and Scatter Plots
 
 cor(face$d.comp, face$diff.share)
 
-### Section 4.2.3: Least Squares
+#' ### Section 4.2.3: Least Squares
 
 fit <- lm(diff.share ~ d.comp, data = face) # fit the model
 fit
@@ -231,9 +231,9 @@ abline(v = 0, lty = "dashed")
 epsilon.hat <- resid(fit)  # residuals
 sqrt(mean(epsilon.hat^2))  # RMSE
 
-### Section 4.2.4: Regression Towards the Mean
+#' ### Section 4.2.4: Regression Towards the Mean
 
-### Section 4.2.5: Merging Data Sets in R
+#' ### Section 4.2.5: Merging Data Sets in R
 
 pres12 <- read.csv("pres12.csv")  # load 2012 data
 ## quick look at two data sets
@@ -291,7 +291,7 @@ mean((pres$Obama2012.z >
           pres$Obama2008.z)[pres$Obama2008.z
                             >= quantile(pres$Obama2008.z, 0.75)])
 
-### Section 4.2.6: Model Fit
+#' ### Section 4.2.6: Model Fit
 
 florida <- read.csv("florida.csv")
 
@@ -350,9 +350,9 @@ text(30000, 3250, "Palm Beach")
 text(30000, 1500, "regression\n with Palm Beach")
 text(30000, 400, "regression\n without Palm Beach")
 
-#### Section 4.3: Regression and Causation
+#' ## Section 4.3: Regression and Causation
 
-### Section 4.3.1: Randomized Experiments
+#' ### Section 4.3.1: Randomized Experiments
 
 women <- read.csv("women.csv")
 
@@ -371,7 +371,7 @@ mean(women$irrigation[women$reserved == 1]) -
 lm(water ~ reserved, data = women)
 lm(irrigation ~ reserved, data = women)
 
-### Section 4.3.2: Regression with Multiple Predictors
+#' ### Section 4.3.2: Regression with Multiple Predictors
 
 social <- read.csv("social.csv")
 levels(social$messages) # base level is `Civic'
@@ -422,7 +422,7 @@ R2(fit) # unadjusted Rsquare calculation
 
 summary(fit)$adj.r.squared
 
-### Section 4.3.3: Heterogenous Treatment Effects
+#' ### Section 4.3.3: Heterogenous Treatment Effects
 
 ## average treatment effect (ate) among those who voted in 2004 primary
 social.voter <- subset(social, primary2004 == 1)
@@ -500,7 +500,7 @@ plot(x = 25:85, y = yT.hat - yC.hat, type = "l", xlim = c(20, 90),
      ylim = c(0, 0.1), xlab = "Age",
      ylab = "Estimated average treatment effect")
 
-### Section 4.3.4: Regression Discontinuity Design
+#' ### Section 4.3.4: Regression Discontinuity Design
 
 ## load the data and subset them into two parties
 MPs <- read.csv("MPs.csv")
@@ -571,4 +571,4 @@ tory.fit4 <- lm(margin.pre ~ margin, data = MPs.tory[MPs.tory$margin > 0, ])
 ## the difference between two intercepts is the estimated effect
 coef(tory.fit4)[1] - coef(tory.fit3)[1]
 
-#### Section 4.4: Summary
+#' ## Section 4.4: Summary
