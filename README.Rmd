@@ -1,22 +1,30 @@
 ---
 output: md_document
 ---
+# Quantitative Social Science: An Introduction: An R Package
+
+<!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
 
 ```{r, include=FALSE}
 library("printr")
 ```
 
-This package simply re-packages the supplementary materials (data and code) for **[Quantitative Social Science: An Introduction](http://press.princeton.edu/titles/11025.html)**, available a [kosukeimai/qss](https://github.com/kosukeimai/qss) as an R package.
+An R package containing the datasets used in
 
-# Install
+> Kosuke Imai. 2017. **[Quantitative Social Science: An Introduction](http://press.princeton.edu/titles/11025.html)**. Princeton University Press.
+
+See [kosukeimai/qss](https://github.com/kosukeimai/qss) for other supplementary materials
+and the original data sets.
+
+## Install
 
 **qss** is not available from CRAN, install the package from github with:
 ```{r eval=FALSE}
 # install.packages("devtools")
-devtools::install_github("jrnold/qss-package")
+devtools::install_github("kosuke/qss-package")
 ```
 
-# Usage
+## Usage
 
 The QSS package contains the following datasets:
 ```{r}
