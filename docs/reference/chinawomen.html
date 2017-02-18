@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,7 @@
     </div>
 
     
-    <p>Sex Ratio and the Price of Agricultural Crops in China</p>
+    <p>Demographic and agricultural crop data for individual counties in China.</p>
     
 
     <pre><span class='no'>chinawomen</span></pre>
@@ -82,7 +85,15 @@
 
     <p>A data frame with 51766 rows and 9 variables:
 <dl class='dl-horizontal'>
- <dt> admin </dt><dd> integer </dd>  <dt> biryr </dt><dd> integer </dd>  <dt> birpop </dt><dd> integer </dd>  <dt> han </dt><dd> numeric </dd>  <dt> sex </dt><dd> numeric </dd>  <dt> teasown </dt><dd> numeric </dd>  <dt> orch </dt><dd> numeric </dd>  <dt> cashcrop </dt><dd> numeric </dd>  <dt> post </dt><dd> integer </dd> 
+ <dt> admin </dt><dd> integer: unique county identifier </dd>
+ <dt> biryr </dt><dd> integer: year of cohort (birth year) </dd>
+ <dt> birpop </dt><dd> integer: birth population in a given year </dd>
+ <dt> han </dt><dd> numeric </dd>
+ <dt> sex </dt><dd> numeric: proportion of males in the birth cohort </dd>
+ <dt> teasown </dt><dd> numeric: quantity of tea sown in the county </dd>
+ <dt> orch </dt><dd> numeric: quantity of orchard-type crops planted in the county </dd>
+ <dt> cashcrop </dt><dd> numeric: quantity of cash crops planted in the county </dd>
+ <dt> post </dt><dd> integer: indicator variable for the introduction of price reforms </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +102,14 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li>  Missing women and the price of tea in China: The effect of sex-specific earnings
+on sex imbalance.” <em>Quarterly Journal of Economics</em>, vol. 123, no. 3, pp. 1251–1285.</p>
+    <p></li>
+</ul></p>
     
 
   </div>
@@ -112,7 +129,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

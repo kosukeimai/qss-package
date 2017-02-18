@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,8 @@
     </div>
 
     
-    <p>UN Voting Data</p>
+    <p>Dataset used to analyze how states’ ideological positions, as captured by their
+votes on UN resolutions, have changed since the fall of communism.</p>
     
 
     <pre><span class='no'>unvoting</span></pre>
@@ -82,7 +86,12 @@
 
     <p>A data frame with 9120 rows and 6 variables:
 <dl class='dl-horizontal'>
- <dt> Year </dt><dd> integer </dd>  <dt> CountryAbb </dt><dd> character </dd>  <dt> CountryName </dt><dd> character </dd>  <dt> idealpoint </dt><dd> numeric </dd>  <dt> PctAgreeUS </dt><dd> numeric </dd>  <dt> PctAgreeRUSSIA </dt><dd> numeric </dd> 
+ <dt> Year </dt><dd> integer: year for which the ideal point is estimated </dd>
+ <dt> CountryAbb </dt><dd> character: abbreviated name of the country </dd>
+ <dt> CountryName </dt><dd> character: name of the country </dd>
+ <dt> idealpoint </dt><dd> numeric: its estimated ideal point </dd>
+ <dt> PctAgreeUS </dt><dd> numeric: proportion of votes that match with votes cast by the United States on the same issue </dd>
+ <dt> PctAgreeRUSSIA </dt><dd> numeric: proportion of votes that match with votes cast by Russia/the Soviet Union on the same issue </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +100,15 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li>  Michael A. Bailey, Anton Strezhnev, and Erik Voeten (2015) “Estimating dynamic
+state preferences from United Nations voting data.” <em>Journal of Conflict Resolution</em>,
+doi = 10.1177/0022002715595700. 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +128,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

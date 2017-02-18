@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,9 @@
     </div>
 
     
-    <p>STAR Project Data</p>
+    <p>Contains data from the STAR (Student–Teacher Achievement Ratio) Project,
+a four-year longitudinal study examining the effect of class size in early grade levels on educational
+performance and personal development</p>
     
 
     <pre><span class='no'>STAR</span></pre>
@@ -82,7 +87,12 @@
 
     <p>A data frame with 6325 rows and 6 variables:
 <dl class='dl-horizontal'>
- <dt> race </dt><dd> integer </dd>  <dt> classtype </dt><dd> integer </dd>  <dt> yearssmall </dt><dd> integer </dd>  <dt> hsgrad </dt><dd> integer </dd>  <dt> g4math </dt><dd> integer </dd>  <dt> g4reading </dt><dd> integer </dd> 
+ <dt> race </dt><dd> integer: student’s race (white = 1, black = 2, Asian = 3, Hispanic = 4, Native American = 5, others = 6) </dd>
+ <dt> classtype </dt><dd> integer: type of kindergarten class (small = 1, regular = 2, regular with aid = 3) </dd>
+ <dt> yearssmall </dt><dd> integer: number of years in small classes </dd>
+ <dt> hsgrad </dt><dd> integer: high-school graduation (did graduate = 1, did not graduate = 0) </dd>
+ <dt> g4math </dt><dd> integer: total scaled score for the math portion of the fourth-grade standardized test </dd>
+ <dt> g4reading </dt><dd> integer: total scaled score for the reading portion of the fourth-grade standardized test </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +101,15 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li>  Mosteller, Frederick. 1997. “The Tennessee Study of Class Size in the Early School
+Grades.” <em>Bulletin of the American Academy of Arts and Sciences</em> 50(7): 14-25.
+doi = 10.2307/3824562 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +129,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

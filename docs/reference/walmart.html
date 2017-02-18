@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,8 @@
     </div>
 
     
-    <p>Walmart Store Opening Data</p>
+    <p>Contains spatial and temporal information about Walmart store openings,
+from the first opening on March 1, 1962 until August 1, 2006.</p>
     
 
     <pre><span class='no'>walmart</span></pre>
@@ -82,7 +86,13 @@
 
     <p>A data frame with 3251 rows and 7 variables:
 <dl class='dl-horizontal'>
- <dt> opendate </dt><dd> Date </dd>  <dt> st.address </dt><dd> character </dd>  <dt> city </dt><dd> character </dd>  <dt> state </dt><dd> character </dd>  <dt> long </dt><dd> numeric </dd>  <dt> lat </dt><dd> numeric </dd>  <dt> type </dt><dd> character </dd> 
+ <dt> opendate </dt><dd> Date: opening date for the store </dd>
+ <dt> st.address </dt><dd> character: street address of the store </dd>
+ <dt> city </dt><dd> character: city of the store </dd>
+ <dt> state </dt><dd> character: state of the store </dd>
+ <dt> long </dt><dd> numeric: longitude of the store </dd>
+ <dt> lat </dt><dd> numeric: latitude of the store </dd>
+ <dt> type </dt><dd> character: store type (Wal-MartStore, SuperCenter, DistributionCenter) </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +101,14 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li>  Thomas J. Holmes (2011) “The diffusion of Wal-Mart and economies of density.”
+<em>Econometrica</em>, vol. 79, no. 1, pp. 253–302. doi = 10.3982/ECTA7699 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +128,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

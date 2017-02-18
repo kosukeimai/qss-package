@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,8 @@
     </div>
 
     
-    <p>Women as Policy Makers Experiment</p>
+    <p>Data set from experiment analyzing the causal effects of having female
+politicians in government on policy outcomes</p>
     
 
     <pre><span class='no'>women</span></pre>
@@ -82,7 +86,12 @@
 
     <p>A data frame with 322 rows and 6 variables:
 <dl class='dl-horizontal'>
- <dt> GP </dt><dd> integer </dd>  <dt> village </dt><dd> integer </dd>  <dt> reserved </dt><dd> integer </dd>  <dt> female </dt><dd> integer </dd>  <dt> irrigation </dt><dd> integer </dd>  <dt> water </dt><dd> integer </dd> 
+ <dt> GP </dt><dd> integer: identifier for the Gram Panchayat (GP) </dd>
+ <dt> village </dt><dd> integer: identifier for each village </dd>
+ <dt> reserved </dt><dd> integer: binary variable indicating whether the GP was reserved for women leaders or not </dd>
+ <dt> female </dt><dd> integer: binary variable indicating whether the GP had a female leader or not </dd>
+ <dt> irrigation </dt><dd> integer: variable measuring the number of new or repaired irrigation facilities in the village since the reserve policy started </dd>
+ <dt> water </dt><dd> integer: variable measuring the number of new or repaired drinking water facilities in the village since the reservation policy started </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +100,15 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li> Raghabendra Chattopadhyay and Esther Duflo (2004) “Women as policy makers:
+Evidence from a randomized policy experiment in India.” <em>Econometrica</em>, vol. 72,
+no. 5, pp. 1409–1443. doi: 10.1111/j.1468-0262.2004.00539.x 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +128,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

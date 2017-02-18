@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,8 @@
     </div>
 
     
-    <p>British Parliament Personal Wealth Data</p>
+    <p>Data set used in experiment to analyze the causal effect of being elected to
+Parliament in the United Kingdom on one&#39;s personal wealth.</p>
     
 
     <pre><span class='no'>MPs</span></pre>
@@ -82,7 +86,16 @@
 
     <p>A data frame with 427 rows and 10 variables:
 <dl class='dl-horizontal'>
- <dt> surname </dt><dd> character </dd>  <dt> firstname </dt><dd> character </dd>  <dt> party </dt><dd> character </dd>  <dt> ln.gross </dt><dd> numeric </dd>  <dt> ln.net </dt><dd> numeric </dd>  <dt> yob </dt><dd> integer </dd>  <dt> yod </dt><dd> integer </dd>  <dt> margin.pre </dt><dd> numeric </dd>  <dt> region </dt><dd> character </dd>  <dt> margin </dt><dd> numeric </dd> 
+ <dt> surname </dt><dd> character: surname of the candidate </dd>
+ <dt> firstname </dt><dd> character: first name of the candidate </dd>
+ <dt> party </dt><dd> character: party of the candidate (labour or tory) </dd>
+ <dt> ln.gross </dt><dd> numeric: log gross wealth at the time of death </dd>
+ <dt> ln.net </dt><dd> numeric: log net wealth at the time of death </dd>
+ <dt> yob </dt><dd> integer: year of birth of the candidate </dd>
+ <dt> yod </dt><dd> integer: year of death of the candidate </dd>
+ <dt> margin.pre </dt><dd> numeric: margin of the candidate’s party in the previous election </dd>
+ <dt> region </dt><dd> character: electoral region </dd>
+ <dt> margin </dt><dd> numeric: margin of victory (vote share) </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +104,15 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li>  Andrew C. Eggers and Jens Hainmueller (2009) “MPs for sale? Returns to office
+in postwar British politics.” <em>American Political Science Review</em>, vol. 103,
+no. 4, pp. 513–533. doi = 10.1017/S0003055409990190 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +132,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

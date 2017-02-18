@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,7 @@
     </div>
 
     
-    <p>County-Level US Presidential Election Data</p>
+    <p>US Presidential Election Data by county for each state between 1960 and 2012.</p>
     
 
     <pre><span class='no'>elections</span></pre>
@@ -82,7 +85,12 @@
 
     <p>A data frame with 43494 rows and 6 variables:
 <dl class='dl-horizontal'>
- <dt> year </dt><dd> integer </dd>  <dt> state </dt><dd> character </dd>  <dt> county </dt><dd> character </dd>  <dt> rep </dt><dd> integer </dd>  <dt> dem </dt><dd> integer </dd>  <dt> other </dt><dd> integer </dd> 
+ <dt> year </dt><dd> integer: election year </dd>
+ <dt> state </dt><dd> character: full name of the 48 states (excluding Alaska, Hawaii, and the District of Columbia) </dd>
+ <dt> county </dt><dd> character: county name </dd>
+ <dt> rep </dt><dd> integer: popular votes for the Republican candidate </dd>
+ <dt> dem </dt><dd> integer: popular votes for the Democratic candidate </dd>
+ <dt> other </dt><dd> integer: popular votes for other candidates </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -112,7 +120,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">
