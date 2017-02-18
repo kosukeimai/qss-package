@@ -33,7 +33,7 @@ data(package = "qss")
 
 
 The Federalist papers text files are in the `extdata/federalist` directory of the installed package.
-```{r}
+```{r eval=FALSE}
 library("tm")
 federalist_dir <- system.file("extdata", "federalist", package = "qss")
 dir(federalist_dir)
@@ -48,7 +48,7 @@ demo(package = "qss")
 
 In 1.3.5 "Data Files", several types of data files are discussed.
 These are included in `extdata/`
-```{r}
+```{r eval=FALSE}
 library("foreign")
 dir(system.file("extdata", "data_files", package = "qss"))
 load(system.file("extdata", "data_files", "UNpop.RData", package = "qss"))
@@ -58,12 +58,13 @@ read.dta(system.file("extdata", "data_files", "UNpop.dta", package = "qss"))
 
 # Build Package and Documentation
 
+To rebuild `README.md` from `README.Rmd`,
+```{r eval=FALSE}
+rmarkdown::render("README.Rmd")
+```
+
 The site for the package is built using [pkgdown](https://github.com/hadley/pkgdown).
 ```{r eval=FALSE}
 # devtools::install_github("hadley/pkgdown")
 pkgdown::build_site()
 ```
-
-
-
-
