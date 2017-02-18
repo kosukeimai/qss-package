@@ -9,7 +9,7 @@ vignette: >
 ## Section 2.1: Racial Discrimination in the Labor Market
 
 ```{r }
-data("resume", package = "qss")
+data(resume)
 
 dim(resume)
 head(resume)
@@ -31,9 +31,11 @@ race.call.tab[1, ]  # the first row
 race.call.tab[, 2]  # the second column
 
 mean(resume$call)
+```
 
-#### Section 2.2: Subsetting the Data in R
+## Section 2.2: Subsetting the Data in R
 
+```{r }
 class(TRUE)
 
 as.integer(TRUE)
@@ -120,16 +122,20 @@ resumeWm <- subset(resume, subset = (race == "white") & (sex == "male"))
 ## racial gaps
 mean(resumeWf$call) - mean(resumeBf$call) # among females
 mean(resumeWm$call) - mean(resumeBm$call) # among males
+```
 
 ### Section 2.2.4: Simple Conditional Statements
 
+```{r }
 resume$BlackFemale <- ifelse(resume$race == "black" &
                                  resume$sex == "female", 1, 0)
 table(race = resume$race, sex = resume$sex,
       BlackFemale = resume$BlackFemale)
+```
 
 ### Section 2.2.5: Factor Variables
 
+```{r }
 resume$type <- NA
 resume$type[resume$race == "black" & resume$sex == "female"] <- "BlackFemale"
 resume$type[resume$race == "black" & resume$sex == "male"] <- "BlackMale"
@@ -167,7 +173,7 @@ resume[1, ]
 ### Section 2.4.2: Social Pressure and Voter Turnout
 
 ```{r }
-data("social", package = "qss") # load the data
+data(social) # load the data
 
 summary(social) # summarize the data
 
@@ -191,7 +197,7 @@ tapply(social$hhsize, social$messages, mean)
 ### Section 2.5.1: Minimum Wage and Unemployment
 
 ```{r }
-data("minwage", package = "qss") # load the data
+data(minwage) # load the data
 
 dim(minwage) # dimension of data
 summary(minwage) # summary of data

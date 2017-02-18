@@ -1,7 +1,7 @@
 #' convert R scripts for QSS into Vignette compatible R markdown
 library("knitr")
 
-filenames <- c("demo/causality.R")
+filenames <- dir("inst/scripts", pattern = "\\.R$", full.names = TRUE)
 
 dir.create("vignettes", showWarnings = FALSE)
 
