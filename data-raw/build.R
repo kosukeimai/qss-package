@@ -6,6 +6,9 @@ library("purrr")
 # Do not include these
 IGNORES <- c("chechen", "resources")
 
+# Rename these csv files from QSS
+RENAMES <- c(names = "cnames", FLCensusVTD = "FLCensus")
+
 # copy csv files from qss/ to data-raw/
 # ----------------------------------------
 csv_files <- dir("qss", pattern = ".*\\.csv$", full.names = TRUE,
@@ -35,8 +38,14 @@ qss_data <- new.env()
 for (fn in dir(csv_dir, pattern = "\\.csv$", full.names = TRUE)) {
   dataname <- make.names(tools::file_path_sans_ext(basename(fn)))
   if (dataname %in% IGNORES) {
-    message("Ignoring", dataname)
+    message("Ignoring ", dataname)
     next
+  }
+  if (dataname %in% names(RENAMES)) {
+    print(dataname)
+    newname <- RENAMES[dataname]
+    message("Renaming ", dataname, " to ", newname)
+    dataname <- newname
   }
   if (dataname == "names") {
     message("For names, using cnames instead")
