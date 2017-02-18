@@ -1,3 +1,11 @@
+#' ---
+#' title: Probability
+#' output: rmarkdown::html_vignette
+#' vignette: >
+#'   %\VignetteEngine{knitr::rmarkdown}
+#'   %\VignetteIndexEntry{Probability}
+#'   %\VignetteEncoding{UTF-8}
+#' ---
 ##### Chapter 6: Probability
 
 #' ## Section 6.1: Probability

@@ -1,3 +1,11 @@
+#' ---
+#' title: Prediction
+#' output: rmarkdown::html_vignette
+#' vignette: >
+#'   %\VignetteEngine{knitr::rmarkdown}
+#'   %\VignetteIndexEntry{Prediction}
+#'   %\VignetteEncoding{UTF-8}
+#' ---
 ##### Chapter 5: Prediction
 
 #' ## Section 4.1: Predicting Election Outcomes

@@ -1,12 +1,13 @@
 #' ---
-#' title: "Chapter 2: Causality"
+#' title: Causality
 #' output: rmarkdown::html_vignette
 #' vignette: >
-#'  %\VignetteEngine{knitr::rmarkdown}
-#'  %\VignetteIndexEntry{Vignette Title}
-#'  %\VignetteEncoding{UTF-8}
+#'   %\VignetteEngine{knitr::rmarkdown}
+#'   %\VignetteIndexEntry{Causality}
+#'   %\VignetteEncoding{UTF-8}
 #' ---
 
+#' # Chapter 2: Causality
 
 #' ## Section 2.1: Racial Discrimination in the Labor Market
 

@@ -1,3 +1,11 @@
+#' ---
+#' title: Discovery
+#' output: rmarkdown::html_vignette
+#' vignette: >
+#'   %\VignetteEngine{knitr::rmarkdown}
+#'   %\VignetteIndexEntry{Discovery}
+#'   %\VignetteEncoding{UTF-8}
+#' ---
 ##### Chapter 5: Discovery
 
 #' ## Section 5.1: Textual Data

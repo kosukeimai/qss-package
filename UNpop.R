@@ -1,3 +1,11 @@
+#' ---
+#' title: Unpop
+#' output: rmarkdown::html_vignette
+#' vignette: >
+#'   %\VignetteEngine{knitr::rmarkdown}
+#'  %\VignetteIndexEntry{Unpop}
+#'  %\VignetteEncoding{UTF-8}
+#' ---
 ##
 ## File: UNpop.R
 ## Author: Kosuke Imai
