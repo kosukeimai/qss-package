@@ -26,5 +26,5 @@ Imports:
     wordcloud
 License: GPL-2
 Encoding: UTF-8
-LazyData: true
-RoxygenNote: 6.0.1
+LazyData: false
+RoxygenNote: 6.0.0
