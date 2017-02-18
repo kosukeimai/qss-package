@@ -1,7 +1,10 @@
+<!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
 Quantitative Social Science: An Introduction: An R Package
 ==========================================================
 
-<!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
+[![Travis-CI Build
+Status](https://travis-ci.org/kosukeimai/qss-data.svg?branch=master)](https://travis-ci.org/kosukeimai/qss-data)
+
 An R package containing the datasets used in
 
 > Kosuke Imai. 2017. **[Quantitative Social Science: An
@@ -301,9 +304,12 @@ are included in `extdata/`
 
     library("foreign")
     dir(system.file("extdata", "data_files", package = "qss"))
+
+    ## [1] "UNpop.csv"   "UNpop.dta"   "UNpop.RData"
+
     load(system.file("extdata", "data_files", "UNpop.RData", package = "qss"))
     read.csv(system.file("extdata", "data_files", "UNpop.csv", package = "qss"))
-    read.dta(system.file("extdata", "data_files", "UNpop.dta", package = "qss"))
+
 
 Build Package and Documentation
 ===============================
