@@ -29,5 +29,5 @@ Remotes:
   yihui/printr
 License: GPL-2
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 RoxygenNote: 6.0.0
