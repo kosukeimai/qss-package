@@ -6,11 +6,7 @@ vignette: >
   %\VignetteIndexEntry{Discovery}
   %\VignetteEncoding{UTF-8}
 ---
-
-```{r }
-##### Chapter 5: Discovery
-```
-
+# Chapter 5: Discovery
 ## Section 5.1: Textual Data
 ### Section 5.1.1: The Disputed Authorship of 'The Federalist Papers'
 

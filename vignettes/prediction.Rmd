@@ -6,11 +6,7 @@ vignette: >
   %\VignetteIndexEntry{Prediction}
   %\VignetteEncoding{UTF-8}
 ---
-
-```{r }
-##### Chapter 5: Prediction
-```
-
+# Chapter 5: Prediction
 ## Section 4.1: Predicting Election Outcomes
 ### Section 4.1.1: Loops in R
 

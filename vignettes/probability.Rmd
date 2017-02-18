@@ -6,11 +6,7 @@ vignette: >
   %\VignetteIndexEntry{Probability}
   %\VignetteEncoding{UTF-8}
 ---
-
-```{r }
-##### Chapter 6: Probability
-```
-
+# Chapter 6: Probability
 ## Section 6.1: Probability
 ### Section 6.1.1: Frequentist versus Bayesian
 ### Section 6.1.2: Definition and Axioms

@@ -6,7 +6,7 @@
 #'   %\VignetteIndexEntry{Prediction}
 #'   %\VignetteEncoding{UTF-8}
 #' ---
-##### Chapter 5: Prediction
+#' # Chapter 5: Prediction
 
 #' ## Section 4.1: Predicting Election Outcomes
 

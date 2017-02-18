@@ -6,11 +6,7 @@ vignette: >
   %\VignetteIndexEntry{Intro}
   %\VignetteEncoding{UTF-8}
 ---
-
-```{r }
-##### Chapter 1: Introduction
-```
-
+# Chapter 1: Introduction
 ## Section 1.1: Overview of the Book
 ## Section 1.2: How to Use this Book
 

@@ -6,7 +6,7 @@
 #'   %\VignetteIndexEntry{Measurement}
 #'   %\VignetteEncoding{UTF-8}
 #' ---
-##### Chapter 3: Measurement
+#' # Chapter 3: Measurement
 
 #' ## Section 3.1: Measuring Civilian Victimization during Wartime
 

@@ -6,7 +6,7 @@
 #'   %\VignetteIndexEntry{Discovery}
 #'   %\VignetteEncoding{UTF-8}
 #' ---
-##### Chapter 5: Discovery
+#' # Chapter 5: Discovery
 
 #' ## Section 5.1: Textual Data
 

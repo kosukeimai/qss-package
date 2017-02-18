@@ -6,7 +6,7 @@
 #'   %\VignetteIndexEntry{Probability}
 #'   %\VignetteEncoding{UTF-8}
 #' ---
-##### Chapter 6: Probability
+#' # Chapter 6: Probability
 
 #' ## Section 6.1: Probability
 

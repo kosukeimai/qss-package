@@ -6,7 +6,7 @@
 #'   %\VignetteIndexEntry{Uncertainty}
 #'   %\VignetteEncoding{UTF-8}
 #' ---
-##### Chapter 7: Uncertainty
+#' # Chapter 7: Uncertainty
 
 #' ## Section 7.1: Estimation
 

@@ -6,7 +6,7 @@
 #'   %\VignetteIndexEntry{Intro}
 #'   %\VignetteEncoding{UTF-8}
 #' ---
-##### Chapter 1: Introduction
+#' # Chapter 1: Introduction
 
 #' ## Section 1.1: Overview of the Book
 
