@@ -54,8 +54,8 @@ pop.all <- c(pop.first, pop.second)
 pop.all
 
 world.pop[2]
-world.pop[c(2, 4)] 
-world.pop[c(4, 2)] 
+world.pop[c(2, 4)]
+world.pop[c(4, 2)]
 world.pop[-3]
 
 pop.million <- world.pop / 1000
@@ -72,12 +72,12 @@ percent.increase
 
 ### Section 1.3.4: Functions
 
-length(world.pop)  
-min(world.pop)     
-max(world.pop)     
-range(world.pop)   
-mean(world.pop)    
-sum(world.pop) / length(world.pop) 
+length(world.pop)
+min(world.pop)
+max(world.pop)
+range(world.pop)
+mean(world.pop)
+sum(world.pop) / length(world.pop)
 
 year <- seq(from = 1950, to = 2010, by = 10)
 year
@@ -88,15 +88,15 @@ seq(from = 2010, to = 1950, by = -10)
 2008:2012
 2012:2008
 
-names(world.pop) 
+names(world.pop)
 names(world.pop) <- year
 names(world.pop)
 world.pop
 
 ## myfunction <- function(input1, input2, ..., inputN) {
-## 
+##
 ##     DEFINE `output' USING INPUTS
-## 
+##
 ##     return(output)
 ## }
 
@@ -117,10 +117,10 @@ my.summary(world.pop)
 ## setwd("qss/INTRO")
 ## getwd()
 
-UNpop <- read.csv("UNpop.csv") 
+data(UNpop)
 class(UNpop)
 
-load("UNpop.RData") 
+## load("UNpop.RData")
 
 names(UNpop)
 nrow(UNpop)
@@ -174,9 +174,9 @@ mean(world.pop, na.rm = TRUE)
 ##
 
 library(foreign)
-UNpop <- read.csv("UNpop.csv") 
+data(UNpop)
 UNpop$world.pop <- UNpop$world.pop / 1000  # population in millions
 write.dta(UNpop, file = "UNpop.dta")
 
 library(lintr)
-lint("UNpop.R")
+lint("demo/UNpop.R")

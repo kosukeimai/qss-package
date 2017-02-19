@@ -8,26 +8,26 @@
 library(tm, SnowballC)
 
 ## load the raw corpus
-corpus.raw <- Corpus(DirSource(directory = "federalist", pattern = "fp")) 
+corpus.raw <- Corpus(DirSource(directory = "inst/extdata/federalist/", pattern = "fp"))
 corpus.raw
 
 ## make lower case
-corpus.prep <- tm_map(corpus.raw, content_transformer(tolower)) 
+corpus.prep <- tm_map(corpus.raw, content_transformer(tolower))
 ## remove white space
-corpus.prep <- tm_map(corpus.prep, stripWhitespace) 
-## remove punctuation 
+corpus.prep <- tm_map(corpus.prep, stripWhitespace)
+## remove punctuation
 corpus.prep <- tm_map(corpus.prep, removePunctuation)
 
 ## remove numbers
-corpus.prep <- tm_map(corpus.prep, removeNumbers) 
+corpus.prep <- tm_map(corpus.prep, removeNumbers)
 
 head(stopwords("english"))
 
-## remove stop words 
-corpus <- tm_map(corpus.prep, removeWords, stopwords("english")) 
+## remove stop words
+corpus <- tm_map(corpus.prep, removeWords, stopwords("english"))
 
 ## finally stem remaining words
-corpus <- tm_map(corpus, stemDocument) 
+corpus <- tm_map(corpus, stemDocument)
 
 ## the output is truncated here to save space
 content(corpus[[10]]) # Essay No. 10
@@ -84,8 +84,8 @@ for (i in 1:k) { # loop for each cluster
 
 ### Section 5.1.4: Authorship Prediction
 
-## document-term matrix converted to matrix for manipulation 
-dtm1 <- as.matrix(DocumentTermMatrix(corpus.prep)) 
+## document-term matrix converted to matrix for manipulation
+dtm1 <- as.matrix(DocumentTermMatrix(corpus.prep))
 tfm <- dtm1 / rowSums(dtm1) * 1000 # term frequency per 1000 words
 
 ## words of interest
@@ -99,7 +99,7 @@ tfm <- tfm[, words]
 madison <- c(10, 14, 37:48, 58)
 
 ## average among Hamilton/Madison essays
-tfm.ave <- rbind(colSums(tfm[hamilton, ]) / length(hamilton), 
+tfm.ave <- rbind(colSums(tfm[hamilton, ]) / length(hamilton),
                  colSums(tfm[madison, ]) / length(madison))
 tfm.ave
 
@@ -108,15 +108,15 @@ author[hamilton] <- 1  # 1 if Hamilton
 author[madison] <- -1  # -1 if Madison
 
 ## data frame for regression
-author.data <- data.frame(author = author[c(hamilton, madison)], 
+author.data <- data.frame(author = author[c(hamilton, madison)],
                           tfm[c(hamilton, madison), ])
 
-hm.fit <- lm(author ~ upon + there + consequently + whilst, 
+hm.fit <- lm(author ~ upon + there + consequently + whilst,
              data = author.data)
 hm.fit
 
 hm.fitted <- fitted(hm.fit) # fitted values
-sd(hm.fitted)  
+sd(hm.fitted)
 
 ### Section 5.1.5: Cross-Validation
 
@@ -127,11 +127,11 @@ mean(hm.fitted[author.data$author == 1] > 0)
 mean(hm.fitted[author.data$author == -1] < 0)
 
 n <- nrow(author.data)
-hm.classify <- rep(NA, n) # a container vector with missing values 
+hm.classify <- rep(NA, n) # a container vector with missing values
 
 for (i in 1:n) {
     ## fit the model to the data after removing the ith observation
-    sub.fit <- lm(author ~ upon + there + consequently + whilst, 
+    sub.fit <- lm(author ~ upon + there + consequently + whilst,
                   data = author.data[-i, ]) # exclude ith row
     ## predict the authorship for the ith observation
     hm.classify[i] <- predict(sub.fit, newdata = author.data[i, ])
@@ -152,25 +152,25 @@ pred # predicted values
 
 par(cex = 1.25)
 ## fitted values for essays authored by Hamilton; red squares
-plot(hamilton, hm.fitted[author.data$author == 1], pch = 15, 
-     xlim = c(1, 85), ylim  = c(-2, 2), col = "red", 
+plot(hamilton, hm.fitted[author.data$author == 1], pch = 15,
+     xlim = c(1, 85), ylim  = c(-2, 2), col = "red",
      xlab = "Federalist Papers", ylab = "Predicted values")
 abline(h = 0, lty = "dashed")
 
 ## essays authored by Madison; blue circles
-points(madison, hm.fitted[author.data$author == -1], 
+points(madison, hm.fitted[author.data$author == -1],
        pch = 16, col = "blue")
 
 ## disputed authorship; black triangles
-points(disputed, pred, pch = 17) 
+points(disputed, pred, pch = 17)
 
 #### Section 5.2: Network Data
 
 ### Section 5.2.1: Marriage Network in Renaissance Florence
 
 ## the first column "FAMILY" of the CSV file represents row names
-florence <- read.csv("florentine.csv", row.names = "FAMILY")
-florence <- as.matrix(florence) # coerce into a matrix
+data("florentine")
+florence <- data.frame(florentine, row.names = "FAMILY")
 
 ## print out the adjacency (sub)matrix for the first 5 families
 florence[1:5, 1:5]
@@ -181,36 +181,36 @@ rowSums(florence)
 par(cex = 1.25)
 
 library("igraph")  # load the package
-
+florence <- as.matrix(florence) # coerce into a matrix
 florence <- graph.adjacency(florence, mode = "undirected", diag = FALSE)
 
 plot(florence) # plot the graph
 degree(florence)
 closeness(florence)
 
-1 / (closeness(florence) * 15)  
+1 / (closeness(florence) * 15)
 
 betweenness(florence)
 
-par(cex = 1.25) 
-plot(florence, vertex.size = closeness(florence) * 1000, 
+par(cex = 1.25)
+plot(florence, vertex.size = closeness(florence) * 1000,
      main = "Closeness")
 
-plot(florence, vertex.size = betweenness(florence), 
+plot(florence, vertex.size = betweenness(florence),
      main = "Betweenness")
 
 ### Section 5.2.3: Twitter-Following Network
 
-twitter <- read.csv("twitter-following.csv")
-senator <- read.csv("twitter-senator.csv")
+data(twitter.following)
+data(twitter.senator)
 
-n <- nrow(senator) # number of senators
+n <- nrow(twitter.senator) # number of senators
 
 ## initialize adjacency matrix
 twitter.adj <- matrix(0, nrow = n, ncol = n)
 
 ## assign screen names to rows and columns
-colnames(twitter.adj) <- rownames(twitter.adj) <- senator$screen_name
+colnames(twitter.adj) <- rownames(twitter.adj) <- twitter.senator$screen_name
 
 ## change `0' to `1' when edge goes from node `i' to node `j'
 for (i in 1:nrow(twitter)) {
@@ -221,50 +221,50 @@ twitter.adj <- graph.adjacency(twitter.adj, mode = "directed", diag = FALSE)
 
 ### Section 5.2.4: Directed Graph and Centrality
 
-senator$indegree <- degree(twitter.adj, mode = "in")
-senator$outdegree <- degree(twitter.adj, mode = "out") 
+twitter.senator$indegree <- degree(twitter.adj, mode = "in")
+twitter.senator$outdegree <- degree(twitter.adj, mode = "out")
 
-in.order <- order(senator$indegree, decreasing = TRUE)
-out.order <- order(senator$outdegree, decreasing = TRUE)
+in.order <- order(twitter.senator$indegree, decreasing = TRUE)
+out.order <- order(twitter.senator$outdegree, decreasing = TRUE)
 
 ## 3 greatest indegree
-senator[in.order[1:3], ]
+twitter.senator[in.order[1:3], ]
 
 ## 3 greatest outdegree
-senator[out.order[1:3], ]
+twitter.senator[out.order[1:3], ]
 
-n <- nrow(senator)
+n <- nrow(twitter.senator)
 ## color: Democrats = `blue', Republicans = `red', Independent = `black'
 col <- rep("red", n)
-col[senator$party == "D"] <- "blue"
-col[senator$party == "I"] <- "black"
+col[twitter.senator$party == "D"] <- "blue"
+col[twitter.senator$party == "I"] <- "black"
 
 ## pch: Democrats = circle, Republicans = diamond, Independent = cross
 pch <- rep(16, n)
-pch[senator$party == "D"] <- 17
-pch[senator$party == "I"] <- 4
+pch[twitter.senator$party == "D"] <- 17
+pch[twitter.senator$party == "I"] <- 4
 
 par(cex = 1.25)
 ## plot for comparing two closeness measures (incoming vs. outgoing)
-plot(closeness(twitter.adj, mode = "in"), 
-     closeness(twitter.adj, mode = "out"), pch = pch, col = col, 
+plot(closeness(twitter.adj, mode = "in"),
+     closeness(twitter.adj, mode = "out"), pch = pch, col = col,
      main = "Closeness", xlab = "Incoming path", ylab = "Outgoing path")
 
 ## plot for comparing directed and undirected betweenness
-plot(betweenness(twitter.adj, directed = TRUE), 
+plot(betweenness(twitter.adj, directed = TRUE),
      betweenness(twitter.adj, directed = FALSE), pch = pch, col = col,
      main = "Betweenness", xlab = "Directed", ylab = "Undirected")
 
-senator$pagerank <- page.rank(twitter.adj)$vector
+twitter.senator$pagerank <- page.rank(twitter.adj)$vector
 
 par(cex = 1.25)
 ## `col' parameter is defined earlier
-plot(twitter.adj, vertex.size = senator$pagerank * 1000, 
-     vertex.color = col, vertex.label = NA, 
+plot(twitter.adj, vertex.size = twitter.senator$pagerank * 1000,
+     vertex.color = col, vertex.label = NA,
      edge.arrow.size = 0.1, edge.width = 0.5)
 
 PageRank <- function(n, A, d, pr) { # function takes 4 inputs
-    deg <- degree(A, mode = "out") # outdegree calculation 
+    deg <- degree(A, mode = "out") # outdegree calculation
     for (j in 1:n) {
         pr[j] <- (1 - d) / n +  d * sum(A[ ,j] * pr / deg)
     }
@@ -274,7 +274,7 @@ PageRank <- function(n, A, d, pr) { # function takes 4 inputs
 nodes <- 4
 
 ## adjacency matrix with arbitrary values
-adj <- matrix(c(0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0), 
+adj <- matrix(c(0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0),
               ncol = nodes, nrow = nodes, byrow = TRUE)
 adj
 
@@ -307,12 +307,12 @@ head(us.cities)
 
 par(cex = 1.25)
 
-map(database = "usa") 
+map(database = "usa")
 capitals <- subset(us.cities, capital == 2) # subset state capitals
 
 ## add points proportional to population using latitude and longitude
 points(x = capitals$long, y = capitals$lat,
-       cex = capitals$pop / 500000, pch = 19) 
+       cex = capitals$pop / 500000, pch = 19)
 title("US state capitals") # add a title
 
 par(cex = 1.25)
@@ -334,7 +334,7 @@ title("Largest cities of California")
 usa <- map(database = "usa", plot = FALSE) # save map
 names(usa)  # list elements
 
-length(usa$x) 
+length(usa$x)
 head(cbind(usa$x, usa$y)) # first five coordinates of a polygon
 
 ### Section 5.3.3: Colors in R
@@ -356,37 +356,37 @@ c(black, white) # results
 rgb(red = c(0.5, 1), green = c(0, 1), blue = c(0.5, 0))
 
 ## semi-transparent blue
-blue.trans <- rgb(red = 0, green = 0, blue = 1, alpha = 0.5) 
+blue.trans <- rgb(red = 0, green = 0, blue = 1, alpha = 0.5)
 
 ## semi-transparent black
-black.trans <- rgb(red = 0, green = 0, blue = 0, alpha = 0.5) 
+black.trans <- rgb(red = 0, green = 0, blue = 0, alpha = 0.5)
 
 par(cex = 1.25)
 
 ## completely colored dots; difficult to distinguish
-plot(x = c(1, 1), y = c(1, 1.2), xlim = c(0.5, 4.5), ylim = c(0.5, 4.5), 
+plot(x = c(1, 1), y = c(1, 1.2), xlim = c(0.5, 4.5), ylim = c(0.5, 4.5),
      pch = 16, cex = 5, ann = FALSE, col = black)
 points(x = c(3, 3), y = c(3, 3.2), pch = 16, cex = 5, col = blue)
 
 ## semi-transparent; easy to distinguish
-points(x = c(2, 2), y = c(2, 2.2), pch = 16, cex = 5, col = black.trans) 
-points(x = c(4, 4), y = c(4, 4.2), pch = 16, cex = 5, col = blue.trans) 
+points(x = c(2, 2), y = c(2, 2.2), pch = 16, cex = 5, col = black.trans)
+points(x = c(4, 4), y = c(4, 4.2), pch = 16, cex = 5, col = blue.trans)
 
 ### Section 5.3.4: US Presidential Elections
 
-pres08 <- read.csv("pres08.csv")
+data(pres08)
 ## two-party vote share
 pres08$Dem <- pres08$Obama / (pres08$Obama + pres08$McCain)
 pres08$Rep <- pres08$McCain / (pres08$Obama + pres08$McCain)
 
 ## color for California
-cal.color <- rgb(red = pres08$Rep[pres08$state == "CA"], 
-                 blue = pres08$Dem[pres08$state == "CA"], 
+cal.color <- rgb(red = pres08$Rep[pres08$state == "CA"],
+                 blue = pres08$Dem[pres08$state == "CA"],
                  green = 0)
 
 par(cex = 1.25)
 ## California as a blue state
-map(database = "state", regions = "California", col = "blue", 
+map(database = "state", regions = "California", col = "blue",
     fill = TRUE)
 
 ## California as a purple state
@@ -399,7 +399,7 @@ map(database = "state") # create a map
 for (i in 1:nrow(pres08)) {
     if ((pres08$state[i] != "HI") & (pres08$state[i] != "AK") &
         (pres08$state[i] != "DC")) {
-        map(database = "state", regions = pres08$state.name[i], 
+        map(database = "state", regions = pres08$state.name[i],
             col = ifelse(pres08$Rep[i] > pres08$Dem[i], "red", "blue"),
             fill = TRUE, add = TRUE)
     }
@@ -410,7 +410,7 @@ map(database = "state") # create a map
 for (i in 1:nrow(pres08)) {
     if ((pres08$state[i] != "HI") & (pres08$state[i] != "AK") &
         (pres08$state[i] != "DC")) {
-        map(database = "state", regions = pres08$state.name[i], 
+        map(database = "state", regions = pres08$state.name[i],
             col = rgb(red = pres08$Rep[i], blue = pres08$Dem[i],
                 green = 0), fill = TRUE, add = TRUE)
     }
@@ -418,12 +418,12 @@ for (i in 1:nrow(pres08)) {
 
 ### Section 5.3.5: Expansion of Walmart
 
-walmart <- read.csv("walmart.csv")
+data(walmart)
 
 ## red = WalMartStore, green = SuperCenter, blue = DistributionCenter
 walmart$storecolors <- NA # create an empty vector
 
-walmart$storecolors[walmart$type == "Wal-MartStore"] <- 
+walmart$storecolors[walmart$type == "Wal-MartStore"] <-
     rgb(red = 1, green = 0, blue = 0, alpha = 1/3)
 walmart$storecolors[walmart$type == "SuperCenter"] <-
     rgb(red = 0, green = 1, blue = 0, alpha = 1/3)
@@ -437,10 +437,10 @@ par(cex = 1.25)
 ## map with legend
 map(database = "state")
 
-points(walmart$long, walmart$lat, col = walmart$storecolors, 
+points(walmart$long, walmart$lat, col = walmart$storecolors,
        pch = 19, cex = walmart$storesize)
 
-legend(x = -120, y = 32, bty = "n", 
+legend(x = -120, y = 32, bty = "n",
        legend = c("Wal-Mart", "Supercenter", "Distrib. Center"),
        col = c("red", "green", "blue"), pch = 19, # solid circles
        pt.cex = c(0.5, 0.5, 1)) # size of circles
@@ -450,7 +450,7 @@ legend(x = -120, y = 32, bty = "n",
 walmart.map <- function(data, date) {
     walmart <- subset(data, subset = (opendate <= date))
     map(database = "state")
-    points(walmart$long, walmart$lat, col = walmart$storecolors, 
+    points(walmart$long, walmart$lat, col = walmart$storecolors,
            pch = 19, cex = walmart$storesize)
 }
 
@@ -471,7 +471,7 @@ walmart.map(walmart, as.Date("2004-12-31"))
 title("2005")
 
 n <- 25 # number of maps to animate
-dates <- seq(from = min(walmart$opendate), 
+dates <- seq(from = min(walmart$opendate),
              to = max(walmart$opendate), length.out = n)
 ## library("animation")
 ## saveHTML({

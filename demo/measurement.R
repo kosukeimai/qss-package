@@ -3,7 +3,7 @@
 #### Section 3.1: Measuring Civilian Victimization during Wartime
 
 ## load data
-afghan <- read.csv("afghan.csv")
+data(afghan)
 
 ## summarize variables of interest
 summary(afghan$age)
@@ -11,7 +11,7 @@ summary(afghan$educ.years)
 summary(afghan$employed)
 summary(afghan$income)
 
-prop.table(table(ISAF = afghan$violent.exp.ISAF, 
+prop.table(table(ISAF = afghan$violent.exp.ISAF,
                  Taliban = afghan$violent.exp.taliban))
 
 #### Section 3.2: Handling Missing Data in R
@@ -25,15 +25,15 @@ sum(is.na(afghan$income))  # count of missing values
 mean(is.na(afghan$income)) # proportion missing
 
 x <- c(1, 2, 3, NA)
-mean(x) 
+mean(x)
 mean(x, na.rm = TRUE)
 
-prop.table(table(ISAF = afghan$violent.exp.ISAF, 
+prop.table(table(ISAF = afghan$violent.exp.ISAF,
                  Taliban = afghan$violent.exp.taliban, exclude = NULL))
 
 afghan.sub <- na.omit(afghan)  # listwise deletion
-nrow(afghan.sub)               
-length(na.omit(afghan$income)) 
+nrow(afghan.sub)
+length(na.omit(afghan$income))
 
 #### Section 3.3: Visualizating the Univariate Distribution
 
@@ -42,25 +42,25 @@ length(na.omit(afghan$income))
 par(cex = 1.5)
 
 ## a vector of proportions to plot
-ISAF.ptable <- prop.table(table(ISAF = afghan$violent.exp.ISAF, 
+ISAF.ptable <- prop.table(table(ISAF = afghan$violent.exp.ISAF,
                                 exclude = NULL))
-ISAF.ptable 
+ISAF.ptable
 
 ## make barplots by specifying a certain range for y-axis
 barplot(ISAF.ptable,
-        names.arg = c("No harm", "Harm", "Nonresponse"), 
+        names.arg = c("No harm", "Harm", "Nonresponse"),
         main = "Civilian victimization by the ISAF",
         xlab = "Response category",
         ylab = "Proportion of the respondents", ylim = c(0, 0.7))
 
 ## repeat the same for the victimization by Taliban
-Taliban.ptable <- prop.table(table(Taliban = afghan$violent.exp.taliban, 
-                         exclude = NULL)) 
+Taliban.ptable <- prop.table(table(Taliban = afghan$violent.exp.taliban,
+                         exclude = NULL))
 barplot(Taliban.ptable,
-        names.arg = c("No harm", "Harm", "Nonresponse"), 
+        names.arg = c("No harm", "Harm", "Nonresponse"),
         main = "Civilian victimization by the Taliban",
         xlab = "Response category",
-        ylab = "Proportion of the respondents", ylim = c(0, 0.7)) 
+        ylab = "Proportion of the respondents", ylim = c(0, 0.7))
 
 ### Section 3.3.2: Histogram
 
@@ -69,10 +69,10 @@ hist(afghan$age, freq = FALSE, ylim = c(0, 0.04), xlab = "Age",
      main = "Distribution of respondent's age")
 
 par(cex = 1.5)
-## histogram of education.  use `breaks' to choose bins 
-hist(afghan$educ.years, freq = FALSE, 
+## histogram of education.  use `breaks' to choose bins
+hist(afghan$educ.years, freq = FALSE,
      breaks = seq(from = -0.5, to = 18.5, by = 1),
-     xlab = "Years of education", 
+     xlab = "Years of education",
      main = "Distribution of respondent's education")
 
 ## add a text label at (x, y) = (3, 0.5)
@@ -86,7 +86,7 @@ lines(x = rep(median(afghan$educ.years), 2), y = c(0, 0.5))
 
 ### Section 3.3.3: Box Plot
 par(cex = 1.25)
-boxplot(educ.years ~ province, data = afghan, 
+boxplot(educ.years ~ province, data = afghan,
         main = "Education by province", ylab = "Years of education")
 
 tapply(afghan$violent.exp.taliban, afghan$province, mean, na.rm = TRUE)
@@ -118,9 +118,9 @@ tapply(afghan$violent.exp.ISAF, afghan$province, mean, na.rm = TRUE)
 par(cex = 1.5)
 
 ## load village data
-afghan.village <- read.csv("afghan-village.csv")
+data("afghan.village")
 
-## boxplots for altitude 
+## boxplots for altitude
 boxplot(altitude ~ village.surveyed, data = afghan.village,
         ylab = "Altitude (meter)", names = c("Nonsampled", "Sampled"))
 
@@ -133,8 +133,8 @@ boxplot(log(population) ~ village.surveyed, data = afghan.village,
 tapply(is.na(afghan$violent.exp.taliban), afghan$province, mean)
 tapply(is.na(afghan$violent.exp.ISAF), afghan$province, mean)
 
-mean(afghan$list.response[afghan$list.group == "ISAF"]) - 
-    mean(afghan$list.response[afghan$list.group == "control"]) 
+mean(afghan$list.response[afghan$list.group == "ISAF"]) -
+    mean(afghan$list.response[afghan$list.group == "control"])
 
 table(response = afghan$list.response, group = afghan$list.group)
 
@@ -144,7 +144,7 @@ table(response = afghan$list.response, group = afghan$list.group)
 
 ### Section 3.6.1: Scatter Plot
 
-congress <- read.csv("congress.csv")
+data(congress)
 
 ## subset the data by party
 rep <- subset(congress, subset = (party == "Republican"))
@@ -162,8 +162,8 @@ ylab <- "Racial liberalism/conservatism"
 lim <- c(-1.5, 1.5)
 
 par(cex = 1.5)
-## scatterplot for the 80th Congress 
-plot(dem80$dwnom1, dem80$dwnom2, pch = 16, col = "blue", 
+## scatterplot for the 80th Congress
+plot(dem80$dwnom1, dem80$dwnom2, pch = 16, col = "blue",
      xlim = lim, ylim = lim, xlab = xlab, ylab = ylab,
      main = "80th Congress") # democrats
 points(rep80$dwnom1, rep80$dwnom2, pch = 17, col = "red") # republicans
@@ -171,7 +171,7 @@ text(-0.75, 1, "Democrats")
 text(1, -1, "Republicans")
 
 ## scatterplot for the 112th Congress
-plot(dem112$dwnom1, dem112$dwnom2, pch = 16, col = "blue", 
+plot(dem112$dwnom1, dem112$dwnom2, pch = 16, col = "blue",
      xlim = lim, ylim = lim, xlab = xlab, ylab = ylab,
      main = "112th Congress")
 points(rep112$dwnom1, rep112$dwnom2, pch = 17, col = "red")
@@ -192,35 +192,35 @@ text(110, 0.85, "Republican\n Party")
 
 ### Section 3.6.2: Correlation
 
-par(cex = 1.5) 
+par(cex = 1.5)
 ## Gini coefficient data
-gini <- read.csv("USGini.csv")
+data(USGini)
 
 ## time-series plot for partisan difference
-plot(seq(from = 1947.5, to = 2011.5, by = 2), 
+plot(seq(from = 1947.5, to = 2011.5, by = 2),
      rep.median - dem.median, xlab = "Year",
      ylab = "Republican median -\n Democratic median",
      main = "Political polarization")
 ## time-series plot for Gini coefficient
-plot(gini$year, gini$gini, ylim = c(0.35, 0.45), xlab = "Year", 
+plot(USGini$year, USGini$gini, ylim = c(0.35, 0.45), xlab = "Year",
      ylab = "Gini coefficient", main = "Income inequality")
 
-cor(gini$gini[seq(from = 2, to = nrow(gini), by = 2)], 
+cor(USGini$gini[seq(from = 2, to = nrow(USGini), by = 2)],
     rep.median - dem.median)
 
 ### Section 3.6.3: Quantile-Quantile Plot
 par(cex = 1.5)
-hist(dem112$dwnom2, freq = FALSE, main = "Democrats", 
-     xlim = c(-1.5, 1.5), ylim = c(0, 1.75), 
-     xlab = "Racial liberalism/conservatism dimension") 
+hist(dem112$dwnom2, freq = FALSE, main = "Democrats",
+     xlim = c(-1.5, 1.5), ylim = c(0, 1.75),
+     xlab = "Racial liberalism/conservatism dimension")
 hist(rep112$dwnom2, freq = FALSE, main = "Republicans",
-     xlim = c(-1.5, 1.5), ylim = c(0, 1.75), 
-     xlab = "Racial liberalism/conservatism dimension") 
+     xlim = c(-1.5, 1.5), ylim = c(0, 1.75),
+     xlab = "Racial liberalism/conservatism dimension")
 
 par(cex = 1.5)
-qqplot(dem112$dwnom2, rep112$dwnom2, xlab = "Democrats", 
-       ylab = "Republicans", xlim = c(-1.5, 1.5), ylim = c(-1.5, 1.5), 
-       main = "Racial liberalism/conservatism dimension") 
+qqplot(dem112$dwnom2, rep112$dwnom2, xlab = "Democrats",
+       ylab = "Republicans", xlim = c(-1.5, 1.5), ylim = c(-1.5, 1.5),
+       main = "Racial liberalism/conservatism dimension")
 abline(0, 1) # 45 degree line
 
 #### Section 3.7: Clustering
@@ -242,11 +242,11 @@ z <- as.matrix(y)
 z
 
 ## column sums
-colSums(x)  
+colSums(x)
 ## row means
-rowMeans(x) 
+rowMeans(x)
 ## column sums
-apply(x, 2, sum) 
+apply(x, 2, sum)
 ## row means
 apply(x, 1, mean)
 ## standard deviation for each row
@@ -256,20 +256,20 @@ apply(x, 1, sd)
 
 ## create a list
 x <- list(y1 = 1:10, y2 = c("hi", "hello", "hey"),
-          y3 = data.frame(z1 = 1:3, z2 = c("good", "bad", "ugly"))) 
-## 3 ways of extracting elements from a list 
+          y3 = data.frame(z1 = 1:3, z2 = c("good", "bad", "ugly")))
+## 3 ways of extracting elements from a list
 x$y1 # first element
 x[[2]] # second element
 x[["y3"]] # third element
 
 ### Section 3.7.3: The k-Means Algorithm
 
-names(x)  # names of all elements 
+names(x)  # names of all elements
 length(x) # number of elements
 
-dwnom80 <- cbind(congress$dwnom1[congress$congress == 80], 
+dwnom80 <- cbind(congress$dwnom1[congress$congress == 80],
                  congress$dwnom2[congress$congress == 80])
-dwnom112 <- cbind(congress$dwnom1[congress$congress == 112], 
+dwnom112 <- cbind(congress$dwnom1[congress$congress == 112],
                  congress$dwnom2[congress$congress == 112])
 
 ## kmeans with 2 clusters
@@ -284,9 +284,9 @@ k80two.out$centers
 k112two.out$centers
 
 ## number of observations for each cluster by party
-table(party = congress$party[congress$congress == 80], 
+table(party = congress$party[congress$congress == 80],
       cluster = k80two.out$cluster)
-table(party = congress$party[congress$congress == 112], 
+table(party = congress$party[congress$congress == 112],
       cluster = k112two.out$cluster)
 
 ## kmeans with 4 clusters
