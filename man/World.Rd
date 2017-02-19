@@ -13,7 +13,6 @@
  \item{ deaths }{ numeric: number of deaths (in thousands) }
  \item{ py.men }{ numeric: person-years for men (in thousands) }
  \item{ py.women }{ numeric: person-years for women (in thousands) }
- \item{ l_x }{ numeric }#'
 }}
 \usage{
 World
