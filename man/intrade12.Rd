@@ -9,10 +9,8 @@
  \item{ .row }{ integer: row number }
  \item{ day }{ Date: date of the session }
  \item{ statename }{ character: full name of each state }
- \item{ MarketD }{ character }
  \item{ PriceD }{ numeric: closing price (predicted vote share) of the Democratic nominee’s market }
  \item{ VolumeD }{ integer: total session trades of the Democratic Party nominee’s market }
- \item{ MarketR }{ character }
  \item{ PriceR }{ numeric: closing price (predicted vote share) of the Republican nominee’s market }
  \item{ VolumeR }{ integer: total session trades of the Republican Party nominee’s market }
  \item{ state }{ character: abbreviation of each state }
