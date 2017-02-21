@@ -3,7 +3,7 @@ Quantitative Social Science: An Introduction: An R Package
 ==========================================================
 
 [![Travis-CI Build
-Status](https://travis-ci.org/kosukeimai/qss-data.svg?branch=master)](https://travis-ci.org/kosukeimai/qss-data)
+Status](https://travis-ci.org/kosukeimai/qss-package.svg?branch=master)](https://travis-ci.org/kosukeimai/qss-package)
 
 An R package containing the datasets used in
 
@@ -20,8 +20,8 @@ Install
 **qss** is not available from CRAN, install the package from github
 with:
 
-    # install.packages("devtools")
-    devtools::install_github("kosuke/qss-package")
+    install.packages("devtools") # if you have not installed the `devtools` package
+    devtools::install_github("kosukeimai/qss-package")
 
 Usage
 -----
@@ -40,7 +40,7 @@ The QSS package contains the following datasets:
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">FLCensusVTD</td>
+<td align="left">FLCensus</td>
 <td align="left">Florida Census Data at the Voting District Level</td>
 </tr>
 <tr class="even">
@@ -304,12 +304,9 @@ are included in `extdata/`
 
     library("foreign")
     dir(system.file("extdata", "data_files", package = "qss"))
-
-    ## [1] "UNpop.csv"   "UNpop.dta"   "UNpop.RData"
-
     load(system.file("extdata", "data_files", "UNpop.RData", package = "qss"))
     read.csv(system.file("extdata", "data_files", "UNpop.csv", package = "qss"))
-
+    read.dta(system.file("extdata", "data_files", "UNpop.dta", package = "qss"))
 
 Build Package and Documentation
 ===============================

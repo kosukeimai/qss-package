@@ -5,7 +5,7 @@ output: md_document
 
 # Quantitative Social Science: An Introduction: An R Package
 
-[![Travis-CI Build Status](https://travis-ci.org/kosukeimai/qss-data.svg?branch=master)](https://travis-ci.org/kosukeimai/qss-data)
+[![Travis-CI Build Status](https://travis-ci.org/kosukeimai/qss-package.svg?branch=master)](https://travis-ci.org/kosukeimai/qss-package)
 
 
 ```{r, include=FALSE}
@@ -23,7 +23,7 @@ and the original data sets.
 
 **qss** is not available from CRAN, install the package from github with:
 ```{r eval=FALSE}
-# install.packages("devtools")
+install.packages("devtools") # if you have not installed the `devtools` package
 devtools::install_github("kosukeimai/qss-package")
 ```
 
