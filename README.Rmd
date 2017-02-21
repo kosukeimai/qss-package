@@ -24,7 +24,7 @@ and the original data sets.
 **qss** is not available from CRAN, install the package from github with:
 ```{r eval=FALSE}
 # install.packages("devtools")
-devtools::install_github("kosuke/qss-package")
+devtools::install_github("kosukeimai/qss-package")
 ```
 
 ## Usage
