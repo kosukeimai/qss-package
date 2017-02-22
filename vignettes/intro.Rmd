@@ -177,8 +177,6 @@ load("Chapter1.RData")
 ## install.packages("foreign") # install package
 library("foreign") # load package
 
-library("rprojroot")
-
 read.dta(system.file("extdata/data_files/UNpop.dta", package = "qss"))
 ## read.spss("UNpop.sav")
 ```

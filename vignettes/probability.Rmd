@@ -62,8 +62,8 @@ choose(84, 6)
 ## Section 6.2: Conditional Probability
 ### Section 6.2.1: Conditional, Marginal, and Joint Probabilities
 
-```{r }
-FLVoters <- read.csv("FLVoters.csv")
+```{r}
+data("FLVoters", package = "qss")
 dim(FLVoters) # before removal of missing data
 
 FLVoters <- na.omit(FLVoters)
@@ -82,7 +82,9 @@ joint.p
 
 rowSums(joint.p)
 colSums(joint.p)
+```
 
+```{r}
 FLVoters$age.group <- NA # initialize a variable
 FLVoters$age.group[FLVoters$age <= 20] <- 1
 FLVoters$age.group[FLVoters$age > 20 & FLVoters$age <= 40] <- 2
@@ -162,7 +164,7 @@ mean(result.switch == "car")
 ### Section 6.2.4: Predicting Race Using Surname and Residence Location
 
 ```{r }
-cnames <- read.csv("names.csv")
+data("cnames", package = "qss")
 dim(cnames)
 
 x <- c("blue", "red", "yellow")
@@ -221,7 +223,7 @@ indx <- match(FLVoters$surname, cnames$surname)
 1 - mean(FLVoters$race[apply(cnames[indx, vars], 1, max) ==
                            cnames$pctapi[indx]] == "asian")
 
-FLCensus <- read.csv("FLCensusVTD.csv")
+data("FLCensus", package = "qss")
 
 ## compute proportions by applying weighted.mean() to each column
 race.prop <-
@@ -356,7 +358,7 @@ dbinom(voters / 2, size = voters, prob = 0.5)
 
 ### Section 6.3.4: Normal Distribution
 
-```{r }
+```{r eval=FALSE}
 ## plus minus one standard deviation from the mean
 pnorm(1) - pnorm(-1)
 
@@ -428,7 +430,7 @@ var(y)
 ### Section 6.3.6: Predicting Election Outcomes with Uncertainty
 
 ```{r }
-pres08 <- read.csv("pres08.csv")
+data("pres08", package = "qss")
 
 ## two-party vote share
 pres08$p <- pres08$Obama / (pres08$Obama + pres08$McCain)
