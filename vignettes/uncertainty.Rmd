@@ -159,8 +159,8 @@ text(0.4, 1800, "margin of error = 0.03")
 text(0.6, -200, "margin of error = 0.05")
 
 ## election and polling results, by state
-data(pres08)
-data(polls08)
+data("pres08", package = "qss")
+data("polls08", package = "qss")
 
 ## convert to a Date object
 polls08$middate <- as.Date(polls08$middate)
@@ -228,7 +228,7 @@ mean((ci.bias.lower <= pres08$Obama / 100) &
 ```{r }
 par(cex = 1.5)
 ## read in data
-data(STAR)
+data("STAR", package = "qss")
 hist(STAR$g4reading[STAR$classtype == 1], freq = FALSE, xlim = c(500, 900),
      ylim = c(0, 0.01), main = "Small class",
      xlab = "Fourth-grade reading test score")
@@ -414,7 +414,7 @@ pnorm(-abs(ate.est), mean = 0, sd = ate.se)
 t.test(STAR$g4reading[STAR$classtype == 1],
        STAR$g4reading[STAR$classtype == 2])
 
-data(resume)
+data("resume", package = "qss")
 
 ## organize the data in tables
 x <- table(resume$race, resume$call)
@@ -502,7 +502,7 @@ power.t.test(delta = 0.25, sd = 1, type = "two.sample",
 ### Section 7.3.1: Linear Regression as a Generative Model
 
 ```{r }
-data(minwage)
+data("minwage", package = "qss")
 
 ## compute proportion of full employment before minimum wage increase
 minwage$fullPropBefore <- minwage$fullBefore /
@@ -550,7 +550,7 @@ confint(fit.minwage)["NJ", ]
 
 ```{r }
 ## load the data and subset them into two parties
-data(MPs)
+data("MPs", package = "qss")
 MPs.labour <- subset(MPs, subset = (party == "labour"))
 MPs.tory <- subset(MPs, subset = (party == "tory"))
 

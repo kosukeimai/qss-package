@@ -11,7 +11,7 @@ vignette: >
 
 ```{r }
 ## load data
-data(afghan)
+data("afghan", package = "qss")
 
 ## summarize variables of interest
 summary(afghan$age)
@@ -135,7 +135,7 @@ tapply(afghan$violent.exp.ISAF, afghan$province, mean, na.rm = TRUE)
 par(cex = 1.5)
 
 ## load village data
-data("afghan.village")
+data("afghan.village", package = "qss")
 
 ## boxplots for altitude
 boxplot(altitude ~ village.surveyed, data = afghan.village,
@@ -163,7 +163,7 @@ table(response = afghan$list.response, group = afghan$list.group)
 ### Section 3.6.1: Scatter Plot
 
 ```{r }
-data(congress)
+data("congress", package = "qss")
 
 ## subset the data by party
 rep <- subset(congress, subset = (party == "Republican"))
@@ -215,7 +215,7 @@ text(110, 0.85, "Republican\n Party")
 ```{r }
 par(cex = 1.5)
 ## Gini coefficient data
-data(USGini)
+data("USGini", package = "qss")
 
 ## time-series plot for partisan difference
 plot(seq(from = 1947.5, to = 2011.5, by = 2),

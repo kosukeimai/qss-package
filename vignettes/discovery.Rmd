@@ -12,10 +12,12 @@ vignette: >
 
 ```{r }
 ## load two required libraries
-library(tm, SnowballC)
+library(tm)
+library(SnowballC)
 
 ## load the raw corpus
-corpus.raw <- Corpus(DirSource(directory = "inst/extdata/federalist/", pattern = "fp"))
+corpus_dir <- system.file("extdata/federalist/", package = "qss")
+corpus.raw <- Corpus(DirSource(corpus_dir, pattern = "\\.txt$"))
 corpus.raw
 
 ## make lower case
@@ -185,7 +187,7 @@ points(disputed, pred, pch = 17)
 
 ```{r }
 ## the first column "FAMILY" of the CSV file represents row names
-data("florentine")
+data("florentine", package = "qss")
 florence <- data.frame(florentine, row.names = "FAMILY")
 
 ## print out the adjacency (sub)matrix for the first 5 families
@@ -221,8 +223,8 @@ plot(florence, vertex.size = betweenness(florence),
 ### Section 5.2.3: Twitter-Following Network
 
 ```{r }
-data(twitter.following)
-data(twitter.senator)
+data("twitter.following", package = "qss")
+data("twitter.senator", package = "qss")
 
 n <- nrow(twitter.senator) # number of senators
 
@@ -233,8 +235,8 @@ twitter.adj <- matrix(0, nrow = n, ncol = n)
 colnames(twitter.adj) <- rownames(twitter.adj) <- twitter.senator$screen_name
 
 ## change `0' to `1' when edge goes from node `i' to node `j'
-for (i in 1:nrow(twitter)) {
-    twitter.adj[twitter$following[i], twitter$followed[i]] <- 1
+for (i in 1:nrow(twitter.adj)) {
+    twitter.adj[twitter.following$following[i], twitter.following$followed[i]] <- 1
 }
 
 twitter.adj <- graph.adjacency(twitter.adj, mode = "directed", diag = FALSE)
@@ -400,7 +402,7 @@ points(x = c(4, 4), y = c(4, 4.2), pch = 16, cex = 5, col = blue.trans)
 ### Section 5.3.4: US Presidential Elections
 
 ```{r }
-data(pres08)
+data("pres08", package = "qss")
 ## two-party vote share
 pres08$Dem <- pres08$Obama / (pres08$Obama + pres08$McCain)
 pres08$Rep <- pres08$McCain / (pres08$Obama + pres08$McCain)
@@ -446,7 +448,7 @@ for (i in 1:nrow(pres08)) {
 ### Section 5.3.5: Expansion of Walmart
 
 ```{r }
-data(walmart)
+data("walmart", package = "qss")
 
 ## red = WalMartStore, green = SuperCenter, blue = DistributionCenter
 walmart$storecolors <- NA # create an empty vector

@@ -10,7 +10,7 @@ vignette: >
 ## Section 2.1: Racial Discrimination in the Labor Market
 
 ```{r }
-data(resume)
+data("resume", package = "qss")
 
 dim(resume)
 head(resume)
@@ -174,7 +174,7 @@ resume[1, ]
 ### Section 2.4.2: Social Pressure and Voter Turnout
 
 ```{r }
-data(social) # load the data
+data("social", package = "qss") # load the data
 
 summary(social) # summarize the data
 
@@ -198,7 +198,7 @@ tapply(social$hhsize, social$messages, mean)
 ### Section 2.5.1: Minimum Wage and Unemployment
 
 ```{r }
-data(minwage) # load the data
+data("minwage", package = "qss") # load the data
 
 dim(minwage) # dimension of data
 summary(minwage) # summary of data
