@@ -178,7 +178,8 @@ load("Chapter1.RData")
 library("foreign") # load package
 
 library("rprojroot")
-read.dta(system.file("extdata/UNpop.dta", package = "qss"))
+
+read.dta(system.file("extdata/data_files/UNpop.dta", package = "qss"))
 ## read.spss("UNpop.sav")
 ```
 ```{r eval = FALSE}
@@ -202,7 +203,7 @@ UNpop$world.pop <- UNpop$world.pop / 1000  # population in millions
 library(foreign)
 write.dta(UNpop, file = "UNpop.dta")
 ```
-```{r eval = fALSE}
+```{r eval = FALSE}
 library(lintr)
 #lint("demo/UNpop.R")
 ```

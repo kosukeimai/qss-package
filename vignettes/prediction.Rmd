@@ -91,9 +91,9 @@ results
 
 ```{r }
 ## load election results, by state
-pres08 <- read.csv("pres08.csv")
+data("pres08", package = "qss")
 ## load polling data
-polls08 <- read.csv("polls08.csv")
+data("polls08", package = "qss")
 ## compute Obama's margin
 polls08$margin <- polls08$Obama - polls08$McCain
 pres08$margin <- pres08$Obama - pres08$McCain
@@ -163,7 +163,7 @@ sum(pres08$EV[pres08$margin > 0])
 sum(pres08$EV[poll.pred > 0])
 
 ## load the data
-pollsUS08 <- read.csv("pollsUS08.csv")
+data("pollsUS08", package = "qss")
 
 ## compute number of days to the election as before
 pollsUS08$middate <- as.Date(pollsUS08$middate)
@@ -206,7 +206,7 @@ text(80, 41, "McCain", col = "red")
 
 ```{r }
 ## load the data
-face <- read.csv("face.csv")
+data("face", package = "qss")
 ## two-party vote share for Democrats and Republicans
 face$d.share <- face$d.votes / (face$d.votes + face$r.votes)
 face$r.share <- face$r.votes / (face$d.votes + face$r.votes)
