@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>2008 US Presidential National Polls Data — pollsUS08 • qss</title>
+<title>US Census Bureau Surname List Data — cnames • qss</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -72,36 +72,41 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>2008 US Presidential National Polls Data</h1>
+    <h1>US Census Bureau Surname List Data</h1>
     </div>
 
     
-    <p>Contains national polling data for 2008 United States Presidential Election</p>
+    <p>Contains total count and racial breakdown data for surnames in the United States.</p>
     
 
-    <pre><span class='no'>pollsUS08</span></pre>
+    <pre><span class='no'>cnames</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 526 rows and 4 variables:
+    <p>A data frame with 151671 rows and 7 variables:
 <dl class='dl-horizontal'>
- <dt> Pollster </dt><dd> character: name of the organization conducting the poll </dd>
- <dt> McCain </dt><dd> integer: predicted support for McCain (percentage) </dd>
- <dt> Obama </dt><dd> integer: predicted support for Obama (percentage) </dd>
- <dt> middate </dt><dd> Date: middate of the period when the poll was conducted </dd>
+ <dt> surname </dt><dd> character: surname </dd>
+ <dt> count </dt><dd> integer: number of individuals with a specific surname </dd>
+ <dt> pctwhite </dt><dd> numeric: percentage of non-Hispanic whites among those who have a specific surname </dd>
+ <dt> pctblack </dt><dd> numeric: percentage of non-Hispanic blacks among those who have a specific surname </dd>
+ <dt> pctapi </dt><dd> numeric: percentage of non-Hispanic Asians and Pacific Islanders among those who have a specific surname </dd>
+ <dt> pcthispanic </dt><dd> numeric: percentage of Hispanic origin among those who have a specific surname </dd>
+ <dt> pctothers </dt><dd> numeric: percentage of the other racial groups among those who have a specific surname </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>See <em>QSS</em> Table 4.2.</p>
+    <p>See <em>QSS</em> Table 6.3.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>#&#39; <ul>
+    <p><ul>
 <li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
 Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
 </li>
-<li>  Huffington Post: <a href = 'Pollster'>http://elections.huffingtonpost.com/pollster</a> 
+<li> Kosuke Imai and Kabir Khanna (2016) “Improving ecological inference by
+predicting individual ethnicity from voter registration records.” <em>Political Analysis</em>,
+vol. 24, no. 2 (Spring), pp. 263–272. doi: https://doi.org/10.1093/pan/mpw001 
 </li>
 </ul></p>
     

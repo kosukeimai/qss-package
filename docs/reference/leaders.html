@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,8 @@
     </div>
 
     
-    <p>Leader Assassination Data</p>
+    <p>Dataset for a natural experiment that studied whether assassinations of political leaders had an
+effect on institutions and war.</p>
     
 
     <pre><span class='no'>leaders</span></pre>
@@ -82,7 +86,17 @@
 
     <p>A data frame with 250 rows and 11 variables:
 <dl class='dl-horizontal'>
- <dt> year </dt><dd> integer </dd>  <dt> country </dt><dd> character </dd>  <dt> leadername </dt><dd> character </dd>  <dt> age </dt><dd> integer </dd>  <dt> politybefore </dt><dd> numeric </dd>  <dt> polityafter </dt><dd> numeric </dd>  <dt> interwarbefore </dt><dd> integer </dd>  <dt> interwarafter </dt><dd> integer </dd>  <dt> civilwarbefore </dt><dd> integer </dd>  <dt> civilwarafter </dt><dd> integer </dd>  <dt> result </dt><dd> character </dd> 
+ <dt> year </dt><dd> integer: year </dd>
+ <dt> country </dt><dd> character: name of the country </dd>
+ <dt> leadername </dt><dd> character: name of the leader who was targeted </dd>
+ <dt> age </dt><dd> integer: age of the targeted leader </dd>
+ <dt> politybefore </dt><dd> numeric: average polity score of the country during the three-year period prior to the attempt </dd>
+ <dt> polityafter </dt><dd> numeric: average polity score of the country during the three-year period after the attempt </dd>
+ <dt> interwarbefore </dt><dd> integer:  1 if the country is in international war during the three-year period prior to the attempt, 0 otherwise </dd>
+ <dt> interwarafter </dt><dd> integer:  1 if the country is in international war during the three-year period after the attempt, 0 otherwise </dd>
+ <dt> civilwarbefore </dt><dd> integer: 1 if the country is in civil war during the three-year period prior to the attempt, 0 otherwise </dd>
+ <dt> civilwarafter </dt><dd> integer: 1 if the country is in civil war during the three-year period after the attempt, 0 otherwise </dd>
+ <dt> result </dt><dd> character: result of the assassination attempt </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +105,15 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li> Benjamin F. Jones and Benjamin A. Olken (2009) “Hit or miss? The effect of
+assassinations on institutions and war.” American Economic Journal: <em>Macroeconomics</em>,
+vol. 1, no. 2, pp. 55–87. doi: 10.3386/w13102 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +133,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,7 @@
     </div>
 
     
-    <p>International Trade Network Data</p>
+    <p>Contains international trade data; value of exports from one country to another in a given year.</p>
     
 
     <pre><span class='no'>trade</span></pre>
@@ -82,7 +85,11 @@
 
     <p>A data frame with 114980 rows and 5 variables:
 <dl class='dl-horizontal'>
- <dt> .row </dt><dd> integer </dd>  <dt> country1 </dt><dd> character </dd>  <dt> country2 </dt><dd> character </dd>  <dt> year </dt><dd> integer </dd>  <dt> exports </dt><dd> numeric </dd> 
+ <dt> .row </dt><dd> integer: row number </dd>
+ <dt> country1 </dt><dd> character: country name of exporter </dd>
+ <dt> country2 </dt><dd> character: country name of importer </dd>
+ <dt> year </dt><dd> integer: year </dd>
+ <dt> exports </dt><dd> numeric: total value of exports (in tens of millions of dollars) </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +98,14 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li>  Luca De Benedictis and Lucia Tajoli. (2011). &#39;The World Trade Network.&#39;
+<em>The World Economy</em>, 34:8, pp.1417-1454. doi = 10.1111/j.1467-9701.2011.01360.x 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +125,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

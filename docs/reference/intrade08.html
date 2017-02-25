@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,8 @@
     </div>
 
     
-    <p>Intrade Betting Market Data</p>
+    <p>Data from Intrade, an online prediction market, in days leading up to the 2008 United
+States Presidential Election.</p>
     
 
     <pre><span class='no'>intrade08</span></pre>
@@ -82,7 +86,16 @@
 
     <p>A data frame with 36891 rows and 10 variables:
 <dl class='dl-horizontal'>
- <dt> .row </dt><dd> integer </dd>  <dt> day </dt><dd> Date </dd>  <dt> statename </dt><dd> character </dd>  <dt> MarketD </dt><dd> character </dd>  <dt> PriceD </dt><dd> numeric </dd>  <dt> VolumeD </dt><dd> integer </dd>  <dt> MarketR </dt><dd> character </dd>  <dt> PriceR </dt><dd> numeric </dd>  <dt> VolumeR </dt><dd> integer </dd>  <dt> state </dt><dd> character </dd> 
+ <dt> .row </dt><dd> integer: row number </dd>
+ <dt> day </dt><dd> Date: date of the session </dd>
+ <dt> statename </dt><dd> character: full name of each state (including District of Columbia in 2008) </dd>
+ <dt> MarketD </dt><dd> character </dd>
+ <dt> PriceD </dt><dd> numeric: closing price (predicted vote share) of the Democratic nominee’s market </dd>
+ <dt> VolumeD </dt><dd> integer: total session trades of the Democratic Party nominee’s market </dd>
+ <dt> MarketR </dt><dd> character </dd>
+ <dt> PriceR </dt><dd> numeric: closing price (predicted vote share) of the Republican nominee’s market </dd>
+ <dt> VolumeR </dt><dd> integer: total session trades of the Republican Party nominee’s market </dd>
+ <dt> state </dt><dd> character: abbreviation of each state (including District of Columbia in 2008) </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +104,15 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li>  David Rothschild (2009) “Forecasting elections: Comparing prediction markets,
+polls, and their biases.” <em>Public Opinion Quarterly</em>, vol. 73, no. 5, pp. 895–916.
+doi = 10.1093/poq/nfp082 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +132,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

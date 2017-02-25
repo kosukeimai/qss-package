@@ -1,9 +1,16 @@
-##### Chapter 5: Prediction
-
-#### Section 4.1: Predicting Election Outcomes
-
+---
+title: Prediction
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Prediction}
+  %\VignetteEncoding{UTF-8}
+---
+# Chapter 5: Prediction
+## Section 4.1: Predicting Election Outcomes
 ### Section 4.1.1: Loops in R
 
+```{r }
 values <- c(2, 4, 6)
 n <- length(values) # number of elements in `values'
 results <- rep(NA, n) # empty container vector for storing the results
@@ -21,9 +28,11 @@ results
 i <- 1
 x <- values[i] * 2
 cat(values[i], "times 2 is equal to", x, "\n")
+```
 
 ### Section 4.1.2: General Conditional Statements in R
 
+```{r }
 ## define the operation to be executed
 operation <- "add"
 if (operation == "add") {
@@ -76,13 +85,15 @@ for (i in 1:n) {
     }
 }
 results
+```
 
 ### Section 4.1.3: Poll Predictions
 
+```{r }
 ## load election results, by state
-pres08 <- read.csv("pres08.csv")
+data("pres08", package = "qss")
 ## load polling data
-polls08 <- read.csv("polls08.csv")
+data("polls08", package = "qss")
 ## compute Obama's margin
 polls08$margin <- polls08$Obama - polls08$McCain
 pres08$margin <- pres08$Obama - pres08$McCain
@@ -152,7 +163,7 @@ sum(pres08$EV[pres08$margin > 0])
 sum(pres08$EV[poll.pred > 0])
 
 ## load the data
-pollsUS08 <- read.csv("pollsUS08.csv")
+data("pollsUS08", package = "qss")
 
 ## compute number of days to the election as before
 pollsUS08$middate <- as.Date(pollsUS08$middate)
@@ -188,13 +199,14 @@ abline(v = 0)
 ## labeling candidates
 text(80, 48, "Obama", col = "blue")
 text(80, 41, "McCain", col = "red")
+```
 
-#### Section 4.2: Linear Regression
-
+## Section 4.2: Linear Regression
 ### Section 4.2.1: Facial Appearance and Election Outcomes
 
+```{r }
 ## load the data
-face <- read.csv("face.csv")
+data("face", package = "qss")
 ## two-party vote share for Democrats and Republicans
 face$d.share <- face$d.votes / (face$d.votes + face$r.votes)
 face$r.share <- face$r.votes / (face$d.votes + face$r.votes)
@@ -207,13 +219,17 @@ plot(face$d.comp, face$diff.share, pch = 16,
      xlab = "Competence scores for Democrats",
      ylab = "Democratic margin in vote share",
      main = "Facial competence and vote share")
+```
 
 ### Section 4.2.2: Correlation and Scatter Plots
 
+```{r }
 cor(face$d.comp, face$diff.share)
+```
 
 ### Section 4.2.3: Least Squares
 
+```{r }
 fit <- lm(diff.share ~ d.comp, data = face) # fit the model
 fit
 
@@ -230,12 +246,13 @@ abline(v = 0, lty = "dashed")
 
 epsilon.hat <- resid(fit)  # residuals
 sqrt(mean(epsilon.hat^2))  # RMSE
+```
 
 ### Section 4.2.4: Regression Towards the Mean
-
 ### Section 4.2.5: Merging Data Sets in R
 
-pres12 <- read.csv("pres12.csv")  # load 2012 data
+```{r }
+data("pres12", package = "qss")  # load 2012 data
 ## quick look at two data sets
 head(pres08)
 head(pres12)
@@ -290,10 +307,12 @@ mean((pres$Obama2012.z >
 mean((pres$Obama2012.z >
           pres$Obama2008.z)[pres$Obama2008.z
                             >= quantile(pres$Obama2008.z, 0.75)])
+```
 
 ### Section 4.2.6: Model Fit
 
-florida <- read.csv("florida.csv")
+```{r }
+data("florida", package = "qss")
 
 ## regress Buchanan's 2000 votes on Perot's 1996 votes
 fit2 <- lm(Buchanan00 ~ Perot96, data = florida)
@@ -349,12 +368,13 @@ abline(fit3) # regression without Palm Beach
 text(30000, 3250, "Palm Beach")
 text(30000, 1500, "regression\n with Palm Beach")
 text(30000, 400, "regression\n without Palm Beach")
+```
 
-#### Section 4.3: Regression and Causation
-
+## Section 4.3: Regression and Causation
 ### Section 4.3.1: Randomized Experiments
 
-women <- read.csv("women.csv")
+```{r }
+data("women", package = "qss")
 
 ## proportion of female politicians in reserved GP vs. unreserved GP
 mean(women$female[women$reserved == 1])
@@ -370,13 +390,15 @@ mean(women$irrigation[women$reserved == 1]) -
 
 lm(water ~ reserved, data = women)
 lm(irrigation ~ reserved, data = women)
+```
 
 ### Section 4.3.2: Regression with Multiple Predictors
 
-social <- read.csv("social.csv")
+```{r }
+data("social", package = "qss")
 levels(social$messages) # base level is `Civic'
 
-fit <- lm(primary2008 ~ messages, data = social)
+fit <- lm(primary2006 ~ messages, data = social)
 fit
 
 ## ## create indicator variables
@@ -384,7 +406,7 @@ fit
 ## social$Hawthorne <- ifelse(social$messages == "Hawthorne", 1, 0)
 ## social$Neighbors <- ifelse(social$messages == "Neighbors", 1, 0)
 ## ## fit the same regression as above by directly using indicator variables
-## lm(primary2008 ~ Control + Hawthorne + Neighbors, data = social)
+## lm(primary2006 ~ Control + Hawthorne + Neighbors, data = social)
 
 ## create a data frame with unique values of `messages'
 unique.messages <- data.frame(messages = unique(social$messages))
@@ -394,18 +416,18 @@ unique.messages
 predict(fit, newdata = unique.messages)
 
 ## sample average
-tapply(social$primary2008, social$messages, mean)
+tapply(social$primary2006, social$messages, mean)
 
 ## linear regression without intercept
-fit.noint <- lm(primary2008 ~ -1 + messages, data = social)
+fit.noint <- lm(primary2006 ~ -1 + messages, data = social)
 fit.noint
 
 ## estimated average effect of `Neighbors' condition
 coef(fit)["messagesNeighbors"] - coef(fit)["messagesControl"]
 
 ## difference in means
-mean(social$primary2008[social$messages == "Neighbors"]) -
-    mean(social$primary2008[social$messages == "Control"])
+mean(social$primary2006[social$messages == "Neighbors"]) -
+    mean(social$primary2006[social$messages == "Control"])
 
 ## adjusted Rsquare
 adjR2 <- function(fit) {
@@ -421,23 +443,25 @@ adjR2(fit)
 R2(fit) # unadjusted Rsquare calculation
 
 summary(fit)$adj.r.squared
+```
 
 ### Section 4.3.3: Heterogenous Treatment Effects
 
+```{r }
 ## average treatment effect (ate) among those who voted in 2004 primary
 social.voter <- subset(social, primary2004 == 1)
 
 ate.voter <-
-    mean(social.voter$primary2008[social.voter$messages == "Neighbors"]) -
-        mean(social.voter$primary2008[social.voter$messages == "Control"])
+    mean(social.voter$primary2006[social.voter$messages == "Neighbors"]) -
+        mean(social.voter$primary2006[social.voter$messages == "Control"])
 ate.voter
 
 ## average effect among those who did not vote
 social.nonvoter <- subset(social, primary2004 == 0)
 
 ate.nonvoter <-
-    mean(social.nonvoter$primary2008[social.nonvoter$messages == "Neighbors"]) -
-        mean(social.nonvoter$primary2008[social.nonvoter$messages == "Control"])
+    mean(social.nonvoter$primary2006[social.nonvoter$messages == "Neighbors"]) -
+        mean(social.nonvoter$primary2006[social.nonvoter$messages == "Control"])
 ate.nonvoter
 
 ## difference
@@ -448,16 +472,16 @@ social.neighbor <- subset(social, (messages == "Control") |
                               (messages == "Neighbors"))
 
 ## standard way to generate main and interaction effects
-fit.int <- lm(primary2008 ~ primary2004 + messages + primary2004:messages,
+fit.int <- lm(primary2006 ~ primary2004 + messages + primary2004:messages,
               data = social.neighbor)
 fit.int
 
-## lm(primary2008 ~ primary2004 * messages, data = social.neighbor)
+## lm(primary2006 ~ primary2004 * messages, data = social.neighbor)
 
 social.neighbor$age <- 2008 - social.neighbor$yearofbirth
 summary(social.neighbor$age)
 
-fit.age <- lm(primary2008 ~ age * messages, data = social.neighbor)
+fit.age <- lm(primary2006 ~ age * messages, data = social.neighbor)
 fit.age
 
 ## age = 25, 45, 65, 85 in Neighbors group
@@ -474,7 +498,7 @@ ate.age <- predict(fit.age, newdata = age.neighbor) -
 
 ate.age
 
-fit.age2 <- lm(primary2008 ~ age + I(age^2) + messages + age:messages +
+fit.age2 <- lm(primary2006 ~ age + I(age^2) + messages + age:messages +
                  I(age^2):messages, data = social.neighbor)
 
 fit.age2
@@ -499,11 +523,13 @@ text(45, 0.15, "Control condition")
 plot(x = 25:85, y = yT.hat - yC.hat, type = "l", xlim = c(20, 90),
      ylim = c(0, 0.1), xlab = "Age",
      ylab = "Estimated average treatment effect")
+```
 
 ### Section 4.3.4: Regression Discontinuity Design
 
+```{r }
 ## load the data and subset them into two parties
-MPs <- read.csv("MPs.csv")
+data("MPs", package = "qss")
 MPs.labour <- subset(MPs, subset = (party == "labour"))
 MPs.tory <- subset(MPs, subset = (party == "tory"))
 
@@ -570,5 +596,6 @@ tory.fit3 <- lm(margin.pre ~ margin, data = MPs.tory[MPs.tory$margin < 0, ])
 tory.fit4 <- lm(margin.pre ~ margin, data = MPs.tory[MPs.tory$margin > 0, ])
 ## the difference between two intercepts is the estimated effect
 coef(tory.fit4)[1] - coef(tory.fit3)[1]
+```
 
-#### Section 4.4: Summary
+## Section 4.4: Summary

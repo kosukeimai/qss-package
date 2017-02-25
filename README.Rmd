@@ -44,10 +44,6 @@ corpus.raw <- Corpus(DirSource(federalist_dir))
 corpus.raw
 ```
 
-Scripts with the full R code for each chapter are available with `demo`:
-```{r}
-demo(package = "qss")
-```
 
 In 1.3.5 "Data Files", several types of data files are discussed.
 These are included in `extdata/`

@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,8 @@
     </div>
 
     
-    <p>Facial Appearanace Experiment Data</p>
+    <p>Contains data from an experiment using competence measures (self-reported
+based on brief exposure to image of a candidate&#39;s face) to predict election outcomes.</p>
     
 
     <pre><span class='no'>face</span></pre>
@@ -82,7 +86,16 @@
 
     <p>A data frame with 119 rows and 10 variables:
 <dl class='dl-horizontal'>
- <dt> year </dt><dd> integer </dd>  <dt> state </dt><dd> character </dd>  <dt> winner </dt><dd> character </dd>  <dt> loser </dt><dd> character </dd>  <dt> w.party </dt><dd> character </dd>  <dt> l.party </dt><dd> character </dd>  <dt> d.comp </dt><dd> numeric </dd>  <dt> r.comp </dt><dd> numeric </dd>  <dt> d.votes </dt><dd> integer </dd>  <dt> r.votes </dt><dd> integer </dd> 
+ <dt> year </dt><dd> integer: year of the election </dd>
+ <dt> state </dt><dd> character: state of the election </dd>
+ <dt> winner </dt><dd> character: name of the winner </dd>
+ <dt> loser </dt><dd> character: name of the runner-up </dd>
+ <dt> w.party </dt><dd> character: party of the winner </dd>
+ <dt> l.party </dt><dd> character: party of the loser </dd>
+ <dt> d.comp </dt><dd> numeric: competence measure for the Democratic candidate </dd>
+ <dt> r.comp </dt><dd> numeric: competence measure for the Republican candidate </dd>
+ <dt> d.votes </dt><dd> integer: number of votes for the Democratic candidate </dd>
+ <dt> r.votes </dt><dd> integer: number of votes for the Republican candidate </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +104,15 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li> Alexander Todorov, Anesu N. Mandisodza, Amir Goren, and Crystal C. Hall (2005)
+“Inferences of competence from faces predict election outcomes.” <em>Science</em>,
+vol. 308, no. 10 (June), pp. 1623–1626. doi: 10.1126/science.1110589 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +132,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

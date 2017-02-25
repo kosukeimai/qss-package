@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,8 @@
     </div>
 
     
-    <p>Progresa Program Data</p>
+    <p>Data set from experiment which seeks to estimate the electoral impact of Progresa,
+Mexico’s conditional cash transfer program (CCT program).</p>
     
 
     <pre><span class='no'>progresa</span></pre>
@@ -82,7 +86,26 @@
 
     <p>A data frame with 417 rows and 20 variables:
 <dl class='dl-horizontal'>
- <dt> treatment </dt><dd> integer </dd>  <dt> pri2000s </dt><dd> numeric </dd>  <dt> pri2000v </dt><dd> numeric </dd>  <dt> t2000 </dt><dd> numeric </dd>  <dt> t2000r </dt><dd> numeric </dd>  <dt> pri1994 </dt><dd> integer </dd>  <dt> pan1994 </dt><dd> integer </dd>  <dt> prd1994 </dt><dd> integer </dd>  <dt> pri1994s </dt><dd> numeric </dd>  <dt> pri1994v </dt><dd> numeric </dd>  <dt> pan1994s </dt><dd> numeric </dd>  <dt> pan1994v </dt><dd> numeric </dd>  <dt> prd1994s </dt><dd> numeric </dd>  <dt> prd1994v </dt><dd> numeric </dd>  <dt> t1994 </dt><dd> numeric </dd>  <dt> t1994r </dt><dd> numeric </dd>  <dt> votos1994 </dt><dd> integer </dd>  <dt> avgpoverty </dt><dd> numeric </dd>  <dt> pobtot1994 </dt><dd> integer </dd>  <dt> villages </dt><dd> integer </dd> 
+ <dt> treatment </dt><dd> integer: whether an electoral precinct contains a village where households received early Progresa </dd>
+ <dt> pri2000s </dt><dd> numeric: PRI votes in the 2000 election as a share of precinct population above 18 </dd>
+ <dt> pri2000v </dt><dd> numeric: official PRI vote share in the 2000 election </dd>
+ <dt> t2000 </dt><dd> numeric: turnout in the 2000 election as a share of precinct population above 18 </dd>
+ <dt> t2000r </dt><dd> numeric: official turnout in the 2000 election </dd>
+ <dt> pri1994 </dt><dd> integer: total PRI votes in the 1994 presidential election </dd>
+ <dt> pan1994 </dt><dd> integer: total PAN votes in the 1994 presidential election </dd>
+ <dt> prd1994 </dt><dd> integer: total PRD votes in the 1994 presidential election </dd>
+ <dt> pri1994s </dt><dd> numeric: total PRI votes in the 1994 election as a share of precinct population above 18 </dd>
+ <dt> pri1994v </dt><dd> numeric: official PRI vote share in the 1994 election </dd>
+ <dt> pan1994s </dt><dd> numeric: total PAN votes in the 1994 election as a share of precinct population above 18 </dd>
+ <dt> pan1994v </dt><dd> numeric: official PAN vote share in the 1994 election </dd>
+ <dt> prd1994s </dt><dd> numeric: total PRD votes in the 1994 election as a share of precinct population above 18 </dd>
+ <dt> prd1994v </dt><dd> numeric: official PRD vote share in the 1994 election </dd>
+ <dt> t1994 </dt><dd> numeric: turnout in the 1994 election as a share of precinct population above 18 </dd>
+ <dt> t1994r </dt><dd> numeric: official turnout in the 1994 election </dd>
+ <dt> votos1994 </dt><dd> integer: total votes cast in the 1994 presidential election </dd>
+ <dt> avgpoverty </dt><dd> numeric: precinct average of village poverty index </dd>
+ <dt> pobtot1994 </dt><dd> integer: total population in the precinct </dd>
+ <dt> villages </dt><dd> integer: number of villages in the precinct </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +114,18 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li> Ana de la O (2013) “Do conditional cash transfers affect voting behavior?
+Evidence from a randomized experiment in Mexico.” <em>American Journal of Political Science</em>,
+vol. 57, no. 1, pp. 1–14 doi: 10.1111/j.1540-5907.2012.00617.x 
+</li>
+<li>  Kosuke Imai, Gary King, and Carlos Velasco (2015) “Do nonpartisan programmatic policies
+have partisan electoral effects? Evidence from two large scale randomized experiments.”  
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +145,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,8 @@
     </div>
 
     
-    <p>Legislative Ideal Points Data</p>
+    <p>Contains the estimated ideal points of all legislators who served in
+the House of Representatives from the 80th (1947–1948) to the 112th (2011–2012) Congresses.</p>
     
 
     <pre><span class='no'>congress</span></pre>
@@ -82,7 +86,13 @@
 
     <p>A data frame with 14552 rows and 7 variables:
 <dl class='dl-horizontal'>
- <dt> congress </dt><dd> integer </dd>  <dt> district </dt><dd> integer </dd>  <dt> state </dt><dd> character </dd>  <dt> party </dt><dd> character </dd>  <dt> name </dt><dd> character </dd>  <dt> dwnom1 </dt><dd> numeric </dd>  <dt> dwnom2 </dt><dd> numeric </dd> 
+ <dt> congress </dt><dd> integer: congressional session number </dd>
+ <dt> district </dt><dd> integer: district number of the congressional representative </dd>
+ <dt> state </dt><dd> character: state of the congressional representative </dd>
+ <dt> party </dt><dd> character: party of the congressional representative </dd>
+ <dt> name </dt><dd> character: name of the congressional representative </dd>
+ <dt> dwnom1 </dt><dd> numeric: DW-NOMINATE score (first dimension) </dd>
+ <dt> dwnom2 </dt><dd> numeric: DW-NOMINATE score (second dimension) </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +101,14 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li> Nolan McCarty, Keith T. Poole, and Howard Rosenthal (2006) <em>Polarized America: The
+Dance of Ideology and Unequal Riches. MIT Press.</em> doi: 10.1017/S1537592707071873 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +128,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

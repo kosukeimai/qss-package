@@ -40,7 +40,7 @@ The QSS package contains the following datasets:
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">FLCensus</td>
+<td align="left">FLCensusVTD</td>
 <td align="left">Florida Census Data at the Voting District Level</td>
 </tr>
 <tr class="even">
@@ -250,54 +250,6 @@ directory of the installed package.
     dir(federalist_dir)
     corpus.raw <- Corpus(DirSource(federalist_dir))
     corpus.raw
-
-Scripts with the full R code for each chapter are available with `demo`:
-
-    demo(package = "qss")
-
-<table>
-<caption>Demos in qss</caption>
-<thead>
-<tr class="header">
-<th align="left">Item</th>
-<th align="left">Title</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">UNpop</td>
-<td align="left">The script used in Section 1.3.8</td>
-</tr>
-<tr class="even">
-<td align="left">causality</td>
-<td align="left">All code for the Causality chapter.</td>
-</tr>
-<tr class="odd">
-<td align="left">discovery</td>
-<td align="left">All code for the Discovery chapter.</td>
-</tr>
-<tr class="even">
-<td align="left">intro</td>
-<td align="left">All code for the Introduction.</td>
-</tr>
-<tr class="odd">
-<td align="left">measurement</td>
-<td align="left">All code for the Measurement chapter.</td>
-</tr>
-<tr class="even">
-<td align="left">prediction</td>
-<td align="left">All code for the Prediction chapter.</td>
-</tr>
-<tr class="odd">
-<td align="left">probability</td>
-<td align="left">All code for the Probability chapter.</td>
-</tr>
-<tr class="even">
-<td align="left">uncertainty</td>
-<td align="left">All code for the Uncertainty chapter.</td>
-</tr>
-</tbody>
-</table>
 
 In 1.3.5 "Data Files", several types of data files are discussed. These
 are included in `extdata/`

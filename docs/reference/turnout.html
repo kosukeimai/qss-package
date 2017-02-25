@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,7 @@
     </div>
 
     
-    <p>US election turnout data</p>
+    <p>Turnout estimates from American National Election Studies (ANES) from 1980-2008.</p>
     
 
     <pre><span class='no'>turnout</span></pre>
@@ -82,7 +85,15 @@
 
     <p>A data frame with 14 rows and 9 variables:
 <dl class='dl-horizontal'>
- <dt> year </dt><dd> integer </dd>  <dt> VEP </dt><dd> integer </dd>  <dt> VAP </dt><dd> integer </dd>  <dt> total </dt><dd> integer </dd>  <dt> ANES </dt><dd> integer </dd>  <dt> felons </dt><dd> integer </dd>  <dt> noncit </dt><dd> integer </dd>  <dt> overseas </dt><dd> integer </dd>  <dt> osvoters </dt><dd> integer </dd> 
+ <dt> year </dt><dd> integer: election year </dd>
+ <dt> VEP </dt><dd> integer: voting eligible population (in thousands) </dd>
+ <dt> VAP </dt><dd> integer: voting age population (in thousands) </dd>
+ <dt> total </dt><dd> integer: total ballots cast for highest office (in thousands) </dd>
+ <dt> ANES </dt><dd> integer: ANES estimated turnout rate </dd>
+ <dt> felons </dt><dd> integer: total ineligible felons (in thousands) </dd>
+ <dt> noncit </dt><dd> integer: total noncitizens (in thousands) </dd>
+ <dt> overseas </dt><dd> integer: total eligible overseas voters (in thousands) </dd>
+ <dt> osvoters </dt><dd> integer: total ballots counted by overseas voters (in thousands) </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +102,13 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li>  American National Election Studies (ANES) 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +128,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

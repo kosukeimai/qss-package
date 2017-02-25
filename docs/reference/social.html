@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,7 @@
     </div>
 
     
-    <p>Social Pressure Experiment Data</p>
+    <p>Dataset used to study the effect of social pressure on voter turnout.</p>
     
 
     <pre><span class='no'>social</span></pre>
@@ -82,7 +85,12 @@
 
     <p>A data frame with 305866 rows and 6 variables:
 <dl class='dl-horizontal'>
- <dt> sex </dt><dd> character </dd>  <dt> yearofbirth </dt><dd> integer </dd>  <dt> primary2004 </dt><dd> integer </dd>  <dt> messages </dt><dd> character </dd>  <dt> primary2006 </dt><dd> integer </dd>  <dt> hhsize </dt><dd> integer </dd> 
+ <dt> sex </dt><dd> character: sex of the voter (female or male) </dd>
+ <dt> yearofbirth </dt><dd> integer: year of birth of the voter </dd>
+ <dt> primary2004 </dt><dd> integer: whether the voter voted in the 2004 primary election (1=voted, 0=abstained) </dd>
+ <dt> messages </dt><dd> character: GOTV messages the voter received (Civic Duty, Control, Neighbors, Hawthorne) </dd>
+ <dt> primary2006 </dt><dd> integer: whether the voter turned out in the 2006 primary election (1=voted, 0=abstained) </dd>
+ <dt> hhsize </dt><dd> integer: household size of the voter </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +99,15 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li> Alan S. Gerber, Donald P. Green, and Christopher W. Larimer (2008) “Social pressure and
+voter turnout: Evidence from a large-scale field experiment.” <em>American Political Science Review</em>,
+vol. 102, no. 1, pp. 33–48. doi: 10.1017/S000305540808009X 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +127,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">

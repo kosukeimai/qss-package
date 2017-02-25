@@ -52,6 +52,9 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
+  <a href="../articles/index.html">Articles</a>
+</li>
+<li>
   <a href="../news/index.html">News</a>
 </li>
       </ul>
@@ -73,7 +76,7 @@
     </div>
 
     
-    <p>Afghanistan Survey Data</p>
+    <p>Survey data containing questions on support for various combatants during wartime.</p>
     
 
     <pre><span class='no'>afghan</span></pre>
@@ -82,7 +85,17 @@
 
     <p>A data frame with 2754 rows and 11 variables:
 <dl class='dl-horizontal'>
- <dt> province </dt><dd> character </dd>  <dt> district </dt><dd> character </dd>  <dt> village.id </dt><dd> integer </dd>  <dt> age </dt><dd> integer </dd>  <dt> educ.years </dt><dd> integer </dd>  <dt> employed </dt><dd> integer </dd>  <dt> income </dt><dd> character </dd>  <dt> violent.exp.ISAF </dt><dd> integer </dd>  <dt> violent.exp.taliban </dt><dd> integer </dd>  <dt> list.group </dt><dd> character </dd>  <dt> list.response </dt><dd> integer </dd> 
+ <dt> province </dt><dd> character: province where the respondent lives </dd>
+ <dt> district </dt><dd> character: district where the respondent lives </dd>
+ <dt> village.id </dt><dd> integer: ID of the village where the respondent lives </dd>
+ <dt> age </dt><dd> integer: age of the respondent </dd>
+ <dt> educ.years </dt><dd> integer: years of education of the respondent </dd>
+ <dt> employed </dt><dd> integer: whether the respondent is employed </dd>
+ <dt> income </dt><dd> character: monthly income of the respondent (five levels) </dd>
+ <dt> violent.exp.ISAF </dt><dd> integer: whether the respondent experienced violence by ISAF </dd>
+ <dt> violent.exp.taliban </dt><dd> integer: whether the respondent experienced violence by the Taliban </dd>
+ <dt> list.group </dt><dd> character: randomly assigned group for the list experiment (control, ISAF, taliban) </dd>
+ <dt> list.response </dt><dd> integer: response to the list experiment question (0–4) </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -91,8 +104,19 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>.</p>
+    <p><ul>
+<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
+</li>
+<li> Jason Lyall, Graeme Blair, and Kosuke Imai (2013) “Explaining support for combatants
+during wartime: A survey experiment in Afghanistan.” <em>American Political Science Review</em>,
+vol. 107, no. 4 (November), pp. 679–705. doi: 10.1017/S0003055413000403 
+</li>
+<li> Graeme Blair, Kosuke Imai, and Jason Lyall (2014) “Comparing and combining list
+and endorsement experiments: Evidence from Afghanistan.” American Journal of Political
+Science, vol. 58, no. 4 (October), pp. 1043–1063. doi: 10.1111/ajps.12086 
+</li>
+</ul></p>
     
 
   </div>
@@ -112,7 +136,7 @@ Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11
 
       <footer>
       <div class="copyright">
-  <p>Developed by Jeffey Arnold, Kosuke Imai.</p>
+  <p>Developed by Jeffey Arnold, Kosuke Imai, Tyler Simko.</p>
 </div>
 
 <div class="pkgdown">
