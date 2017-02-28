@@ -1,4 +1,5 @@
 <!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
+
 Quantitative Social Science: An Introduction: An R Package
 ==========================================================
 
@@ -14,6 +15,9 @@ An R package containing the datasets used in
 See [kosukeimai/qss](https://github.com/kosukeimai/qss) for other
 supplementary materials and the original data sets.
 
+The website for this package is available at
+[<https://kosukeimai.github.io/qss-package>](https://kosukeimai.github.io/qss-package)
+
 Install
 -------
 
@@ -26,9 +30,7 @@ with:
 Usage
 -----
 
-The QSS package contains the following datasets:
-
-    data(package = "qss")
+To list all data sets contained in this package:
 
 <table>
 <caption>Data sets in qss</caption>
@@ -40,7 +42,7 @@ The QSS package contains the following datasets:
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">FLCensusVTD</td>
+<td align="left">FLCensus</td>
 <td align="left">Florida Census Data at the Voting District Level</td>
 </tr>
 <tr class="even">
@@ -242,8 +244,14 @@ The QSS package contains the following datasets:
 </tbody>
 </table>
 
+For example, to use the `election` data set:
+
+    data(package = "qss", election)
+
+    ## Warning in data(package = "qss", election): data set 'election' not found
+
 The Federalist papers text files are in the `extdata/federalist`
-directory of the installed package.
+directory of the installed package and need to be accessed as follows:
 
     library("tm")
     federalist_dir <- system.file("extdata", "federalist", package = "qss")
@@ -252,7 +260,7 @@ directory of the installed package.
     corpus.raw
 
 In 1.3.5 "Data Files", several types of data files are discussed. These
-are included in `extdata/`
+are included in `extdata/`:
 
     library("foreign")
     dir(system.file("extdata", "data_files", package = "qss"))
@@ -263,12 +271,12 @@ are included in `extdata/`
 Build Package and Documentation
 ===============================
 
-To rebuild `README.md` from `README.Rmd`,
+To rebuild `README.md` from `README.Rmd`:
 
     rmarkdown::render("README.Rmd")
 
-The site for the package is built using
-[pkgdown](https://github.com/hadley/pkgdown).
+The [site](https://kosukeimai.github.io/qss-package) for the package is
+built using [pkgdown](https://github.com/hadley/pkgdown):
 
     # devtools::install_github("hadley/pkgdown")
     pkgdown::build_site()
