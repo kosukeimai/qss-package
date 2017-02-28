@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fertility and Mortality estimates data (World) — World • qss</title>
+<title>Florida Census Data at the Voting District Level — FLCensus • qss</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -72,31 +72,32 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fertility and Mortality estimates data (World)</h1>
+    <h1>Florida Census Data at the Voting District Level</h1>
     </div>
 
     
-    <p>Data set containing basic demographic quantities during two time periods: 1950-1955 and 2005-2010.</p>
+    <p>Florida Census Data at the Voting District Level.</p>
     
 
-    <pre><span class='no'>World</span></pre>
+    <pre><span class='no'>FLCensus</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 30 rows and 7 variables:
+    <p>A data frame with 8871 rows and 8 variables:
 <dl class='dl-horizontal'>
- <dt> country </dt><dd> character: abbreviated country name </dd>
- <dt> period </dt><dd> characte: period during which data are collectedr </dd>
- <dt> age </dt><dd> character: age group </dd>
- <dt> births </dt><dd> numeric: number of births (in thousands), i.e., the number of children born to women of the age group </dd>
- <dt> deaths </dt><dd> numeric: number of deaths (in thousands) </dd>
- <dt> py.men </dt><dd> numeric: person-years for men (in thousands) </dd>
- <dt> py.women </dt><dd> numeric: person-years for women (in thousands) </dd>
+ <dt> county </dt><dd> integer: county census ID of the voting district </dd>
+ <dt> VTD </dt><dd> integer: voting district census ID (only unique within the county) </dd>
+ <dt> total.pop </dt><dd> integer: total population of the voting district </dd>
+ <dt> white </dt><dd> numeric: proportion of non-Hispanic whites in the voting district </dd>
+ <dt> black </dt><dd> numeric: proportion of non-Hispanic blacks in the voting district </dd>
+ <dt> hispanic </dt><dd> numeric: proportion of voters of Hispanic origin in the voting district </dd>
+ <dt> api </dt><dd> numeric: proportion of non-Hispanic Asians and Pacific Islanders in the voting district </dd>
+ <dt> others </dt><dd> numeric: proportion of the other racial groups in the voting district </dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>See <em>QSS</em> Table 1.4.</p>
+    <p>See <em>QSS</em> Table 6.4.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -104,8 +105,9 @@
 <li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
 Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
 </li>
-<li>  United Nations, Department of Economic and Social Affairs, Population Division (2013).
-<em>World Population Prospects: The 2012 Revision, DVD Edition.</em> 
+<li> Kosuke Imai and Kabir Khanna (2016) “Improving ecological inference by
+predicting individual ethnicity from voter registration records.” <em>Political Analysis</em>,
+vol. 24, no. 2 (Spring), pp. 263–272. doi: https://doi.org/10.1093/pan/mpw001 
 </li>
 </ul></p>
     

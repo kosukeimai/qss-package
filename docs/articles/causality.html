@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chapter 2: Causality • qss</title>
+<title>Causality • qss</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
@@ -50,21 +50,24 @@
       </header><div class="row">
   <div class="col-md-9">
     <div class="page-header toc-ignore">
-      <h1>Chapter 2: Causality</h1>
+      <h1>Causality</h1>
             
           </div>
 
     
     
 <div class="contents">
+<div id="chapter-2-causality" class="section level1">
+<h1 class="hasAnchor">
+<html><body><a href="#chapter-2-causality" class="anchor"> </a></body></html>Chapter 2: Causality</h1>
 <div id="section-2-1-racial-discrimination-in-the-labor-market" class="section level2">
 <h2 class="hasAnchor">
 <html><body><a href="#section-2-1-racial-discrimination-in-the-labor-market" class="anchor"> </a></body></html>Section 2.1: Racial Discrimination in the Labor Market</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"resume"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"resume"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
-<span class="kw">dim</span>(resume)</code></pre></div>
+<span class="kw">dim</span>(resume)</code></pre>
 <pre><code>## [1] 4870    4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(resume)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(resume)</code></pre>
 <table class="table">
 <thead><tr class="header">
 <th align="left">firstname</th>
@@ -111,10 +114,10 @@
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(resume)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(resume)</code></pre>
 <table class="table">
 <thead><tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="center">firstname</th>
 <th align="center">sex</th>
 <th align="center">race</th>
@@ -122,42 +125,42 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td></td>
+<td align="left"></td>
 <td align="center">Length:4870</td>
 <td align="center">Length:4870</td>
 <td align="center">Length:4870</td>
 <td align="center">Min. :0.00000</td>
 </tr>
 <tr class="even">
-<td></td>
+<td align="left"></td>
 <td align="center">Class :character</td>
 <td align="center">Class :character</td>
 <td align="center">Class :character</td>
 <td align="center">1st Qu.:0.00000</td>
 </tr>
 <tr class="odd">
-<td></td>
+<td align="left"></td>
 <td align="center">Mode :character</td>
 <td align="center">Mode :character</td>
 <td align="center">Mode :character</td>
 <td align="center">Median :0.00000</td>
 </tr>
 <tr class="even">
-<td></td>
+<td align="left"></td>
 <td align="center">NA</td>
 <td align="center">NA</td>
 <td align="center">NA</td>
 <td align="center">Mean :0.08049</td>
 </tr>
 <tr class="odd">
-<td></td>
+<td align="left"></td>
 <td align="center">NA</td>
 <td align="center">NA</td>
 <td align="center">NA</td>
 <td align="center">3rd Qu.:0.00000</td>
 </tr>
 <tr class="even">
-<td></td>
+<td align="left"></td>
 <td align="center">NA</td>
 <td align="center">NA</td>
 <td align="center">NA</td>
@@ -165,8 +168,8 @@
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">race.call.tab &lt;-<span class="st"> </span><span class="kw">table</span>(<span class="dt">race =</span> resume$race, <span class="dt">call =</span> resume$call)
-race.call.tab</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">race.call.tab &lt;-<span class="st"> </span><span class="kw">table</span>(<span class="dt">race =</span> resume$race, <span class="dt">call =</span> resume$call)
+race.call.tab</code></pre>
 <table class="table">
 <thead><tr class="header">
 <th align="left">race/call</th>
@@ -186,7 +189,7 @@ race.call.tab</code></pre></div>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(race.call.tab)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(race.call.tab)</code></pre>
 <table class="table">
 <thead><tr class="header">
 <th align="left">race/call</th>
@@ -215,149 +218,151 @@ race.call.tab</code></pre></div>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## overall callback rate: total callbacks divided by the sample size
-<span class="kw">sum</span>(race.call.tab[, <span class="dv">2</span>]) /<span class="st"> </span><span class="kw">nrow</span>(resume)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## overall callback rate: total callbacks divided by the sample size
+<span class="kw">sum</span>(race.call.tab[, <span class="dv">2</span>]) /<span class="st"> </span><span class="kw">nrow</span>(resume)</code></pre>
 <pre><code>## [1] 0.08049281</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## callback rates for each race
-race.call.tab[<span class="dv">1</span>, <span class="dv">2</span>] /<span class="st"> </span><span class="kw">sum</span>(race.call.tab[<span class="dv">1</span>, ]) <span class="co"># black</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## callback rates for each race
+race.call.tab[<span class="dv">1</span>, <span class="dv">2</span>] /<span class="st"> </span><span class="kw">sum</span>(race.call.tab[<span class="dv">1</span>, ]) <span class="co"># black</span></code></pre>
 <pre><code>## [1] 0.06447639</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">race.call.tab[<span class="dv">2</span>, <span class="dv">2</span>] /<span class="st"> </span><span class="kw">sum</span>(race.call.tab[<span class="dv">2</span>, ]) <span class="co"># white</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">race.call.tab[<span class="dv">2</span>, <span class="dv">2</span>] /<span class="st"> </span><span class="kw">sum</span>(race.call.tab[<span class="dv">2</span>, ]) <span class="co"># white</span></code></pre>
 <pre><code>## [1] 0.09650924</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">race.call.tab[<span class="dv">1</span>, ]  <span class="co"># the first row</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">race.call.tab[<span class="dv">1</span>, ]  <span class="co"># the first row</span></code></pre>
 <pre><code>##    0    1 
 ## 2278  157</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">race.call.tab[, <span class="dv">2</span>]  <span class="co"># the second column</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">race.call.tab[, <span class="dv">2</span>]  <span class="co"># the second column</span></code></pre>
 <pre><code>## black white 
 ##   157   235</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(resume$call)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(resume$call)</code></pre>
 <pre><code>## [1] 0.08049281</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">#### Section 2.2: Subsetting the Data in R
-
-<span class="kw">class</span>(<span class="ot">TRUE</span>)</code></pre></div>
+</div>
+<div id="section-2-2-subsetting-the-data-in-r" class="section level2">
+<h2 class="hasAnchor">
+<html><body><a href="#section-2-2-subsetting-the-data-in-r" class="anchor"> </a></body></html>Section 2.2: Subsetting the Data in R</h2>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="ot">TRUE</span>)</code></pre>
 <pre><code>## [1] "logical"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="ot">TRUE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="ot">TRUE</span>)</code></pre>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="ot">FALSE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="ot">FALSE</span>)</code></pre>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>) <span class="co"># a vector with logical values</span>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>) <span class="co"># a vector with logical values</span>
 
-<span class="kw">mean</span>(x) <span class="co"># proportion of TRUEs</span></code></pre></div>
+<span class="kw">mean</span>(x) <span class="co"># proportion of TRUEs</span></code></pre>
 <pre><code>## [1] 0.6666667</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(x) <span class="co"># number of TRUEs</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(x) <span class="co"># number of TRUEs</span></code></pre>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">FALSE</span> &amp;<span class="st"> </span><span class="ot">TRUE</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="ot">FALSE</span> &amp;<span class="st"> </span><span class="ot">TRUE</span></code></pre>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span> &amp;<span class="st"> </span><span class="ot">TRUE</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span> &amp;<span class="st"> </span><span class="ot">TRUE</span></code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span> |<span class="st"> </span><span class="ot">FALSE</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span> |<span class="st"> </span><span class="ot">FALSE</span></code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">FALSE</span> |<span class="st"> </span><span class="ot">FALSE</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="ot">FALSE</span> |<span class="st"> </span><span class="ot">FALSE</span></code></pre>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span> &amp;<span class="st"> </span><span class="ot">FALSE</span> &amp;<span class="st"> </span><span class="ot">TRUE</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span> &amp;<span class="st"> </span><span class="ot">FALSE</span> &amp;<span class="st"> </span><span class="ot">TRUE</span></code></pre>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="ot">TRUE</span> |<span class="st"> </span><span class="ot">FALSE</span>) &amp;<span class="st"> </span><span class="ot">FALSE</span> <span class="co"># the parentheses evaluate to TRUE</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">(<span class="ot">TRUE</span> |<span class="st"> </span><span class="ot">FALSE</span>) &amp;<span class="st"> </span><span class="ot">FALSE</span> <span class="co"># the parentheses evaluate to TRUE</span></code></pre>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span> |<span class="st"> </span>(<span class="ot">FALSE</span> &amp;<span class="st"> </span><span class="ot">FALSE</span>) <span class="co"># the parentheses evaluate to FALSE</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span> |<span class="st"> </span>(<span class="ot">FALSE</span> &amp;<span class="st"> </span><span class="ot">FALSE</span>) <span class="co"># the parentheses evaluate to FALSE</span></code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">TF1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>)
+<pre class="sourceCode r"><code class="sourceCode r">TF1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>)
 TF2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)
-TF1 |<span class="st"> </span>TF2</code></pre></div>
+TF1 |<span class="st"> </span>TF2</code></pre>
 <pre><code>## [1]  TRUE FALSE  TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">TF1 &amp;<span class="st"> </span>TF2</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">TF1 &amp;<span class="st"> </span>TF2</code></pre>
 <pre><code>## [1]  TRUE FALSE FALSE</code></pre>
 <div id="section-2-2-2-relational-operators" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-2-2-2-relational-operators" class="anchor"> </a></body></html>Section 2.2.2: Relational Operators</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">4</span> &gt;<span class="st"> </span><span class="dv">3</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">4</span> &gt;<span class="st"> </span><span class="dv">3</span></code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">"Hello"</span> ==<span class="st"> "hello"</span>  <span class="co"># R is case-sensitive</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="st">"Hello"</span> ==<span class="st"> "hello"</span>  <span class="co"># R is case-sensitive</span></code></pre>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">"Hello"</span> !=<span class="st"> "hello"</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="st">"Hello"</span> !=<span class="st"> "hello"</span></code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, -<span class="dv">2</span>, -<span class="dv">1</span>)
-x &gt;=<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, -<span class="dv">2</span>, -<span class="dv">1</span>)
+x &gt;=<span class="st"> </span><span class="dv">2</span></code></pre>
 <pre><code>## [1]  TRUE  TRUE FALSE FALSE FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x !=<span class="st"> </span><span class="dv">1</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x !=<span class="st"> </span><span class="dv">1</span></code></pre>
 <pre><code>## [1]  TRUE  TRUE FALSE  TRUE  TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## logical conjunction of two vectors with logical values
-(x &gt;<span class="st"> </span><span class="dv">0</span>) &amp;<span class="st"> </span>(x &lt;=<span class="st"> </span><span class="dv">2</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## logical conjunction of two vectors with logical values
+(x &gt;<span class="st"> </span><span class="dv">0</span>) &amp;<span class="st"> </span>(x &lt;=<span class="st"> </span><span class="dv">2</span>)</code></pre>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## logical disjunction of two vectors with logical values
-(x &gt;<span class="st"> </span><span class="dv">2</span>) |<span class="st"> </span>(x &lt;=<span class="st"> </span>-<span class="dv">1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## logical disjunction of two vectors with logical values
+(x &gt;<span class="st"> </span><span class="dv">2</span>) |<span class="st"> </span>(x &lt;=<span class="st"> </span>-<span class="dv">1</span>)</code></pre>
 <pre><code>## [1]  TRUE FALSE FALSE  TRUE  TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x.int &lt;-<span class="st"> </span>(x &gt;<span class="st"> </span><span class="dv">0</span>) &amp;<span class="st"> </span>(x &lt;=<span class="st"> </span><span class="dv">2</span>) <span class="co"># logical vector</span>
-x.int</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x.int &lt;-<span class="st"> </span>(x &gt;<span class="st"> </span><span class="dv">0</span>) &amp;<span class="st"> </span>(x &lt;=<span class="st"> </span><span class="dv">2</span>) <span class="co"># logical vector</span>
+x.int</code></pre>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x.int) <span class="co"># proportion of TRUEs</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x.int) <span class="co"># proportion of TRUEs</span></code></pre>
 <pre><code>## [1] 0.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(x.int)  <span class="co"># number of TRUEs</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(x.int)  <span class="co"># number of TRUEs</span></code></pre>
 <pre><code>## [1] 2</code></pre>
 </div>
 <div id="section-2-2-3-subsetting" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-2-2-3-subsetting" class="anchor"> </a></body></html>Section 2.2.3: Subsetting</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## callback rate for black-sounding names
-<span class="kw">mean</span>(resume$call[resume$race ==<span class="st"> "black"</span>])</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## callback rate for black-sounding names
+<span class="kw">mean</span>(resume$call[resume$race ==<span class="st"> "black"</span>])</code></pre>
 <pre><code>## [1] 0.06447639</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## race of first 5 observations
-resume$race[<span class="dv">1</span>:<span class="dv">5</span>]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## race of first 5 observations
+resume$race[<span class="dv">1</span>:<span class="dv">5</span>]</code></pre>
 <pre><code>## [1] "white" "white" "black" "black" "white"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## comparison of first 5 observations
-(resume$race ==<span class="st"> "black"</span>)[<span class="dv">1</span>:<span class="dv">5</span>]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## comparison of first 5 observations
+(resume$race ==<span class="st"> "black"</span>)[<span class="dv">1</span>:<span class="dv">5</span>]</code></pre>
 <pre><code>## [1] FALSE FALSE  TRUE  TRUE FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(resume) <span class="co"># dimension of original data frame</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(resume) <span class="co"># dimension of original data frame</span></code></pre>
 <pre><code>## [1] 4870    4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## subset blacks only
+<pre class="sourceCode r"><code class="sourceCode r">## subset blacks only
 resumeB &lt;-<span class="st"> </span>resume[resume$race ==<span class="st"> "black"</span>, ]
-<span class="kw">dim</span>(resumeB) <span class="co"># this data.frame has fewer rows than the original data.frame</span></code></pre></div>
+<span class="kw">dim</span>(resumeB) <span class="co"># this data.frame has fewer rows than the original data.frame</span></code></pre>
 <pre><code>## [1] 2435    4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(resumeB$call) <span class="co"># callback rate for blacks</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(resumeB$call) <span class="co"># callback rate for blacks</span></code></pre>
 <pre><code>## [1] 0.06447639</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## keep "call" and "firstname" variables
+<pre class="sourceCode r"><code class="sourceCode r">## keep "call" and "firstname" variables
 ## also keep observations with black female-sounding names
 resumeBf &lt;-<span class="st"> </span><span class="kw">subset</span>(resume, <span class="dt">select =</span> <span class="kw">c</span>(<span class="st">"call"</span>, <span class="st">"firstname"</span>),
                    <span class="dt">subset =</span> (race ==<span class="st"> "black"</span> &amp;<span class="st"> </span>sex ==<span class="st"> "female"</span>))
-<span class="kw">head</span>(resumeBf)</code></pre></div>
+<span class="kw">head</span>(resumeBf)</code></pre>
 <table class="table">
 <thead><tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">call</th>
 <th align="left">firstname</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>3</td>
+<td align="left">3</td>
 <td align="right">0</td>
 <td align="left">Lakisha</td>
 </tr>
 <tr class="even">
-<td>4</td>
+<td align="left">4</td>
 <td align="right">0</td>
 <td align="left">Latonya</td>
 </tr>
 <tr class="odd">
-<td>8</td>
+<td align="left">8</td>
 <td align="right">0</td>
 <td align="left">Kenya</td>
 </tr>
 <tr class="even">
-<td>9</td>
+<td align="left">9</td>
 <td align="right">0</td>
 <td align="left">Latonya</td>
 </tr>
 <tr class="odd">
-<td>11</td>
+<td align="left">11</td>
 <td align="right">0</td>
 <td align="left">Aisha</td>
 </tr>
 <tr class="even">
-<td>13</td>
+<td align="left">13</td>
 <td align="right">0</td>
 <td align="left">Aisha</td>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## ## an alternative syntax with the same results
+<pre class="sourceCode r"><code class="sourceCode r">## ## an alternative syntax with the same results
 ## resumeBf &lt;- resume[resume$race == "black" &amp; resume$sex == "female",
 ##                    c("call", "firstname")]
 ## black male
@@ -367,16 +372,18 @@ resumeWf &lt;-<span class="st"> </span><span class="kw">subset</span>(resume, <s
 ## white male
 resumeWm &lt;-<span class="st"> </span><span class="kw">subset</span>(resume, <span class="dt">subset =</span> (race ==<span class="st"> "white"</span>) &amp;<span class="st"> </span>(sex ==<span class="st"> "male"</span>))
 ## racial gaps
-<span class="kw">mean</span>(resumeWf$call) -<span class="st"> </span><span class="kw">mean</span>(resumeBf$call) <span class="co"># among females</span></code></pre></div>
+<span class="kw">mean</span>(resumeWf$call) -<span class="st"> </span><span class="kw">mean</span>(resumeBf$call) <span class="co"># among females</span></code></pre>
 <pre><code>## [1] 0.03264689</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(resumeWm$call) -<span class="st"> </span><span class="kw">mean</span>(resumeBm$call) <span class="co"># among males</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(resumeWm$call) -<span class="st"> </span><span class="kw">mean</span>(resumeBm$call) <span class="co"># among males</span></code></pre>
 <pre><code>## [1] 0.03040786</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Section 2.2.4: Simple Conditional Statements
-
-resume$BlackFemale &lt;-<span class="st"> </span><span class="kw">ifelse</span>(resume$race ==<span class="st"> "black"</span> &amp;
+</div>
+<div id="section-2-2-4-simple-conditional-statements" class="section level3">
+<h3 class="hasAnchor">
+<html><body><a href="#section-2-2-4-simple-conditional-statements" class="anchor"> </a></body></html>Section 2.2.4: Simple Conditional Statements</h3>
+<pre class="sourceCode r"><code class="sourceCode r">resume$BlackFemale &lt;-<span class="st"> </span><span class="kw">ifelse</span>(resume$race ==<span class="st"> "black"</span> &amp;
 <span class="st">                                 </span>resume$sex ==<span class="st"> "female"</span>, <span class="dv">1</span>, <span class="dv">0</span>)
 <span class="kw">table</span>(<span class="dt">race =</span> resume$race, <span class="dt">sex =</span> resume$sex,
-      <span class="dt">BlackFemale =</span> resume$BlackFemale)</code></pre></div>
+      <span class="dt">BlackFemale =</span> resume$BlackFemale)</code></pre>
 <table class="table">
 <thead><tr class="header">
 <th align="left">race</th>
@@ -435,24 +442,26 @@ resume$BlackFemale &lt;-<span class="st"> </span><span class="kw">ifelse</span>(
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Section 2.2.5: Factor Variables
-
-resume$type &lt;-<span class="st"> </span><span class="ot">NA</span>
+</div>
+<div id="section-2-2-5-factor-variables" class="section level3">
+<h3 class="hasAnchor">
+<html><body><a href="#section-2-2-5-factor-variables" class="anchor"> </a></body></html>Section 2.2.5: Factor Variables</h3>
+<pre class="sourceCode r"><code class="sourceCode r">resume$type &lt;-<span class="st"> </span><span class="ot">NA</span>
 resume$type[resume$race ==<span class="st"> "black"</span> &amp;<span class="st"> </span>resume$sex ==<span class="st"> "female"</span>] &lt;-<span class="st"> "BlackFemale"</span>
 resume$type[resume$race ==<span class="st"> "black"</span> &amp;<span class="st"> </span>resume$sex ==<span class="st"> "male"</span>] &lt;-<span class="st"> "BlackMale"</span>
 resume$type[resume$race ==<span class="st"> "white"</span> &amp;<span class="st"> </span>resume$sex ==<span class="st"> "female"</span>] &lt;-<span class="st"> "WhiteFemale"</span>
 resume$type[resume$race ==<span class="st"> "white"</span> &amp;<span class="st"> </span>resume$sex ==<span class="st"> "male"</span>] &lt;-<span class="st"> "WhiteMale"</span>
 
 ## check object class
-<span class="kw">class</span>(resume$type)</code></pre></div>
+<span class="kw">class</span>(resume$type)</code></pre>
 <pre><code>## [1] "character"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## coerce new character variable into a factor variable
+<pre class="sourceCode r"><code class="sourceCode r">## coerce new character variable into a factor variable
 resume$type &lt;-<span class="st"> </span><span class="kw">as.factor</span>(resume$type)
 ## list all levels of a factor variable
-<span class="kw">levels</span>(resume$type)</code></pre></div>
+<span class="kw">levels</span>(resume$type)</code></pre>
 <pre><code>## [1] "BlackFemale" "BlackMale"   "WhiteFemale" "WhiteMale"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## obtain the number of observations for each level
-<span class="kw">table</span>(resume$type)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## obtain the number of observations for each level
+<span class="kw">table</span>(resume$type)</code></pre>
 <table class="table">
 <thead><tr class="header">
 <th align="right">BlackFemale</th>
@@ -467,15 +476,15 @@ resume$type &lt;-<span class="st"> </span><span class="kw">as.factor</span>(resu
 <td align="right">575</td>
 </tr></tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(resume$call, resume$type, mean)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(resume$call, resume$type, mean)</code></pre>
 <pre><code>## BlackFemale   BlackMale WhiteFemale   WhiteMale 
 ##  0.06627784  0.05828780  0.09892473  0.08869565</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## turn first name into a factor variable
+<pre class="sourceCode r"><code class="sourceCode r">## turn first name into a factor variable
 resume$firstname &lt;-<span class="st"> </span><span class="kw">as.factor</span>(resume$firstname)
 ## compute callback rate for each first name
 callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resume$call, resume$firstname, mean)
 ## sort the result in the increasing order
-<span class="kw">sort</span>(callback.name)</code></pre></div>
+<span class="kw">sort</span>(callback.name)</code></pre>
 <pre><code>##      Aisha    Rasheed     Keisha   Tremayne     Kareem    Darnell 
 ## 0.02222222 0.02985075 0.03825137 0.04347826 0.04687500 0.04761905 
 ##     Tyrone      Hakim     Tamika    Lakisha    Tanisha       Todd 
@@ -493,7 +502,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <div id="section-2-3-causal-effects-and-the-counterfactual" class="section level2">
 <h2 class="hasAnchor">
 <html><body><a href="#section-2-3-causal-effects-and-the-counterfactual" class="anchor"> </a></body></html>Section 2.3: Causal Effects and the Counterfactual</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">resume[<span class="dv">1</span>, ]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">resume[<span class="dv">1</span>, ]</code></pre>
 <table class="table">
 <thead><tr class="header">
 <th align="left">firstname</th>
@@ -523,12 +532,12 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <div id="section-2-4-2-social-pressure-and-voter-turnout" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-2-4-2-social-pressure-and-voter-turnout" class="anchor"> </a></body></html>Section 2.4.2: Social Pressure and Voter Turnout</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"social"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>) <span class="co"># load the data</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"social"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>) <span class="co"># load the data</span>
 
-<span class="kw">summary</span>(social) <span class="co"># summarize the data</span></code></pre></div>
+<span class="kw">summary</span>(social) <span class="co"># summarize the data</span></code></pre>
 <table class="table">
 <thead><tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="center">sex</th>
 <th align="center">yearofbirth</th>
 <th align="center">primary2004</th>
@@ -538,7 +547,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td></td>
+<td align="left"></td>
 <td align="center">Length:305866</td>
 <td align="center">Min. :1900</td>
 <td align="center">Min. :0.0000</td>
@@ -547,7 +556,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <td align="center">Min. :1.000</td>
 </tr>
 <tr class="even">
-<td></td>
+<td align="left"></td>
 <td align="center">Class :character</td>
 <td align="center">1st Qu.:1947</td>
 <td align="center">1st Qu.:0.0000</td>
@@ -556,7 +565,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <td align="center">1st Qu.:2.000</td>
 </tr>
 <tr class="odd">
-<td></td>
+<td align="left"></td>
 <td align="center">Mode :character</td>
 <td align="center">Median :1956</td>
 <td align="center">Median :0.0000</td>
@@ -565,7 +574,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <td align="center">Median :2.000</td>
 </tr>
 <tr class="even">
-<td></td>
+<td align="left"></td>
 <td align="center">NA</td>
 <td align="center">Mean :1956</td>
 <td align="center">Mean :0.4014</td>
@@ -574,7 +583,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <td align="center">Mean :2.184</td>
 </tr>
 <tr class="odd">
-<td></td>
+<td align="left"></td>
 <td align="center">NA</td>
 <td align="center">3rd Qu.:1965</td>
 <td align="center">3rd Qu.:1.0000</td>
@@ -583,7 +592,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <td align="center">3rd Qu.:2.000</td>
 </tr>
 <tr class="even">
-<td></td>
+<td align="left"></td>
 <td align="center">NA</td>
 <td align="center">Max. :1986</td>
 <td align="center">Max. :1.0000</td>
@@ -593,26 +602,26 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## turnout for each group
-<span class="kw">tapply</span>(social$primary2006, social$messages, mean)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## turnout for each group
+<span class="kw">tapply</span>(social$primary2006, social$messages, mean)</code></pre>
 <pre><code>## Civic Duty    Control  Hawthorne  Neighbors 
 ##  0.3145377  0.2966383  0.3223746  0.3779482</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## turnout for control group
-<span class="kw">mean</span>(social$primary2006[social$messages ==<span class="st"> "Control"</span>])</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## turnout for control group
+<span class="kw">mean</span>(social$primary2006[social$messages ==<span class="st"> "Control"</span>])</code></pre>
 <pre><code>## [1] 0.2966383</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## subtract control group turnout from each group
+<pre class="sourceCode r"><code class="sourceCode r">## subtract control group turnout from each group
 <span class="kw">tapply</span>(social$primary2006, social$messages, mean) -
-<span class="st">    </span><span class="kw">mean</span>(social$primary2006[social$messages ==<span class="st"> "Control"</span>])</code></pre></div>
+<span class="st">    </span><span class="kw">mean</span>(social$primary2006[social$messages ==<span class="st"> "Control"</span>])</code></pre>
 <pre><code>## Civic Duty    Control  Hawthorne  Neighbors 
 ## 0.01789934 0.00000000 0.02573631 0.08130991</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">social$age &lt;-<span class="st"> </span><span class="dv">2006</span> -<span class="st"> </span>social$yearofbirth <span class="co"># create age variable</span>
-<span class="kw">tapply</span>(social$age, social$messages, mean)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">social$age &lt;-<span class="st"> </span><span class="dv">2006</span> -<span class="st"> </span>social$yearofbirth <span class="co"># create age variable</span>
+<span class="kw">tapply</span>(social$age, social$messages, mean)</code></pre>
 <pre><code>## Civic Duty    Control  Hawthorne  Neighbors 
 ##   49.65904   49.81355   49.70480   49.85294</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(social$primary2004, social$messages, mean)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(social$primary2004, social$messages, mean)</code></pre>
 <pre><code>## Civic Duty    Control  Hawthorne  Neighbors 
 ##  0.3994453  0.4003388  0.4032300  0.4066647</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(social$hhsize, social$messages, mean)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(social$hhsize, social$messages, mean)</code></pre>
 <pre><code>## Civic Duty    Control  Hawthorne  Neighbors 
 ##   2.189126   2.183667   2.180138   2.187770</code></pre>
 </div>
@@ -623,14 +632,14 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <div id="section-2-5-1-minimum-wage-and-unemployment" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-2-5-1-minimum-wage-and-unemployment" class="anchor"> </a></body></html>Section 2.5.1: Minimum Wage and Unemployment</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"minwage"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>) <span class="co"># load the data</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"minwage"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>) <span class="co"># load the data</span>
 
-<span class="kw">dim</span>(minwage) <span class="co"># dimension of data</span></code></pre></div>
+<span class="kw">dim</span>(minwage) <span class="co"># dimension of data</span></code></pre>
 <pre><code>## [1] 358   8</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(minwage) <span class="co"># summary of data</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(minwage) <span class="co"># summary of data</span></code></pre>
 <table class="table">
 <thead><tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="center">chain</th>
 <th align="center">location</th>
 <th align="center">wageBefore</th>
@@ -642,7 +651,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td></td>
+<td align="left"></td>
 <td align="center">Length:358</td>
 <td align="center">Length:358</td>
 <td align="center">Min. :4.250</td>
@@ -653,7 +662,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <td align="center">Min. : 0.00</td>
 </tr>
 <tr class="even">
-<td></td>
+<td align="left"></td>
 <td align="center">Class :character</td>
 <td align="center">Class :character</td>
 <td align="center">1st Qu.:4.250</td>
@@ -664,7 +673,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <td align="center">1st Qu.:11.00</td>
 </tr>
 <tr class="odd">
-<td></td>
+<td align="left"></td>
 <td align="center">Mode :character</td>
 <td align="center">Mode :character</td>
 <td align="center">Median :4.500</td>
@@ -675,7 +684,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <td align="center">Median :17.00</td>
 </tr>
 <tr class="even">
-<td></td>
+<td align="left"></td>
 <td align="center">NA</td>
 <td align="center">NA</td>
 <td align="center">Mean :4.618</td>
@@ -686,7 +695,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <td align="center">Mean :18.69</td>
 </tr>
 <tr class="odd">
-<td></td>
+<td align="left"></td>
 <td align="center">NA</td>
 <td align="center">NA</td>
 <td align="center">3rd Qu.:4.987</td>
@@ -697,7 +706,7 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 <td align="center">3rd Qu.:25.00</td>
 </tr>
 <tr class="even">
-<td></td>
+<td align="left"></td>
 <td align="center">NA</td>
 <td align="center">NA</td>
 <td align="center">Max. :5.750</td>
@@ -709,33 +718,33 @@ callback.name &lt;-<span class="st"> </span><span class="kw">tapply</span>(resum
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## subsetting the data into two states
+<pre class="sourceCode r"><code class="sourceCode r">## subsetting the data into two states
 minwageNJ &lt;-<span class="st"> </span><span class="kw">subset</span>(minwage, <span class="dt">subset =</span> (location !=<span class="st"> "PA"</span>))
 minwagePA &lt;-<span class="st"> </span><span class="kw">subset</span>(minwage, <span class="dt">subset =</span> (location ==<span class="st"> "PA"</span>))
 
 ## proportion of restaurants whose wage is less than $5.05
-<span class="kw">mean</span>(minwageNJ$wageBefore &lt;<span class="st"> </span><span class="fl">5.05</span>) <span class="co"># NJ before</span></code></pre></div>
+<span class="kw">mean</span>(minwageNJ$wageBefore &lt;<span class="st"> </span><span class="fl">5.05</span>) <span class="co"># NJ before</span></code></pre>
 <pre><code>## [1] 0.9106529</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(minwageNJ$wageAfter &lt;<span class="st"> </span><span class="fl">5.05</span>)  <span class="co"># NJ after</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(minwageNJ$wageAfter &lt;<span class="st"> </span><span class="fl">5.05</span>)  <span class="co"># NJ after</span></code></pre>
 <pre><code>## [1] 0.003436426</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(minwagePA$wageBefore &lt;<span class="st"> </span><span class="fl">5.05</span>) <span class="co"># PA before</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(minwagePA$wageBefore &lt;<span class="st"> </span><span class="fl">5.05</span>) <span class="co"># PA before</span></code></pre>
 <pre><code>## [1] 0.9402985</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(minwagePA$wageAfter &lt;<span class="st"> </span><span class="fl">5.05</span>)  <span class="co"># PA after</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(minwagePA$wageAfter &lt;<span class="st"> </span><span class="fl">5.05</span>)  <span class="co"># PA after</span></code></pre>
 <pre><code>## [1] 0.9552239</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## create a variable for proportion of full-time employees in NJ and PA
+<pre class="sourceCode r"><code class="sourceCode r">## create a variable for proportion of full-time employees in NJ and PA
 minwageNJ$fullPropAfter &lt;-<span class="st"> </span>minwageNJ$fullAfter /
 <span class="st">    </span>(minwageNJ$fullAfter +<span class="st"> </span>minwageNJ$partAfter)
 minwagePA$fullPropAfter &lt;-<span class="st"> </span>minwagePA$fullAfter /
 <span class="st">    </span>(minwagePA$fullAfter +<span class="st"> </span>minwagePA$partAfter)
 
 ## compute the difference in means
-<span class="kw">mean</span>(minwageNJ$fullPropAfter) -<span class="st"> </span><span class="kw">mean</span>(minwagePA$fullPropAfter)</code></pre></div>
+<span class="kw">mean</span>(minwageNJ$fullPropAfter) -<span class="st"> </span><span class="kw">mean</span>(minwagePA$fullPropAfter)</code></pre>
 <pre><code>## [1] 0.04811886</code></pre>
 </div>
 <div id="section-2-5-2-confounding-bias" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-2-5-2-confounding-bias" class="anchor"> </a></body></html>Section 2.5.2: Confounding Bias</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(minwageNJ$chain))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(minwageNJ$chain))</code></pre>
 <table class="table">
 <thead><tr class="header">
 <th align="right">burgerking</th>
@@ -750,7 +759,7 @@ minwagePA$fullPropAfter &lt;-<span class="st"> </span>minwagePA$fullAfter /
 <td align="right">0.1202749</td>
 </tr></tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(minwagePA$chain))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(minwagePA$chain))</code></pre>
 <table class="table">
 <thead><tr class="header">
 <th align="right">burgerking</th>
@@ -765,46 +774,46 @@ minwagePA$fullPropAfter &lt;-<span class="st"> </span>minwagePA$fullAfter /
 <td align="right">0.1641791</td>
 </tr></tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## subset Burger King only
+<pre class="sourceCode r"><code class="sourceCode r">## subset Burger King only
 minwageNJ.bk &lt;-<span class="st"> </span><span class="kw">subset</span>(minwageNJ, <span class="dt">subset =</span> (chain ==<span class="st"> "burgerking"</span>))
 minwagePA.bk &lt;-<span class="st"> </span><span class="kw">subset</span>(minwagePA, <span class="dt">subset =</span> (chain ==<span class="st"> "burgerking"</span>))
 
 ## comparison of full-time employment rates
-<span class="kw">mean</span>(minwageNJ.bk$fullPropAfter) -<span class="st"> </span><span class="kw">mean</span>(minwagePA.bk$fullPropAfter)</code></pre></div>
+<span class="kw">mean</span>(minwageNJ.bk$fullPropAfter) -<span class="st"> </span><span class="kw">mean</span>(minwagePA.bk$fullPropAfter)</code></pre>
 <pre><code>## [1] 0.03643934</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">minwageNJ.bk.subset &lt;-
+<pre class="sourceCode r"><code class="sourceCode r">minwageNJ.bk.subset &lt;-
 <span class="st">    </span><span class="kw">subset</span>(minwageNJ.bk, <span class="dt">subset =</span> ((location !=<span class="st"> "shoreNJ"</span>) &amp;
 <span class="st">                                       </span>(location !=<span class="st"> "centralNJ"</span>)))
 
-<span class="kw">mean</span>(minwageNJ.bk.subset$fullPropAfter) -<span class="st"> </span><span class="kw">mean</span>(minwagePA.bk$fullPropAfter)</code></pre></div>
+<span class="kw">mean</span>(minwageNJ.bk.subset$fullPropAfter) -<span class="st"> </span><span class="kw">mean</span>(minwagePA.bk$fullPropAfter)</code></pre>
 <pre><code>## [1] 0.03149853</code></pre>
 </div>
 <div id="section-2-5-3-before-and-after-and-difference-in-differences-designs" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-2-5-3-before-and-after-and-difference-in-differences-designs" class="anchor"> </a></body></html>Section 2.5.3: Before-and-After and Difference-in-Differences Designs</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## full-time employment proportion in the previous period for NJ
+<pre class="sourceCode r"><code class="sourceCode r">## full-time employment proportion in the previous period for NJ
 minwageNJ$fullPropBefore &lt;-<span class="st"> </span>minwageNJ$fullBefore /
 <span class="st">    </span>(minwageNJ$fullBefore +<span class="st"> </span>minwageNJ$partBefore)
 
 ## mean difference between before and after the minimum wage increase
 NJdiff &lt;-<span class="st"> </span><span class="kw">mean</span>(minwageNJ$fullPropAfter) -<span class="st"> </span><span class="kw">mean</span>(minwageNJ$fullPropBefore)
-NJdiff</code></pre></div>
+NJdiff</code></pre>
 <pre><code>## [1] 0.02387474</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## full-time employment proportion in the previous period for PA
+<pre class="sourceCode r"><code class="sourceCode r">## full-time employment proportion in the previous period for PA
 minwagePA$fullPropBefore &lt;-<span class="st"> </span>minwagePA$fullBefore /
 <span class="st">    </span>(minwagePA$fullBefore +<span class="st"> </span>minwagePA$partBefore)
 ## mean difference between before and after for PA
 PAdiff &lt;-<span class="st"> </span><span class="kw">mean</span>(minwagePA$fullPropAfter) -<span class="st"> </span><span class="kw">mean</span>(minwagePA$fullPropBefore)
 ## difference-in-differences
-NJdiff -<span class="st"> </span>PAdiff</code></pre></div>
+NJdiff -<span class="st"> </span>PAdiff</code></pre>
 <pre><code>## [1] 0.06155831</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## full-time employment proportion in the previous period for PA
+<pre class="sourceCode r"><code class="sourceCode r">## full-time employment proportion in the previous period for PA
 minwagePA$fullPropBefore &lt;-<span class="st"> </span>minwagePA$fullBefore /
 <span class="st">    </span>(minwagePA$fullBefore +<span class="st"> </span>minwagePA$partBefore)
 ## mean difference between before and after for PA
 PAdiff &lt;-<span class="st"> </span><span class="kw">mean</span>(minwagePA$fullPropAfter) -<span class="st"> </span><span class="kw">mean</span>(minwagePA$fullPropBefore)
 ## difference-in-differences
-NJdiff -<span class="st"> </span>PAdiff</code></pre></div>
+NJdiff -<span class="st"> </span>PAdiff</code></pre>
 <pre><code>## [1] 0.06155831</code></pre>
 </div>
 </div>
@@ -814,21 +823,21 @@ NJdiff -<span class="st"> </span>PAdiff</code></pre></div>
 <div id="section-2-6-1-quantiles" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-2-6-1-quantiles" class="anchor"> </a></body></html>Section 2.6.1: Quantiles</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## cross-section comparison between NJ and PA
-<span class="kw">median</span>(minwageNJ$fullPropAfter) -<span class="st"> </span><span class="kw">median</span>(minwagePA$fullPropAfter)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## cross-section comparison between NJ and PA
+<span class="kw">median</span>(minwageNJ$fullPropAfter) -<span class="st"> </span><span class="kw">median</span>(minwagePA$fullPropAfter)</code></pre>
 <pre><code>## [1] 0.07291667</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## before and after comparison
+<pre class="sourceCode r"><code class="sourceCode r">## before and after comparison
 NJdiff.med &lt;-<span class="st"> </span><span class="kw">median</span>(minwageNJ$fullPropAfter) -
 <span class="st">    </span><span class="kw">median</span>(minwageNJ$fullPropBefore)
-NJdiff.med</code></pre></div>
+NJdiff.med</code></pre>
 <pre><code>## [1] 0.025</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## median difference-in-differences
+<pre class="sourceCode r"><code class="sourceCode r">## median difference-in-differences
 PAdiff.med &lt;-<span class="st"> </span><span class="kw">median</span>(minwagePA$fullPropAfter) -
 <span class="st">    </span><span class="kw">median</span>(minwagePA$fullPropBefore)
-NJdiff.med -<span class="st"> </span>PAdiff.med</code></pre></div>
+NJdiff.med -<span class="st"> </span>PAdiff.med</code></pre>
 <pre><code>## [1] 0.03701923</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## summary shows quartiles as well as minimum, maximum, and mean
-<span class="kw">summary</span>(minwageNJ$wageBefore)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## summary shows quartiles as well as minimum, maximum, and mean
+<span class="kw">summary</span>(minwageNJ$wageBefore)</code></pre>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Min.</th>
@@ -847,7 +856,7 @@ NJdiff.med -<span class="st"> </span>PAdiff.med</code></pre></div>
 <td align="right">5.75</td>
 </tr></tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(minwageNJ$wageAfter)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(minwageNJ$wageAfter)</code></pre>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Min.</th>
@@ -866,36 +875,37 @@ NJdiff.med -<span class="st"> </span>PAdiff.med</code></pre></div>
 <td align="right">5.75</td>
 </tr></tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## interquartile range
-<span class="kw">IQR</span>(minwageNJ$wageBefore)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## interquartile range
+<span class="kw">IQR</span>(minwageNJ$wageBefore)</code></pre>
 <pre><code>## [1] 0.62</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">IQR</span>(minwageNJ$wageAfter)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">IQR</span>(minwageNJ$wageAfter)</code></pre>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## deciles (10 groups)
-<span class="kw">quantile</span>(minwageNJ$wageBefore, <span class="dt">probs =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.1</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## deciles (10 groups)
+<span class="kw">quantile</span>(minwageNJ$wageBefore, <span class="dt">probs =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.1</span>))</code></pre>
 <pre><code>##   0%  10%  20%  30%  40%  50%  60%  70%  80%  90% 100% 
 ## 4.25 4.25 4.25 4.25 4.50 4.50 4.65 4.75 5.00 5.00 5.75</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quantile</span>(minwageNJ$wageAfter, <span class="dt">probs =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.1</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quantile</span>(minwageNJ$wageAfter, <span class="dt">probs =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.1</span>))</code></pre>
 <pre><code>##   0%  10%  20%  30%  40%  50%  60%  70%  80%  90% 100% 
 ## 5.00 5.05 5.05 5.05 5.05 5.05 5.05 5.05 5.05 5.15 5.75</code></pre>
 </div>
 <div id="standard-deviation" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#standard-deviation" class="anchor"> </a></body></html>2.6.2: Standard Deviation</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">mean</span>((minwageNJ$fullPropAfter -<span class="st"> </span>minwageNJ$fullPropBefore)^<span class="dv">2</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">mean</span>((minwageNJ$fullPropAfter -<span class="st"> </span>minwageNJ$fullPropBefore)^<span class="dv">2</span>))</code></pre>
 <pre><code>## [1] 0.3014669</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(minwageNJ$fullPropAfter -<span class="st"> </span>minwageNJ$fullPropBefore)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(minwageNJ$fullPropAfter -<span class="st"> </span>minwageNJ$fullPropBefore)</code></pre>
 <pre><code>## [1] 0.02387474</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## standard deviation
-<span class="kw">sd</span>(minwageNJ$fullPropBefore)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## standard deviation
+<span class="kw">sd</span>(minwageNJ$fullPropBefore)</code></pre>
 <pre><code>## [1] 0.2304592</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(minwageNJ$fullPropAfter)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(minwageNJ$fullPropAfter)</code></pre>
 <pre><code>## [1] 0.2510016</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## variance
-<span class="kw">var</span>(minwageNJ$fullPropBefore)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## variance
+<span class="kw">var</span>(minwageNJ$fullPropBefore)</code></pre>
 <pre><code>## [1] 0.05311145</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(minwageNJ$fullPropAfter)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(minwageNJ$fullPropAfter)</code></pre>
 <pre><code>## [1] 0.0630018</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -905,11 +915,16 @@ NJdiff.med -<span class="st"> </span>PAdiff.med</code></pre></div>
         <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+<li>
+<a href="#chapter-2-causality">Chapter 2: Causality</a><ul class="nav nav-pills nav-stacked">
 <li><a href="#section-2.1-racial-discrimination-in-the-labor-market">Section 2.1: Racial Discrimination in the Labor Market</a></li>
+      <li><a href="#section-2.2-subsetting-the-data-in-r">Section 2.2: Subsetting the Data in R</a></li>
       <li><a href="#section-2.3-causal-effects-and-the-counterfactual">Section 2.3: Causal Effects and the Counterfactual</a></li>
       <li><a href="#section-2.4-randomized-controlled-trials">Section 2.4: Randomized Controlled Trials</a></li>
       <li><a href="#section-2.5-observational-studies">Section 2.5: Observational Studies</a></li>
       <li><a href="#section-2.6-descriptive-statistics-for-a-single-variable">Section 2.6: Descriptive Statistics for a Single Variable</a></li>
+      </ul>
+</li>
       </ul>
 </div>
       </div>
