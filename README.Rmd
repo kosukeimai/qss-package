@@ -32,13 +32,13 @@ devtools::install_github("kosukeimai/qss-package")
 ## Usage
 
 To list all data sets contained in this package:
-```{r, echo = FALSE}
+```{r, eval = FALSE}
 data(package = "qss")
 ```
 
-For example, to use the `election` data set:
+For example, to use the `elections` data set:
 ```{r}
-data(package = "qss", election)
+data(package = "qss", elections)
 ```
 
 The Federalist papers text files are in the `extdata/federalist` directory of the installed package and need to be accessed as follows:
