@@ -55,9 +55,9 @@
     
 <div class="contents">
 <!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
-<div id="quantitative-social-science-an-introduction-an-r-package" class="section level1">
+<div id="quantitative-social-science-an-introduction" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#quantitative-social-science-an-introduction-an-r-package" class="anchor"> </a>Quantitative Social Science: An Introduction: An R Package</h1></div>
+<a href="#quantitative-social-science-an-introduction" class="anchor"> </a>Quantitative Social Science: An Introduction</h1></div>
 
 <p>An R package containing the datasets used in</p>
 <blockquote>
@@ -78,9 +78,11 @@
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"> </a>Usage</h2>
 <p>To list all data sets contained in this package:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">"qss"</span>)</code></pre></div>
-<p>For example, to use the <code>elections</code> data set:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">"qss"</span>, elections)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">"qss"</span>)
+<span class="kw">data</span>(elections) <span class="co"># load the elections data</span>
+<span class="kw">vignette</span>(<span class="dt">package =</span> <span class="st">"qss"</span>) <span class="co"># list all vignettes</span>
+<span class="kw">browseVignette</span>(<span class="st">"qss"</span>) <span class="co"># list vignettes and R code</span>
+<span class="kw">vignette</span>(<span class="st">"causality"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>) <span class="co"># show the vignette for the Causality chapter</span></code></pre></div>
 <p>The Federalist papers text files are in the <code>extdata/federalist</code> directory of the installed package and need to be accessed as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"tm"</span>)
 federalist_dir &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"federalist"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)

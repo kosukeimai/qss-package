@@ -1,6 +1,6 @@
 <!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
-Quantitative Social Science: An Introduction: An R Package
-==========================================================
+Quantitative Social Science: An Introduction
+============================================
 
 [![Travis-CI Build
 Status](https://travis-ci.org/kosukeimai/qss-package.svg?branch=master)](https://travis-ci.org/kosukeimai/qss-package)
@@ -34,10 +34,10 @@ Usage
 To list all data sets contained in this package:
 
     data(package = "qss")
-
-For example, to use the `elections` data set:
-
-    data(package = "qss", elections)
+    data(elections) # load the elections data
+    vignette(package = "qss") # list all vignettes
+    browseVignette("qss") # list vignettes and R code
+    vignette("causality", package = "qss") # show the vignette for the Causality chapter
 
 The Federalist papers text files are in the `extdata/federalist`
 directory of the installed package and need to be accessed as follows:
