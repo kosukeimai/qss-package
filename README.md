@@ -1,5 +1,4 @@
 <!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
-
 Quantitative Social Science: An Introduction: An R Package
 ==========================================================
 
@@ -16,7 +15,7 @@ See [kosukeimai/qss](https://github.com/kosukeimai/qss) for other
 supplementary materials and the original data sets.
 
 The website for this package is available at
-[<https://kosukeimai.github.io/qss-package>](https://kosukeimai.github.io/qss-package)
+<https://kosukeimai.github.io/qss-package>
 
 Install
 -------
@@ -24,8 +23,10 @@ Install
 **qss** is not available from CRAN, install the package from github
 with:
 
-    install.packages("devtools") # if you have not installed the `devtools` package
-    devtools::install_github("kosukeimai/qss-package")
+    # if you have not installed the `devtools` package
+    # install.packages("devtools") 
+    library("devtools")
+    install_github("kosukeimai/qss-package", build_vignettes = TRUE)
 
 Usage
 -----

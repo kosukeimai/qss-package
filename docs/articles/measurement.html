@@ -63,11 +63,11 @@
 <div id="section-3-1-measuring-civilian-victimization-during-wartime" class="section level2">
 <h2 class="hasAnchor">
 <html><body><a href="#section-3-1-measuring-civilian-victimization-during-wartime" class="anchor"> </a></body></html>Section 3.1: Measuring Civilian Victimization during Wartime</h2>
-<pre class="sourceCode r"><code class="sourceCode r">## load data
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load data
 <span class="kw">data</span>(<span class="st">"afghan"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 ## summarize variables of interest
-<span class="kw">summary</span>(afghan$age)</code></pre>
+<span class="kw">summary</span>(afghan$age)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Min.</th>
@@ -86,7 +86,7 @@
 <td align="right">80</td>
 </tr></tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(afghan$educ.years)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(afghan$educ.years)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Min.</th>
@@ -105,7 +105,7 @@
 <td align="right">18</td>
 </tr></tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(afghan$employed)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(afghan$employed)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Min.</th>
@@ -124,7 +124,7 @@
 <td align="right">1</td>
 </tr></tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(afghan$income)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(afghan$income)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Length</th>
@@ -137,8 +137,8 @@
 <td align="left">character</td>
 </tr></tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(<span class="dt">ISAF =</span> afghan$violent.exp.ISAF,
-                 <span class="dt">Taliban =</span> afghan$violent.exp.taliban))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(<span class="dt">ISAF =</span> afghan$violent.exp.ISAF,
+                 <span class="dt">Taliban =</span> afghan$violent.exp.taliban))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">ISAF/Taliban</th>
@@ -162,25 +162,25 @@
 <div id="section-3-2-handling-missing-data-in-r" class="section level2">
 <h2 class="hasAnchor">
 <html><body><a href="#section-3-2-handling-missing-data-in-r" class="anchor"> </a></body></html>Section 3.2: Handling Missing Data in R</h2>
-<pre class="sourceCode r"><code class="sourceCode r">## print income data for first 10 respondents
-<span class="kw">head</span>(afghan$income, <span class="dt">n =</span> <span class="dv">10</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## print income data for first 10 respondents
+<span class="kw">head</span>(afghan$income, <span class="dt">n =</span> <span class="dv">10</span>)</code></pre></div>
 <pre><code>##  [1] "2,001-10,000"  "2,001-10,000"  "2,001-10,000"  "2,001-10,000" 
 ##  [5] "2,001-10,000"  NA              "10,001-20,000" "2,001-10,000" 
 ##  [9] "2,001-10,000"  NA</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## indicate whether respondents' income is missing
-<span class="kw">head</span>(<span class="kw">is.na</span>(afghan$income), <span class="dt">n =</span> <span class="dv">10</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## indicate whether respondents' income is missing
+<span class="kw">head</span>(<span class="kw">is.na</span>(afghan$income), <span class="dt">n =</span> <span class="dv">10</span>)</code></pre></div>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">is.na</span>(afghan$income))  <span class="co"># count of missing values</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">is.na</span>(afghan$income))  <span class="co"># count of missing values</span></code></pre></div>
 <pre><code>## [1] 154</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">is.na</span>(afghan$income)) <span class="co"># proportion missing</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">is.na</span>(afghan$income)) <span class="co"># proportion missing</span></code></pre></div>
 <pre><code>## [1] 0.05591866</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="ot">NA</span>)
-<span class="kw">mean</span>(x)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="ot">NA</span>)
+<span class="kw">mean</span>(x)</code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(<span class="dt">ISAF =</span> afghan$violent.exp.ISAF,
-                 <span class="dt">Taliban =</span> afghan$violent.exp.taliban, <span class="dt">exclude =</span> <span class="ot">NULL</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(<span class="dt">ISAF =</span> afghan$violent.exp.ISAF,
+                 <span class="dt">Taliban =</span> afghan$violent.exp.taliban, <span class="dt">exclude =</span> <span class="ot">NULL</span>))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">ISAF/Taliban</th>
@@ -209,10 +209,10 @@
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">afghan.sub &lt;-<span class="st"> </span><span class="kw">na.omit</span>(afghan)  <span class="co"># listwise deletion</span>
-<span class="kw">nrow</span>(afghan.sub)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">afghan.sub &lt;-<span class="st"> </span><span class="kw">na.omit</span>(afghan)  <span class="co"># listwise deletion</span>
+<span class="kw">nrow</span>(afghan.sub)</code></pre></div>
 <pre><code>## [1] 2554</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(<span class="kw">na.omit</span>(afghan$income))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(<span class="kw">na.omit</span>(afghan$income))</code></pre></div>
 <pre><code>## [1] 2600</code></pre>
 </div>
 <div id="section-3-3-visualizating-the-univariate-distribution" class="section level2">
@@ -221,12 +221,12 @@
 <div id="section-3-3-1-bar-plot" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-3-3-1-bar-plot" class="anchor"> </a></body></html>Section 3.3.1: Bar Plot</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 
 ## a vector of proportions to plot
 ISAF.ptable &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(<span class="dt">ISAF =</span> afghan$violent.exp.ISAF,
                                 <span class="dt">exclude =</span> <span class="ot">NULL</span>))
-ISAF.ptable</code></pre>
+ISAF.ptable</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">0</th>
@@ -239,31 +239,31 @@ ISAF.ptable</code></pre>
 <td align="right">0.0090777</td>
 </tr></tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## make barplots by specifying a certain range for y-axis
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## make barplots by specifying a certain range for y-axis
 <span class="kw">barplot</span>(ISAF.ptable,
         <span class="dt">names.arg =</span> <span class="kw">c</span>(<span class="st">"No harm"</span>, <span class="st">"Harm"</span>, <span class="st">"Nonresponse"</span>),
         <span class="dt">main =</span> <span class="st">"Civilian victimization by the ISAF"</span>,
         <span class="dt">xlab =</span> <span class="st">"Response category"</span>,
-        <span class="dt">ylab =</span> <span class="st">"Proportion of the respondents"</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.7</span>))</code></pre>
+        <span class="dt">ylab =</span> <span class="st">"Proportion of the respondents"</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.7</span>))</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-3-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## repeat the same for the victimization by Taliban
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## repeat the same for the victimization by Taliban
 Taliban.ptable &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(<span class="dt">Taliban =</span> afghan$violent.exp.taliban,
                          <span class="dt">exclude =</span> <span class="ot">NULL</span>))
 <span class="kw">barplot</span>(Taliban.ptable,
         <span class="dt">names.arg =</span> <span class="kw">c</span>(<span class="st">"No harm"</span>, <span class="st">"Harm"</span>, <span class="st">"Nonresponse"</span>),
         <span class="dt">main =</span> <span class="st">"Civilian victimization by the Taliban"</span>,
         <span class="dt">xlab =</span> <span class="st">"Response category"</span>,
-        <span class="dt">ylab =</span> <span class="st">"Proportion of the respondents"</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.7</span>))</code></pre>
+        <span class="dt">ylab =</span> <span class="st">"Proportion of the respondents"</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.7</span>))</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-3-2.png" width="672"></p>
 </div>
 <div id="section-3-3-2-histogram" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-3-3-2-histogram" class="anchor"> </a></body></html>Section 3.3.2: Histogram</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 <span class="kw">hist</span>(afghan$age, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.04</span>), <span class="dt">xlab =</span> <span class="st">"Age"</span>,
-     <span class="dt">main =</span> <span class="st">"Distribution of respondent's age"</span>)</code></pre>
+     <span class="dt">main =</span> <span class="st">"Distribution of respondent's age"</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 ## histogram of education.  use `breaks' to choose bins
 <span class="kw">hist</span>(afghan$educ.years, <span class="dt">freq =</span> <span class="ot">FALSE</span>,
      <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> -<span class="fl">0.5</span>, <span class="dt">to =</span> <span class="fl">18.5</span>, <span class="dt">by =</span> <span class="dv">1</span>),
@@ -277,23 +277,23 @@ Taliban.ptable &lt;-<span class="st"> </span><span class="kw">prop.table</span>(
 <span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">median</span>(afghan$educ.years))
 
 ## adding a vertical line representing median
-<span class="kw">lines</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="kw">median</span>(afghan$educ.years), <span class="dv">2</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.5</span>))</code></pre>
+<span class="kw">lines</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="kw">median</span>(afghan$educ.years), <span class="dv">2</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.5</span>))</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-4-2.png" width="672"></p>
 </div>
 <div id="section-3-3-3-box-plot" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-3-3-3-box-plot" class="anchor"> </a></body></html>Section 3.3.3: Box Plot</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 <span class="kw">boxplot</span>(educ.years ~<span class="st"> </span>province, <span class="dt">data =</span> afghan,
-        <span class="dt">main =</span> <span class="st">"Education by province"</span>, <span class="dt">ylab =</span> <span class="st">"Years of education"</span>)</code></pre>
+        <span class="dt">main =</span> <span class="st">"Education by province"</span>, <span class="dt">ylab =</span> <span class="st">"Years of education"</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(afghan$violent.exp.taliban, afghan$province, mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(afghan$violent.exp.taliban, afghan$province, mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>##    Helmand      Khost      Kunar      Logar    Uruzgan 
 ## 0.50422195 0.23322684 0.30303030 0.08024691 0.45454545</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(afghan$violent.exp.ISAF, afghan$province, mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(afghan$violent.exp.ISAF, afghan$province, mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>##   Helmand     Khost     Kunar     Logar   Uruzgan 
 ## 0.5410226 0.2424242 0.3989899 0.1440329 0.4960422</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## Saving or Printing a Graph
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Saving or Printing a Graph
 
 ## pdf(file = "educ.pdf", height = 5, width = 5)
 ## boxplot(educ.years ~ province, data = afghan,
@@ -310,7 +310,7 @@ Taliban.ptable &lt;-<span class="st"> </span><span class="kw">prop.table</span>(
 ##      breaks = seq(from = -0.5, to = 18.5, by = 1),
 ##      xlab = "Years of education", xlim = c(0, 20),
 ##      main = "Distribution of Respondent's Education")
-## dev.off()</code></pre>
+## dev.off()</code></pre></div>
 </div>
 </div>
 <div id="section-3-4-survey-sampling" class="section level2">
@@ -319,33 +319,33 @@ Taliban.ptable &lt;-<span class="st"> </span><span class="kw">prop.table</span>(
 <div id="section-3-4-1-the-role-of-randomization" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-3-4-1-the-role-of-randomization" class="anchor"> </a></body></html>Section 3.4.1: The Role of Randomization</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 
 ## load village data
 <span class="kw">data</span>(<span class="st">"afghan.village"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 ## boxplots for altitude
 <span class="kw">boxplot</span>(altitude ~<span class="st"> </span>village.surveyed, <span class="dt">data =</span> afghan.village,
-        <span class="dt">ylab =</span> <span class="st">"Altitude (meter)"</span>, <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">"Nonsampled"</span>, <span class="st">"Sampled"</span>))</code></pre>
+        <span class="dt">ylab =</span> <span class="st">"Altitude (meter)"</span>, <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">"Nonsampled"</span>, <span class="st">"Sampled"</span>))</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## boxplots for log population
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## boxplots for log population
 <span class="kw">boxplot</span>(<span class="kw">log</span>(population) ~<span class="st"> </span>village.surveyed, <span class="dt">data =</span> afghan.village,
-        <span class="dt">ylab =</span> <span class="st">"log population"</span>, <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">"Nonsampled"</span>, <span class="st">"Sampled"</span>))</code></pre>
+        <span class="dt">ylab =</span> <span class="st">"log population"</span>, <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">"Nonsampled"</span>, <span class="st">"Sampled"</span>))</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-6-2.png" width="672"></p>
 </div>
 <div id="section-3-4-2-nonresponse-and-other-sources-of-bias" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-3-4-2-nonresponse-and-other-sources-of-bias" class="anchor"> </a></body></html>Section 3.4.2: Nonresponse and Other Sources of Bias</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(<span class="kw">is.na</span>(afghan$violent.exp.taliban), afghan$province, mean)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(<span class="kw">is.na</span>(afghan$violent.exp.taliban), afghan$province, mean)</code></pre></div>
 <pre><code>##     Helmand       Khost       Kunar       Logar     Uruzgan 
 ## 0.030409357 0.006349206 0.000000000 0.000000000 0.062015504</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(<span class="kw">is.na</span>(afghan$violent.exp.ISAF), afghan$province, mean)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(<span class="kw">is.na</span>(afghan$violent.exp.ISAF), afghan$province, mean)</code></pre></div>
 <pre><code>##     Helmand       Khost       Kunar       Logar     Uruzgan 
 ## 0.016374269 0.004761905 0.000000000 0.000000000 0.020671835</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(afghan$list.response[afghan$list.group ==<span class="st"> "ISAF"</span>]) -
-<span class="st">    </span><span class="kw">mean</span>(afghan$list.response[afghan$list.group ==<span class="st"> "control"</span>])</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(afghan$list.response[afghan$list.group ==<span class="st"> "ISAF"</span>]) -
+<span class="st">    </span><span class="kw">mean</span>(afghan$list.response[afghan$list.group ==<span class="st"> "control"</span>])</code></pre></div>
 <pre><code>## [1] 0.04901961</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(<span class="dt">response =</span> afghan$list.response, <span class="dt">group =</span> afghan$list.group)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(<span class="dt">response =</span> afghan$list.response, <span class="dt">group =</span> afghan$list.group)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">response/group</th>
@@ -398,7 +398,7 @@ Taliban.ptable &lt;-<span class="st"> </span><span class="kw">prop.table</span>(
 <div id="section-3-6-1-scatter-plot" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-3-6-1-scatter-plot" class="anchor"> </a></body></html>Section 3.6.1: Scatter Plot</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"congress"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"congress"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 ## subset the data by party
 rep &lt;-<span class="st"> </span><span class="kw">subset</span>(congress, <span class="dt">subset =</span> (party ==<span class="st"> "Republican"</span>))
@@ -422,15 +422,15 @@ lim &lt;-<span class="st"> </span><span class="kw">c</span>(-<span class="fl">1.
      <span class="dt">main =</span> <span class="st">"80th Congress"</span>) <span class="co"># democrats</span>
 <span class="kw">points</span>(rep80$dwnom1, rep80$dwnom2, <span class="dt">pch =</span> <span class="dv">17</span>, <span class="dt">col =</span> <span class="st">"red"</span>) <span class="co"># republicans</span>
 <span class="kw">text</span>(-<span class="fl">0.75</span>, <span class="dv">1</span>, <span class="st">"Democrats"</span>)
-<span class="kw">text</span>(<span class="dv">1</span>, -<span class="dv">1</span>, <span class="st">"Republicans"</span>)</code></pre>
+<span class="kw">text</span>(<span class="dv">1</span>, -<span class="dv">1</span>, <span class="st">"Republicans"</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## scatterplot for the 112th Congress
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## scatterplot for the 112th Congress
 <span class="kw">plot</span>(dem112$dwnom1, dem112$dwnom2, <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">"blue"</span>,
      <span class="dt">xlim =</span> lim, <span class="dt">ylim =</span> lim, <span class="dt">xlab =</span> xlab, <span class="dt">ylab =</span> ylab,
      <span class="dt">main =</span> <span class="st">"112th Congress"</span>)
-<span class="kw">points</span>(rep112$dwnom1, rep112$dwnom2, <span class="dt">pch =</span> <span class="dv">17</span>, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre>
+<span class="kw">points</span>(rep112$dwnom1, rep112$dwnom2, <span class="dt">pch =</span> <span class="dv">17</span>, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-8-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## party median for each congress
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## party median for each congress
 dem.median &lt;-<span class="st"> </span><span class="kw">tapply</span>(dem$dwnom1, dem$congress, median)
 rep.median &lt;-<span class="st"> </span><span class="kw">tapply</span>(rep$dwnom1, rep$congress, median)
 
@@ -442,13 +442,13 @@ rep.median &lt;-<span class="st"> </span><span class="kw">tapply</span>(rep$dwno
 ## add Republicans
 <span class="kw">lines</span>(<span class="kw">names</span>(rep.median), rep.median, <span class="dt">col =</span> <span class="st">"red"</span>)
 <span class="kw">text</span>(<span class="dv">110</span>, -<span class="fl">0.6</span>, <span class="st">"Democratic</span><span class="ch">\n</span><span class="st"> Party"</span>)
-<span class="kw">text</span>(<span class="dv">110</span>, <span class="fl">0.85</span>, <span class="st">"Republican</span><span class="ch">\n</span><span class="st"> Party"</span>)</code></pre>
+<span class="kw">text</span>(<span class="dv">110</span>, <span class="fl">0.85</span>, <span class="st">"Republican</span><span class="ch">\n</span><span class="st"> Party"</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-8-3.png" width="672"></p>
 </div>
 <div id="section-3-6-2-correlation" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-3-6-2-correlation" class="anchor"> </a></body></html>Section 3.6.2: Correlation</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 ## Gini coefficient data
 <span class="kw">data</span>(<span class="st">"USGini"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
@@ -456,49 +456,49 @@ rep.median &lt;-<span class="st"> </span><span class="kw">tapply</span>(rep$dwno
 <span class="kw">plot</span>(<span class="kw">seq</span>(<span class="dt">from =</span> <span class="fl">1947.5</span>, <span class="dt">to =</span> <span class="fl">2011.5</span>, <span class="dt">by =</span> <span class="dv">2</span>),
      rep.median -<span class="st"> </span>dem.median, <span class="dt">xlab =</span> <span class="st">"Year"</span>,
      <span class="dt">ylab =</span> <span class="st">"Republican median -</span><span class="ch">\n</span><span class="st"> Democratic median"</span>,
-     <span class="dt">main =</span> <span class="st">"Political polarization"</span>)</code></pre>
+     <span class="dt">main =</span> <span class="st">"Political polarization"</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-9-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## time-series plot for Gini coefficient
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## time-series plot for Gini coefficient
 <span class="kw">plot</span>(USGini$year, USGini$gini, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="fl">0.35</span>, <span class="fl">0.45</span>), <span class="dt">xlab =</span> <span class="st">"Year"</span>,
-     <span class="dt">ylab =</span> <span class="st">"Gini coefficient"</span>, <span class="dt">main =</span> <span class="st">"Income inequality"</span>)</code></pre>
+     <span class="dt">ylab =</span> <span class="st">"Gini coefficient"</span>, <span class="dt">main =</span> <span class="st">"Income inequality"</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-9-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(USGini$gini[<span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">2</span>, <span class="dt">to =</span> <span class="kw">nrow</span>(USGini), <span class="dt">by =</span> <span class="dv">2</span>)],
-    rep.median -<span class="st"> </span>dem.median)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(USGini$gini[<span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">2</span>, <span class="dt">to =</span> <span class="kw">nrow</span>(USGini), <span class="dt">by =</span> <span class="dv">2</span>)],
+    rep.median -<span class="st"> </span>dem.median)</code></pre></div>
 <pre><code>## [1] 0.9418128</code></pre>
 </div>
 <div id="section-3-6-3-quantile-quantile-plot" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-3-6-3-quantile-quantile-plot" class="anchor"> </a></body></html>Section 3.6.3: Quantile-Quantile Plot</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 <span class="kw">hist</span>(dem112$dwnom2, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Democrats"</span>,
      <span class="dt">xlim =</span> <span class="kw">c</span>(-<span class="fl">1.5</span>, <span class="fl">1.5</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">1.75</span>),
-     <span class="dt">xlab =</span> <span class="st">"Racial liberalism/conservatism dimension"</span>)</code></pre>
+     <span class="dt">xlab =</span> <span class="st">"Racial liberalism/conservatism dimension"</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-10-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(rep112$dwnom2, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Republicans"</span>,
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(rep112$dwnom2, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Republicans"</span>,
      <span class="dt">xlim =</span> <span class="kw">c</span>(-<span class="fl">1.5</span>, <span class="fl">1.5</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">1.75</span>),
-     <span class="dt">xlab =</span> <span class="st">"Racial liberalism/conservatism dimension"</span>)</code></pre>
+     <span class="dt">xlab =</span> <span class="st">"Racial liberalism/conservatism dimension"</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-10-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 <span class="kw">qqplot</span>(dem112$dwnom2, rep112$dwnom2, <span class="dt">xlab =</span> <span class="st">"Democrats"</span>,
        <span class="dt">ylab =</span> <span class="st">"Republicans"</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(-<span class="fl">1.5</span>, <span class="fl">1.5</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(-<span class="fl">1.5</span>, <span class="fl">1.5</span>),
        <span class="dt">main =</span> <span class="st">"Racial liberalism/conservatism dimension"</span>)
-<span class="kw">abline</span>(<span class="dv">0</span>, <span class="dv">1</span>) <span class="co"># 45 degree line</span></code></pre>
+<span class="kw">abline</span>(<span class="dv">0</span>, <span class="dv">1</span>) <span class="co"># 45 degree line</span></code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-10-3.png" width="672"></p>
 </div>
 </div>
 <div id="section-3-7-clustering" class="section level2">
 <h2 class="hasAnchor">
 <html><body><a href="#section-3-7-clustering" class="anchor"> </a></body></html>Section 3.7: Clustering</h2>
-<pre class="sourceCode r"><code class="sourceCode r">## 3x4 matrix filled by row; first argument take actual entries
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 3x4 matrix filled by row; first argument take actual entries
 x &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">12</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
 <span class="kw">rownames</span>(x) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)
 <span class="kw">colnames</span>(x) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"d"</span>, <span class="st">"e"</span>, <span class="st">"f"</span>, <span class="st">"g"</span>)
-<span class="kw">dim</span>(x) <span class="co"># dimension</span></code></pre>
+<span class="kw">dim</span>(x) <span class="co"># dimension</span></code></pre></div>
 <pre><code>## [1] 3 4</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">x</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x</code></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th align="left"></th>
+<th></th>
 <th align="right">d</th>
 <th align="right">e</th>
 <th align="right">f</th>
@@ -506,21 +506,21 @@ x &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">a</td>
+<td>a</td>
 <td align="right">1</td>
 <td align="right">2</td>
 <td align="right">3</td>
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td align="left">b</td>
+<td>b</td>
 <td align="right">5</td>
 <td align="right">6</td>
 <td align="right">7</td>
 <td align="right">8</td>
 </tr>
 <tr class="odd">
-<td align="left">c</td>
+<td>c</td>
 <td align="right">9</td>
 <td align="right">10</td>
 <td align="right">11</td>
@@ -528,15 +528,15 @@ x &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## data frame can take different data types
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## data frame can take different data types
 y &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">y1 =</span> <span class="kw">as.factor</span>(<span class="kw">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)), <span class="dt">y2 =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>))
-<span class="kw">class</span>(y$y1)</code></pre>
+<span class="kw">class</span>(y$y1)</code></pre></div>
 <pre><code>## [1] "factor"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(y$y2)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(y$y2)</code></pre></div>
 <pre><code>## [1] "numeric"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## as.matrix() converts both variables to character
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## as.matrix() converts both variables to character
 z &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(y)
-z</code></pre>
+z</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">y1</th>
@@ -557,38 +557,38 @@ z</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## column sums
-<span class="kw">colSums</span>(x)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## column sums
+<span class="kw">colSums</span>(x)</code></pre></div>
 <pre><code>##  d  e  f  g 
 ## 15 18 21 24</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## row means
-<span class="kw">rowMeans</span>(x)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## row means
+<span class="kw">rowMeans</span>(x)</code></pre></div>
 <pre><code>##    a    b    c 
 ##  2.5  6.5 10.5</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## column sums
-<span class="kw">apply</span>(x, <span class="dv">2</span>, sum)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## column sums
+<span class="kw">apply</span>(x, <span class="dv">2</span>, sum)</code></pre></div>
 <pre><code>##  d  e  f  g 
 ## 15 18 21 24</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## row means
-<span class="kw">apply</span>(x, <span class="dv">1</span>, mean)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## row means
+<span class="kw">apply</span>(x, <span class="dv">1</span>, mean)</code></pre></div>
 <pre><code>##    a    b    c 
 ##  2.5  6.5 10.5</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## standard deviation for each row
-<span class="kw">apply</span>(x, <span class="dv">1</span>, sd)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## standard deviation for each row
+<span class="kw">apply</span>(x, <span class="dv">1</span>, sd)</code></pre></div>
 <pre><code>##        a        b        c 
 ## 1.290994 1.290994 1.290994</code></pre>
 <div id="section-3-7-2-list-in-r" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-3-7-2-list-in-r" class="anchor"> </a></body></html>Section 3.7.2: List in R</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## create a list
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## create a list
 x &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">y1 =</span> <span class="dv">1</span>:<span class="dv">10</span>, <span class="dt">y2 =</span> <span class="kw">c</span>(<span class="st">"hi"</span>, <span class="st">"hello"</span>, <span class="st">"hey"</span>),
           <span class="dt">y3 =</span> <span class="kw">data.frame</span>(<span class="dt">z1 =</span> <span class="dv">1</span>:<span class="dv">3</span>, <span class="dt">z2 =</span> <span class="kw">c</span>(<span class="st">"good"</span>, <span class="st">"bad"</span>, <span class="st">"ugly"</span>)))
 ## 3 ways of extracting elements from a list
-x$y1 <span class="co"># first element</span></code></pre>
+x$y1 <span class="co"># first element</span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">x[[<span class="dv">2</span>]] <span class="co"># second element</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[[<span class="dv">2</span>]] <span class="co"># second element</span></code></pre></div>
 <pre><code>## [1] "hi"    "hello" "hey"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">x[[<span class="st">"y3"</span>]] <span class="co"># third element</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[[<span class="st">"y3"</span>]] <span class="co"># third element</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">z1</th>
@@ -613,11 +613,11 @@ x$y1 <span class="co"># first element</span></code></pre>
 <div id="section-3-7-3-the-k-means-algorithm" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-3-7-3-the-k-means-algorithm" class="anchor"> </a></body></html>Section 3.7.3: The k-Means Algorithm</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(x)  <span class="co"># names of all elements</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(x)  <span class="co"># names of all elements</span></code></pre></div>
 <pre><code>## [1] "y1" "y2" "y3"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(x) <span class="co"># number of elements</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(x) <span class="co"># number of elements</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">dwnom80 &lt;-<span class="st"> </span><span class="kw">cbind</span>(congress$dwnom1[congress$congress ==<span class="st"> </span><span class="dv">80</span>],
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dwnom80 &lt;-<span class="st"> </span><span class="kw">cbind</span>(congress$dwnom1[congress$congress ==<span class="st"> </span><span class="dv">80</span>],
                  congress$dwnom2[congress$congress ==<span class="st"> </span><span class="dv">80</span>])
 dwnom112 &lt;-<span class="st"> </span><span class="kw">cbind</span>(congress$dwnom1[congress$congress ==<span class="st"> </span><span class="dv">112</span>],
                  congress$dwnom2[congress$congress ==<span class="st"> </span><span class="dv">112</span>])
@@ -627,12 +627,12 @@ k80two.out &lt;-<span class="st"> </span><span class="kw">kmeans</span>(dwnom80,
 k112two.out &lt;-<span class="st"> </span><span class="kw">kmeans</span>(dwnom112, <span class="dt">centers =</span> <span class="dv">2</span>, <span class="dt">nstart =</span> <span class="dv">5</span>)
 
 ## elements of a list
-<span class="kw">names</span>(k80two.out)</code></pre>
+<span class="kw">names</span>(k80two.out)</code></pre></div>
 <pre><code>## [1] "cluster"      "centers"      "totss"        "withinss"    
 ## [5] "tot.withinss" "betweenss"    "size"         "iter"        
 ## [9] "ifault"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## final centroids
-k80two.out$centers</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## final centroids
+k80two.out$centers</code></pre></div>
 <table class="table"><tbody>
 <tr class="odd">
 <td align="right">0.1468103</td>
@@ -643,7 +643,7 @@ k80two.out$centers</code></pre>
 <td align="right">0.7827259</td>
 </tr>
 </tbody></table>
-<pre class="sourceCode r"><code class="sourceCode r">k112two.out$centers</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">k112two.out$centers</code></pre></div>
 <table class="table"><tbody>
 <tr class="odd">
 <td align="right">-0.3912687</td>
@@ -654,9 +654,9 @@ k80two.out$centers</code></pre>
 <td align="right">0.0906116</td>
 </tr>
 </tbody></table>
-<pre class="sourceCode r"><code class="sourceCode r">## number of observations for each cluster by party
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## number of observations for each cluster by party
 <span class="kw">table</span>(<span class="dt">party =</span> congress$party[congress$congress ==<span class="st"> </span><span class="dv">80</span>],
-      <span class="dt">cluster =</span> k80two.out$cluster)</code></pre>
+      <span class="dt">cluster =</span> k80two.out$cluster)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">party/cluster</th>
@@ -681,8 +681,8 @@ k80two.out$centers</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(<span class="dt">party =</span> congress$party[congress$congress ==<span class="st"> </span><span class="dv">112</span>],
-      <span class="dt">cluster =</span> k112two.out$cluster)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(<span class="dt">party =</span> congress$party[congress$congress ==<span class="st"> </span><span class="dv">112</span>],
+      <span class="dt">cluster =</span> k112two.out$cluster)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">party/cluster</th>
@@ -702,7 +702,7 @@ k80two.out$centers</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## kmeans with 4 clusters
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## kmeans with 4 clusters
 k80four.out &lt;-<span class="st"> </span><span class="kw">kmeans</span>(dwnom80, <span class="dt">centers =</span> <span class="dv">4</span>, <span class="dt">nstart =</span> <span class="dv">5</span>)
 k112four.out &lt;-<span class="st"> </span><span class="kw">kmeans</span>(dwnom112, <span class="dt">centers =</span> <span class="dv">4</span>, <span class="dt">nstart =</span> <span class="dv">5</span>)
 
@@ -712,14 +712,14 @@ k112four.out &lt;-<span class="st"> </span><span class="kw">kmeans</span>(dwnom1
      <span class="dt">xlim =</span> lim, <span class="dt">ylim =</span> lim, <span class="dt">main =</span> <span class="st">"80th Congress"</span>)
 
 ## plotting the centroids
-<span class="kw">points</span>(k80four.out$centers, <span class="dt">pch =</span> <span class="dv">8</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</code></pre>
+<span class="kw">points</span>(k80four.out$centers, <span class="dt">pch =</span> <span class="dv">8</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-13-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## 112th congress
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 112th congress
 <span class="kw">plot</span>(dwnom112, <span class="dt">col =</span> k112four.out$cluster +<span class="st"> </span><span class="dv">1</span>, <span class="dt">xlab =</span> xlab, <span class="dt">ylab =</span> ylab,
      <span class="dt">xlim =</span> lim, <span class="dt">ylim =</span> lim, <span class="dt">main =</span> <span class="st">"112th Congress"</span>)
-<span class="kw">points</span>(k112four.out$centers, <span class="dt">pch =</span> <span class="dv">8</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</code></pre>
+<span class="kw">points</span>(k112four.out$centers, <span class="dt">pch =</span> <span class="dv">8</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</code></pre></div>
 <p><img src="measurement_files/figure-html/unnamed-chunk-13-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">palette</span>()</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">palette</span>()</code></pre></div>
 <pre><code>## [1] "black"   "red"     "green3"  "blue"    "cyan"    "magenta" "yellow" 
 ## [8] "gray"</code></pre>
 </div>

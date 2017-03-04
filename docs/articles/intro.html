@@ -67,10 +67,10 @@
 <div id="section-1-2-how-to-use-this-book" class="section level2">
 <h2 class="hasAnchor">
 <html><body><a href="#section-1-2-how-to-use-this-book" class="anchor"> </a></body></html>Section 1.2: How to Use this Book</h2>
-<pre class="sourceCode r"><code class="sourceCode r">## install.packages("swirl") # install the package
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## install.packages("swirl") # install the package
 <span class="kw">library</span>(swirl) <span class="co"># load the package</span>
 <span class="kw">install_course_github</span>(<span class="st">"kosukeimai"</span>, <span class="st">"qss-swirl"</span>) <span class="co"># install the course</span>
-<span class="kw">swirl</span>()</code></pre>
+<span class="kw">swirl</span>()</code></pre></div>
 </div>
 <div id="section-1-3-introduction-to-r" class="section level2">
 <h2 class="hasAnchor">
@@ -78,118 +78,118 @@
 <div id="section-1-3-1-arithmetic-operations" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-1-3-1-arithmetic-operations" class="anchor"> </a></body></html>Section 1.3.1: Arithmetic Operations</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> +<span class="st"> </span><span class="dv">3</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> +<span class="st"> </span><span class="dv">3</span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> -<span class="st"> </span><span class="dv">3</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> -<span class="st"> </span><span class="dv">3</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> /<span class="st"> </span><span class="dv">3</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> /<span class="st"> </span><span class="dv">3</span></code></pre></div>
 <pre><code>## [1] 1.666667</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> ^<span class="st"> </span><span class="dv">3</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> ^<span class="st"> </span><span class="dv">3</span></code></pre></div>
 <pre><code>## [1] 125</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> *<span class="st"> </span>(<span class="dv">10</span> -<span class="st"> </span><span class="dv">3</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> *<span class="st"> </span>(<span class="dv">10</span> -<span class="st"> </span><span class="dv">3</span>)</code></pre></div>
 <pre><code>## [1] 35</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">4</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">4</span>)</code></pre></div>
 <pre><code>## [1] 2</code></pre>
 </div>
 <div id="section-1-3-2-objects" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-1-3-2-objects" class="anchor"> </a></body></html>Section 1.3.2: Objects</h3>
-<pre class="sourceCode r"><code class="sourceCode r">result &lt;-<span class="st"> </span><span class="dv">5</span> +<span class="st"> </span><span class="dv">3</span>
-result</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">result &lt;-<span class="st"> </span><span class="dv">5</span> +<span class="st"> </span><span class="dv">3</span>
+result</code></pre></div>
 <pre><code>## [1] 8</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(result)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(result)</code></pre></div>
 <pre><code>## [1] 8</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">result &lt;-<span class="st"> </span><span class="dv">5</span> -<span class="st"> </span><span class="dv">3</span>
-result</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">result &lt;-<span class="st"> </span><span class="dv">5</span> -<span class="st"> </span><span class="dv">3</span>
+result</code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">kosuke &lt;-<span class="st"> "instructor"</span>
-kosuke</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">kosuke &lt;-<span class="st"> "instructor"</span>
+kosuke</code></pre></div>
 <pre><code>## [1] "instructor"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">kosuke &lt;-<span class="st"> "instructor and author"</span>
-kosuke</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">kosuke &lt;-<span class="st"> "instructor and author"</span>
+kosuke</code></pre></div>
 <pre><code>## [1] "instructor and author"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">Result &lt;-<span class="st"> "5"</span>
-Result</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Result &lt;-<span class="st"> "5"</span>
+Result</code></pre></div>
 <pre><code>## [1] "5"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">result</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">result</code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(result)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(result)</code></pre></div>
 <pre><code>## [1] "numeric"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">Result</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Result</code></pre></div>
 <pre><code>## [1] "5"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(Result)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(Result)</code></pre></div>
 <pre><code>## [1] "character"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(sqrt)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(sqrt)</code></pre></div>
 <pre><code>## [1] "function"</code></pre>
 </div>
 <div id="section-1-3-3-vectors" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-1-3-3-vectors" class="anchor"> </a></body></html>Section 1.3.3: Vectors</h3>
-<pre class="sourceCode r"><code class="sourceCode r">world.pop &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2525779</span>, <span class="dv">3026003</span>, <span class="dv">3691173</span>, <span class="dv">4449049</span>, <span class="dv">5320817</span>, <span class="dv">6127700</span>, <span class="dv">6916183</span>)
-world.pop</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">world.pop &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2525779</span>, <span class="dv">3026003</span>, <span class="dv">3691173</span>, <span class="dv">4449049</span>, <span class="dv">5320817</span>, <span class="dv">6127700</span>, <span class="dv">6916183</span>)
+world.pop</code></pre></div>
 <pre><code>## [1] 2525779 3026003 3691173 4449049 5320817 6127700 6916183</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">pop.first &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2525779</span>, <span class="dv">3026003</span>, <span class="dv">3691173</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop.first &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2525779</span>, <span class="dv">3026003</span>, <span class="dv">3691173</span>)
 pop.second &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4449049</span>, <span class="dv">5320817</span>, <span class="dv">6127700</span>, <span class="dv">6916183</span>)
 pop.all &lt;-<span class="st"> </span><span class="kw">c</span>(pop.first, pop.second)
-pop.all</code></pre>
+pop.all</code></pre></div>
 <pre><code>## [1] 2525779 3026003 3691173 4449049 5320817 6127700 6916183</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">world.pop[<span class="dv">2</span>]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">world.pop[<span class="dv">2</span>]</code></pre></div>
 <pre><code>## [1] 3026003</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">world.pop[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">world.pop[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]</code></pre></div>
 <pre><code>## [1] 3026003 4449049</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">world.pop[<span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>)]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">world.pop[<span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>)]</code></pre></div>
 <pre><code>## [1] 4449049 3026003</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">world.pop[-<span class="dv">3</span>]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">world.pop[-<span class="dv">3</span>]</code></pre></div>
 <pre><code>## [1] 2525779 3026003 4449049 5320817 6127700 6916183</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">pop.million &lt;-<span class="st"> </span>world.pop /<span class="st"> </span><span class="dv">1000</span>
-pop.million</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop.million &lt;-<span class="st"> </span>world.pop /<span class="st"> </span><span class="dv">1000</span>
+pop.million</code></pre></div>
 <pre><code>## [1] 2525.779 3026.003 3691.173 4449.049 5320.817 6127.700 6916.183</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">pop.rate &lt;-<span class="st"> </span>world.pop /<span class="st"> </span>world.pop[<span class="dv">1</span>]
-pop.rate</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop.rate &lt;-<span class="st"> </span>world.pop /<span class="st"> </span>world.pop[<span class="dv">1</span>]
+pop.rate</code></pre></div>
 <pre><code>## [1] 1.000000 1.198047 1.461400 1.761456 2.106604 2.426063 2.738238</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">pop.increase &lt;-<span class="st"> </span>world.pop[-<span class="dv">1</span>] -<span class="st"> </span>world.pop[-<span class="dv">7</span>]
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop.increase &lt;-<span class="st"> </span>world.pop[-<span class="dv">1</span>] -<span class="st"> </span>world.pop[-<span class="dv">7</span>]
 percent.increase &lt;-<span class="st"> </span>(pop.increase /<span class="st"> </span>world.pop[-<span class="dv">7</span>]) *<span class="st"> </span><span class="dv">100</span>
-percent.increase</code></pre>
+percent.increase</code></pre></div>
 <pre><code>## [1] 19.80474 21.98180 20.53212 19.59448 15.16464 12.86752</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">percent.increase[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">22</span>)
-percent.increase</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">percent.increase[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">22</span>)
+percent.increase</code></pre></div>
 <pre><code>## [1] 20.00000 22.00000 20.53212 19.59448 15.16464 12.86752</code></pre>
 </div>
 <div id="section-1-3-4-functions" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-1-3-4-functions" class="anchor"> </a></body></html>Section 1.3.4: Functions</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(world.pop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(world.pop)</code></pre></div>
 <pre><code>## [1] 7</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">min</span>(world.pop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">min</span>(world.pop)</code></pre></div>
 <pre><code>## [1] 2525779</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">max</span>(world.pop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">max</span>(world.pop)</code></pre></div>
 <pre><code>## [1] 6916183</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">range</span>(world.pop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">range</span>(world.pop)</code></pre></div>
 <pre><code>## [1] 2525779 6916183</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(world.pop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(world.pop)</code></pre></div>
 <pre><code>## [1] 4579529</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(world.pop) /<span class="st"> </span><span class="kw">length</span>(world.pop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(world.pop) /<span class="st"> </span><span class="kw">length</span>(world.pop)</code></pre></div>
 <pre><code>## [1] 4579529</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">year &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1950</span>, <span class="dt">to =</span> <span class="dv">2010</span>, <span class="dt">by =</span> <span class="dv">10</span>)
-year</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">year &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1950</span>, <span class="dt">to =</span> <span class="dv">2010</span>, <span class="dt">by =</span> <span class="dv">10</span>)
+year</code></pre></div>
 <pre><code>## [1] 1950 1960 1970 1980 1990 2000 2010</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dt">to =</span> <span class="dv">2010</span>, <span class="dt">by =</span> <span class="dv">10</span>, <span class="dt">from =</span> <span class="dv">1950</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dt">to =</span> <span class="dv">2010</span>, <span class="dt">by =</span> <span class="dv">10</span>, <span class="dt">from =</span> <span class="dv">1950</span>)</code></pre></div>
 <pre><code>## [1] 1950 1960 1970 1980 1990 2000 2010</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">2010</span>, <span class="dt">to =</span> <span class="dv">1950</span>, <span class="dt">by =</span> -<span class="dv">10</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">2010</span>, <span class="dt">to =</span> <span class="dv">1950</span>, <span class="dt">by =</span> -<span class="dv">10</span>)</code></pre></div>
 <pre><code>## [1] 2010 2000 1990 1980 1970 1960 1950</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2008</span>:<span class="dv">2012</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2008</span>:<span class="dv">2012</span></code></pre></div>
 <pre><code>## [1] 2008 2009 2010 2011 2012</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2012</span>:<span class="dv">2008</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2012</span>:<span class="dv">2008</span></code></pre></div>
 <pre><code>## [1] 2012 2011 2010 2009 2008</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(world.pop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(world.pop)</code></pre></div>
 <pre><code>## NULL</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(world.pop) &lt;-<span class="st"> </span>year
-<span class="kw">names</span>(world.pop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(world.pop) &lt;-<span class="st"> </span>year
+<span class="kw">names</span>(world.pop)</code></pre></div>
 <pre><code>## [1] "1950" "1960" "1970" "1980" "1990" "2000" "2010"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">world.pop</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">world.pop</code></pre></div>
 <pre><code>##    1950    1960    1970    1980    1990    2000    2010 
 ## 2525779 3026003 3691173 4449049 5320817 6127700 6916183</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## myfunction &lt;- function(input1, input2, ..., inputN) {
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## myfunction &lt;- function(input1, input2, ..., inputN) {
 ##
 ##     DEFINE `output' USING INPUTS
 ##
@@ -205,77 +205,77 @@ my.summary &lt;-<span class="st"> </span>function(x){ <span class="co"># functio
   <span class="kw">return</span>(out) <span class="co"># end function by calling output</span>
 }
 z &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">10</span>
-<span class="kw">my.summary</span>(z)</code></pre>
+<span class="kw">my.summary</span>(z)</code></pre></div>
 <pre><code>##    sum length   mean 
 ##   55.0   10.0    5.5</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">my.summary</span>(world.pop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">my.summary</span>(world.pop)</code></pre></div>
 <pre><code>##      sum   length     mean 
 ## 32056704        7  4579529</code></pre>
 </div>
 <div id="section-1-3-5-data-files" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-1-3-5-data-files" class="anchor"> </a></body></html>Section 1.3.5: Data Files</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## setwd("qss/INTRO")
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## setwd("qss/INTRO")
 ## getwd()
 
 <span class="kw">data</span>(<span class="st">"UNpop"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
-<span class="kw">class</span>(UNpop)</code></pre>
+<span class="kw">class</span>(UNpop)</code></pre></div>
 <pre><code>## [1] "data.frame"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## load("UNpop.RData")
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load("UNpop.RData")
 
-<span class="kw">names</span>(UNpop)</code></pre>
+<span class="kw">names</span>(UNpop)</code></pre></div>
 <pre><code>## [1] "year"      "world.pop"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">nrow</span>(UNpop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">nrow</span>(UNpop)</code></pre></div>
 <pre><code>## [1] 7</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ncol</span>(UNpop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ncol</span>(UNpop)</code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(UNpop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(UNpop)</code></pre></div>
 <pre><code>## [1] 7 2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(UNpop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(UNpop)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th align="left"></th>
+<th></th>
 <th align="center">year</th>
 <th align="center">world.pop</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left"></td>
+<td></td>
 <td align="center">Min. :1950</td>
 <td align="center">Min. :2525779</td>
 </tr>
 <tr class="even">
-<td align="left"></td>
+<td></td>
 <td align="center">1st Qu.:1965</td>
 <td align="center">1st Qu.:3358588</td>
 </tr>
 <tr class="odd">
-<td align="left"></td>
+<td></td>
 <td align="center">Median :1980</td>
 <td align="center">Median :4449049</td>
 </tr>
 <tr class="even">
-<td align="left"></td>
+<td></td>
 <td align="center">Mean :1980</td>
 <td align="center">Mean :4579529</td>
 </tr>
 <tr class="odd">
-<td align="left"></td>
+<td></td>
 <td align="center">3rd Qu.:1995</td>
 <td align="center">3rd Qu.:5724258</td>
 </tr>
 <tr class="even">
-<td align="left"></td>
+<td></td>
 <td align="center">Max. :2010</td>
 <td align="center">Max. :6916183</td>
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">UNpop$world.pop</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">UNpop$world.pop</code></pre></div>
 <pre><code>## [1] 2525779 3026003 3691173 4449049 5320817 6127700 6916183</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">UNpop[, <span class="st">"world.pop"</span>] <span class="co"># extract the column called "world.pop"</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">UNpop[, <span class="st">"world.pop"</span>] <span class="co"># extract the column called "world.pop"</span></code></pre></div>
 <pre><code>## [1] 2525779 3026003 3691173 4449049 5320817 6127700 6916183</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">UNpop[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),]   <span class="co"># extract the first three rows (and all columns)</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">UNpop[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),]   <span class="co"># extract the first three rows (and all columns)</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">year</th>
@@ -296,38 +296,38 @@ z &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">10</s
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">UNpop[<span class="dv">1</span>:<span class="dv">3</span>, <span class="st">"year"</span>]   <span class="co"># extract the first three rows of the "year" column</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">UNpop[<span class="dv">1</span>:<span class="dv">3</span>, <span class="st">"year"</span>]   <span class="co"># extract the first three rows of the "year" column</span></code></pre></div>
 <pre><code>## [1] 1950 1960 1970</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## take elements 1, 3, 5, ... of the "world.pop" variable
-UNpop$world.pop[<span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="kw">nrow</span>(UNpop), <span class="dt">by =</span> <span class="dv">2</span>)]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## take elements 1, 3, 5, ... of the "world.pop" variable
+UNpop$world.pop[<span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="kw">nrow</span>(UNpop), <span class="dt">by =</span> <span class="dv">2</span>)]</code></pre></div>
 <pre><code>## [1] 2525779 3691173 5320817 6916183</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">world.pop &lt;-<span class="st"> </span><span class="kw">c</span>(UNpop$world.pop, <span class="ot">NA</span>)
-world.pop</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">world.pop &lt;-<span class="st"> </span><span class="kw">c</span>(UNpop$world.pop, <span class="ot">NA</span>)
+world.pop</code></pre></div>
 <pre><code>## [1] 2525779 3026003 3691173 4449049 5320817 6127700 6916183      NA</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(world.pop)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(world.pop)</code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(world.pop, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(world.pop, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## [1] 4579529</code></pre>
 </div>
 <div id="section-1-3-6-saving-objects" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-1-3-6-saving-objects" class="anchor"> </a></body></html>Section 1.3.6: Saving Objects</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save.image</span>(<span class="st">"qss/INTRO/Chapter1.RData"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save.image</span>(<span class="st">"qss/INTRO/Chapter1.RData"</span>)
 
 <span class="kw">save</span>(UNpop, <span class="dt">file =</span> <span class="st">"Chapter1.RData"</span>)
 <span class="kw">save</span>(world.pop, year, <span class="dt">file =</span> <span class="st">"qss/INTRO/Chapter1.RData"</span>)
 
 <span class="kw">write.csv</span>(UNpop, <span class="dt">file =</span> <span class="st">"UNpop.csv"</span>)
 
-<span class="kw">load</span>(<span class="st">"Chapter1.RData"</span>)</code></pre>
+<span class="kw">load</span>(<span class="st">"Chapter1.RData"</span>)</code></pre></div>
 </div>
 <div id="section-1-3-7-packages" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-1-3-7-packages" class="anchor"> </a></body></html>Section 1.3.7: Packages</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## install.packages("foreign") # install package
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## install.packages("foreign") # install package
 <span class="kw">library</span>(<span class="st">"foreign"</span>) <span class="co"># load package</span>
 
-<span class="kw">read.dta</span>(<span class="kw">system.file</span>(<span class="st">"extdata/data_files/UNpop.dta"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>))</code></pre>
+<span class="kw">read.dta</span>(<span class="kw">system.file</span>(<span class="st">"extdata/data_files/UNpop.dta"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">year</th>
@@ -364,13 +364,13 @@ world.pop</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## read.spss("UNpop.sav")</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.dta</span>(UNpop, <span class="dt">file =</span> <span class="st">"UNpop.dta"</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## read.spss("UNpop.sav")</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.dta</span>(UNpop, <span class="dt">file =</span> <span class="st">"UNpop.dta"</span>)</code></pre></div>
 </div>
 <div id="section-1-3-8-programming-and-learning-tips" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-1-3-8-programming-and-learning-tips" class="anchor"> </a></body></html>Section 1.3.8: Programming and Learning Tips</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## source("UNpop.R")
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## source("UNpop.R")
 
 ##
 ## File: UNpop.R
@@ -378,11 +378,11 @@ world.pop</code></pre>
 ## The code loads the UN population data and saves it as a STATA file
 ##
 <span class="kw">data</span>(<span class="st">"UNpop"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
-UNpop$world.pop &lt;-<span class="st"> </span>UNpop$world.pop /<span class="st"> </span><span class="dv">1000</span>  <span class="co"># population in millions</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(foreign)
-<span class="kw">write.dta</span>(UNpop, <span class="dt">file =</span> <span class="st">"UNpop.dta"</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lintr)
-<span class="co">#lint("demo/UNpop.R")</span></code></pre>
+UNpop$world.pop &lt;-<span class="st"> </span>UNpop$world.pop /<span class="st"> </span><span class="dv">1000</span>  <span class="co"># population in millions</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(foreign)
+<span class="kw">write.dta</span>(UNpop, <span class="dt">file =</span> <span class="st">"UNpop.dta"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lintr)
+<span class="co">#lint("demo/UNpop.R")</span></code></pre></div>
 </div>
 </div>
 </div>

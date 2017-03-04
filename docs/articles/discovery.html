@@ -66,19 +66,19 @@
 <div id="section-5-1-1-the-disputed-authorship-of-the-federalist-papers" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-1-1-the-disputed-authorship-of-the-federalist-papers" class="anchor"> </a></body></html>Section 5.1.1: The Disputed Authorship of ‘The Federalist Papers’</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## load two required libraries
-<span class="kw">library</span>(tm)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load two required libraries
+<span class="kw">library</span>(tm)</code></pre></div>
 <pre><code>## Loading required package: NLP</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(SnowballC)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(SnowballC)
 
 ## load the raw corpus
 corpus_dir &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">"extdata/federalist/"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 corpus.raw &lt;-<span class="st"> </span><span class="kw">Corpus</span>(<span class="kw">DirSource</span>(corpus_dir, <span class="dt">pattern =</span> <span class="st">"</span><span class="ch">\\</span><span class="st">.txt$"</span>))
-corpus.raw</code></pre>
-<pre><code>## &lt;&lt;VCorpus&gt;&gt;
-## Metadata:  corpus specific: 0, document level (indexed): 0
+corpus.raw</code></pre></div>
+<pre><code>## &lt;&lt;SimpleCorpus&gt;&gt;
+## Metadata:  corpus specific: 1, document level (indexed): 0
 ## Content:  documents: 85</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## make lower case
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## make lower case
 corpus.prep &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus.raw, <span class="kw">content_transformer</span>(tolower))
 ## remove white space
 corpus.prep &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus.prep, stripWhitespace)
@@ -88,312 +88,82 @@ corpus.prep &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus.
 ## remove numbers
 corpus.prep &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus.prep, removeNumbers)
 
-<span class="kw">head</span>(<span class="kw">stopwords</span>(<span class="st">"english"</span>))</code></pre>
+<span class="kw">head</span>(<span class="kw">stopwords</span>(<span class="st">"english"</span>))</code></pre></div>
 <pre><code>## [1] "i"      "me"     "my"     "myself" "we"     "our"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## remove stop words
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## remove stop words
 corpus &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus.prep, removeWords, <span class="kw">stopwords</span>(<span class="st">"english"</span>))
 
 ## finally stem remaining words
 corpus &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus, stemDocument)
 
 ## the output is truncated here to save space
-<span class="kw">content</span>(corpus[[<span class="dv">10</span>]]) <span class="co"># Essay No. 10</span></code></pre>
-<pre><code>##   [1] "among  numer advantag promis   wellconstruct union none"                                                      
-##   [2] " deserv    accur develop   tendenc  break "                                                                   
-##   [3] " control  violenc  faction  friend  popular govern never"                                                     
-##   [4] " find   much alarm   charact  fate   "                                                                        
-##   [5] " contempl  propens   danger vice  will  fail"                                                                 
-##   [6] " therefor  set  due valu   plan  without violat "                                                             
-##   [7] " principl     attach provid  proper cure   "                                                                  
-##   [8] " instabl injustic  confus introduc   public council"                                                          
-##   [9] "   truth   mortal diseas   popular govern"                                                                    
-##  [10] "  everywher perish   continu    favorit  fruit"                                                               
-##  [11] " topic    adversari  liberti deriv   specious"                                                                
-##  [12] " declam  valuabl improv made   american constitut"                                                            
-##  [13] "   popular model  ancient  modern  certain  "                                                                 
-##  [14] " much admir      unwarrant partial  contend"                                                                  
-##  [15] "     effectu obviat  danger   side  "                                                                         
-##  [16] " wish  expect complaint  everywher heard    consider"                                                         
-##  [17] "  virtuous citizen equal  friend  public  privat faith"                                                       
-##  [18] "   public  person liberti   govern   unstabl"                                                                 
-##  [19] "   public good  disregard   conflict  rival parti"                                                            
-##  [20] "   measur   often decid  accord   rule "                                                                      
-##  [21] " justic   right   minor parti    superior forc "                                                              
-##  [22] "  interest  overbear major howev anxious  may wish"                                                           
-##  [23] "   complaint   foundat  evid  known fact"                                                                     
-##  [24] " will  permit us  deni      degre true  will"                                                                 
-##  [25] "  found inde   candid review   situat    "                                                                    
-##  [26] " distress    labor   erron charg   oper"                                                                      
-##  [27] "   govern   will  found    time  "                                                                            
-##  [28] " caus will  alon account  mani   heaviest misfortun "                                                         
-##  [29] " particular   prevail  increas distrust  public engag"                                                        
-##  [30] "  alarm  privat right   echo  one end   contin"                                                               
-##  [31] "     must  chiefli   wholli effect   unsteadi"                                                                
-##  [32] "  injustic    factious spirit  taint  public administr   faction  understand  number  citizen whether amount "
-##  [33] "  major   minor   whole   unit  actuat "                                                                      
-##  [34] "  common impuls  passion   interest advers   right"                                                           
-##  [35] "   citizen    perman  aggreg interest  "                                                                      
-##  [36] " communiti   two method  cure  mischief  faction  one "                                                       
-##  [37] " remov  caus    control  effect    two method  remov  caus  faction  one"                                     
-##  [38] "  destroy  liberti   essenti   exist  "                                                                       
-##  [39] "  give  everi citizen   opinion   passion  "                                                                  
-##  [40] "  interest   never   truli said    first remedi   "                                                           
-##  [41] " wors   diseas liberti   faction  air   fire "                                                                
-##  [42] " aliment without   instant expir      less folli"                                                             
-##  [43] "  abolish liberti   essenti  polit life   nourish"                                                            
-##  [44] " faction      wish  annihil  air   essenti"                                                                   
-##  [45] "  anim life   impart  fire  destruct agenc  second expedi   impractic   first   unwis"                        
-##  [46] "  long   reason  man continu fallibl     liberti"                                                             
-##  [47] "  exercis  differ opinion will  form  long   connect"                                                         
-##  [48] " subsist   reason   selflov  opinion   passion"                                                               
-##  [49] " will   reciproc influenc      former will "                                                                  
-##  [50] " object    latter will attach   divers  "                                                                     
-##  [51] " faculti  men    right  properti origin  "                                                                    
-##  [52] " less  insuper obstacl   uniform  interest  protect"                                                          
-##  [53] "   faculti   first object  govern   protect"                                                                  
-##  [54] "  differ  unequ faculti  acquir properti  possess"                                                            
-##  [55] "  differ degre  kind  properti immedi result  "                                                               
-##  [56] "  influenc     sentiment  view   respect proprietor"                                                          
-##  [57] " ensu  divis   societi  differ interest  parti  latent caus  faction  thus sown   natur  man "                
-##  [58] "  see  everywher brought  differ degre  activ accord"                                                         
-##  [59] "   differ circumst  civil societi  zeal  differ"                                                              
-##  [60] " opinion concern religion concern govern  mani  point"                                                        
-##  [61] "  well  specul   practic  attach  differ leader"                                                              
-##  [62] " ambiti contend  preemin  power   person  "                                                                   
-##  [63] " descript whose fortun   interest   human passion"                                                            
-##  [64] "   turn divid mankind  parti inflam   mutual"                                                                 
-##  [65] " animos  render  much  dispos  vex  oppress "                                                                 
-##  [66] "    cooper   common good  strong   propens"                                                                   
-##  [67] "  mankind  fall  mutual animos    substanti"                                                                  
-##  [68] " occas present    frivol  fanci distinct"                                                                     
-##  [69] "   suffici  kindl  unfriend passion  excit "                                                                  
-##  [70] "  violent conflict    common  durabl sourc  faction"                                                          
-##  [71] "    various  unequ distribut  properti   hold"                                                                
-##  [72] "     without properti  ever form distinct interest"                                                           
-##  [73] "  societi    creditor     debtor fall "                                                                       
-##  [74] "  like discrimin  land interest  manufactur interest "                                                        
-##  [75] " mercantil interest  money interest  mani lesser interest grow"                                               
-##  [76] "   necess  civil nation  divid   differ class"                                                                
-##  [77] " actuat  differ sentiment  view  regul   various"                                                             
-##  [78] "  interf interest form  princip task  modern legisl"                                                          
-##  [79] "  involv  spirit  parti  faction   necessari  ordinari"                                                       
-##  [80] " oper   govern  man  allow    judg    caus   interest"                                                        
-##  [81] "  certain bias  judgment   improb corrupt  integr"                                                            
-##  [82] "  equal nay  greater reason  bodi  men  unfit   "                                                             
-##  [83] " judg  parti    time yet   mani    import"                                                                    
-##  [84] " act  legisl   mani judici determin  inde concern"                                                            
-##  [85] "  right  singl person  concern  right  larg bodi"                                                             
-##  [86] "  citizen     differ class  legisl  advoc"                                                                    
-##  [87] "  parti   caus   determin   law propos concern"                                                               
-##  [88] " privat debt    question    creditor  parti "                                                                 
-##  [89] " one side   debtor    justic   hold  balanc"                                                                  
-##  [90] "   yet  parti   must    judg"                                                                                 
-##  [91] "    numer parti    word   power faction"                                                                      
-##  [92] " must  expect  prevail shall domest manufactur  encourag"                                                     
-##  [93] "    degre  restrict  foreign manufactur  question"                                                            
-##  [94] "    differ decid   land   manufactur"                                                                         
-##  [95] " class  probabl  neither   sole regard  justic  "                                                             
-##  [96] " public good  apportion  tax   various descript "                                                             
-##  [97] " properti   act  seem  requir   exact imparti"                                                                
-##  [98] " yet   perhap  legisl act   greater opportun"                                                                 
-##  [99] "  temptat  given   predomin parti  trampl   rule"                                                             
-## [100] "  justic everi shill    overburden  inferior number"                                                          
-## [101] "   shill save    pocket    vain  say  enlighten statesmen will  abl  adjust"                                  
-## [102] "  clash interest  render   subservi   public"                                                                 
-## [103] " good enlighten statesmen will  alway    helm   mani"                                                         
-## [104] " case can   adjust  made   without take  view"                                                                
-## [105] " indirect  remot consider  will rare prevail  "                                                               
-## [106] " immedi interest  one parti may find  disregard  right"                                                       
-## [107] "  anoth   good   whole  infer     brought    caus  faction"                                                   
-## [108] "   remov   relief     sought   mean "                                                                         
-## [109] " control  effect   faction consist  less   major relief  suppli "                                             
-## [110] "  republican principl  enabl  major  defeat  sinist"                                                          
-## [111] " view  regular vote  may clog  administr  may convuls"                                                        
-## [112] "  societi   will  unabl  execut  mask  violenc "                                                              
-## [113] "  form   constitut   major  includ   faction"                                                                 
-## [114] "  form  popular govern    hand enabl   sacrific"                                                              
-## [115] "   rule passion  interest   public good   right"                                                              
-## [116] "   citizen  secur  public good  privat right "                                                                
-## [117] "  danger    faction     time  preserv  spirit"                                                                
-## [118] "   form  popular govern    great object  "                                                                    
-## [119] "  inquiri  direct let  add     great desideratum"                                                             
-## [120] "    form  govern can  rescu   opprobrium "                                                                    
-## [121] "     long labor   recommend   esteem  adopt"                                                                  
-## [122] "  mankind   mean   object attain evid  one  two "                                                             
-## [123] " either  exist    passion  interest   major "                                                                 
-## [124] "   time must  prevent   major   coexist"                                                                      
-## [125] " passion  interest must  render   number  local situat"                                                       
-## [126] " unabl  concert  carri  effect scheme  oppress  "                                                             
-## [127] " impuls   opportun  suffer  coincid  well know "                                                              
-## [128] " neither moral  religi motiv can  reli    adequ control"                                                      
-## [129] "    found      injustic  violenc  individu"                                                                   
-## [130] "  lose  efficaci  proport   number combin togeth"                                                             
-## [131] "    proport   efficaci becom need   view   subject  may  conclud   pure democraci"                            
-## [132] "    mean  societi consist   small number  citizen "                                                           
-## [133] " assembl  administ  govern  person can admit   cure"                                                          
-## [134] "   mischief  faction  common passion  interest will  almost"                                                  
-## [135] " everi case  felt   major   whole  communic  concert"                                                         
-## [136] " result   form  govern     noth  check"                                                                       
-## [137] "  induc  sacrific  weaker parti   obnoxi individu"                                                            
-## [138] " henc     democraci  ever  spectacl  turbul"                                                                  
-## [139] "  content  ever  found incompat  person secur"                                                                
-## [140] "   right  properti    general   short  "                                                                      
-## [141] " live     violent   death theoret politician"                                                                 
-## [142] "   patron  speci  govern  erron suppos"                                                                       
-## [143] "   reduc mankind   perfect equal   polit right"                                                               
-## [144] "      time  perfect equal  assimil "                                                                          
-## [145] "  possess  opinion   passion  republ    mean  govern    scheme  represent"                                    
-## [146] " take place open  differ prospect  promis  cure  "                                                            
-## [147] "   seek let us examin  point    vari  pure"                                                                   
-## [148] " democraci   shall comprehend   natur   cure  "                                                               
-## [149] " efficaci   must deriv   union  two great point  differ   democraci   republ"                                 
-## [150] "  first  deleg   govern   latter   small"                                                                     
-## [151] " number  citizen elect   rest second  greater number "                                                        
-## [152] " citizen  greater sphere  countri    latter may "                                                             
-## [153] " extend  effect   first differ    one hand  refin "                                                           
-## [154] " enlarg  public view  pass    medium   chosen"                                                                
-## [155] " bodi  citizen whose wisdom may best discern  true interest  "                                                
-## [156] " countri  whose patriot  love  justic will  least like"                                                       
-## [157] "  sacrific   temporari  partial consider    regul"                                                            
-## [158] "  may well happen   public voic pronounc   repres"                                                            
-## [159] "   peopl will   conson   public good   pronounc"                                                              
-## [160] "   peopl  conven   purpos    hand"                                                                            
-## [161] "  effect may  invert men  factious temper  local prejudic"                                                    
-## [162] "   sinist design may  intrigu  corrupt    mean"                                                               
-## [163] " first obtain  suffrag   betray  interest   peopl"                                                            
-## [164] "  question result  whether small  extens republ  "                                                            
-## [165] " favor   elect  proper guardian   public weal "                                                               
-## [166] "   clear decid  favor   latter  two obvious consider   first place     remark  howev small  republ"           
-## [167] " may   repres must  rais   certain number  order"                                                             
-## [168] "  guard   cabal      howev larg  may "                                                                        
-## [169] "  must  limit   certain number  order  guard  "                                                               
-## [170] " confus   multitud henc  number  repres  "                                                                    
-## [171] " two case    proport     two constitu "                                                                       
-## [172] "  proport greater   small republ  follow  "                                                                   
-## [173] "  proport  fit charact   less   larg   "                                                                      
-## [174] " small republ  former will present  greater option  consequ"                                                  
-## [175] "  greater probabl   fit choic   next place   repres will  chosen   greater"                                   
-## [176] " number  citizen   larg    small republ  will "                                                               
-## [177] "  difficult  unworthi candid  practic  success  vicious"                                                      
-## [178] " art   elect   often carri   suffrag  "                                                                       
-## [179] " peopl   free will   like  centr  men  possess"                                                               
-## [180] "   attract merit    diffus  establish charact  must  confess        case   "                                  
-## [181] " mean   side   inconveni will  found  lie  enlarg"                                                            
-## [182] "  much  number  elector  render  repres  littl"                                                               
-## [183] " acquaint    local circumst  lesser interest "                                                                
-## [184] "  reduc   much  render  unduli attach   "                                                                     
-## [185] "  littl fit  comprehend  pursu great  nation object "                                                         
-## [186] " feder constitut form  happi combin   respect  great"                                                         
-## [187] "  aggreg interest  refer   nation  local "                                                                    
-## [188] " particular   state legislatur   point  differ   greater number  citizen "                                    
-## [189] " extent  territori  may  brought within  compass  republican"                                                 
-## [190] "   democrat govern     circumst princip"                                                                      
-## [191] "  render factious combin less   dread   former "                                                              
-## [192] "   latter  smaller  societi  fewer probabl will  "                                                            
-## [193] " distinct parti  interest compos   fewer  distinct parti"                                                     
-## [194] "  interest   frequent will  major  found   "                                                                  
-## [195] " parti   smaller  number  individu compos  major"                                                             
-## [196] "   smaller  compass within    place   easili"                                                                 
-## [197] " will  concert  execut  plan  oppress extend  sphere"                                                         
-## [198] "   take   greater varieti  parti  interest  make "                                                            
-## [199] " less probabl   major   whole will   common motiv "                                                           
-## [200] " invad  right   citizen     common motiv exist"                                                               
-## [201] "  will   difficult    feel   discov   strength"                                                               
-## [202] "   act  unison    besid  impedi  may"                                                                         
-## [203] "  remark      conscious  unjust  dishonor"                                                                    
-## [204] " purpos communic  alway check  distrust  proport "                                                            
-## [205] "  number whose concurr  necessari henc  clear appear    advantag   republ "                                   
-## [206] "   democraci  control  effect  faction  enjoy "                                                               
-## [207] "  larg   small republici enjoy   union   state"                                                               
-## [208] " compos    advantag consist   substitut  repres"                                                              
-## [209] " whose enlighten view  virtuous sentiment render  superior "                                                  
-## [210] " local prejudic  scheme  injustic  will   deni "                                                              
-## [211] "  represent   union will   like  possess  requisit"                                                           
-## [212] " endow   consist   greater secur afford   greater"                                                            
-## [213] " varieti  parti   event   one parti  abl  outnumb"                                                            
-## [214] "  oppress  rest   equal degre   increas varieti "                                                             
-## [215] " parti compris within  union increas  secur   "                                                               
-## [216] " fine consist   greater obstacl oppos   concert  accomplish"                                                  
-## [217] "   secret wish   unjust  interest major  "                                                                    
-## [218] "  extent   union give    palpabl advantag  influenc  factious leader may kindl  flame within  particular"     
-## [219] " state  will  unabl  spread  general conflagr  "                                                              
-## [220] "  state  religi sect may degener   polit faction"                                                             
-## [221] "   part   confederaci   varieti  sect dispers "                                                               
-## [222] "  entir face   must secur  nation council   danger"                                                           
-## [223] "   sourc  rage  paper money   abolit  debt "                                                                  
-## [224] "  equal divis  properti     improp  wick project"                                                             
-## [225] " will  less apt  pervad  whole bodi   union   particular"                                                     
-## [226] " member      proport    maladi   like "                                                                       
-## [227] " taint  particular counti  district   entir state   extent  proper structur   union therefor  behold"         
-## [228] "  republican remedi   diseas  incid  republican govern"                                                       
-## [229] "  accord   degre  pleasur  pride  feel   republican"                                                          
-## [230] "     zeal  cherish  spirit  support  charact"                                                                 
-## [231] "  federalist"</code></pre>
+<span class="kw">content</span>(corpus[[<span class="dv">10</span>]]) <span class="co"># Essay No. 10</span></code></pre></div>
+<pre><code>## [1] "among numer advantag promis wellconstruct union none deserv accur develop tendenc break control violenc faction friend popular govern never find much alarm charact fate contempl propens danger vice will fail therefor set due valu plan without violat principl attach provid proper cure instabl injustic confus introduc public council truth mortal diseas popular govern everywher perish continu favorit fruit topic adversari liberti deriv specious declam valuabl improv made american constitut popular model ancient modern certain much admir unwarrant partial contend effectu obviat danger side wish expect complaint everywher heard consider virtuous citizen equal friend public privat faith public person liberti govern unstabl public good disregard conflict rival parti measur often decid accord rule justic right minor parti superior forc interest overbear major howev anxious may wish complaint foundat evid known fact will permit us deni degre true will found inde candid review situat distress labor erron charg oper govern will found time caus will alon account mani heaviest misfortun particular prevail increas distrust public engag alarm privat right echo one end contin must chiefli wholli effect unsteadi injustic factious spirit taint public administr faction understand number citizen whether amount major minor whole unit actuat common impuls passion interest advers right citizen perman aggreg interest communiti two method cure mischief faction one remov caus control effect two method remov caus faction one destroy liberti essenti exist give everi citizen opinion passion interest never truli said first remedi wors diseas liberti faction air fire aliment without instant expir less folli abolish liberti essenti polit life nourish faction wish annihil air essenti anim life impart fire destruct agenc second expedi impractic first unwis long reason man continu fallibl liberti exercis differ opinion will form long connect subsist reason selflov opinion passion will reciproc influenc former will object latter will attach divers faculti men right properti origin less insuper obstacl uniform interest protect faculti first object govern protect differ unequ faculti acquir properti possess differ degre kind properti immedi result influenc sentiment view respect proprietor ensu divis societi differ interest parti latent caus faction thus sown natur man see everywher brought differ degre activ accord differ circumst civil societi zeal differ opinion concern religion concern govern mani point well specul practic attach differ leader ambiti contend preemin power person descript whose fortun interest human passion turn divid mankind parti inflam mutual animos render much dispos vex oppress cooper common good strong propens mankind fall mutual animos substanti occas present frivol fanci distinct suffici kindl unfriend passion excit violent conflict common durabl sourc faction various unequ distribut properti hold without properti ever form distinct interest societi creditor debtor fall like discrimin land interest manufactur interest mercantil interest money interest mani lesser interest grow necess civil nation divid differ class actuat differ sentiment view regul various interf interest form princip task modern legisl involv spirit parti faction necessari ordinari oper govern man allow judg caus interest certain bias judgment improb corrupt integr equal nay greater reason bodi men unfit judg parti time yet mani import act legisl mani judici determin inde concern right singl person concern right larg bodi citizen differ class legisl advoc parti caus determin law propos concern privat debt question creditor parti one side debtor justic hold balanc yet parti must judg numer parti word power faction must expect prevail shall domest manufactur encourag degre restrict foreign manufactur question differ decid land manufactur class probabl neither sole regard justic public good apportion tax various descript properti act seem requir exact imparti yet perhap legisl act greater opportun temptat given predomin parti trampl rule justic everi shill overburden inferior number shill save pocket vain say enlighten statesmen will abl adjust clash interest render subservi public good enlighten statesmen will alway helm mani case can adjust made without take view indirect remot consider will rare prevail immedi interest one parti may find disregard right anoth good whole infer brought caus faction remov relief sought mean control effect faction consist less major relief suppli republican principl enabl major defeat sinist view regular vote may clog administr may convuls societi will unabl execut mask violenc form constitut major includ faction form popular govern hand enabl sacrific rule passion interest public good right citizen secur public good privat right danger faction time preserv spirit form popular govern great object inquiri direct let add great desideratum form govern can rescu opprobrium long labor recommend esteem adopt mankind mean object attain evid one two either exist passion interest major time must prevent major coexist passion interest must render number local situat unabl concert carri effect scheme oppress impuls opportun suffer coincid well know neither moral religi motiv can reli adequ control found injustic violenc individu lose efficaci proport number combin togeth proport efficaci becom need view subject may conclud pure democraci mean societi consist small number citizen assembl administ govern person can admit cure mischief faction common passion interest will almost everi case felt major whole communic concert result form govern noth check induc sacrific weaker parti obnoxi individu henc democraci ever spectacl turbul content ever found incompat person secur right properti general short live violent death theoret politician patron speci govern erron suppos reduc mankind perfect equal polit right time perfect equal assimil possess opinion passion republ mean govern scheme represent take place open differ prospect promis cure seek let us examin point vari pure democraci shall comprehend natur cure efficaci must deriv union two great point differ democraci republ first deleg govern latter small number citizen elect rest second greater number citizen greater sphere countri latter may extend effect first differ one hand refin enlarg public view pass medium chosen bodi citizen whose wisdom may best discern true interest countri whose patriot love justic will least like sacrific temporari partial consider regul may well happen public voic pronounc repres peopl will conson public good pronounc peopl conven purpos hand effect may invert men factious temper local prejudic sinist design may intrigu corrupt mean first obtain suffrag betray interest peopl question result whether small extens republ favor elect proper guardian public weal clear decid favor latter two obvious consider first place remark howev small republ may repres must rais certain number order guard cabal howev larg may must limit certain number order guard confus multitud henc number repres two case proport two constitu proport greater small republ follow proport fit charact less larg small republ former will present greater option consequ greater probabl fit choic next place repres will chosen greater number citizen larg small republ will difficult unworthi candid practic success vicious art elect often carri suffrag peopl free will like centr men possess attract merit diffus establish charact must confess case mean side inconveni will found lie enlarg much number elector render repres littl acquaint local circumst lesser interest reduc much render unduli attach littl fit comprehend pursu great nation object feder constitut form happi combin respect great aggreg interest refer nation local particular state legislatur point differ greater number citizen extent territori may brought within compass republican democrat govern circumst princip render factious combin less dread former latter smaller societi fewer probabl will distinct parti interest compos fewer distinct parti interest frequent will major found parti smaller number individu compos major smaller compass within place easili will concert execut plan oppress extend sphere take greater varieti parti interest make less probabl major whole will common motiv invad right citizen common motiv exist will difficult feel discov strength act unison besid impedi may remark conscious unjust dishonor purpos communic alway check distrust proport number whose concurr necessari henc clear appear advantag republ democraci control effect faction enjoy larg small republici enjoy union state compos advantag consist substitut repres whose enlighten view virtuous sentiment render superior local prejudic scheme injustic will deni represent union will like possess requisit endow consist greater secur afford greater varieti parti event one parti abl outnumb oppress rest equal degre increas varieti parti compris within union increas secur fine consist greater obstacl oppos concert accomplish secret wish unjust interest major extent union give palpabl advantag influenc factious leader may kindl flame within particular state will unabl spread general conflagr state religi sect may degener polit faction part confederaci varieti sect dispers entir face must secur nation council danger sourc rage paper money abolit debt equal divis properti improp wick project will less apt pervad whole bodi union particular member proport maladi like taint particular counti district entir state extent proper structur union therefor behold republican remedi diseas incid republican govern accord degre pleasur pride feel republican zeal cherish spirit support charact federalist"</code></pre>
 </div>
 <div id="section-5-1-2-document-term-matrix" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-1-2-document-term-matrix" class="anchor"> </a></body></html>Section 5.1.2: Document-Term Matrix</h3>
-<pre class="sourceCode r"><code class="sourceCode r">dtm &lt;-<span class="st"> </span><span class="kw">DocumentTermMatrix</span>(corpus)
-dtm</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dtm &lt;-<span class="st"> </span><span class="kw">DocumentTermMatrix</span>(corpus)
+dtm</code></pre></div>
 <pre><code>## &lt;&lt;DocumentTermMatrix (documents: 85, terms: 4849)&gt;&gt;
 ## Non-/sparse entries: 44917/367248
 ## Sparsity           : 89%
 ## Maximal term length: 18
 ## Weighting          : term frequency (tf)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect</span>(dtm[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1</span>:<span class="dv">8</span>])</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect</span>(dtm[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1</span>:<span class="dv">8</span>])</code></pre></div>
 <pre><code>## &lt;&lt;DocumentTermMatrix (documents: 5, terms: 8)&gt;&gt;
-## Non-/sparse entries: 4/36
-## Sparsity           : 90%
-## Maximal term length: 7
+## Non-/sparse entries: 18/22
+## Sparsity           : 55%
+## Maximal term length: 10
 ## Weighting          : term frequency (tf)
-## 
+## Sample             :
 ##           Terms
-## Docs       abandon abat abb abet abhorr abil abject abl
-##   fp01.txt       0    0   0    0      0    0      0   1
-##   fp02.txt       0    0   0    0      0    1      0   0
-##   fp03.txt       0    0   0    0      0    0      0   2
-##   fp04.txt       0    0   0    0      0    0      0   1
-##   fp05.txt       0    0   0    0      0    0      0   0</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">dtm.mat &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(dtm)</code></pre>
+## Docs       abl absurd accid accord acknowledg act actuat add
+##   fp01.txt   1      1     1      1          1   1      1   1
+##   fp02.txt   0      0     0      0          0   0      0   0
+##   fp03.txt   2      0     0      1          2   1      1   1
+##   fp04.txt   1      0     0      1          0   1      0   0
+##   fp05.txt   0      0     0      0          0   1      0   0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dtm.mat &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(dtm)</code></pre></div>
 </div>
 <div id="section-5-1-3-topic-discovery" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-1-3-topic-discovery" class="anchor"> </a></body></html>Section 5.1.3: Topic Discovery</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(wordcloud)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(wordcloud)</code></pre></div>
 <pre><code>## Loading required package: RColorBrewer</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wordcloud</span>(<span class="kw">colnames</span>(dtm.mat), dtm.mat[<span class="dv">12</span>, ], <span class="dt">max.words =</span> <span class="dv">20</span>)  <span class="co"># essay No. 12</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wordcloud</span>(<span class="kw">colnames</span>(dtm.mat), dtm.mat[<span class="dv">12</span>, ], <span class="dt">max.words =</span> <span class="dv">20</span>)  <span class="co"># essay No. 12</span></code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-3-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wordcloud</span>(<span class="kw">colnames</span>(dtm.mat), dtm.mat[<span class="dv">24</span>, ], <span class="dt">max.words =</span> <span class="dv">20</span>)  <span class="co"># essay No. 24</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wordcloud</span>(<span class="kw">colnames</span>(dtm.mat), dtm.mat[<span class="dv">24</span>, ], <span class="dt">max.words =</span> <span class="dv">20</span>)  <span class="co"># essay No. 24</span></code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-3-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stemCompletion</span>(<span class="kw">c</span>(<span class="st">"revenu"</span>, <span class="st">"commerc"</span>, <span class="st">"peac"</span>, <span class="st">"army"</span>), corpus.prep)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stemCompletion</span>(<span class="kw">c</span>(<span class="st">"revenu"</span>, <span class="st">"commerc"</span>, <span class="st">"peac"</span>, <span class="st">"army"</span>), corpus.prep)</code></pre></div>
 <pre><code>##     revenu    commerc       peac       army 
 ##  "revenue" "commerce"    "peace"     "army"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">dtm.tfidf &lt;-<span class="st"> </span><span class="kw">weightTfIdf</span>(dtm) <span class="co"># tf-idf calculation</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dtm.tfidf &lt;-<span class="st"> </span><span class="kw">weightTfIdf</span>(dtm) <span class="co"># tf-idf calculation</span>
 
 dtm.tfidf.mat &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(dtm.tfidf)  <span class="co"># convert to matrix</span>
 
 ## 10 most important words for Paper No. 12
-<span class="kw">head</span>(<span class="kw">sort</span>(dtm.tfidf.mat[<span class="dv">12</span>, ], <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">n =</span> <span class="dv">10</span>)</code></pre>
+<span class="kw">head</span>(<span class="kw">sort</span>(dtm.tfidf.mat[<span class="dv">12</span>, ], <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">n =</span> <span class="dv">10</span>)</code></pre></div>
 <pre><code>##     revenu contraband     patrol      excis      coast      trade 
 ## 0.01905877 0.01886965 0.01886965 0.01876560 0.01592559 0.01473504 
 ##        per        tax       cent     gallon 
 ## 0.01420342 0.01295466 0.01257977 0.01257977</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## 10 most important words for Paper No. 24
-<span class="kw">head</span>(<span class="kw">sort</span>(dtm.tfidf.mat[<span class="dv">24</span>, ], <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">n =</span> <span class="dv">10</span>)</code></pre>
-<pre><code>##   garrison   dockyard settlement      spain       armi   frontier 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 10 most important words for Paper No. 24
+<span class="kw">head</span>(<span class="kw">sort</span>(dtm.tfidf.mat[<span class="dv">24</span>, ], <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">n =</span> <span class="dv">10</span>)</code></pre></div>
+<pre><code>##   garrison settlement   dockyard      spain       armi   frontier 
 ## 0.02965511 0.01962294 0.01962294 0.01649040 0.01544256 0.01482756 
 ##    arsenal    western       post     nearer 
 ## 0.01308196 0.01306664 0.01236780 0.01166730</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">k &lt;-<span class="st"> </span><span class="dv">4</span>  <span class="co"># number of clusters</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">k &lt;-<span class="st"> </span><span class="dv">4</span>  <span class="co"># number of clusters</span>
 ## subset The Federalist papers written by Hamilton
 hamilton &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">6</span>:<span class="dv">9</span>, <span class="dv">11</span>:<span class="dv">13</span>, <span class="dv">15</span>:<span class="dv">17</span>, <span class="dv">21</span>:<span class="dv">36</span>, <span class="dv">59</span>:<span class="dv">61</span>, <span class="dv">65</span>:<span class="dv">85</span>)
 dtm.tfidf.hamilton &lt;-<span class="st"> </span>dtm.tfidf.mat[hamilton, ]
 
 ## run k-means
 km.out &lt;-<span class="st"> </span><span class="kw">kmeans</span>(dtm.tfidf.hamilton, <span class="dt">centers =</span> k)
-km.out$iter <span class="co"># check the convergence; number of iterations may vary</span></code></pre>
+km.out$iter <span class="co"># check the convergence; number of iterations may vary</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## label each centroid with the corresponding term
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## label each centroid with the corresponding term
 <span class="kw">colnames</span>(km.out$centers) &lt;-<span class="st"> </span><span class="kw">colnames</span>(dtm.tfidf.hamilton)
 
 for (i in <span class="dv">1</span>:k) { <span class="co"># loop for each cluster</span>
@@ -404,7 +174,7 @@ for (i in <span class="dv">1</span>:k) { <span class="co"># loop for each cluste
     <span class="kw">cat</span>(<span class="st">"Federalist Papers classified: </span><span class="ch">\n</span><span class="st">"</span>) <span class="co"># extract essays classified</span>
     <span class="kw">print</span>(<span class="kw">rownames</span>(dtm.tfidf.hamilton)[km.out$cluster ==<span class="st"> </span>i])
     <span class="kw">cat</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)
-}</code></pre>
+}</code></pre></div>
 <pre><code>## CLUSTER 1 
 ## Top 10 words:
 ##       court       senat        upon        juri      presid       claus 
@@ -455,7 +225,7 @@ for (i in <span class="dv">1</span>:k) { <span class="co"># loop for each cluste
 <div id="section-5-1-4-authorship-prediction" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-1-4-authorship-prediction" class="anchor"> </a></body></html>Section 5.1.4: Authorship Prediction</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## document-term matrix converted to matrix for manipulation
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## document-term matrix converted to matrix for manipulation
 dtm1 &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(<span class="kw">DocumentTermMatrix</span>(corpus.prep))
 tfm &lt;-<span class="st"> </span>dtm1 /<span class="st"> </span><span class="kw">rowSums</span>(dtm1) *<span class="st"> </span><span class="dv">1000</span> <span class="co"># term frequency per 1000 words</span>
 
@@ -472,7 +242,7 @@ madison &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv"
 ## average among Hamilton/Madison essays
 tfm.ave &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">colSums</span>(tfm[hamilton, ]) /<span class="st"> </span><span class="kw">length</span>(hamilton),
                  <span class="kw">colSums</span>(tfm[madison, ]) /<span class="st"> </span><span class="kw">length</span>(madison))
-tfm.ave</code></pre>
+tfm.ave</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">although</th>
@@ -513,7 +283,7 @@ tfm.ave</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">author &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="kw">nrow</span>(dtm1)) <span class="co"># a vector with missing values</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">author &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="kw">nrow</span>(dtm1)) <span class="co"># a vector with missing values</span>
 author[hamilton] &lt;-<span class="st"> </span><span class="dv">1</span>  <span class="co"># 1 if Hamilton</span>
 author[madison] &lt;-<span class="st"> </span>-<span class="dv">1</span>  <span class="co"># -1 if Madison</span>
 
@@ -523,7 +293,7 @@ author.data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<sp
 
 hm.fit &lt;-<span class="st"> </span><span class="kw">lm</span>(author ~<span class="st"> </span>upon +<span class="st"> </span>there +<span class="st"> </span>consequently +<span class="st"> </span>whilst,
              <span class="dt">data =</span> author.data)
-hm.fit</code></pre>
+hm.fit</code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = author ~ upon + there + consequently + whilst, data = author.data)
@@ -531,20 +301,20 @@ hm.fit</code></pre>
 ## Coefficients:
 ##  (Intercept)          upon         there  consequently        whilst  
 ##     -0.26288       0.16678       0.09494      -0.44012      -0.65875</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">hm.fitted &lt;-<span class="st"> </span><span class="kw">fitted</span>(hm.fit) <span class="co"># fitted values</span>
-<span class="kw">sd</span>(hm.fitted)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hm.fitted &lt;-<span class="st"> </span><span class="kw">fitted</span>(hm.fit) <span class="co"># fitted values</span>
+<span class="kw">sd</span>(hm.fitted)</code></pre></div>
 <pre><code>## [1] 0.7180769</code></pre>
 </div>
 <div id="section-5-1-5-cross-validation" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-1-5-cross-validation" class="anchor"> </a></body></html>Section 5.1.5: Cross-Validation</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Hamilton
-<span class="kw">mean</span>(hm.fitted[author.data$author ==<span class="st"> </span><span class="dv">1</span>] &gt;<span class="st"> </span><span class="dv">0</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Hamilton
+<span class="kw">mean</span>(hm.fitted[author.data$author ==<span class="st"> </span><span class="dv">1</span>] &gt;<span class="st"> </span><span class="dv">0</span>)</code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Madison
-<span class="kw">mean</span>(hm.fitted[author.data$author ==<span class="st"> </span>-<span class="dv">1</span>] &lt;<span class="st"> </span><span class="dv">0</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Madison
+<span class="kw">mean</span>(hm.fitted[author.data$author ==<span class="st"> </span>-<span class="dv">1</span>] &lt;<span class="st"> </span><span class="dv">0</span>)</code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(author.data)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(author.data)
 hm.classify &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, n) <span class="co"># a container vector with missing values</span>
 
 for (i in <span class="dv">1</span>:n) {
@@ -556,22 +326,22 @@ for (i in <span class="dv">1</span>:n) {
 }
 
 ## proportion of correctly classified essays by Hamilton
-<span class="kw">mean</span>(hm.classify[author.data$author ==<span class="st"> </span><span class="dv">1</span>] &gt;<span class="st"> </span><span class="dv">0</span>)</code></pre>
+<span class="kw">mean</span>(hm.classify[author.data$author ==<span class="st"> </span><span class="dv">1</span>] &gt;<span class="st"> </span><span class="dv">0</span>)</code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Madison
-<span class="kw">mean</span>(hm.classify[author.data$author ==<span class="st"> </span>-<span class="dv">1</span>] &lt;<span class="st"> </span><span class="dv">0</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Madison
+<span class="kw">mean</span>(hm.classify[author.data$author ==<span class="st"> </span>-<span class="dv">1</span>] &lt;<span class="st"> </span><span class="dv">0</span>)</code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">disputed &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">49</span>, <span class="dv">50</span>:<span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">63</span>) <span class="co"># 11 essays with disputed authorship</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">disputed &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">49</span>, <span class="dv">50</span>:<span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">63</span>) <span class="co"># 11 essays with disputed authorship</span>
 tf.disputed &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(tfm[disputed, ])
 
 ## prediction of disputed authorship
 pred &lt;-<span class="st"> </span><span class="kw">predict</span>(hm.fit, <span class="dt">newdata =</span> tf.disputed)
-pred <span class="co"># predicted values</span></code></pre>
+pred <span class="co"># predicted values</span></code></pre></div>
 <pre><code>##    fp49.txt    fp50.txt    fp51.txt    fp52.txt    fp53.txt    fp54.txt 
 ## -0.99831799 -0.06759254 -1.53243206 -0.26288400 -0.54584900 -0.56566555 
 ##    fp55.txt    fp56.txt    fp57.txt    fp62.txt    fp63.txt 
 ##  0.04376632 -0.57115610 -1.22289415 -1.00675456 -0.21939646</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 ## fitted values for essays authored by Hamilton; red squares
 <span class="kw">plot</span>(hamilton, hm.fitted[author.data$author ==<span class="st"> </span><span class="dv">1</span>], <span class="dt">pch =</span> <span class="dv">15</span>,
      <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">85</span>), <span class="dt">ylim  =</span> <span class="kw">c</span>(-<span class="dv">2</span>, <span class="dv">2</span>), <span class="dt">col =</span> <span class="st">"red"</span>,
@@ -583,7 +353,7 @@ pred <span class="co"># predicted values</span></code></pre>
        <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">"blue"</span>)
 
 ## disputed authorship; black triangles
-<span class="kw">points</span>(disputed, pred, <span class="dt">pch =</span> <span class="dv">17</span>)</code></pre>
+<span class="kw">points</span>(disputed, pred, <span class="dt">pch =</span> <span class="dv">17</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
 </div>
 </div>
@@ -593,15 +363,15 @@ pred <span class="co"># predicted values</span></code></pre>
 <div id="section-5-2-1-marriage-network-in-renaissance-florence" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-2-1-marriage-network-in-renaissance-florence" class="anchor"> </a></body></html>Section 5.2.1: Marriage Network in Renaissance Florence</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## the first column "FAMILY" of the CSV file represents row names
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## the first column "FAMILY" of the CSV file represents row names
 <span class="kw">data</span>(<span class="st">"florentine"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 florence &lt;-<span class="st"> </span><span class="kw">data.frame</span>(florentine, <span class="dt">row.names =</span> <span class="st">"FAMILY"</span>)
 
 ## print out the adjacency (sub)matrix for the first 5 families
-florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1</span>:<span class="dv">5</span>]</code></pre>
+florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1</span>:<span class="dv">5</span>]</code></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th align="left"></th>
+<th></th>
 <th align="right">ACCIAIUOL</th>
 <th align="right">ALBIZZI</th>
 <th align="right">BARBADORI</th>
@@ -610,7 +380,7 @@ florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">ACCIAIUOL</td>
+<td>ACCIAIUOL</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -618,7 +388,7 @@ florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1
 <td align="right">0</td>
 </tr>
 <tr class="even">
-<td align="left">ALBIZZI</td>
+<td>ALBIZZI</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -626,7 +396,7 @@ florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1
 <td align="right">0</td>
 </tr>
 <tr class="odd">
-<td align="left">BARBADORI</td>
+<td>BARBADORI</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -634,7 +404,7 @@ florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1
 <td align="right">1</td>
 </tr>
 <tr class="even">
-<td align="left">BISCHERI</td>
+<td>BISCHERI</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -642,7 +412,7 @@ florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1
 <td align="right">0</td>
 </tr>
 <tr class="odd">
-<td align="left">CASTELLAN</td>
+<td>CASTELLAN</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
@@ -651,7 +421,7 @@ florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rowSums</span>(florence)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rowSums</span>(florence)</code></pre></div>
 <pre><code>## ACCIAIUOL   ALBIZZI BARBADORI  BISCHERI CASTELLAN    GINORI  GUADAGNI 
 ##         1         3         2         3         3         1         4 
 ## LAMBERTES    MEDICI     PAZZI   PERUZZI     PUCCI   RIDOLFI  SALVIATI 
@@ -662,62 +432,65 @@ florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1
 <div id="section-5-2-2-undirected-graph-and-centrality-measures" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-2-2-undirected-graph-and-centrality-measures" class="anchor"> </a></body></html>Section 5.2.2: Undirected Graph and Centrality Measures</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 
-<span class="kw">library</span>(<span class="st">"igraph"</span>)  <span class="co"># load the package</span></code></pre>
+<span class="kw">library</span>(<span class="st">"igraph"</span>)  <span class="co"># load the package</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: 'igraph'</code></pre>
 <pre><code>## The following objects are masked from 'package:stats':
 ## 
 ##     decompose, spectrum</code></pre>
+<pre><code>## The following objects are masked from 'package:testthat':
+## 
+##     %&gt;%, compare</code></pre>
 <pre><code>## The following object is masked from 'package:base':
 ## 
 ##     union</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">florence &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(florence) <span class="co"># coerce into a matrix</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">florence &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(florence) <span class="co"># coerce into a matrix</span>
 florence &lt;-<span class="st"> </span><span class="kw">graph.adjacency</span>(florence, <span class="dt">mode =</span> <span class="st">"undirected"</span>, <span class="dt">diag =</span> <span class="ot">FALSE</span>)
 
-<span class="kw">plot</span>(florence) <span class="co"># plot the graph</span></code></pre>
+<span class="kw">plot</span>(florence) <span class="co"># plot the graph</span></code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">degree</span>(florence)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">degree</span>(florence)</code></pre></div>
 <pre><code>## ACCIAIUOL   ALBIZZI BARBADORI  BISCHERI CASTELLAN    GINORI  GUADAGNI 
 ##         1         3         2         3         3         1         4 
 ## LAMBERTES    MEDICI     PAZZI   PERUZZI     PUCCI   RIDOLFI  SALVIATI 
 ##         1         6         1         3         0         3         2 
 ##   STROZZI TORNABUON 
 ##         4         3</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">closeness</span>(florence)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">closeness</span>(florence)</code></pre></div>
 <pre><code>##   ACCIAIUOL     ALBIZZI   BARBADORI    BISCHERI   CASTELLAN      GINORI 
 ## 0.018518519 0.022222222 0.020833333 0.019607843 0.019230769 0.017241379 
 ##    GUADAGNI   LAMBERTES      MEDICI       PAZZI     PERUZZI       PUCCI 
 ## 0.021739130 0.016949153 0.024390244 0.015384615 0.018518519 0.004166667 
 ##     RIDOLFI    SALVIATI     STROZZI   TORNABUON 
 ## 0.022727273 0.019230769 0.020833333 0.022222222</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> /<span class="st"> </span>(<span class="kw">closeness</span>(florence) *<span class="st"> </span><span class="dv">15</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> /<span class="st"> </span>(<span class="kw">closeness</span>(florence) *<span class="st"> </span><span class="dv">15</span>)</code></pre></div>
 <pre><code>## ACCIAIUOL   ALBIZZI BARBADORI  BISCHERI CASTELLAN    GINORI  GUADAGNI 
 ##  3.600000  3.000000  3.200000  3.400000  3.466667  3.866667  3.066667 
 ## LAMBERTES    MEDICI     PAZZI   PERUZZI     PUCCI   RIDOLFI  SALVIATI 
 ##  3.933333  2.733333  4.333333  3.600000 16.000000  2.933333  3.466667 
 ##   STROZZI TORNABUON 
 ##  3.200000  3.000000</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">betweenness</span>(florence)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">betweenness</span>(florence)</code></pre></div>
 <pre><code>## ACCIAIUOL   ALBIZZI BARBADORI  BISCHERI CASTELLAN    GINORI  GUADAGNI 
 ##  0.000000 19.333333  8.500000  9.500000  5.000000  0.000000 23.166667 
 ## LAMBERTES    MEDICI     PAZZI   PERUZZI     PUCCI   RIDOLFI  SALVIATI 
 ##  0.000000 47.500000  0.000000  2.000000  0.000000 10.333333 13.000000 
 ##   STROZZI TORNABUON 
 ##  9.333333  8.333333</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 <span class="kw">plot</span>(florence, <span class="dt">vertex.size =</span> <span class="kw">closeness</span>(florence) *<span class="st"> </span><span class="dv">1000</span>,
-     <span class="dt">main =</span> <span class="st">"Closeness"</span>)</code></pre>
+     <span class="dt">main =</span> <span class="st">"Closeness"</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-7-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(florence, <span class="dt">vertex.size =</span> <span class="kw">betweenness</span>(florence),
-     <span class="dt">main =</span> <span class="st">"Betweenness"</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(florence, <span class="dt">vertex.size =</span> <span class="kw">betweenness</span>(florence),
+     <span class="dt">main =</span> <span class="st">"Betweenness"</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-7-3.png" width="672"></p>
 </div>
 <div id="section-5-2-3-twitter-following-network" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-2-3-twitter-following-network" class="anchor"> </a></body></html>Section 5.2.3: Twitter-Following Network</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"twitter.following"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"twitter.following"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 <span class="kw">data</span>(<span class="st">"twitter.senator"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 n &lt;-<span class="st"> </span><span class="kw">nrow</span>(twitter.senator) <span class="co"># number of senators</span>
@@ -733,22 +506,22 @@ for (i in <span class="dv">1</span>:<span class="kw">nrow</span>(twitter.adj)) {
     twitter.adj[twitter.following$following[i], twitter.following$followed[i]] &lt;-<span class="st"> </span><span class="dv">1</span>
 }
 
-twitter.adj &lt;-<span class="st"> </span><span class="kw">graph.adjacency</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"directed"</span>, <span class="dt">diag =</span> <span class="ot">FALSE</span>)</code></pre>
+twitter.adj &lt;-<span class="st"> </span><span class="kw">graph.adjacency</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"directed"</span>, <span class="dt">diag =</span> <span class="ot">FALSE</span>)</code></pre></div>
 </div>
 <div id="section-5-2-4-directed-graph-and-centrality" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-2-4-directed-graph-and-centrality" class="anchor"> </a></body></html>Section 5.2.4: Directed Graph and Centrality</h3>
-<pre class="sourceCode r"><code class="sourceCode r">twitter.senator$indegree &lt;-<span class="st"> </span><span class="kw">degree</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"in"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">twitter.senator$indegree &lt;-<span class="st"> </span><span class="kw">degree</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"in"</span>)
 twitter.senator$outdegree &lt;-<span class="st"> </span><span class="kw">degree</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"out"</span>)
 
 in.order &lt;-<span class="st"> </span><span class="kw">order</span>(twitter.senator$indegree, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)
 out.order &lt;-<span class="st"> </span><span class="kw">order</span>(twitter.senator$outdegree, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)
 
 ## 3 greatest indegree
-twitter.senator[in.order[<span class="dv">1</span>:<span class="dv">3</span>], ]</code></pre>
+twitter.senator[in.order[<span class="dv">1</span>:<span class="dv">3</span>], ]</code></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th align="left"></th>
+<th></th>
 <th align="left">screen_name</th>
 <th align="left">name</th>
 <th align="left">party</th>
@@ -758,7 +531,7 @@ twitter.senator[in.order[<span class="dv">1</span>:<span class="dv">3</span>], ]
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">5</td>
+<td>5</td>
 <td align="left">SenatorBurr</td>
 <td align="left">Richard Burr</td>
 <td align="left">R</td>
@@ -767,7 +540,7 @@ twitter.senator[in.order[<span class="dv">1</span>:<span class="dv">3</span>], ]
 <td align="right">0</td>
 </tr>
 <tr class="even">
-<td align="left">7</td>
+<td>7</td>
 <td align="left">JohnBoozman</td>
 <td align="left">John Boozman</td>
 <td align="left">R</td>
@@ -776,7 +549,7 @@ twitter.senator[in.order[<span class="dv">1</span>:<span class="dv">3</span>], ]
 <td align="right">0</td>
 </tr>
 <tr class="odd">
-<td align="left">8</td>
+<td>8</td>
 <td align="left">SenJohnBarrasso</td>
 <td align="left">John Barrasso</td>
 <td align="left">R</td>
@@ -786,11 +559,11 @@ twitter.senator[in.order[<span class="dv">1</span>:<span class="dv">3</span>], ]
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## 3 greatest outdegree
-twitter.senator[out.order[<span class="dv">1</span>:<span class="dv">3</span>], ]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 3 greatest outdegree
+twitter.senator[out.order[<span class="dv">1</span>:<span class="dv">3</span>], ]</code></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th align="left"></th>
+<th></th>
 <th align="left">screen_name</th>
 <th align="left">name</th>
 <th align="left">party</th>
@@ -800,7 +573,7 @@ twitter.senator[out.order[<span class="dv">1</span>:<span class="dv">3</span>], 
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">2</td>
+<td>2</td>
 <td align="left">RoyBlunt</td>
 <td align="left">Roy Blunt</td>
 <td align="left">R</td>
@@ -809,7 +582,7 @@ twitter.senator[out.order[<span class="dv">1</span>:<span class="dv">3</span>], 
 <td align="right">46</td>
 </tr>
 <tr class="even">
-<td align="left">1</td>
+<td>1</td>
 <td align="left">SenAlexander</td>
 <td align="left">Lamar Alexander</td>
 <td align="left">R</td>
@@ -818,7 +591,7 @@ twitter.senator[out.order[<span class="dv">1</span>:<span class="dv">3</span>], 
 <td align="right">38</td>
 </tr>
 <tr class="odd">
-<td align="left">3</td>
+<td>3</td>
 <td align="left">SenatorBoxer</td>
 <td align="left">Barbara Boxer</td>
 <td align="left">D</td>
@@ -828,7 +601,7 @@ twitter.senator[out.order[<span class="dv">1</span>:<span class="dv">3</span>], 
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(twitter.senator)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(twitter.senator)
 ## color: Democrats = `blue', Republicans = `red', Independent = `black'
 col &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="st">"red"</span>, n)
 col[twitter.senator$party ==<span class="st"> "D"</span>] &lt;-<span class="st"> "blue"</span>
@@ -843,14 +616,14 @@ pch[twitter.senator$party ==<span class="st"> "I"</span>] &lt;-<span class="st">
 ## plot for comparing two closeness measures (incoming vs. outgoing)
 <span class="kw">plot</span>(<span class="kw">closeness</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"in"</span>),
      <span class="kw">closeness</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"out"</span>), <span class="dt">pch =</span> pch, <span class="dt">col =</span> col,
-     <span class="dt">main =</span> <span class="st">"Closeness"</span>, <span class="dt">xlab =</span> <span class="st">"Incoming path"</span>, <span class="dt">ylab =</span> <span class="st">"Outgoing path"</span>)</code></pre>
+     <span class="dt">main =</span> <span class="st">"Closeness"</span>, <span class="dt">xlab =</span> <span class="st">"Incoming path"</span>, <span class="dt">ylab =</span> <span class="st">"Outgoing path"</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-9-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## plot for comparing directed and undirected betweenness
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## plot for comparing directed and undirected betweenness
 <span class="kw">plot</span>(<span class="kw">betweenness</span>(twitter.adj, <span class="dt">directed =</span> <span class="ot">TRUE</span>),
      <span class="kw">betweenness</span>(twitter.adj, <span class="dt">directed =</span> <span class="ot">FALSE</span>), <span class="dt">pch =</span> pch, <span class="dt">col =</span> col,
-     <span class="dt">main =</span> <span class="st">"Betweenness"</span>, <span class="dt">xlab =</span> <span class="st">"Directed"</span>, <span class="dt">ylab =</span> <span class="st">"Undirected"</span>)</code></pre>
+     <span class="dt">main =</span> <span class="st">"Betweenness"</span>, <span class="dt">xlab =</span> <span class="st">"Directed"</span>, <span class="dt">ylab =</span> <span class="st">"Undirected"</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-9-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">twitter.senator$pagerank &lt;-<span class="st"> </span><span class="kw">page.rank</span>(twitter.adj)$vector
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">twitter.senator$pagerank &lt;-<span class="st"> </span><span class="kw">page.rank</span>(twitter.adj)$vector
 
 <span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 ## `col' parameter is defined earlier
@@ -871,7 +644,7 @@ nodes &lt;-<span class="st"> </span><span class="dv">4</span>
 ## adjacency matrix with arbitrary values
 adj &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),
               <span class="dt">ncol =</span> nodes, <span class="dt">nrow =</span> nodes, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
-adj</code></pre>
+adj</code></pre></div>
 <table class="table"><tbody>
 <tr class="odd">
 <td align="right">0</td>
@@ -898,7 +671,7 @@ adj</code></pre>
 <td align="right">0</td>
 </tr>
 </tbody></table>
-<pre class="sourceCode r"><code class="sourceCode r">adj &lt;-<span class="st"> </span><span class="kw">graph.adjacency</span>(adj)  <span class="co"># turn it into an igraph object</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">adj &lt;-<span class="st"> </span><span class="kw">graph.adjacency</span>(adj)  <span class="co"># turn it into an igraph object</span>
 
 d &lt;-<span class="st"> </span><span class="fl">0.85</span>  <span class="co"># typical choice of constant</span>
 pr &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span> /<span class="st"> </span>nodes, nodes) <span class="co"># starting values</span>
@@ -911,9 +684,9 @@ while (diff &gt;<span class="st"> </span><span class="fl">0.001</span>) {
     pr.pre &lt;-<span class="st"> </span>pr <span class="co"># save the previous iteration</span>
     pr &lt;-<span class="st"> </span><span class="kw">PageRank</span>(<span class="dt">n =</span> nodes, <span class="dt">A =</span> adj, <span class="dt">d =</span> d, <span class="dt">pr =</span> pr)
     diff &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw">abs</span>(pr -<span class="st"> </span>pr.pre))
-}</code></pre>
+}</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-9-3.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">pr</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pr</code></pre></div>
 <pre><code>## [1] 0.2213090 0.4316623 0.2209565 0.1315563</code></pre>
 </div>
 </div>
@@ -927,9 +700,9 @@ while (diff &gt;<span class="st"> </span><span class="fl">0.001</span>) {
 <div id="section-5-3-2-spatial-data-in-r" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-3-2-spatial-data-in-r" class="anchor"> </a></body></html>Section 5.3.2: Spatial Data in R</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(maps)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(maps)
 <span class="kw">data</span>(us.cities)
-<span class="kw">head</span>(us.cities)</code></pre>
+<span class="kw">head</span>(us.cities)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">name</th>
@@ -990,7 +763,7 @@ while (diff &gt;<span class="st"> </span><span class="fl">0.001</span>) {
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 
 <span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"usa"</span>)
 capitals &lt;-<span class="st"> </span><span class="kw">subset</span>(us.cities, capital ==<span class="st"> </span><span class="dv">2</span>) <span class="co"># subset state capitals</span>
@@ -998,9 +771,9 @@ capitals &lt;-<span class="st"> </span><span class="kw">subset</span>(us.cities,
 ## add points proportional to population using latitude and longitude
 <span class="kw">points</span>(<span class="dt">x =</span> capitals$long, <span class="dt">y =</span> capitals$lat,
        <span class="dt">cex =</span> capitals$pop /<span class="st"> </span><span class="dv">500000</span>, <span class="dt">pch =</span> <span class="dv">19</span>)
-<span class="kw">title</span>(<span class="st">"US state capitals"</span>) <span class="co"># add a title</span></code></pre>
+<span class="kw">title</span>(<span class="st">"US state capitals"</span>) <span class="co"># add a title</span></code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-10-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 <span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>)
 
 cal.cities &lt;-<span class="st"> </span><span class="kw">subset</span>(us.cities, <span class="dt">subset =</span> (country.etc ==<span class="st"> "CA"</span>))
@@ -1014,14 +787,14 @@ top7 &lt;-<span class="st"> </span>sind[<span class="dv">1</span>:<span class="d
 ## add a constant to latitude to avoid overlapping with circles
 <span class="kw">text</span>(<span class="dt">x =</span> cal.cities$long[top7] +<span class="st"> </span><span class="fl">2.25</span>, <span class="dt">y =</span> cal.cities$lat[top7],
      <span class="dt">label =</span> cal.cities$name[top7])
-<span class="kw">title</span>(<span class="st">"Largest cities of California"</span>)</code></pre>
+<span class="kw">title</span>(<span class="st">"Largest cities of California"</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-10-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">usa &lt;-<span class="st"> </span><span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"usa"</span>, <span class="dt">plot =</span> <span class="ot">FALSE</span>) <span class="co"># save map</span>
-<span class="kw">names</span>(usa)  <span class="co"># list elements</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">usa &lt;-<span class="st"> </span><span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"usa"</span>, <span class="dt">plot =</span> <span class="ot">FALSE</span>) <span class="co"># save map</span>
+<span class="kw">names</span>(usa)  <span class="co"># list elements</span></code></pre></div>
 <pre><code>## [1] "x"     "y"     "range" "names"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(usa$x)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(usa$x)</code></pre></div>
 <pre><code>## [1] 7252</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">cbind</span>(usa$x, usa$y)) <span class="co"># first five coordinates of a polygon</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">cbind</span>(usa$x, usa$y)) <span class="co"># first five coordinates of a polygon</span></code></pre></div>
 <table class="table"><tbody>
 <tr class="odd">
 <td align="right">-101.4078</td>
@@ -1052,25 +825,25 @@ top7 &lt;-<span class="st"> </span>sind[<span class="dv">1</span>:<span class="d
 <div id="section-5-3-3-colors-in-r" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-3-3-colors-in-r" class="anchor"> </a></body></html>Section 5.3.3: Colors in R</h3>
-<pre class="sourceCode r"><code class="sourceCode r">allcolors &lt;-<span class="st"> </span><span class="kw">colors</span>()
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">allcolors &lt;-<span class="st"> </span><span class="kw">colors</span>()
 
-<span class="kw">head</span>(allcolors)   <span class="co"># some colors</span></code></pre>
+<span class="kw">head</span>(allcolors)   <span class="co"># some colors</span></code></pre></div>
 <pre><code>## [1] "white"         "aliceblue"     "antiquewhite"  "antiquewhite1"
 ## [5] "antiquewhite2" "antiquewhite3"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(allcolors) <span class="co"># number of color names</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(allcolors) <span class="co"># number of color names</span></code></pre></div>
 <pre><code>## [1] 657</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">red &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">1</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">0</span>) <span class="co"># red</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">red &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">1</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">0</span>) <span class="co"># red</span>
 green &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">0</span>, <span class="dt">green =</span> <span class="dv">1</span>, <span class="dt">blue =</span> <span class="dv">0</span>) <span class="co"># green</span>
 blue &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">0</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">1</span>) <span class="co"># blue</span>
-<span class="kw">c</span>(red, green, blue) <span class="co"># results</span></code></pre>
+<span class="kw">c</span>(red, green, blue) <span class="co"># results</span></code></pre></div>
 <pre><code>## [1] "#FF0000" "#00FF00" "#0000FF"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">black &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">0</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">0</span>) <span class="co"># black</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">black &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">0</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">0</span>) <span class="co"># black</span>
 white &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">1</span>, <span class="dt">green =</span> <span class="dv">1</span>, <span class="dt">blue =</span> <span class="dv">1</span>) <span class="co"># white</span>
-<span class="kw">c</span>(black, white) <span class="co"># results</span></code></pre>
+<span class="kw">c</span>(black, white) <span class="co"># results</span></code></pre></div>
 <pre><code>## [1] "#000000" "#FFFFFF"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>), <span class="dt">green =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">blue =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">0</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>), <span class="dt">green =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">blue =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">0</span>))</code></pre></div>
 <pre><code>## [1] "#800080" "#FFFF00"</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## semi-transparent blue
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## semi-transparent blue
 blue.trans &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">0</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">1</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)
 
 ## semi-transparent black
@@ -1085,13 +858,13 @@ black.trans &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span clas
 
 ## semi-transparent; easy to distinguish
 <span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="fl">2.2</span>), <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">cex =</span> <span class="dv">5</span>, <span class="dt">col =</span> black.trans)
-<span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="fl">4.2</span>), <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">cex =</span> <span class="dv">5</span>, <span class="dt">col =</span> blue.trans)</code></pre>
+<span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="fl">4.2</span>), <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">cex =</span> <span class="dv">5</span>, <span class="dt">col =</span> blue.trans)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-11-1.png" width="672"></p>
 </div>
 <div id="section-5-3-4-us-presidential-elections" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-3-4-us-presidential-elections" class="anchor"> </a></body></html>Section 5.3.4: US Presidential Elections</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"pres08"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"pres08"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 ## two-party vote share
 pres08$Dem &lt;-<span class="st"> </span>pres08$Obama /<span class="st"> </span>(pres08$Obama +<span class="st"> </span>pres08$McCain)
 pres08$Rep &lt;-<span class="st"> </span>pres08$McCain /<span class="st"> </span>(pres08$Obama +<span class="st"> </span>pres08$McCain)
@@ -1104,13 +877,13 @@ cal.color &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class=
 <span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 ## California as a blue state
 <span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>, <span class="dt">col =</span> <span class="st">"blue"</span>,
-    <span class="dt">fill =</span> <span class="ot">TRUE</span>)</code></pre>
+    <span class="dt">fill =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-12-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## California as a purple state
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## California as a purple state
 <span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>, <span class="dt">col =</span> cal.color,
-    <span class="dt">fill =</span> <span class="ot">TRUE</span>)</code></pre>
+    <span class="dt">fill =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-12-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 ## America as red and blue states
 <span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>) <span class="co"># create a map</span>
 for (i in <span class="dv">1</span>:<span class="kw">nrow</span>(pres08)) {
@@ -1120,9 +893,9 @@ for (i in <span class="dv">1</span>:<span class="kw">nrow</span>(pres08)) {
             <span class="dt">col =</span> <span class="kw">ifelse</span>(pres08$Rep[i] &gt;<span class="st"> </span>pres08$Dem[i], <span class="st">"red"</span>, <span class="st">"blue"</span>),
             <span class="dt">fill =</span> <span class="ot">TRUE</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)
     }
-}</code></pre>
+}</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-12-3.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## America as purple states
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## America as purple states
 <span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>) <span class="co"># create a map</span>
 for (i in <span class="dv">1</span>:<span class="kw">nrow</span>(pres08)) {
     if ((pres08$state[i] !=<span class="st"> "HI"</span>) &amp;<span class="st"> </span>(pres08$state[i] !=<span class="st"> "AK"</span>) &amp;
@@ -1131,13 +904,13 @@ for (i in <span class="dv">1</span>:<span class="kw">nrow</span>(pres08)) {
             <span class="dt">col =</span> <span class="kw">rgb</span>(<span class="dt">red =</span> pres08$Rep[i], <span class="dt">blue =</span> pres08$Dem[i],
                 <span class="dt">green =</span> <span class="dv">0</span>), <span class="dt">fill =</span> <span class="ot">TRUE</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)
     }
-}</code></pre>
+}</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-12-4.png" width="672"></p>
 </div>
 <div id="section-5-3-5-expansion-of-walmart" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-3-5-expansion-of-walmart" class="anchor"> </a></body></html>Section 5.3.5: Expansion of Walmart</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"walmart"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"walmart"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 ## red = WalMartStore, green = SuperCenter, blue = DistributionCenter
 walmart$storecolors &lt;-<span class="st"> </span><span class="ot">NA</span> <span class="co"># create an empty vector</span>
@@ -1162,13 +935,13 @@ walmart$storesize &lt;-<span class="st"> </span><span class="kw">ifelse</span>(w
 <span class="kw">legend</span>(<span class="dt">x =</span> -<span class="dv">120</span>, <span class="dt">y =</span> <span class="dv">32</span>, <span class="dt">bty =</span> <span class="st">"n"</span>,
        <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">"Wal-Mart"</span>, <span class="st">"Supercenter"</span>, <span class="st">"Distrib. Center"</span>),
        <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="co"># solid circles</span>
-       <span class="dt">pt.cex =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)) <span class="co"># size of circles</span></code></pre>
+       <span class="dt">pt.cex =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)) <span class="co"># size of circles</span></code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-13-1.png" width="672"></p>
 </div>
 <div id="section-5-3-6-animation-in-r" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-5-3-6-animation-in-r" class="anchor"> </a></body></html>Section 5.3.6: Animation in R</h3>
-<pre class="sourceCode r"><code class="sourceCode r">walmart.map &lt;-<span class="st"> </span>function(data, date) {
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">walmart.map &lt;-<span class="st"> </span>function(data, date) {
     walmart &lt;-<span class="st"> </span><span class="kw">subset</span>(data, <span class="dt">subset =</span> (opendate &lt;=<span class="st"> </span>date))
     <span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>)
     <span class="kw">points</span>(walmart$long, walmart$lat, <span class="dt">col =</span> walmart$storecolors,
@@ -1180,18 +953,18 @@ walmart$storesize &lt;-<span class="st"> </span><span class="kw">ifelse</span>(w
 walmart$opendate &lt;-<span class="st"> </span><span class="kw">as.Date</span>(walmart$opendate)
 
 <span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"1974-12-31"</span>))
-<span class="kw">title</span>(<span class="st">"1975"</span>)</code></pre>
+<span class="kw">title</span>(<span class="st">"1975"</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-14-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"1984-12-31"</span>))
-<span class="kw">title</span>(<span class="st">"1985"</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"1984-12-31"</span>))
+<span class="kw">title</span>(<span class="st">"1985"</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-14-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"1994-12-31"</span>))
-<span class="kw">title</span>(<span class="st">"1995"</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"1994-12-31"</span>))
+<span class="kw">title</span>(<span class="st">"1995"</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-14-3.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"2004-12-31"</span>))
-<span class="kw">title</span>(<span class="st">"2005"</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"2004-12-31"</span>))
+<span class="kw">title</span>(<span class="st">"2005"</span>)</code></pre></div>
 <p><img src="discovery_files/figure-html/unnamed-chunk-14-4.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">25</span> <span class="co"># number of maps to animate</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">25</span> <span class="co"># number of maps to animate</span>
 dates &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="kw">min</span>(walmart$opendate),
              <span class="dt">to =</span> <span class="kw">max</span>(walmart$opendate), <span class="dt">length.out =</span> n)
 ## library("animation")
@@ -1201,7 +974,7 @@ dates &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt"
 ##         title(dates[i])
 ##     }
 ## }, title = "Expansion of Walmart", htmlfile = "walmart.html",
-##          outdir = getwd(), autobrowse = FALSE)</code></pre>
+##          outdir = getwd(), autobrowse = FALSE)</code></pre></div>
 </div>
 </div>
 <div id="summary" class="section level2">

@@ -66,7 +66,7 @@
 <div id="section-7-1-1-unbiasedness-and-consistency" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-1-1-unbiasedness-and-consistency" class="anchor"> </a></body></html>Section 7.1.1: Unbiasedness and Consistency</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## simulation parameters
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## simulation parameters
 n &lt;-<span class="st"> </span><span class="dv">100</span> <span class="co"># sample size</span>
 mu0 &lt;-<span class="st"> </span><span class="dv">0</span> <span class="co"># mean of Y_i(0)</span>
 sd0 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="co"># standard deviation of Y_i(0)</span>
@@ -79,9 +79,9 @@ Y1 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n, <span class="d
 tau &lt;-<span class="st"> </span>Y1 -<span class="st"> </span>Y0 <span class="co"># individual treatment effect</span>
 ## true value of the sample average treatment effect
 SATE &lt;-<span class="st"> </span><span class="kw">mean</span>(tau)
-SATE</code></pre>
+SATE</code></pre></div>
 <pre><code>## [1] 1.003892</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## repeatedly conduct randomized controlled trials
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## repeatedly conduct randomized controlled trials
 sims &lt;-<span class="st"> </span><span class="dv">5000</span> <span class="co"># repeat 5,000 times, we could do more</span>
 diff.means &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, sims)  <span class="co"># container</span>
 
@@ -94,7 +94,7 @@ for (i in <span class="dv">1</span>:sims) {
 
 ## estimation error for SATE
 est.error &lt;-<span class="st"> </span>diff.means -<span class="st"> </span>SATE
-<span class="kw">summary</span>(est.error)</code></pre>
+<span class="kw">summary</span>(est.error)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Min.</th>
@@ -113,7 +113,7 @@ est.error &lt;-<span class="st"> </span>diff.means -<span class="st"> </span>SAT
 <td align="right">0.5316</td>
 </tr></tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## PATE simulation
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## PATE simulation
 PATE &lt;-<span class="st"> </span>mu1 -<span class="st"> </span>mu0
 diff.means &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, sims)
 for (i in <span class="dv">1</span>:sims) {
@@ -128,7 +128,7 @@ for (i in <span class="dv">1</span>:sims) {
 est.error &lt;-<span class="st"> </span>diff.means -<span class="st"> </span>PATE
 
 ## unbiased
-<span class="kw">summary</span>(est.error)</code></pre>
+<span class="kw">summary</span>(est.error)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Min.</th>
@@ -151,17 +151,17 @@ est.error &lt;-<span class="st"> </span>diff.means -<span class="st"> </span>PAT
 <div id="section-7-1-2-standard-error" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-1-2-standard-error" class="anchor"> </a></body></html>Section 7.1.2: Standard Error</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 <span class="kw">hist</span>(diff.means, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">xlab =</span> <span class="st">"Difference-in-means estimator"</span>,
      <span class="dt">main =</span> <span class="st">"Sampling distribution"</span>)
 <span class="kw">abline</span>(<span class="dt">v =</span> SATE, <span class="dt">col =</span> <span class="st">"red"</span>) <span class="co"># true value of SATE</span>
-<span class="kw">text</span>(<span class="fl">0.6</span>, <span class="fl">2.4</span>, <span class="st">"true SATE"</span>, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre>
+<span class="kw">text</span>(<span class="fl">0.6</span>, <span class="fl">2.4</span>, <span class="st">"true SATE"</span>, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre></div>
 <p><img src="uncertainty_files/figure-html/unnamed-chunk-2-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(diff.means)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(diff.means)</code></pre></div>
 <pre><code>## [1] 0.2003413</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">mean</span>((diff.means -<span class="st"> </span>SATE)^<span class="dv">2</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">mean</span>((diff.means -<span class="st"> </span>SATE)^<span class="dv">2</span>))</code></pre></div>
 <pre><code>## [1] 0.2003798</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## PATE simulation with standard error
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## PATE simulation with standard error
 sims &lt;-<span class="st"> </span><span class="dv">5000</span>
 diff.means &lt;-<span class="st"> </span>se &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, sims)  <span class="co"># container for standard error added</span>
 for (i in <span class="dv">1</span>:sims) {
@@ -176,28 +176,28 @@ for (i in <span class="dv">1</span>:sims) {
 }
 
 ## standard deviation of difference-in-means
-<span class="kw">sd</span>(diff.means)</code></pre>
+<span class="kw">sd</span>(diff.means)</code></pre></div>
 <pre><code>## [1] 0.1964185</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## mean of standard errors
-<span class="kw">mean</span>(se)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## mean of standard errors
+<span class="kw">mean</span>(se)</code></pre></div>
 <pre><code>## [1] 0.1992454</code></pre>
 </div>
 <div id="section-7-1-3-confidence-intervals" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-1-3-confidence-intervals" class="anchor"> </a></body></html>Section 7.1.3: Confidence Intervals</h3>
-<pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">1000</span> <span class="co"># sample size</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">1000</span> <span class="co"># sample size</span>
 x.bar &lt;-<span class="st"> </span><span class="fl">0.6</span> <span class="co"># point estimate</span>
 s.e. &lt;-<span class="st"> </span><span class="kw">sqrt</span>(x.bar *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>x.bar) /<span class="st"> </span>n) <span class="co"># standard error</span>
 ## 99% confidence intervals
-<span class="kw">c</span>(x.bar -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.995</span>) *<span class="st"> </span>s.e., x.bar +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.995</span>) *<span class="st"> </span>s.e.)</code></pre>
+<span class="kw">c</span>(x.bar -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.995</span>) *<span class="st"> </span>s.e., x.bar +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.995</span>) *<span class="st"> </span>s.e.)</code></pre></div>
 <pre><code>## [1] 0.5600954 0.6399046</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## 95% confidence intervals
-<span class="kw">c</span>(x.bar -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>) *<span class="st"> </span>s.e., x.bar +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>) *<span class="st"> </span>s.e.)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 95% confidence intervals
+<span class="kw">c</span>(x.bar -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>) *<span class="st"> </span>s.e., x.bar +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>) *<span class="st"> </span>s.e.)</code></pre></div>
 <pre><code>## [1] 0.5696364 0.6303636</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## 90% confidence intervals
-<span class="kw">c</span>(x.bar -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.95</span>) *<span class="st"> </span>s.e., x.bar +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.95</span>) *<span class="st"> </span>s.e.)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 90% confidence intervals
+<span class="kw">c</span>(x.bar -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.95</span>) *<span class="st"> </span>s.e., x.bar +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.95</span>) *<span class="st"> </span>s.e.)</code></pre></div>
 <pre><code>## [1] 0.574518 0.625482</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## empty container matrices for 2 sets of confidence intervals
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## empty container matrices for 2 sets of confidence intervals
 ci95 &lt;-<span class="st"> </span>ci90 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="ot">NA</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> sims)
 ## 95 percent confidence intervals
 ci95[, <span class="dv">1</span>] &lt;-<span class="st"> </span>diff.means -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>) *<span class="st"> </span>se <span class="co"># lower limit</span>
@@ -208,12 +208,12 @@ ci90[, <span class="dv">1</span>] &lt;-<span class="st"> </span>diff.means -<spa
 ci90[, <span class="dv">2</span>] &lt;-<span class="st"> </span>diff.means +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.95</span>) *<span class="st"> </span>se <span class="co"># upper limit</span>
 
 ## coverage rate for 95% confidence interval
-<span class="kw">mean</span>(ci95[, <span class="dv">1</span>] &lt;=<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>ci95[, <span class="dv">2</span>] &gt;=<span class="st"> </span><span class="dv">1</span>)</code></pre>
+<span class="kw">mean</span>(ci95[, <span class="dv">1</span>] &lt;=<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>ci95[, <span class="dv">2</span>] &gt;=<span class="st"> </span><span class="dv">1</span>)</code></pre></div>
 <pre><code>## [1] 0.9508</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## coverage rate for 90% confidence interval
-<span class="kw">mean</span>(ci90[, <span class="dv">1</span>] &lt;=<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>ci90[, <span class="dv">2</span>] &gt;=<span class="st"> </span><span class="dv">1</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## coverage rate for 90% confidence interval
+<span class="kw">mean</span>(ci90[, <span class="dv">1</span>] &lt;=<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>ci90[, <span class="dv">2</span>] &gt;=<span class="st"> </span><span class="dv">1</span>)</code></pre></div>
 <pre><code>## [1] 0.9</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="fl">0.6</span> <span class="co"># true parameter value</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="fl">0.6</span> <span class="co"># true parameter value</span>
 n &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">1000</span>) <span class="co"># 3 sample sizes to be examined</span>
 alpha &lt;-<span class="st"> </span><span class="fl">0.05</span>
 sims &lt;-<span class="st"> </span><span class="dv">5000</span> <span class="co"># number of simulations</span>
@@ -234,13 +234,13 @@ for (i in <span class="dv">1</span>:<span class="kw">length</span>(n)) {
     ## proportion of CIs that contain the true value
     results[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(ci.results)
 }
-results</code></pre>
+results</code></pre></div>
 <pre><code>## [1] 0.9454 0.9508 0.9496</code></pre>
 </div>
 <div id="scetion-7-1-4-margin-of-error-and-sample-size-calculation-in-polls" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#scetion-7-1-4-margin-of-error-and-sample-size-calculation-in-polls" class="anchor"> </a></body></html>Scetion 7.1.4: Margin of Error and Sample Size Calculation in Polls</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
 MoE &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.01</span>, <span class="fl">0.03</span>, <span class="fl">0.05</span>)  <span class="co"># the desired margin of error</span>
 p &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="fl">0.01</span>, <span class="dt">to =</span> <span class="fl">0.99</span>, <span class="dt">by =</span> <span class="fl">0.01</span>)
 n &lt;-<span class="st"> </span><span class="fl">1.96</span>^<span class="dv">2</span> *<span class="st"> </span>p *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>p) /<span class="st"> </span>MoE[<span class="dv">1</span>]^<span class="dv">2</span>
@@ -250,9 +250,9 @@ n &lt;-<span class="st"> </span><span class="fl">1.96</span>^<span class="dv">2<
 <span class="kw">lines</span>(p, <span class="fl">1.96</span>^<span class="dv">2</span> *<span class="st"> </span>p *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>p) /<span class="st"> </span>MoE[<span class="dv">3</span>]^<span class="dv">2</span>, <span class="dt">lty =</span> <span class="st">"dotted"</span>)
 <span class="kw">text</span>(<span class="fl">0.4</span>, <span class="dv">10000</span>, <span class="st">"margin of error = 0.01"</span>)
 <span class="kw">text</span>(<span class="fl">0.4</span>, <span class="dv">1800</span>, <span class="st">"margin of error = 0.03"</span>)
-<span class="kw">text</span>(<span class="fl">0.6</span>, -<span class="dv">200</span>, <span class="st">"margin of error = 0.05"</span>)</code></pre>
+<span class="kw">text</span>(<span class="fl">0.6</span>, -<span class="dv">200</span>, <span class="st">"margin of error = 0.05"</span>)</code></pre></div>
 <p><img src="uncertainty_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## election and polling results, by state
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## election and polling results, by state
 <span class="kw">data</span>(<span class="st">"pres08"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 <span class="kw">data</span>(<span class="st">"polls08"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
@@ -295,17 +295,17 @@ alpha &lt;-<span class="st"> </span><span class="fl">0.05</span>
 ## adding 95% confidence intervals for each state
 for (i in <span class="dv">1</span>:<span class="dv">51</span>) {
     <span class="kw">lines</span>(<span class="kw">rep</span>(pres08$Obama[i] /<span class="st"> </span><span class="dv">100</span>, <span class="dv">2</span>), <span class="kw">c</span>(poll.pred[i, <span class="dv">2</span>], poll.pred[i, <span class="dv">3</span>]))
-}</code></pre>
+}</code></pre></div>
 <p><img src="uncertainty_files/figure-html/unnamed-chunk-4-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## proportion of confidence intervals that contain the election day outcome
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## proportion of confidence intervals that contain the election day outcome
 <span class="kw">mean</span>((poll.pred[, <span class="dv">2</span>] &lt;=<span class="st"> </span>pres08$Obama /<span class="st"> </span><span class="dv">100</span>) &amp;
-<span class="st">         </span>(poll.pred[, <span class="dv">3</span>] &gt;=<span class="st"> </span>pres08$Obama /<span class="st"> </span><span class="dv">100</span>))</code></pre>
+<span class="st">         </span>(poll.pred[, <span class="dv">3</span>] &gt;=<span class="st"> </span>pres08$Obama /<span class="st"> </span><span class="dv">100</span>))</code></pre></div>
 <pre><code>## [1] 0.5882353</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## bias
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## bias
 bias &lt;-<span class="st"> </span><span class="kw">mean</span>(poll.pred[, <span class="dv">1</span>] -<span class="st"> </span>pres08$Obama /<span class="st"> </span><span class="dv">100</span>)
-bias</code></pre>
+bias</code></pre></div>
 <pre><code>## [1] -0.02679739</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## bias corrected estimate
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## bias corrected estimate
 poll.bias &lt;-<span class="st"> </span>poll.pred[, <span class="dv">1</span>] -<span class="st"> </span>bias
 ## bias-corrected standard error
 s.e.bias &lt;-<span class="st"> </span><span class="kw">sqrt</span>(poll.bias *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>poll.bias) /<span class="st"> </span>n)
@@ -315,90 +315,90 @@ ci.bias.upper &lt;-<span class="st"> </span>poll.bias +<span class="st"> </span>
 
 ## proportion of bias-corrected CIs that contain the election day outcome
 <span class="kw">mean</span>((ci.bias.lower &lt;=<span class="st"> </span>pres08$Obama /<span class="st"> </span><span class="dv">100</span>) &amp;
-<span class="st">         </span>(ci.bias.upper &gt;=<span class="st"> </span>pres08$Obama /<span class="st"> </span><span class="dv">100</span>))</code></pre>
+<span class="st">         </span>(ci.bias.upper &gt;=<span class="st"> </span>pres08$Obama /<span class="st"> </span><span class="dv">100</span>))</code></pre></div>
 <pre><code>## [1] 0.7647059</code></pre>
 </div>
 <div id="section-7-1-5-analysis-of-randomized-controlled-trials" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-1-5-analysis-of-randomized-controlled-trials" class="anchor"> </a></body></html>Section 7.1.5: Analysis of Randomized Controlled Trials</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 ## read in data
 <span class="kw">data</span>(<span class="st">"STAR"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 <span class="kw">hist</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">1</span>], <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">500</span>, <span class="dv">900</span>),
      <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.01</span>), <span class="dt">main =</span> <span class="st">"Small class"</span>,
      <span class="dt">xlab =</span> <span class="st">"Fourth-grade reading test score"</span>)
 <span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">1</span>], <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
-       <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre>
+       <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre></div>
 <p><img src="uncertainty_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">2</span>], <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">500</span>, <span class="dv">900</span>),
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">2</span>], <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">500</span>, <span class="dv">900</span>),
      <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.01</span>), <span class="dt">main =</span> <span class="st">"Regular class"</span>,
      <span class="dt">xlab =</span> <span class="st">"Fourth-grade reading test score"</span>)
 <span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">2</span>], <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
-       <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre>
+       <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre></div>
 <p><img src="uncertainty_files/figure-html/unnamed-chunk-5-2.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## estimate and standard error for small class
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## estimate and standard error for small class
 n.small &lt;-<span class="st"> </span><span class="kw">sum</span>(STAR$classtype ==<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>!<span class="kw">is.na</span>(STAR$g4reading))
 est.small &lt;-<span class="st"> </span><span class="kw">mean</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">1</span>], <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
 se.small &lt;-<span class="st"> </span><span class="kw">sd</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">1</span>], <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) /
 <span class="st">    </span><span class="kw">sqrt</span>(n.small)
-est.small</code></pre>
+est.small</code></pre></div>
 <pre><code>## [1] 723.3912</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">se.small</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">se.small</code></pre></div>
 <pre><code>## [1] 1.913012</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## estimate and standard error for regular class
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## estimate and standard error for regular class
 n.regular &lt;-<span class="st"> </span><span class="kw">sum</span>(STAR$classtype ==<span class="st"> </span><span class="dv">2</span> &amp;<span class="st"> </span>!<span class="kw">is.na</span>(STAR$classtype) &amp;
 <span class="st">                     </span>!<span class="kw">is.na</span>(STAR$g4reading))
 est.regular &lt;-<span class="st"> </span><span class="kw">mean</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">2</span>], <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
 se.regular &lt;-<span class="st"> </span><span class="kw">sd</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">2</span>], <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) /
 <span class="st">    </span><span class="kw">sqrt</span>(n.regular)
-est.regular</code></pre>
+est.regular</code></pre></div>
 <pre><code>## [1] 719.89</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">se.regular</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">se.regular</code></pre></div>
 <pre><code>## [1] 1.83885</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="fl">0.05</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="fl">0.05</span>
 ## 95% confidence intervals for small class
 ci.small &lt;-<span class="st"> </span><span class="kw">c</span>(est.small -<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> -<span class="st"> </span>alpha /<span class="st"> </span><span class="dv">2</span>) *<span class="st"> </span>se.small,
               est.small +<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> -<span class="st"> </span>alpha /<span class="st"> </span><span class="dv">2</span>) *<span class="st"> </span>se.small)
-ci.small</code></pre>
+ci.small</code></pre></div>
 <pre><code>## [1] 719.6417 727.1406</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## 95% confidence intervals for regular class
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 95% confidence intervals for regular class
 ci.regular &lt;-<span class="st"> </span><span class="kw">c</span>(est.regular -<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> -<span class="st"> </span>alpha /<span class="st"> </span><span class="dv">2</span>) *<span class="st"> </span>se.regular,
                 est.regular +<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> -<span class="st"> </span>alpha /<span class="st"> </span><span class="dv">2</span>) *<span class="st"> </span>se.regular)
-ci.regular</code></pre>
+ci.regular</code></pre></div>
 <pre><code>## [1] 716.2859 723.4940</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## difference-in-means estimator
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## difference-in-means estimator
 ate.est &lt;-<span class="st"> </span>est.small -<span class="st"> </span>est.regular
-ate.est</code></pre>
+ate.est</code></pre></div>
 <pre><code>## [1] 3.501232</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## standard error and 95% confidence interval
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## standard error and 95% confidence interval
 ate.se &lt;-<span class="st"> </span><span class="kw">sqrt</span>(se.small^<span class="dv">2</span> +<span class="st"> </span>se.regular^<span class="dv">2</span>)
-ate.se</code></pre>
+ate.se</code></pre></div>
 <pre><code>## [1] 2.653485</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">ate.ci &lt;-<span class="st"> </span><span class="kw">c</span>(ate.est -<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> -<span class="st"> </span>alpha /<span class="st"> </span><span class="dv">2</span>) *<span class="st"> </span>ate.se,
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ate.ci &lt;-<span class="st"> </span><span class="kw">c</span>(ate.est -<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> -<span class="st"> </span>alpha /<span class="st"> </span><span class="dv">2</span>) *<span class="st"> </span>ate.se,
             ate.est +<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> -<span class="st"> </span>alpha /<span class="st"> </span><span class="dv">2</span>) *<span class="st"> </span>ate.se)
-ate.ci</code></pre>
+ate.ci</code></pre></div>
 <pre><code>## [1] -1.699503  8.701968</code></pre>
 </div>
 <div id="section-7-1-6-analysis-based-on-students-t-distribution" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-1-6-analysis-based-on-students-t-distribution" class="anchor"> </a></body></html>Section 7.1.6: Analysis Based on Student’s t-Distribution</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## 95% CI for small class
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 95% CI for small class
 <span class="kw">c</span>(est.small -<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, <span class="dt">df =</span> n.small -<span class="st"> </span><span class="dv">1</span>) *<span class="st"> </span>se.small,
-  est.small +<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, <span class="dt">df =</span> n.small -<span class="st"> </span><span class="dv">1</span>) *<span class="st"> </span>se.small)</code></pre>
+  est.small +<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, <span class="dt">df =</span> n.small -<span class="st"> </span><span class="dv">1</span>) *<span class="st"> </span>se.small)</code></pre></div>
 <pre><code>## [1] 719.6355 727.1469</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## 95% CI based on the central limit theorem
-ci.small</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 95% CI based on the central limit theorem
+ci.small</code></pre></div>
 <pre><code>## [1] 719.6417 727.1406</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## 95% CI for regular class
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 95% CI for regular class
 <span class="kw">c</span>(est.regular -<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, <span class="dt">df =</span> n.regular -<span class="st"> </span><span class="dv">1</span>) *<span class="st"> </span>se.regular,
-  est.regular +<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, <span class="dt">df =</span> n.regular -<span class="st"> </span><span class="dv">1</span>) *<span class="st"> </span>se.regular)</code></pre>
+  est.regular +<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, <span class="dt">df =</span> n.regular -<span class="st"> </span><span class="dv">1</span>) *<span class="st"> </span>se.regular)</code></pre></div>
 <pre><code>## [1] 716.2806 723.4993</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## 95% CI based on the central limit theorem
-ci.regular</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 95% CI based on the central limit theorem
+ci.regular</code></pre></div>
 <pre><code>## [1] 716.2859 723.4940</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">t.ci &lt;-<span class="st"> </span><span class="kw">t.test</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">1</span>],
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t.ci &lt;-<span class="st"> </span><span class="kw">t.test</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">1</span>],
                STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">2</span>])
-t.ci</code></pre>
+t.ci</code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -418,22 +418,22 @@ t.ci</code></pre>
 <div id="section-7-2-1-tea-testing-experiment" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-2-1-tea-testing-experiment" class="anchor"> </a></body></html>Section 7.2.1: Tea-Testing Experiment</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## truth: enumerate the number of assignment combinations
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## truth: enumerate the number of assignment combinations
 true &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">choose</span>(<span class="dv">4</span>, <span class="dv">0</span>) *<span class="st"> </span><span class="kw">choose</span>(<span class="dv">4</span>, <span class="dv">4</span>),
           <span class="kw">choose</span>(<span class="dv">4</span>, <span class="dv">1</span>) *<span class="st"> </span><span class="kw">choose</span>(<span class="dv">4</span>, <span class="dv">3</span>),
           <span class="kw">choose</span>(<span class="dv">4</span>, <span class="dv">2</span>) *<span class="st"> </span><span class="kw">choose</span>(<span class="dv">4</span>, <span class="dv">2</span>),
           <span class="kw">choose</span>(<span class="dv">4</span>, <span class="dv">3</span>) *<span class="st"> </span><span class="kw">choose</span>(<span class="dv">4</span>, <span class="dv">1</span>),
           <span class="kw">choose</span>(<span class="dv">4</span>, <span class="dv">4</span>) *<span class="st"> </span><span class="kw">choose</span>(<span class="dv">4</span>, <span class="dv">0</span>))
-true</code></pre>
+true</code></pre></div>
 <pre><code>## [1]  1 16 36 16  1</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## compute probability: divide it by the total number of events
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## compute probability: divide it by the total number of events
 true &lt;-<span class="st"> </span>true /<span class="st"> </span><span class="kw">sum</span>(true)
 ## number of correctly classified cups as labels
 <span class="kw">names</span>(true) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)
-true</code></pre>
+true</code></pre></div>
 <pre><code>##          0          2          4          6          8 
 ## 0.01428571 0.22857143 0.51428571 0.22857143 0.01428571</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## simulations
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## simulations
 sims &lt;-<span class="st"> </span><span class="dv">1000</span>
 ## lady's guess: M stands for `Milk first,' T stands for `Tea first'
 guess &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"T"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"T"</span>, <span class="st">"M"</span>)
@@ -444,7 +444,7 @@ for (i in <span class="dv">1</span>:sims) {
     correct[i] &lt;-<span class="st"> </span><span class="kw">sum</span>(guess ==<span class="st"> </span>cups) <span class="co"># number of correct guesses</span>
 }
 ## estimated probability for each number of correct guesses
-<span class="kw">prop.table</span>(<span class="kw">table</span>(correct))</code></pre>
+<span class="kw">prop.table</span>(<span class="kw">table</span>(correct))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">0</th>
@@ -461,8 +461,8 @@ for (i in <span class="dv">1</span>:sims) {
 <td align="right">0.013</td>
 </tr></tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## comparison with analytical answers; the differences are small
-<span class="kw">prop.table</span>(<span class="kw">table</span>(correct)) -<span class="st"> </span>true</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## comparison with analytical answers; the differences are small
+<span class="kw">prop.table</span>(<span class="kw">table</span>(correct)) -<span class="st"> </span>true</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">0</th>
@@ -483,55 +483,55 @@ for (i in <span class="dv">1</span>:sims) {
 <div id="section-7-2-2-the-general-framework" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-2-2-the-general-framework" class="anchor"> </a></body></html>Section 7.2.2: The General Framework</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## all correct
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## all correct
 x &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>), <span class="dt">byrow =</span> <span class="ot">TRUE</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)
 ## six correct
 y &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>), <span class="dt">byrow =</span> <span class="ot">TRUE</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)
 
 ## `M' milk first, `T' tea first
 <span class="kw">rownames</span>(x) &lt;-<span class="st"> </span><span class="kw">colnames</span>(x) &lt;-<span class="st"> </span><span class="kw">rownames</span>(y) &lt;-<span class="st"> </span><span class="kw">colnames</span>(y) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>)
-x</code></pre>
+x</code></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th align="left"></th>
+<th></th>
 <th align="right">M</th>
 <th align="right">T</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">M</td>
+<td>M</td>
 <td align="right">4</td>
 <td align="right">0</td>
 </tr>
 <tr class="even">
-<td align="left">T</td>
+<td>T</td>
 <td align="right">0</td>
 <td align="right">4</td>
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">y</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y</code></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th align="left"></th>
+<th></th>
 <th align="right">M</th>
 <th align="right">T</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">M</td>
+<td>M</td>
 <td align="right">3</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
-<td align="left">T</td>
+<td>T</td>
 <td align="right">1</td>
 <td align="right">3</td>
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## one-sided test for 8 correct guesses
-<span class="kw">fisher.test</span>(x, <span class="dt">alternative =</span> <span class="st">"greater"</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## one-sided test for 8 correct guesses
+<span class="kw">fisher.test</span>(x, <span class="dt">alternative =</span> <span class="st">"greater"</span>)</code></pre></div>
 <pre><code>## 
 ##  Fisher's Exact Test for Count Data
 ## 
@@ -543,8 +543,8 @@ x</code></pre>
 ## sample estimates:
 ## odds ratio 
 ##        Inf</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## two-sided test for 6 correct guesses
-<span class="kw">fisher.test</span>(y)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## two-sided test for 6 correct guesses
+<span class="kw">fisher.test</span>(y)</code></pre></div>
 <pre><code>## 
 ##  Fisher's Exact Test for Count Data
 ## 
@@ -560,7 +560,7 @@ x</code></pre>
 <div id="section-7-2-3-one-sample-tests" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-2-3-one-sample-tests" class="anchor"> </a></body></html>Section 7.2.3: One-Sample Tests</h3>
-<pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">1018</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">1018</span>
 x.bar &lt;-<span class="st"> </span><span class="dv">550</span> /<span class="st"> </span>n
 se &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="fl">0.5</span> *<span class="st"> </span><span class="fl">0.5</span> /<span class="st"> </span>n) <span class="co"># standard deviation of sampling distribution</span>
 
@@ -571,28 +571,28 @@ upper &lt;-<span class="st"> </span><span class="kw">pnorm</span>(x.bar, <span c
 lower &lt;-<span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">0.5</span> -<span class="st"> </span>(x.bar -<span class="st"> </span><span class="fl">0.5</span>), <span class="dt">mean =</span> <span class="fl">0.5</span>, <span class="dt">sd =</span> se)
 
 ## two-side p-value
-upper +<span class="st"> </span>lower</code></pre>
+upper +<span class="st"> </span>lower</code></pre></div>
 <pre><code>## [1] 0.01016866</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> *<span class="st"> </span>upper</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> *<span class="st"> </span>upper</code></pre></div>
 <pre><code>## [1] 0.01016866</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## one-sided p-value
-upper</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## one-sided p-value
+upper</code></pre></div>
 <pre><code>## [1] 0.005084332</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">z.score &lt;-<span class="st"> </span>(x.bar -<span class="st"> </span><span class="fl">0.5</span>) /<span class="st"> </span>se
-z.score</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z.score &lt;-<span class="st"> </span>(x.bar -<span class="st"> </span><span class="fl">0.5</span>) /<span class="st"> </span>se
+z.score</code></pre></div>
 <pre><code>## [1] 2.57004</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(z.score, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>) <span class="co"># one-sided p-value</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(z.score, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>) <span class="co"># one-sided p-value</span></code></pre></div>
 <pre><code>## [1] 0.005084332</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> *<span class="st"> </span><span class="kw">pnorm</span>(z.score, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>) <span class="co"># two-sided p-value</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> *<span class="st"> </span><span class="kw">pnorm</span>(z.score, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>) <span class="co"># two-sided p-value</span></code></pre></div>
 <pre><code>## [1] 0.01016866</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## 99% confidence interval contains 0.5
-<span class="kw">c</span>(x.bar -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.995</span>) *<span class="st"> </span>se, x.bar +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.995</span>) *<span class="st"> </span>se)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 99% confidence interval contains 0.5
+<span class="kw">c</span>(x.bar -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.995</span>) *<span class="st"> </span>se, x.bar +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.995</span>) *<span class="st"> </span>se)</code></pre></div>
 <pre><code>## [1] 0.4999093 0.5806408</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## 95% confidence interval does not contain 0.5
-<span class="kw">c</span>(x.bar -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>) *<span class="st"> </span>se, x.bar +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>) *<span class="st"> </span>se)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 95% confidence interval does not contain 0.5
+<span class="kw">c</span>(x.bar -<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>) *<span class="st"> </span>se, x.bar +<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>) *<span class="st"> </span>se)</code></pre></div>
 <pre><code>## [1] 0.5095605 0.5709896</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## no continuity correction to get the same p-value as above
-<span class="kw">prop.test</span>(<span class="dv">550</span>, <span class="dt">n =</span> n, <span class="dt">p =</span> <span class="fl">0.5</span>, <span class="dt">correct =</span> <span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## no continuity correction to get the same p-value as above
+<span class="kw">prop.test</span>(<span class="dv">550</span>, <span class="dt">n =</span> n, <span class="dt">p =</span> <span class="fl">0.5</span>, <span class="dt">correct =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>## 
 ##  1-sample proportions test without continuity correction
 ## 
@@ -604,8 +604,8 @@ z.score</code></pre>
 ## sample estimates:
 ##        p 
 ## 0.540275</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## with continuity correction
-<span class="kw">prop.test</span>(<span class="dv">550</span>, <span class="dt">n =</span> n, <span class="dt">p =</span> <span class="fl">0.5</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## with continuity correction
+<span class="kw">prop.test</span>(<span class="dv">550</span>, <span class="dt">n =</span> n, <span class="dt">p =</span> <span class="fl">0.5</span>)</code></pre></div>
 <pre><code>## 
 ##  1-sample proportions test with continuity correction
 ## 
@@ -617,7 +617,7 @@ z.score</code></pre>
 ## sample estimates:
 ##        p 
 ## 0.540275</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="dv">550</span>, <span class="dt">n =</span> n, <span class="dt">p =</span> <span class="fl">0.5</span>, <span class="dt">conf.level =</span> <span class="fl">0.99</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="dv">550</span>, <span class="dt">n =</span> n, <span class="dt">p =</span> <span class="fl">0.5</span>, <span class="dt">conf.level =</span> <span class="fl">0.99</span>)</code></pre></div>
 <pre><code>## 
 ##  1-sample proportions test with continuity correction
 ## 
@@ -629,8 +629,8 @@ z.score</code></pre>
 ## sample estimates:
 ##        p 
 ## 0.540275</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## two-sided one-sample t-test
-<span class="kw">t.test</span>(STAR$g4reading, <span class="dt">mu =</span> <span class="dv">710</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## two-sided one-sample t-test
+<span class="kw">t.test</span>(STAR$g4reading, <span class="dt">mu =</span> <span class="dv">710</span>)</code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -646,15 +646,15 @@ z.score</code></pre>
 <div id="section-7-2-4-two-sample-tests" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-2-4-two-sample-tests" class="anchor"> </a></body></html>Section 7.2.4: Two-Sample Tests</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## one-sided p-value
-<span class="kw">pnorm</span>(-<span class="kw">abs</span>(ate.est), <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> ate.se)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## one-sided p-value
+<span class="kw">pnorm</span>(-<span class="kw">abs</span>(ate.est), <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> ate.se)</code></pre></div>
 <pre><code>## [1] 0.09350361</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## two-sided p-value
-<span class="dv">2</span> *<span class="st"> </span><span class="kw">pnorm</span>(-<span class="kw">abs</span>(ate.est), <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> ate.se)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## two-sided p-value
+<span class="dv">2</span> *<span class="st"> </span><span class="kw">pnorm</span>(-<span class="kw">abs</span>(ate.est), <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> ate.se)</code></pre></div>
 <pre><code>## [1] 0.1870072</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## testing the null of zero average treatment effect
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## testing the null of zero average treatment effect
 <span class="kw">t.test</span>(STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">1</span>],
-       STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">2</span>])</code></pre>
+       STAR$g4reading[STAR$classtype ==<span class="st"> </span><span class="dv">2</span>])</code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -666,11 +666,11 @@ z.score</code></pre>
 ## sample estimates:
 ## mean of x mean of y 
 ##  723.3912  719.8900</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"resume"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"resume"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 ## organize the data in tables
 x &lt;-<span class="st"> </span><span class="kw">table</span>(resume$race, resume$call)
-x</code></pre>
+x</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">/</th>
@@ -690,8 +690,8 @@ x</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## one-sided test
-<span class="kw">prop.test</span>(x, <span class="dt">alternative =</span> <span class="st">"greater"</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## one-sided test
+<span class="kw">prop.test</span>(x, <span class="dt">alternative =</span> <span class="st">"greater"</span>)</code></pre></div>
 <pre><code>## 
 ##  2-sample test for equality of proportions with continuity
 ##  correction
@@ -704,7 +704,7 @@ x</code></pre>
 ## sample estimates:
 ##    prop 1    prop 2 
 ## 0.9355236 0.9034908</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## sample size
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## sample size
 n0 &lt;-<span class="st"> </span><span class="kw">sum</span>(resume$race ==<span class="st"> "black"</span>)
 n1 &lt;-<span class="st"> </span><span class="kw">sum</span>(resume$race ==<span class="st"> "white"</span>)
 
@@ -715,20 +715,20 @@ p1 &lt;-<span class="st"> </span><span class="kw">mean</span>(resume$call[resume
 
 ## point estimate
 est &lt;-<span class="st"> </span>p1 -<span class="st"> </span>p0
-est</code></pre>
+est</code></pre></div>
 <pre><code>## [1] 0.03203285</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## standard error
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## standard error
 se &lt;-<span class="st"> </span><span class="kw">sqrt</span>(p *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>p) *<span class="st"> </span>(<span class="dv">1</span> /<span class="st"> </span>n0 +<span class="st"> </span><span class="dv">1</span> /<span class="st"> </span>n1))
-se</code></pre>
+se</code></pre></div>
 <pre><code>## [1] 0.007796894</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## z-statistic
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## z-statistic
 zstat &lt;-<span class="st"> </span>est /<span class="st"> </span>se
-zstat</code></pre>
+zstat</code></pre></div>
 <pre><code>## [1] 4.108412</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## one-sided p-value
-<span class="kw">pnorm</span>(-<span class="kw">abs</span>(zstat))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## one-sided p-value
+<span class="kw">pnorm</span>(-<span class="kw">abs</span>(zstat))</code></pre></div>
 <pre><code>## [1] 1.991943e-05</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(x, <span class="dt">alternative =</span> <span class="st">"greater"</span>, <span class="dt">correct =</span> <span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(x, <span class="dt">alternative =</span> <span class="st">"greater"</span>, <span class="dt">correct =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>## 
 ##  2-sample test for equality of proportions without continuity
 ##  correction
@@ -749,7 +749,7 @@ zstat</code></pre>
 <div id="section-7-2-6-power-analysis" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-2-6-power-analysis" class="anchor"> </a></body></html>Section 7.2.6: Power Analysis</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## set the parameters
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## set the parameters
 n &lt;-<span class="st"> </span><span class="dv">250</span>
 p.star &lt;-<span class="st"> </span><span class="fl">0.48</span> <span class="co"># data generating process</span>
 p &lt;-<span class="st"> </span><span class="fl">0.5</span> <span class="co"># null value</span>
@@ -766,9 +766,9 @@ se &lt;-<span class="st"> </span><span class="kw">sqrt</span>(p *<span class="st
 
 ## power
 <span class="kw">pnorm</span>(p -<span class="st"> </span>cr.value *<span class="st"> </span>se, <span class="dt">mean =</span> p.star, <span class="dt">sd =</span> se.star) +
-<span class="st">    </span><span class="kw">pnorm</span>(p +<span class="st"> </span>cr.value *<span class="st"> </span>se, <span class="dt">mean =</span> p.star, <span class="dt">sd =</span> se.star, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre>
+<span class="st">    </span><span class="kw">pnorm</span>(p +<span class="st"> </span>cr.value *<span class="st"> </span>se, <span class="dt">mean =</span> p.star, <span class="dt">sd =</span> se.star, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>## [1] 0.09673114</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## parameters
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## parameters
 n1 &lt;-<span class="st"> </span><span class="dv">500</span>
 n0 &lt;-<span class="st"> </span><span class="dv">500</span>
 p1.star &lt;-<span class="st"> </span><span class="fl">0.05</span>
@@ -783,9 +783,9 @@ se.star &lt;-<span class="st"> </span><span class="kw">sqrt</span>(p1.star *<spa
 
 <span class="kw">pnorm</span>(-cr.value *<span class="st"> </span>se, <span class="dt">mean =</span> p1.star -<span class="st"> </span>p0.star, <span class="dt">sd =</span> se.star) +
 <span class="st">    </span><span class="kw">pnorm</span>(cr.value *<span class="st"> </span>se, <span class="dt">mean =</span> p1.star -<span class="st"> </span>p0.star, <span class="dt">sd =</span> se.star,
-          <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre>
+          <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>## [1] 0.85228</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">power.prop.test</span>(<span class="dt">n =</span> <span class="dv">500</span>, <span class="dt">p1 =</span> <span class="fl">0.05</span>, <span class="dt">p2 =</span> <span class="fl">0.1</span>, <span class="dt">sig.level =</span> <span class="fl">0.05</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">power.prop.test</span>(<span class="dt">n =</span> <span class="dv">500</span>, <span class="dt">p1 =</span> <span class="fl">0.05</span>, <span class="dt">p2 =</span> <span class="fl">0.1</span>, <span class="dt">sig.level =</span> <span class="fl">0.05</span>)</code></pre></div>
 <pre><code>## 
 ##      Two-sample comparison of proportions power calculation 
 ## 
@@ -797,7 +797,7 @@ se.star &lt;-<span class="st"> </span><span class="kw">sqrt</span>(p1.star *<spa
 ##     alternative = two.sided
 ## 
 ## NOTE: n is number in *each* group</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">power.prop.test</span>(<span class="dt">p1 =</span> <span class="fl">0.05</span>, <span class="dt">p2 =</span> <span class="fl">0.1</span>, <span class="dt">sig.level =</span> <span class="fl">0.05</span>, <span class="dt">power =</span> <span class="fl">0.9</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">power.prop.test</span>(<span class="dt">p1 =</span> <span class="fl">0.05</span>, <span class="dt">p2 =</span> <span class="fl">0.1</span>, <span class="dt">sig.level =</span> <span class="fl">0.05</span>, <span class="dt">power =</span> <span class="fl">0.9</span>)</code></pre></div>
 <pre><code>## 
 ##      Two-sample comparison of proportions power calculation 
 ## 
@@ -809,7 +809,7 @@ se.star &lt;-<span class="st"> </span><span class="kw">sqrt</span>(p1.star *<spa
 ##     alternative = two.sided
 ## 
 ## NOTE: n is number in *each* group</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">power.t.test</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">delta =</span> <span class="fl">0.25</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">"one.sample"</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">power.t.test</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">delta =</span> <span class="fl">0.25</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">"one.sample"</span>)</code></pre></div>
 <pre><code>## 
 ##      One-sample t test power calculation 
 ## 
@@ -819,7 +819,7 @@ se.star &lt;-<span class="st"> </span><span class="kw">sqrt</span>(p1.star *<spa
 ##       sig.level = 0.05
 ##           power = 0.6969757
 ##     alternative = two.sided</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">power.t.test</span>(<span class="dt">power =</span> <span class="fl">0.9</span>, <span class="dt">delta =</span> <span class="fl">0.25</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">"one.sample"</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">power.t.test</span>(<span class="dt">power =</span> <span class="fl">0.9</span>, <span class="dt">delta =</span> <span class="fl">0.25</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">"one.sample"</span>)</code></pre></div>
 <pre><code>## 
 ##      One-sample t test power calculation 
 ## 
@@ -829,8 +829,8 @@ se.star &lt;-<span class="st"> </span><span class="kw">sqrt</span>(p1.star *<spa
 ##       sig.level = 0.05
 ##           power = 0.9
 ##     alternative = two.sided</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">power.t.test</span>(<span class="dt">delta =</span> <span class="fl">0.25</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">"two.sample"</span>,
-             <span class="dt">alternative =</span> <span class="st">"one.sided"</span>, <span class="dt">power =</span> <span class="fl">0.9</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">power.t.test</span>(<span class="dt">delta =</span> <span class="fl">0.25</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">"two.sample"</span>,
+             <span class="dt">alternative =</span> <span class="st">"one.sided"</span>, <span class="dt">power =</span> <span class="fl">0.9</span>)</code></pre></div>
 <pre><code>## 
 ##      Two-sample t test power calculation 
 ## 
@@ -850,7 +850,7 @@ se.star &lt;-<span class="st"> </span><span class="kw">sqrt</span>(p1.star *<spa
 <div id="section-7-3-1-linear-regression-as-a-generative-model" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-3-1-linear-regression-as-a-generative-model" class="anchor"> </a></body></html>Section 7.3.1: Linear Regression as a Generative Model</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"minwage"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"minwage"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 ## compute proportion of full employment before minimum wage increase
 minwage$fullPropBefore &lt;-<span class="st"> </span>minwage$fullBefore /
@@ -867,7 +867,7 @@ fit.minwage &lt;-<span class="st"> </span><span class="kw">lm</span>(fullPropAft
 <span class="st">                      </span>wageBefore +<span class="st"> </span>chain, <span class="dt">data =</span> minwage)
 
 ## regression result
-fit.minwage</code></pre>
+fit.minwage</code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = fullPropAfter ~ -1 + NJ + fullPropBefore + wageBefore + 
@@ -878,9 +878,9 @@ fit.minwage</code></pre>
 ##         0.05422          0.16879          0.08133         -0.11563  
 ##        chainkfc        chainroys      chainwendys  
 ##        -0.15080         -0.20639         -0.22013</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">fit.minwage1 &lt;-<span class="st"> </span><span class="kw">lm</span>(fullPropAfter ~<span class="st"> </span>NJ +<span class="st"> </span>fullPropBefore +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit.minwage1 &lt;-<span class="st"> </span><span class="kw">lm</span>(fullPropAfter ~<span class="st"> </span>NJ +<span class="st"> </span>fullPropBefore +
 <span class="st">                       </span>wageBefore +<span class="st"> </span>chain, <span class="dt">data =</span> minwage)
-fit.minwage1</code></pre>
+fit.minwage1</code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = fullPropAfter ~ NJ + fullPropBefore + wageBefore + 
@@ -891,10 +891,10 @@ fit.minwage1</code></pre>
 ##       -0.11563         0.05422         0.16879         0.08133  
 ##       chainkfc       chainroys     chainwendys  
 ##       -0.03517        -0.09076        -0.10451</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(fit.minwage, <span class="dt">newdata =</span> minwage[<span class="dv">1</span>, ])</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(fit.minwage, <span class="dt">newdata =</span> minwage[<span class="dv">1</span>, ])</code></pre></div>
 <pre><code>##         1 
 ## 0.2709367</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(fit.minwage1, <span class="dt">newdata =</span> minwage[<span class="dv">1</span>, ])</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(fit.minwage1, <span class="dt">newdata =</span> minwage[<span class="dv">1</span>, ])</code></pre></div>
 <pre><code>##         1 
 ## 0.2709367</code></pre>
 </div>
@@ -909,9 +909,9 @@ fit.minwage1</code></pre>
 <div id="section-7-3-4-inference-about-coefficients" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-3-4-inference-about-coefficients" class="anchor"> </a></body></html>Section 7.3.4: Inference About Coefficients</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(women, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(women, <span class="dt">package =</span> <span class="st">"qss"</span>)
 fit.women &lt;-<span class="st"> </span><span class="kw">lm</span>(water ~<span class="st"> </span>reserved, <span class="dt">data =</span> women)
-<span class="kw">summary</span>(fit.women)</code></pre>
+<span class="kw">summary</span>(fit.women)</code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = water ~ reserved, data = women)
@@ -930,27 +930,27 @@ fit.women &lt;-<span class="st"> </span><span class="kw">lm</span>(water ~<span 
 ## Residual standard error: 33.45 on 320 degrees of freedom
 ## Multiple R-squared:  0.01688,    Adjusted R-squared:  0.0138 
 ## F-statistic: 5.493 on 1 and 320 DF,  p-value: 0.0197</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(fit.women) <span class="co"># 95% confidence intervals</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(fit.women) <span class="co"># 95% confidence intervals</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th align="left"></th>
+<th></th>
 <th align="right">2.5 %</th>
 <th align="right">97.5 %</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">(Intercept)</td>
+<td>(Intercept)</td>
 <td align="right">10.240240</td>
 <td align="right">19.23640</td>
 </tr>
 <tr class="even">
-<td align="left">reserved</td>
+<td>reserved</td>
 <td align="right">1.485608</td>
 <td align="right">17.01924</td>
 </tr>
 </tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(fit.minwage)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(fit.minwage)</code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = fullPropAfter ~ -1 + NJ + fullPropBefore + wageBefore + 
@@ -975,15 +975,15 @@ fit.women &lt;-<span class="st"> </span><span class="kw">lm</span>(water ~<span 
 ## Residual standard error: 0.2438 on 351 degrees of freedom
 ## Multiple R-squared:  0.6349, Adjusted R-squared:  0.6277 
 ## F-statistic: 87.21 on 7 and 351 DF,  p-value: &lt; 2.2e-16</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## confidence interval just for the `NJ' variable
-<span class="kw">confint</span>(fit.minwage)[<span class="st">"NJ"</span>, ]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## confidence interval just for the `NJ' variable
+<span class="kw">confint</span>(fit.minwage)[<span class="st">"NJ"</span>, ]</code></pre></div>
 <pre><code>##       2.5 %      97.5 % 
 ## -0.01109295  0.11953297</code></pre>
 </div>
 <div id="section-7-3-5-inference-about-predictions" class="section level3">
 <h3 class="hasAnchor">
 <html><body><a href="#section-7-3-5-inference-about-predictions" class="anchor"> </a></body></html>Section 7.3.5: Inference About Predictions</h3>
-<pre class="sourceCode r"><code class="sourceCode r">## load the data and subset them into two parties
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load the data and subset them into two parties
 <span class="kw">data</span>(<span class="st">"MPs"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 MPs.labour &lt;-<span class="st"> </span><span class="kw">subset</span>(MPs, <span class="dt">subset =</span> (party ==<span class="st"> "labour"</span>))
 MPs.tory &lt;-<span class="st"> </span><span class="kw">subset</span>(MPs, <span class="dt">subset =</span> (party ==<span class="st"> "tory"</span>))
@@ -1001,7 +1001,7 @@ tory.fit2 &lt;-<span class="st"> </span><span class="kw">lm</span>(ln.net ~<span
 ## tory party: prediction at the threshold
 tory.y0 &lt;-<span class="st"> </span><span class="kw">predict</span>(tory.fit1, <span class="dt">interval =</span> <span class="st">"confidence"</span>,
                    <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">margin =</span> <span class="dv">0</span>))
-tory.y0</code></pre>
+tory.y0</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">fit</th>
@@ -1014,9 +1014,9 @@ tory.y0</code></pre>
 <td align="right">12.96221</td>
 </tr></tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">tory.y1 &lt;-<span class="st"> </span><span class="kw">predict</span>(tory.fit2, <span class="dt">interval =</span> <span class="st">"confidence"</span>,
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tory.y1 &lt;-<span class="st"> </span><span class="kw">predict</span>(tory.fit2, <span class="dt">interval =</span> <span class="st">"confidence"</span>,
                    <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">margin =</span> <span class="dv">0</span>))
-tory.y1</code></pre>
+tory.y1</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">fit</th>
@@ -1029,7 +1029,7 @@ tory.y1</code></pre>
 <td align="right">13.56869</td>
 </tr></tbody>
 </table>
-<pre class="sourceCode r"><code class="sourceCode r">## range of predictors; min to 0 and 0 to max
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## range of predictors; min to 0 and 0 to max
 y1.range &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="kw">min</span>(MPs.tory$margin), <span class="dt">by =</span> -<span class="fl">0.01</span>)
 y2.range &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="kw">max</span>(MPs.tory$margin), <span class="dt">by =</span> <span class="fl">0.01</span>)
 
@@ -1050,12 +1050,12 @@ tory.y1 &lt;-<span class="st"> </span><span class="kw">predict</span>(tory.fit2,
 ## plotting the second regression with winners
 <span class="kw">lines</span>(y2.range, tory.y1[, <span class="st">"fit"</span>], <span class="dt">lty =</span> <span class="st">"solid"</span>)  <span class="co"># point estimates</span>
 <span class="kw">lines</span>(y2.range, tory.y1[, <span class="st">"lwr"</span>], <span class="dt">lty =</span> <span class="st">"dashed"</span>) <span class="co"># lower CI</span>
-<span class="kw">lines</span>(y2.range, tory.y1[, <span class="st">"upr"</span>], <span class="dt">lty =</span> <span class="st">"dashed"</span>) <span class="co"># upper CI</span></code></pre>
+<span class="kw">lines</span>(y2.range, tory.y1[, <span class="st">"upr"</span>], <span class="dt">lty =</span> <span class="st">"dashed"</span>) <span class="co"># upper CI</span></code></pre></div>
 <p><img src="uncertainty_files/figure-html/unnamed-chunk-14-1.png" width="672"></p>
-<pre class="sourceCode r"><code class="sourceCode r">## re-compute the predicted value and return standard errors
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## re-compute the predicted value and return standard errors
 tory.y0 &lt;-<span class="st"> </span><span class="kw">predict</span>(tory.fit1, <span class="dt">interval =</span> <span class="st">"confidence"</span>, <span class="dt">se.fit =</span> <span class="ot">TRUE</span>,
                    <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">margin =</span> <span class="dv">0</span>))
-tory.y0</code></pre>
+tory.y0</code></pre></div>
 <pre><code>## $fit
 ##        fit      lwr      upr
 ## 1 12.53812 12.11402 12.96221
@@ -1068,11 +1068,11 @@ tory.y0</code></pre>
 ## 
 ## $residual.scale
 ## [1] 1.434283</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">tory.y1 &lt;-<span class="st"> </span><span class="kw">predict</span>(tory.fit2, <span class="dt">interval =</span> <span class="st">"confidence"</span>, <span class="dt">se.fit =</span> <span class="ot">TRUE</span>,
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tory.y1 &lt;-<span class="st"> </span><span class="kw">predict</span>(tory.fit2, <span class="dt">interval =</span> <span class="st">"confidence"</span>, <span class="dt">se.fit =</span> <span class="ot">TRUE</span>,
                    <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">margin =</span> <span class="dv">0</span>))
 
 ## s.e. of the intercept is the same as s.e. of the predicted value
-<span class="kw">summary</span>(tory.fit1)</code></pre>
+<span class="kw">summary</span>(tory.fit1)</code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = ln.net ~ margin, data = MPs.tory[MPs.tory$margin &lt; 
@@ -1092,22 +1092,22 @@ tory.y0</code></pre>
 ## Residual standard error: 1.434 on 119 degrees of freedom
 ## Multiple R-squared:  0.01108,    Adjusted R-squared:  0.002769 
 ## F-statistic: 1.333 on 1 and 119 DF,  p-value: 0.2506</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## standard error
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## standard error
 se.diff &lt;-<span class="st"> </span><span class="kw">sqrt</span>(tory.y0$se.fit^<span class="dv">2</span> +<span class="st"> </span>tory.y1$se.fit^<span class="dv">2</span>)
-se.diff</code></pre>
+se.diff</code></pre></div>
 <pre><code>## [1] 0.2876281</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## point estimate
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## point estimate
 diff.est &lt;-<span class="st"> </span>tory.y1$fit[<span class="dv">1</span>, <span class="st">"fit"</span>] -<span class="st"> </span>tory.y0$fit[<span class="dv">1</span>, <span class="st">"fit"</span>]
-diff.est</code></pre>
+diff.est</code></pre></div>
 <pre><code>## [1] 0.6496861</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## confidence interval
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## confidence interval
 CI &lt;-<span class="st"> </span><span class="kw">c</span>(diff.est -<span class="st"> </span>se.diff *<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>), diff.est +<span class="st"> </span>se.diff *<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>))
-CI</code></pre>
+CI</code></pre></div>
 <pre><code>## [1] 0.0859455 1.2134268</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">## hypothesis test
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## hypothesis test
 z.score &lt;-<span class="st"> </span>diff.est /<span class="st"> </span>se.diff
 p.value &lt;-<span class="st"> </span><span class="dv">2</span> *<span class="st"> </span><span class="kw">pnorm</span>(<span class="kw">abs</span>(z.score), <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>) <span class="co"># two-sided p-value</span>
-p.value</code></pre>
+p.value</code></pre></div>
 <pre><code>## [1] 0.02389759</code></pre>
 </div>
 </div>

@@ -25,8 +25,10 @@ The website for this package is available at [https://kosukeimai.github.io/qss-p
 
 **qss** is not available from CRAN, install the package from github with:
 ```{r eval=FALSE}
-install.packages("devtools") # if you have not installed the `devtools` package
-devtools::install_github("kosukeimai/qss-package")
+# if you have not installed the `devtools` package
+# install.packages("devtools") 
+library("devtools")
+install_github("kosukeimai/qss-package", build_vignettes = TRUE)
 ```
 
 ## Usage
