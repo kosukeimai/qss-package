@@ -35,9 +35,9 @@ To list all data sets contained in this package:
 
     data(package = "qss")
     data(elections, package = "qss") # load the elections data
-    vignettes(package = "qss") # list all vignettes
+    vignette(package = "qss") # list all vignettes
     browseVignettes("qss") # list vignettes and R code
-    vignettes("causality", package = "qss") # show the vignette for the Causality chapter
+    vignette("causality", package = "qss") # show the vignette for the Causality chapter
 
 The Federalist papers text files are in the `extdata/federalist`
 directory of the installed package and need to be accessed as follows:
