@@ -16,8 +16,7 @@ An R package containing the datasets used in
 
 > Kosuke Imai. 2017. **[Quantitative Social Science: An Introduction](http://press.princeton.edu/titles/11025.html)**. Princeton University Press.
 
-See [kosukeimai/qss](https://github.com/kosukeimai/qss) for other supplementary materials
-and the original data sets.
+See [kosukeimai/qss](https://github.com/kosukeimai/qss) for other supplementary materials and the original data sets.
 
 The website for this package is available at [https://kosukeimai.github.io/qss-package](https://kosukeimai.github.io/qss-package)
 
@@ -37,9 +36,9 @@ To list all data sets contained in this package:
 ```{r, eval = FALSE}
 data(package = "qss")
 data(elections, package = "qss") # load the elections data
-vignettes(package = "qss") # list all vignettes
+vignette(package = "qss") # list all vignettes
 browseVignettes("qss") # list vignettes and R code
-vignettes("causality", package = "qss") # show the vignette for the Causality chapter
+vignette("causality", package = "qss") # show the vignette for the Causality chapter
 ```
 
 The Federalist papers text files are in the `extdata/federalist` directory of the installed package and need to be accessed as follows:
