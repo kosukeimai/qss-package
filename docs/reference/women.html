@@ -23,14 +23,17 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -49,10 +52,43 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/causality.html">Causality</a>
+    </li>
+    <li>
+      <a href="../articles/discovery.html">Discovery</a>
+    </li>
+    <li>
+      <a href="../articles/intro.html">Intro</a>
+    </li>
+    <li>
+      <a href="../articles/measurement.html">Measurement</a>
+    </li>
+    <li>
+      <a href="../articles/prediction.html">Prediction</a>
+    </li>
+    <li>
+      <a href="../articles/probability.html">Probability</a>
+    </li>
+    <li>
+      <a href="../articles/uncertainty.html">Uncertainty</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -80,19 +116,18 @@
 politicians in government on policy outcomes</p>
     
 
-    <pre><span class='no'>women</span></pre>
+    <pre class="usage"><span class='no'>women</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 322 rows and 6 variables:
-<dl class='dl-horizontal'>
- <dt> GP </dt><dd> integer: identifier for the Gram Panchayat (GP) </dd>
- <dt> village </dt><dd> integer: identifier for each village </dd>
- <dt> reserved </dt><dd> integer: binary variable indicating whether the GP was reserved for women leaders or not </dd>
- <dt> female </dt><dd> integer: binary variable indicating whether the GP had a female leader or not </dd>
- <dt> irrigation </dt><dd> integer: variable measuring the number of new or repaired irrigation facilities in the village since the reserve policy started </dd>
- <dt> water </dt><dd> integer: variable measuring the number of new or repaired drinking water facilities in the village since the reservation policy started </dd>
-</dl></p>
+    <p>A data frame with 322 rows and 6 variables:</p><dl class='dl-horizontal'>
+ <dt> GP </dt><dd><p>integer: identifier for the Gram Panchayat (GP)</p></dd>
+ <dt> village </dt><dd><p>integer: identifier for each village</p></dd>
+ <dt> reserved </dt><dd><p>integer: binary variable indicating whether the GP was reserved for women leaders or not</p></dd>
+ <dt> female </dt><dd><p>integer: binary variable indicating whether the GP had a female leader or not</p></dd>
+ <dt> irrigation </dt><dd><p>integer: variable measuring the number of new or repaired irrigation facilities in the village since the reserve policy started</p></dd>
+ <dt> water </dt><dd><p>integer: variable measuring the number of new or repaired drinking water facilities in the village since the reservation policy started</p></dd>
+</dl>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -100,15 +135,13 @@ politicians in government on policy outcomes</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p><ul>
-<li> Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
-Princeton University Press. <a href = 'URL'>http://press.princeton.edu/titles/11025.html</a>. 
-</li>
-<li> Raghabendra Chattopadhyay and Esther Duflo (2004) “Women as policy makers:
+    <ul>
+<li><p>Imai, Kosuke. 2017. <em>Quantitative Social Science: An Introduction</em>.
+Princeton University Press. <a href='http://press.princeton.edu/titles/11025.html'>URL</a>.</p></li>
+<li><p>Raghabendra Chattopadhyay and Esther Duflo (2004) “Women as policy makers:
 Evidence from a randomized policy experiment in India.” <em>Econometrica</em>, vol. 72,
-no. 5, pp. 1409–1443. doi: 10.1111/j.1468-0262.2004.00539.x 
-</li>
-</ul></p>
+no. 5, pp. 1409–1443. doi: 10.1111/j.1468-0262.2004.00539.x</p></li>
+</ul>
     
 
   </div>
@@ -132,7 +165,7 @@ no. 5, pp. 1409–1443. doi: 10.1111/j.1468-0262.2004.00539.x
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

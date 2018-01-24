@@ -9,7 +9,7 @@
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- mathjax --><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
+<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
@@ -29,10 +29,43 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/causality.html">Causality</a>
+    </li>
+    <li>
+      <a href="../articles/discovery.html">Discovery</a>
+    </li>
+    <li>
+      <a href="../articles/intro.html">Intro</a>
+    </li>
+    <li>
+      <a href="../articles/measurement.html">Measurement</a>
+    </li>
+    <li>
+      <a href="../articles/prediction.html">Prediction</a>
+    </li>
+    <li>
+      <a href="../articles/probability.html">Probability</a>
+    </li>
+    <li>
+      <a href="../articles/uncertainty.html">Uncertainty</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -59,14 +92,14 @@
 <div class="contents">
 <div id="chapter-5-prediction" class="section level1">
 <h1 class="hasAnchor">
-<html><body><a href="#chapter-5-prediction" class="anchor"> </a></body></html>Chapter 5: Prediction</h1>
+<a href="#chapter-5-prediction" class="anchor"></a>Chapter 5: Prediction</h1>
 <div id="section-4-1-predicting-election-outcomes" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#section-4-1-predicting-election-outcomes" class="anchor"> </a></body></html>Section 4.1: Predicting Election Outcomes</h2>
+<a href="#section-4-1-predicting-election-outcomes" class="anchor"></a>Section 4.1: Predicting Election Outcomes</h2>
 <div id="section-4-1-1-loops-in-r" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-1-1-loops-in-r" class="anchor"> </a></body></html>Section 4.1.1: Loops in R</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">values &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)
+<a href="#section-4-1-1-loops-in-r" class="anchor"></a>Section 4.1.1: Loops in R</h3>
+<pre class="sourceCode r"><code class="sourceCode r">values &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)
 n &lt;-<span class="st"> </span><span class="kw">length</span>(values) <span class="co"># number of elements in `values'</span>
 results &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, n) <span class="co"># empty container vector for storing the results</span>
 
@@ -76,30 +109,30 @@ for (i in <span class="dv">1</span>:n) {
     ## `results' vector
     results[i] &lt;-<span class="st"> </span>values[i] *<span class="st"> </span><span class="dv">2</span>
     <span class="kw">cat</span>(values[i], <span class="st">"times 2 is equal to"</span>, results[i], <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)
-}</code></pre></div>
+}</code></pre>
 <pre><code>## 2 times 2 is equal to 4 
 ## 4 times 2 is equal to 8 
 ## 6 times 2 is equal to 12</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">results</code></pre>
 <pre><code>## [1]  4  8 12</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## check if the code runs when i = 1
+<pre class="sourceCode r"><code class="sourceCode r">## check if the code runs when i = 1
 i &lt;-<span class="st"> </span><span class="dv">1</span>
 x &lt;-<span class="st"> </span>values[i] *<span class="st"> </span><span class="dv">2</span>
-<span class="kw">cat</span>(values[i], <span class="st">"times 2 is equal to"</span>, x, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</code></pre></div>
+<span class="kw">cat</span>(values[i], <span class="st">"times 2 is equal to"</span>, x, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</code></pre>
 <pre><code>## 2 times 2 is equal to 4</code></pre>
 </div>
 <div id="section-4-1-2-general-conditional-statements-in-r" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-1-2-general-conditional-statements-in-r" class="anchor"> </a></body></html>Section 4.1.2: General Conditional Statements in R</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## define the operation to be executed
+<a href="#section-4-1-2-general-conditional-statements-in-r" class="anchor"></a>Section 4.1.2: General Conditional Statements in R</h3>
+<pre class="sourceCode r"><code class="sourceCode r">## define the operation to be executed
 operation &lt;-<span class="st"> "add"</span>
 if (operation ==<span class="st"> "add"</span>) {
     <span class="kw">cat</span>(<span class="st">"I will perform addition 4 + 4</span><span class="ch">\n</span><span class="st">"</span>)
     <span class="dv">4</span> +<span class="st"> </span><span class="dv">4</span>
-}</code></pre></div>
+}</code></pre>
 <pre><code>## I will perform addition 4 + 4</code></pre>
 <pre><code>## [1] 8</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">if (operation ==<span class="st"> "multiply"</span>) {
+<pre class="sourceCode r"><code class="sourceCode r">if (operation ==<span class="st"> "multiply"</span>) {
     <span class="kw">cat</span>(<span class="st">"I will perform multiplication 4 * 4</span><span class="ch">\n</span><span class="st">"</span>)
     <span class="dv">4</span> *<span class="st"> </span><span class="dv">4</span>
 }
@@ -112,10 +145,10 @@ if (operation ==<span class="st"> "add"</span>) {
 } else {
     <span class="kw">cat</span>(<span class="st">"I will perform multiplication 4 * 4"</span>)
     <span class="dv">4</span> *<span class="st"> </span><span class="dv">4</span>
-}</code></pre></div>
+}</code></pre>
 <pre><code>## I will perform multiplication 4 * 4</code></pre>
 <pre><code>## [1] 16</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Note that `operation' is redefined
+<pre class="sourceCode r"><code class="sourceCode r">## Note that `operation' is redefined
 operation &lt;-<span class="st"> "subtract"</span>
 if (operation ==<span class="st"> "add"</span>) {
     <span class="kw">cat</span>(<span class="st">"I will perform addition 4 + 4</span><span class="ch">\n</span><span class="st">"</span>)
@@ -126,9 +159,9 @@ if (operation ==<span class="st"> "add"</span>) {
 } else {
     <span class="kw">cat</span>(<span class="st">"`"</span>, operation, <span class="st">"' is invalid. Use either `add' or `multiply'.</span><span class="ch">\n</span><span class="st">"</span>,
         <span class="dt">sep =</span> <span class="st">""</span>)
-}</code></pre></div>
+}</code></pre>
 <pre><code>## `subtract' is invalid. Use either `add' or `multiply'.</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">values &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">5</span>
+<pre class="sourceCode r"><code class="sourceCode r">values &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">5</span>
 n &lt;-<span class="st">  </span><span class="kw">length</span>(values)
 results &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, n)
 for (i in <span class="dv">1</span>:n) {
@@ -144,19 +177,19 @@ for (i in <span class="dv">1</span>:n) {
             x, <span class="st">"*"</span>, x, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)
         results[i] &lt;-<span class="st"> </span>x *<span class="st"> </span>x
     }
-}</code></pre></div>
+}</code></pre>
 <pre><code>## 1 is odd and I will perform multiplication 1 * 1 
 ## 2 is even and I will perform addition 2 + 2 
 ## 3 is odd and I will perform multiplication 3 * 3 
 ## 4 is even and I will perform addition 4 + 4 
 ## 5 is odd and I will perform multiplication 5 * 5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">results</code></pre>
 <pre><code>## [1]  1  4  9  8 25</code></pre>
 </div>
 <div id="section-4-1-3-poll-predictions" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-1-3-poll-predictions" class="anchor"> </a></body></html>Section 4.1.3: Poll Predictions</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load election results, by state
+<a href="#section-4-1-3-poll-predictions" class="anchor"></a>Section 4.1.3: Poll Predictions</h3>
+<pre class="sourceCode r"><code class="sourceCode r">## load election results, by state
 <span class="kw">data</span>(<span class="st">"pres08"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 ## load polling data
 <span class="kw">data</span>(<span class="st">"polls08"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
@@ -164,11 +197,13 @@ for (i in <span class="dv">1</span>:n) {
 polls08$margin &lt;-<span class="st"> </span>polls08$Obama -<span class="st"> </span>polls08$McCain
 pres08$margin &lt;-<span class="st"> </span>pres08$Obama -<span class="st"> </span>pres08$McCain
 
-x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">"2008-11-04"</span>)
-y &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">"2008/9/1"</span>)
-x -<span class="st"> </span>y <span class="co"># number of days between 2008/9/1 and 11/4</span></code></pre></div>
+x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">"2008-11-04"</span>)</code></pre>
+<pre><code>## Warning in strptime(xx, f &lt;- "%Y-%m-%d", tz = "GMT"): unknown timezone
+## 'zone/tz/2017c.1.0/zoneinfo/America/New_York'</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">y &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">"2008/9/1"</span>)
+x -<span class="st"> </span>y <span class="co"># number of days between 2008/9/1 and 11/4</span></code></pre>
 <pre><code>## Time difference of 64 days</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## convert to a Date object
+<pre class="sourceCode r"><code class="sourceCode r">## convert to a Date object
 polls08$middate &lt;-<span class="st"> </span><span class="kw">as.Date</span>(polls08$middate)
 
 ## computer the number of days to the election day
@@ -194,20 +229,20 @@ for (i in <span class="dv">1</span>:<span class="dv">51</span>){
 ## error of latest polls
 errors &lt;-<span class="st"> </span>pres08$margin -<span class="st"> </span>poll.pred
 <span class="kw">names</span>(errors) &lt;-<span class="st"> </span>st.names <span class="co"># add state names</span>
-<span class="kw">mean</span>(errors) <span class="co"># mean prediction error</span></code></pre></div>
+<span class="kw">mean</span>(errors) <span class="co"># mean prediction error</span></code></pre>
 <pre><code>## [1] 1.062092</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">mean</span>(errors^<span class="dv">2</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">mean</span>(errors^<span class="dv">2</span>))</code></pre>
 <pre><code>## [1] 5.90894</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 ## histogram
 <span class="kw">hist</span>(errors, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.08</span>),
      <span class="dt">main =</span> <span class="st">"Poll prediction error"</span>,
      <span class="dt">xlab =</span> <span class="st">"Error in predicted margin for Obama (percentage points)"</span>)
 ## add mean
 <span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(errors), <span class="dt">lty =</span> <span class="st">"dashed"</span>, <span class="dt">col =</span> <span class="st">"red"</span>)
-<span class="kw">text</span>(<span class="dt">x =</span> -<span class="dv">7</span>, <span class="dt">y =</span> <span class="fl">0.07</span>, <span class="st">"average error"</span>, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre></div>
+<span class="kw">text</span>(<span class="dt">x =</span> -<span class="dv">7</span>, <span class="dt">y =</span> <span class="fl">0.07</span>, <span class="st">"average error"</span>, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-3-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 ## type = "n" generates "empty" plot
 <span class="kw">plot</span>(poll.pred, pres08$margin, <span class="dt">type =</span> <span class="st">"n"</span>, <span class="dt">main =</span> <span class="st">""</span>, <span class="dt">xlab =</span> <span class="st">"Poll results"</span>,
      <span class="dt">xlim =</span> <span class="kw">c</span>(-<span class="dv">40</span>, <span class="dv">90</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(-<span class="dv">40</span>, <span class="dv">90</span>), <span class="dt">ylab =</span> <span class="st">"Actual election results"</span>)
@@ -216,21 +251,21 @@ errors &lt;-<span class="st"> </span>pres08$margin -<span class="st"> </span>pol
 ## lines
 <span class="kw">abline</span>(<span class="dt">a =</span> <span class="dv">0</span>, <span class="dt">b =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="st">"dashed"</span>) <span class="co"># 45 degree line</span>
 <span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">0</span>)  <span class="co"># vertical line at 0</span>
-<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)  <span class="co"># horizontal line at 0</span></code></pre></div>
+<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)  <span class="co"># horizontal line at 0</span></code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-3-2.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## which state polls called wrong?
-pres08$state[<span class="kw">sign</span>(poll.pred) !=<span class="st"> </span><span class="kw">sign</span>(pres08$margin)]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## which state polls called wrong?
+pres08$state[<span class="kw">sign</span>(poll.pred) !=<span class="st"> </span><span class="kw">sign</span>(pres08$margin)]</code></pre>
 <pre><code>## [1] "IN" "MO" "NC"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## what was the actual margin for these states?
-pres08$margin[<span class="kw">sign</span>(poll.pred) !=<span class="st"> </span><span class="kw">sign</span>(pres08$margin)]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## what was the actual margin for these states?
+pres08$margin[<span class="kw">sign</span>(poll.pred) !=<span class="st"> </span><span class="kw">sign</span>(pres08$margin)]</code></pre>
 <pre><code>## [1]  1 -1  1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## actual results: total number of electoral votes won by Obama
-<span class="kw">sum</span>(pres08$EV[pres08$margin &gt;<span class="st"> </span><span class="dv">0</span>])</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## actual results: total number of electoral votes won by Obama
+<span class="kw">sum</span>(pres08$EV[pres08$margin &gt;<span class="st"> </span><span class="dv">0</span>])</code></pre>
 <pre><code>## [1] 364</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## poll prediction
-<span class="kw">sum</span>(pres08$EV[poll.pred &gt;<span class="st"> </span><span class="dv">0</span>])</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## poll prediction
+<span class="kw">sum</span>(pres08$EV[poll.pred &gt;<span class="st"> </span><span class="dv">0</span>])</code></pre>
 <pre><code>## [1] 349</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load the data
+<pre class="sourceCode r"><code class="sourceCode r">## load the data
 <span class="kw">data</span>(<span class="st">"pollsUS08"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 ## compute number of days to the election as before
@@ -266,17 +301,17 @@ for (i in <span class="dv">1</span>:<span class="dv">90</span>) {
 
 ## labeling candidates
 <span class="kw">text</span>(<span class="dv">80</span>, <span class="dv">48</span>, <span class="st">"Obama"</span>, <span class="dt">col =</span> <span class="st">"blue"</span>)
-<span class="kw">text</span>(<span class="dv">80</span>, <span class="dv">41</span>, <span class="st">"McCain"</span>, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre></div>
+<span class="kw">text</span>(<span class="dv">80</span>, <span class="dv">41</span>, <span class="st">"McCain"</span>, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-3-3.png" width="672"></p>
 </div>
 </div>
 <div id="section-4-2-linear-regression" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#section-4-2-linear-regression" class="anchor"> </a></body></html>Section 4.2: Linear Regression</h2>
+<a href="#section-4-2-linear-regression" class="anchor"></a>Section 4.2: Linear Regression</h2>
 <div id="section-4-2-1-facial-appearance-and-election-outcomes" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-2-1-facial-appearance-and-election-outcomes" class="anchor"> </a></body></html>Section 4.2.1: Facial Appearance and Election Outcomes</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load the data
+<a href="#section-4-2-1-facial-appearance-and-election-outcomes" class="anchor"></a>Section 4.2.1: Facial Appearance and Election Outcomes</h3>
+<pre class="sourceCode r"><code class="sourceCode r">## load the data
 <span class="kw">data</span>(<span class="st">"face"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 ## two-party vote share for Democrats and Republicans
 face$d.share &lt;-<span class="st"> </span>face$d.votes /<span class="st"> </span>(face$d.votes +<span class="st"> </span>face$r.votes)
@@ -289,20 +324,20 @@ face$diff.share &lt;-<span class="st"> </span>face$d.share -<span class="st"> </
      <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(-<span class="dv">1</span>, <span class="dv">1</span>),
      <span class="dt">xlab =</span> <span class="st">"Competence scores for Democrats"</span>,
      <span class="dt">ylab =</span> <span class="st">"Democratic margin in vote share"</span>,
-     <span class="dt">main =</span> <span class="st">"Facial competence and vote share"</span>)</code></pre></div>
+     <span class="dt">main =</span> <span class="st">"Facial competence and vote share"</span>)</code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
 </div>
 <div id="section-4-2-2-correlation-and-scatter-plots" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-2-2-correlation-and-scatter-plots" class="anchor"> </a></body></html>Section 4.2.2: Correlation and Scatter Plots</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(face$d.comp, face$diff.share)</code></pre></div>
+<a href="#section-4-2-2-correlation-and-scatter-plots" class="anchor"></a>Section 4.2.2: Correlation and Scatter Plots</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(face$d.comp, face$diff.share)</code></pre>
 <pre><code>## [1] 0.4327743</code></pre>
 </div>
 <div id="section-4-2-3-least-squares" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-2-3-least-squares" class="anchor"> </a></body></html>Section 4.2.3: Least Squares</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit &lt;-<span class="st"> </span><span class="kw">lm</span>(diff.share ~<span class="st"> </span>d.comp, <span class="dt">data =</span> face) <span class="co"># fit the model</span>
-fit</code></pre></div>
+<a href="#section-4-2-3-least-squares" class="anchor"></a>Section 4.2.3: Least Squares</h3>
+<pre class="sourceCode r"><code class="sourceCode r">fit &lt;-<span class="st"> </span><span class="kw">lm</span>(diff.share ~<span class="st"> </span>d.comp, <span class="dt">data =</span> face) <span class="co"># fit the model</span>
+fit</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = diff.share ~ d.comp, data = face)
@@ -310,520 +345,143 @@ fit</code></pre></div>
 ## Coefficients:
 ## (Intercept)       d.comp  
 ##     -0.3122       0.6604</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## lm(face$diff.share ~ face$d.comp)
-<span class="kw">coef</span>(fit)  <span class="co"># get estimated coefficients</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## lm(face$diff.share ~ face$d.comp)
+<span class="kw">coef</span>(fit)  <span class="co"># get estimated coefficients</span></code></pre>
 <pre><code>## (Intercept)      d.comp 
 ##  -0.3122259   0.6603815</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">fitted</span>(fit))  <span class="co"># get fitted or predicted values</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">fitted</span>(fit))  <span class="co"># get fitted or predicted values</span></code></pre>
 <pre><code>##           1           2           3           4           5           6 
 ##  0.06060411 -0.08643340  0.09217061  0.04539236  0.13698690 -0.10057206</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(face$d.comp, face$diff.share, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">1.05</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(-<span class="dv">1</span>,<span class="dv">1</span>),
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(face$d.comp, face$diff.share, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">1.05</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(-<span class="dv">1</span>,<span class="dv">1</span>),
      <span class="dt">xlab =</span> <span class="st">"Competence scores for Democrats"</span>,
      <span class="dt">ylab =</span> <span class="st">"Democratic margin in vote share"</span>,
      <span class="dt">main =</span> <span class="st">"Facial competence and vote share"</span>)
 <span class="kw">abline</span>(fit) <span class="co"># add regression line</span>
-<span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="st">"dashed"</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="st">"dashed"</span>)</code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">epsilon.hat &lt;-<span class="st"> </span><span class="kw">resid</span>(fit)  <span class="co"># residuals</span>
-<span class="kw">sqrt</span>(<span class="kw">mean</span>(epsilon.hat^<span class="dv">2</span>))  <span class="co"># RMSE</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">epsilon.hat &lt;-<span class="st"> </span><span class="kw">resid</span>(fit)  <span class="co"># residuals</span>
+<span class="kw">sqrt</span>(<span class="kw">mean</span>(epsilon.hat^<span class="dv">2</span>))  <span class="co"># RMSE</span></code></pre>
 <pre><code>## [1] 0.2642361</code></pre>
 </div>
 <div id="section-4-2-4-regression-towards-the-mean" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-2-4-regression-towards-the-mean" class="anchor"> </a></body></html>Section 4.2.4: Regression Towards the Mean</h3>
+<a href="#section-4-2-4-regression-towards-the-mean" class="anchor"></a>Section 4.2.4: Regression Towards the Mean</h3>
 </div>
 <div id="section-4-2-5-merging-data-sets-in-r" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-2-5-merging-data-sets-in-r" class="anchor"> </a></body></html>Section 4.2.5: Merging Data Sets in R</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"pres12"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)  <span class="co"># load 2012 data</span>
+<a href="#section-4-2-5-merging-data-sets-in-r" class="anchor"></a>Section 4.2.5: Merging Data Sets in R</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"pres12"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)  <span class="co"># load 2012 data</span>
 ## quick look at two data sets
-<span class="kw">head</span>(pres08)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="left">state.name</th>
-<th align="left">state</th>
-<th align="right">Obama</th>
-<th align="right">McCain</th>
-<th align="right">EV</th>
-<th align="right">margin</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">Alabama</td>
-<td align="left">AL</td>
-<td align="right">39</td>
-<td align="right">60</td>
-<td align="right">9</td>
-<td align="right">-21</td>
-</tr>
-<tr class="even">
-<td align="left">Alaska</td>
-<td align="left">AK</td>
-<td align="right">38</td>
-<td align="right">59</td>
-<td align="right">3</td>
-<td align="right">-21</td>
-</tr>
-<tr class="odd">
-<td align="left">Arizona</td>
-<td align="left">AZ</td>
-<td align="right">45</td>
-<td align="right">54</td>
-<td align="right">10</td>
-<td align="right">-9</td>
-</tr>
-<tr class="even">
-<td align="left">Arkansas</td>
-<td align="left">AR</td>
-<td align="right">39</td>
-<td align="right">59</td>
-<td align="right">6</td>
-<td align="right">-20</td>
-</tr>
-<tr class="odd">
-<td align="left">California</td>
-<td align="left">CA</td>
-<td align="right">61</td>
-<td align="right">37</td>
-<td align="right">55</td>
-<td align="right">24</td>
-</tr>
-<tr class="even">
-<td align="left">Colorado</td>
-<td align="left">CO</td>
-<td align="right">54</td>
-<td align="right">45</td>
-<td align="right">9</td>
-<td align="right">9</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(pres12)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="left">state</th>
-<th align="right">Obama</th>
-<th align="right">Romney</th>
-<th align="right">EV</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">AL</td>
-<td align="right">38</td>
-<td align="right">61</td>
-<td align="right">9</td>
-</tr>
-<tr class="even">
-<td align="left">AK</td>
-<td align="right">41</td>
-<td align="right">55</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">AZ</td>
-<td align="right">45</td>
-<td align="right">54</td>
-<td align="right">11</td>
-</tr>
-<tr class="even">
-<td align="left">AR</td>
-<td align="right">37</td>
-<td align="right">61</td>
-<td align="right">6</td>
-</tr>
-<tr class="odd">
-<td align="left">CA</td>
-<td align="right">60</td>
-<td align="right">37</td>
-<td align="right">55</td>
-</tr>
-<tr class="even">
-<td align="left">CO</td>
-<td align="right">51</td>
-<td align="right">46</td>
-<td align="right">9</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## merge two data frames
+<span class="kw">head</span>(pres08)</code></pre>
+<pre><code>##   state.name state Obama McCain EV margin
+## 1    Alabama    AL    39     60  9    -21
+## 2     Alaska    AK    38     59  3    -21
+## 3    Arizona    AZ    45     54 10     -9
+## 4   Arkansas    AR    39     59  6    -20
+## 5 California    CA    61     37 55     24
+## 6   Colorado    CO    54     45  9      9</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(pres12)</code></pre>
+<pre><code>##   state Obama Romney EV
+## 1    AL    38     61  9
+## 2    AK    41     55  3
+## 3    AZ    45     54 11
+## 4    AR    37     61  6
+## 5    CA    60     37 55
+## 6    CO    51     46  9</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">## merge two data frames
 pres &lt;-<span class="st"> </span><span class="kw">merge</span>(pres08, pres12, <span class="dt">by =</span> <span class="st">"state"</span>)
 
 ## summarize the merged data frame
-<span class="kw">summary</span>(pres)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th></th>
-<th align="center">state</th>
-<th align="center">state.name</th>
-<th align="center">Obama.x</th>
-<th align="center">McCain</th>
-<th align="center">EV.x</th>
-<th align="center">margin</th>
-<th align="center">Obama.y</th>
-<th align="center">Romney</th>
-<th align="center">EV.y</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td align="center">Length:51</td>
-<td align="center">Length:51</td>
-<td align="center">Min. :33.00</td>
-<td align="center">Min. : 7.00</td>
-<td align="center">Min. : 3.00</td>
-<td align="center">Min. :-32.000</td>
-<td align="center">Min. :25.00</td>
-<td align="center">Min. : 7.00</td>
-<td align="center">Min. : 3.00</td>
-</tr>
-<tr class="even">
-<td></td>
-<td align="center">Class :character</td>
-<td align="center">Class :character</td>
-<td align="center">1st Qu.:43.00</td>
-<td align="center">1st Qu.:40.00</td>
-<td align="center">1st Qu.: 4.50</td>
-<td align="center">1st Qu.:-13.000</td>
-<td align="center">1st Qu.:40.50</td>
-<td align="center">1st Qu.:41.00</td>
-<td align="center">1st Qu.: 4.50</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td align="center">Mode :character</td>
-<td align="center">Mode :character</td>
-<td align="center">Median :51.00</td>
-<td align="center">Median :47.00</td>
-<td align="center">Median : 8.00</td>
-<td align="center">Median : 4.000</td>
-<td align="center">Median :51.00</td>
-<td align="center">Median :48.00</td>
-<td align="center">Median : 8.00</td>
-</tr>
-<tr class="even">
-<td></td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">Mean :51.37</td>
-<td align="center">Mean :47.06</td>
-<td align="center">Mean :10.55</td>
-<td align="center">Mean : 4.314</td>
-<td align="center">Mean :49.06</td>
-<td align="center">Mean :49.04</td>
-<td align="center">Mean :10.55</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">3rd Qu.:57.50</td>
-<td align="center">3rd Qu.:56.00</td>
-<td align="center">3rd Qu.:11.50</td>
-<td align="center">3rd Qu.: 17.500</td>
-<td align="center">3rd Qu.:56.00</td>
-<td align="center">3rd Qu.:58.00</td>
-<td align="center">3rd Qu.:11.50</td>
-</tr>
-<tr class="even">
-<td></td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">Max. :92.00</td>
-<td align="center">Max. :66.00</td>
-<td align="center">Max. :55.00</td>
-<td align="center">Max. : 85.000</td>
-<td align="center">Max. :91.00</td>
-<td align="center">Max. :73.00</td>
-<td align="center">Max. :55.00</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## change the variable name for illustration
+<span class="kw">summary</span>(pres)</code></pre>
+<pre><code>##     state            state.name           Obama.x          McCain     
+##  Length:51          Length:51          Min.   :33.00   Min.   : 7.00  
+##  Class :character   Class :character   1st Qu.:43.00   1st Qu.:40.00  
+##  Mode  :character   Mode  :character   Median :51.00   Median :47.00  
+##                                        Mean   :51.37   Mean   :47.06  
+##                                        3rd Qu.:57.50   3rd Qu.:56.00  
+##                                        Max.   :92.00   Max.   :66.00  
+##       EV.x           margin           Obama.y          Romney     
+##  Min.   : 3.00   Min.   :-32.000   Min.   :25.00   Min.   : 7.00  
+##  1st Qu.: 4.50   1st Qu.:-13.000   1st Qu.:40.50   1st Qu.:41.00  
+##  Median : 8.00   Median :  4.000   Median :51.00   Median :48.00  
+##  Mean   :10.55   Mean   :  4.314   Mean   :49.06   Mean   :49.04  
+##  3rd Qu.:11.50   3rd Qu.: 17.500   3rd Qu.:56.00   3rd Qu.:58.00  
+##  Max.   :55.00   Max.   : 85.000   Max.   :91.00   Max.   :73.00  
+##       EV.y      
+##  Min.   : 3.00  
+##  1st Qu.: 4.50  
+##  Median : 8.00  
+##  Mean   :10.55  
+##  3rd Qu.:11.50  
+##  Max.   :55.00</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">## change the variable name for illustration
 <span class="kw">names</span>(pres12)[<span class="dv">1</span>] &lt;-<span class="st"> "state.abb"</span>
 
 ## merging data sets using the variables of different names
 pres &lt;-<span class="st"> </span><span class="kw">merge</span>(pres08, pres12, <span class="dt">by.x =</span> <span class="st">"state"</span>, <span class="dt">by.y =</span> <span class="st">"state.abb"</span>)
-<span class="kw">summary</span>(pres)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th></th>
-<th align="center">state</th>
-<th align="center">state.name</th>
-<th align="center">Obama.x</th>
-<th align="center">McCain</th>
-<th align="center">EV.x</th>
-<th align="center">margin</th>
-<th align="center">Obama.y</th>
-<th align="center">Romney</th>
-<th align="center">EV.y</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td align="center">Length:51</td>
-<td align="center">Length:51</td>
-<td align="center">Min. :33.00</td>
-<td align="center">Min. : 7.00</td>
-<td align="center">Min. : 3.00</td>
-<td align="center">Min. :-32.000</td>
-<td align="center">Min. :25.00</td>
-<td align="center">Min. : 7.00</td>
-<td align="center">Min. : 3.00</td>
-</tr>
-<tr class="even">
-<td></td>
-<td align="center">Class :character</td>
-<td align="center">Class :character</td>
-<td align="center">1st Qu.:43.00</td>
-<td align="center">1st Qu.:40.00</td>
-<td align="center">1st Qu.: 4.50</td>
-<td align="center">1st Qu.:-13.000</td>
-<td align="center">1st Qu.:40.50</td>
-<td align="center">1st Qu.:41.00</td>
-<td align="center">1st Qu.: 4.50</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td align="center">Mode :character</td>
-<td align="center">Mode :character</td>
-<td align="center">Median :51.00</td>
-<td align="center">Median :47.00</td>
-<td align="center">Median : 8.00</td>
-<td align="center">Median : 4.000</td>
-<td align="center">Median :51.00</td>
-<td align="center">Median :48.00</td>
-<td align="center">Median : 8.00</td>
-</tr>
-<tr class="even">
-<td></td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">Mean :51.37</td>
-<td align="center">Mean :47.06</td>
-<td align="center">Mean :10.55</td>
-<td align="center">Mean : 4.314</td>
-<td align="center">Mean :49.06</td>
-<td align="center">Mean :49.04</td>
-<td align="center">Mean :10.55</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">3rd Qu.:57.50</td>
-<td align="center">3rd Qu.:56.00</td>
-<td align="center">3rd Qu.:11.50</td>
-<td align="center">3rd Qu.: 17.500</td>
-<td align="center">3rd Qu.:56.00</td>
-<td align="center">3rd Qu.:58.00</td>
-<td align="center">3rd Qu.:11.50</td>
-</tr>
-<tr class="even">
-<td></td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">Max. :92.00</td>
-<td align="center">Max. :66.00</td>
-<td align="center">Max. :55.00</td>
-<td align="center">Max. : 85.000</td>
-<td align="center">Max. :91.00</td>
-<td align="center">Max. :73.00</td>
-<td align="center">Max. :55.00</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## cbinding two data frames
+<span class="kw">summary</span>(pres)</code></pre>
+<pre><code>##     state            state.name           Obama.x          McCain     
+##  Length:51          Length:51          Min.   :33.00   Min.   : 7.00  
+##  Class :character   Class :character   1st Qu.:43.00   1st Qu.:40.00  
+##  Mode  :character   Mode  :character   Median :51.00   Median :47.00  
+##                                        Mean   :51.37   Mean   :47.06  
+##                                        3rd Qu.:57.50   3rd Qu.:56.00  
+##                                        Max.   :92.00   Max.   :66.00  
+##       EV.x           margin           Obama.y          Romney     
+##  Min.   : 3.00   Min.   :-32.000   Min.   :25.00   Min.   : 7.00  
+##  1st Qu.: 4.50   1st Qu.:-13.000   1st Qu.:40.50   1st Qu.:41.00  
+##  Median : 8.00   Median :  4.000   Median :51.00   Median :48.00  
+##  Mean   :10.55   Mean   :  4.314   Mean   :49.06   Mean   :49.04  
+##  3rd Qu.:11.50   3rd Qu.: 17.500   3rd Qu.:56.00   3rd Qu.:58.00  
+##  Max.   :55.00   Max.   : 85.000   Max.   :91.00   Max.   :73.00  
+##       EV.y      
+##  Min.   : 3.00  
+##  1st Qu.: 4.50  
+##  Median : 8.00  
+##  Mean   :10.55  
+##  3rd Qu.:11.50  
+##  Max.   :55.00</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">## cbinding two data frames
 pres1 &lt;-<span class="st"> </span><span class="kw">cbind</span>(pres08, pres12)
 ## this shows all variables are kept
-<span class="kw">summary</span>(pres1)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th></th>
-<th align="center">state.name</th>
-<th align="center">state</th>
-<th align="center">Obama</th>
-<th align="center">McCain</th>
-<th align="center">EV</th>
-<th align="center">margin</th>
-<th align="center">state.abb</th>
-<th align="center">Obama</th>
-<th align="center">Romney</th>
-<th align="center">EV</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td align="center">Length:51</td>
-<td align="center">Length:51</td>
-<td align="center">Min. :33.00</td>
-<td align="center">Min. : 7.00</td>
-<td align="center">Min. : 3.00</td>
-<td align="center">Min. :-32.000</td>
-<td align="center">Length:51</td>
-<td align="center">Min. :25.00</td>
-<td align="center">Min. : 7.00</td>
-<td align="center">Min. : 3.00</td>
-</tr>
-<tr class="even">
-<td></td>
-<td align="center">Class :character</td>
-<td align="center">Class :character</td>
-<td align="center">1st Qu.:43.00</td>
-<td align="center">1st Qu.:40.00</td>
-<td align="center">1st Qu.: 4.50</td>
-<td align="center">1st Qu.:-13.000</td>
-<td align="center">Class :character</td>
-<td align="center">1st Qu.:40.50</td>
-<td align="center">1st Qu.:41.00</td>
-<td align="center">1st Qu.: 4.50</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td align="center">Mode :character</td>
-<td align="center">Mode :character</td>
-<td align="center">Median :51.00</td>
-<td align="center">Median :47.00</td>
-<td align="center">Median : 8.00</td>
-<td align="center">Median : 4.000</td>
-<td align="center">Mode :character</td>
-<td align="center">Median :51.00</td>
-<td align="center">Median :48.00</td>
-<td align="center">Median : 8.00</td>
-</tr>
-<tr class="even">
-<td></td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">Mean :51.37</td>
-<td align="center">Mean :47.06</td>
-<td align="center">Mean :10.55</td>
-<td align="center">Mean : 4.314</td>
-<td align="center">NA</td>
-<td align="center">Mean :49.06</td>
-<td align="center">Mean :49.04</td>
-<td align="center">Mean :10.55</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">3rd Qu.:57.50</td>
-<td align="center">3rd Qu.:56.00</td>
-<td align="center">3rd Qu.:11.50</td>
-<td align="center">3rd Qu.: 17.500</td>
-<td align="center">NA</td>
-<td align="center">3rd Qu.:56.00</td>
-<td align="center">3rd Qu.:58.00</td>
-<td align="center">3rd Qu.:11.50</td>
-</tr>
-<tr class="even">
-<td></td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">Max. :92.00</td>
-<td align="center">Max. :66.00</td>
-<td align="center">Max. :55.00</td>
-<td align="center">Max. : 85.000</td>
-<td align="center">NA</td>
-<td align="center">Max. :91.00</td>
-<td align="center">Max. :73.00</td>
-<td align="center">Max. :55.00</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## DC and DE are flipped in this alternative approach
-pres1[<span class="dv">8</span>:<span class="dv">9</span>, ]</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th></th>
-<th align="left">state.name</th>
-<th align="left">state</th>
-<th align="right">Obama</th>
-<th align="right">McCain</th>
-<th align="right">EV</th>
-<th align="right">margin</th>
-<th align="left">state.abb</th>
-<th align="right">Obama</th>
-<th align="right">Romney</th>
-<th align="right">EV</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>8</td>
-<td align="left">D.C.</td>
-<td align="left">DC</td>
-<td align="right">92</td>
-<td align="right">7</td>
-<td align="right">3</td>
-<td align="right">85</td>
-<td align="left">DE</td>
-<td align="right">59</td>
-<td align="right">40</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td align="left">Delaware</td>
-<td align="left">DE</td>
-<td align="right">62</td>
-<td align="right">37</td>
-<td align="right">3</td>
-<td align="right">25</td>
-<td align="left">DC</td>
-<td align="right">91</td>
-<td align="right">7</td>
-<td align="right">3</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## merge() does not have this problem
-pres[<span class="dv">8</span>:<span class="dv">9</span>, ]</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th></th>
-<th align="left">state</th>
-<th align="left">state.name</th>
-<th align="right">Obama.x</th>
-<th align="right">McCain</th>
-<th align="right">EV.x</th>
-<th align="right">margin</th>
-<th align="right">Obama.y</th>
-<th align="right">Romney</th>
-<th align="right">EV.y</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>8</td>
-<td align="left">DC</td>
-<td align="left">D.C.</td>
-<td align="right">92</td>
-<td align="right">7</td>
-<td align="right">3</td>
-<td align="right">85</td>
-<td align="right">91</td>
-<td align="right">7</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td align="left">DE</td>
-<td align="left">Delaware</td>
-<td align="right">62</td>
-<td align="right">37</td>
-<td align="right">3</td>
-<td align="right">25</td>
-<td align="right">59</td>
-<td align="right">40</td>
-<td align="right">3</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pres$Obama2008.z &lt;-<span class="st"> </span><span class="kw">scale</span>(pres$Obama.x)
+<span class="kw">summary</span>(pres1)</code></pre>
+<pre><code>##   state.name           state               Obama           McCain     
+##  Length:51          Length:51          Min.   :33.00   Min.   : 7.00  
+##  Class :character   Class :character   1st Qu.:43.00   1st Qu.:40.00  
+##  Mode  :character   Mode  :character   Median :51.00   Median :47.00  
+##                                        Mean   :51.37   Mean   :47.06  
+##                                        3rd Qu.:57.50   3rd Qu.:56.00  
+##                                        Max.   :92.00   Max.   :66.00  
+##        EV            margin         state.abb             Obama      
+##  Min.   : 3.00   Min.   :-32.000   Length:51          Min.   :25.00  
+##  1st Qu.: 4.50   1st Qu.:-13.000   Class :character   1st Qu.:40.50  
+##  Median : 8.00   Median :  4.000   Mode  :character   Median :51.00  
+##  Mean   :10.55   Mean   :  4.314                      Mean   :49.06  
+##  3rd Qu.:11.50   3rd Qu.: 17.500                      3rd Qu.:56.00  
+##  Max.   :55.00   Max.   : 85.000                      Max.   :91.00  
+##      Romney            EV       
+##  Min.   : 7.00   Min.   : 3.00  
+##  1st Qu.:41.00   1st Qu.: 4.50  
+##  Median :48.00   Median : 8.00  
+##  Mean   :49.04   Mean   :10.55  
+##  3rd Qu.:58.00   3rd Qu.:11.50  
+##  Max.   :73.00   Max.   :55.00</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">## DC and DE are flipped in this alternative approach
+pres1[<span class="dv">8</span>:<span class="dv">9</span>, ]</code></pre>
+<pre><code>##   state.name state Obama McCain EV margin state.abb Obama Romney EV
+## 8       D.C.    DC    92      7  3     85        DE    59     40  3
+## 9   Delaware    DE    62     37  3     25        DC    91      7  3</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">## merge() does not have this problem
+pres[<span class="dv">8</span>:<span class="dv">9</span>, ]</code></pre>
+<pre><code>##   state state.name Obama.x McCain EV.x margin Obama.y Romney EV.y
+## 8    DC       D.C.      92      7    3     85      91      7    3
+## 9    DE   Delaware      62     37    3     25      59     40    3</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">pres$Obama2008.z &lt;-<span class="st"> </span><span class="kw">scale</span>(pres$Obama.x)
 pres$Obama2012.z &lt;-<span class="st"> </span><span class="kw">scale</span>(pres$Obama.y)
 
 ## intercept is estimated essentially zero
 fit1 &lt;-<span class="st"> </span><span class="kw">lm</span>(Obama2012.z ~<span class="st"> </span>Obama2008.z, <span class="dt">data =</span> pres)
-fit1</code></pre></div>
+fit1</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = Obama2012.z ~ Obama2008.z, data = pres)
@@ -831,9 +489,9 @@ fit1</code></pre></div>
 ## Coefficients:
 ## (Intercept)  Obama2008.z  
 ##  -3.521e-17    9.834e-01</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## regression without an intercept; estimated slope is identical
+<pre class="sourceCode r"><code class="sourceCode r">## regression without an intercept; estimated slope is identical
 fit1 &lt;-<span class="st"> </span><span class="kw">lm</span>(Obama2012.z ~<span class="st"> </span>-<span class="dv">1</span> +<span class="st"> </span>Obama2008.z, <span class="dt">data =</span> pres)
-fit1</code></pre></div>
+fit1</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = Obama2012.z ~ -1 + Obama2008.z, data = pres)
@@ -841,31 +499,31 @@ fit1</code></pre></div>
 ## Coefficients:
 ## Obama2008.z  
 ##      0.9834</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 <span class="kw">plot</span>(pres$Obama2008.z, pres$Obama2012.z, <span class="dt">xlim =</span> <span class="kw">c</span>(-<span class="dv">4</span>, <span class="dv">4</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(-<span class="dv">4</span>, <span class="dv">4</span>),
      <span class="dt">xlab =</span> <span class="st">"Obama's standardized vote share in 2008"</span>,
      <span class="dt">ylab =</span> <span class="st">"Obama's standardized vote share in 2012"</span>)
-<span class="kw">abline</span>(fit1) <span class="co"># draw a regression line</span></code></pre></div>
+<span class="kw">abline</span>(fit1) <span class="co"># draw a regression line</span></code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## bottom quartile
+<pre class="sourceCode r"><code class="sourceCode r">## bottom quartile
 <span class="kw">mean</span>((pres$Obama2012.z &gt;
 <span class="st">          </span>pres$Obama2008.z)[pres$Obama2008.z
-                            &lt;=<span class="st"> </span><span class="kw">quantile</span>(pres$Obama2008.z, <span class="fl">0.25</span>)])</code></pre></div>
+                            &lt;=<span class="st"> </span><span class="kw">quantile</span>(pres$Obama2008.z, <span class="fl">0.25</span>)])</code></pre>
 <pre><code>## [1] 0.5714286</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## top quartile
+<pre class="sourceCode r"><code class="sourceCode r">## top quartile
 <span class="kw">mean</span>((pres$Obama2012.z &gt;
 <span class="st">          </span>pres$Obama2008.z)[pres$Obama2008.z
-                            &gt;=<span class="st"> </span><span class="kw">quantile</span>(pres$Obama2008.z, <span class="fl">0.75</span>)])</code></pre></div>
+                            &gt;=<span class="st"> </span><span class="kw">quantile</span>(pres$Obama2008.z, <span class="fl">0.75</span>)])</code></pre>
 <pre><code>## [1] 0.4615385</code></pre>
 </div>
 <div id="section-4-2-6-model-fit" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-2-6-model-fit" class="anchor"> </a></body></html>Section 4.2.6: Model Fit</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"florida"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<a href="#section-4-2-6-model-fit" class="anchor"></a>Section 4.2.6: Model Fit</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"florida"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 ## regress Buchanan's 2000 votes on Perot's 1996 votes
 fit2 &lt;-<span class="st"> </span><span class="kw">lm</span>(Buchanan00 ~<span class="st"> </span>Perot96, <span class="dt">data =</span> florida)
-fit2</code></pre></div>
+fit2</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = Buchanan00 ~ Perot96, data = florida)
@@ -873,14 +531,14 @@ fit2</code></pre></div>
 ## Coefficients:
 ## (Intercept)      Perot96  
 ##     1.34575      0.03592</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## compute TSS (total sum of squares) and SSR (sum of squared residuals)
+<pre class="sourceCode r"><code class="sourceCode r">## compute TSS (total sum of squares) and SSR (sum of squared residuals)
 TSS2 &lt;-<span class="st"> </span><span class="kw">sum</span>((florida$Buchanan00 -<span class="st"> </span><span class="kw">mean</span>(florida$Buchanan00))^<span class="dv">2</span>)
 SSR2 &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">resid</span>(fit2)^<span class="dv">2</span>)
 
 ## Coefficient of determination
-(TSS2 -<span class="st"> </span>SSR2) /<span class="st"> </span>TSS2</code></pre></div>
+(TSS2 -<span class="st"> </span>SSR2) /<span class="st"> </span>TSS2</code></pre>
 <pre><code>## [1] 0.5130333</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">R2 &lt;-<span class="st"> </span>function(fit) {
+<pre class="sourceCode r"><code class="sourceCode r">R2 &lt;-<span class="st"> </span>function(fit) {
     resid &lt;-<span class="st"> </span><span class="kw">resid</span>(fit) <span class="co"># residuals</span>
     y &lt;-<span class="st"> </span><span class="kw">fitted</span>(fit) +<span class="st"> </span>resid <span class="co"># outcome variable</span>
     TSS &lt;-<span class="st"> </span><span class="kw">sum</span>((y -<span class="st"> </span><span class="kw">mean</span>(y))^<span class="dv">2</span>)
@@ -888,25 +546,25 @@ SSR2 &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">
     R2 &lt;-<span class="st"> </span>(TSS -<span class="st"> </span>SSR) /<span class="st"> </span>TSS
     <span class="kw">return</span>(R2)
 }
-<span class="kw">R2</span>(fit2)</code></pre></div>
+<span class="kw">R2</span>(fit2)</code></pre>
 <pre><code>## [1] 0.5130333</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## built-in R function
-<span class="kw">summary</span>(fit2)$r.squared</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## built-in R function
+<span class="kw">summary</span>(fit2)$r.squared</code></pre>
 <pre><code>## [1] 0.5130333</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">R2</span>(fit1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">R2</span>(fit1)</code></pre>
 <pre><code>## [1] 0.9671579</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 <span class="kw">plot</span>(<span class="kw">fitted</span>(fit2), <span class="kw">resid</span>(fit2), <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1500</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(-<span class="dv">750</span>, <span class="dv">2500</span>),
      <span class="dt">xlab =</span> <span class="st">"Fitted values"</span>, <span class="dt">ylab =</span> <span class="st">"Residuals"</span>)
-<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">florida$county[<span class="kw">resid</span>(fit2) ==<span class="st"> </span><span class="kw">max</span>(<span class="kw">resid</span>(fit2))]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">florida$county[<span class="kw">resid</span>(fit2) ==<span class="st"> </span><span class="kw">max</span>(<span class="kw">resid</span>(fit2))]</code></pre>
 <pre><code>## [1] "PalmBeach"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## data without Palm Beach
+<pre class="sourceCode r"><code class="sourceCode r">## data without Palm Beach
 florida.pb &lt;-<span class="st"> </span><span class="kw">subset</span>(florida, <span class="dt">subset =</span> (county !=<span class="st"> "PalmBeach"</span>))
 
 fit3 &lt;-<span class="st"> </span><span class="kw">lm</span>(Buchanan00 ~<span class="st"> </span>Perot96, <span class="dt">data =</span> florida.pb)
-fit3</code></pre></div>
+fit3</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = Buchanan00 ~ Perot96, data = florida.pb)
@@ -914,48 +572,48 @@ fit3</code></pre></div>
 ## Coefficients:
 ## (Intercept)      Perot96  
 ##    45.84193      0.02435</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## R^2 or coefficient of determination
-<span class="kw">R2</span>(fit3)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## R^2 or coefficient of determination
+<span class="kw">R2</span>(fit3)</code></pre>
 <pre><code>## [1] 0.8511675</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>)
 ## residual plot
 <span class="kw">plot</span>(<span class="kw">fitted</span>(fit3), <span class="kw">resid</span>(fit3), <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1500</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(-<span class="dv">750</span>, <span class="dv">2500</span>),
      <span class="dt">xlab =</span> <span class="st">"Fitted values"</span>, <span class="dt">ylab =</span> <span class="st">"Residuals"</span>,
      <span class="dt">main =</span> <span class="st">"Residual plot without Palm Beach"</span>)
-<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>) <span class="co"># horizontal line at 0</span></code></pre></div>
+<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>) <span class="co"># horizontal line at 0</span></code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-8-2.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(florida$Perot96, florida$Buchanan00, <span class="dt">xlab =</span> <span class="st">"Perot's votes in 1996"</span>,
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(florida$Perot96, florida$Buchanan00, <span class="dt">xlab =</span> <span class="st">"Perot's votes in 1996"</span>,
      <span class="dt">ylab =</span> <span class="st">"Buchanan's votes in 2000"</span>)
 <span class="kw">abline</span>(fit2, <span class="dt">lty =</span> <span class="st">"dashed"</span>) <span class="co"># regression with Palm Beach</span>
 <span class="kw">abline</span>(fit3) <span class="co"># regression without Palm Beach</span>
 <span class="kw">text</span>(<span class="dv">30000</span>, <span class="dv">3250</span>, <span class="st">"Palm Beach"</span>)
 <span class="kw">text</span>(<span class="dv">30000</span>, <span class="dv">1500</span>, <span class="st">"regression</span><span class="ch">\n</span><span class="st"> with Palm Beach"</span>)
-<span class="kw">text</span>(<span class="dv">30000</span>, <span class="dv">400</span>, <span class="st">"regression</span><span class="ch">\n</span><span class="st"> without Palm Beach"</span>)</code></pre></div>
+<span class="kw">text</span>(<span class="dv">30000</span>, <span class="dv">400</span>, <span class="st">"regression</span><span class="ch">\n</span><span class="st"> without Palm Beach"</span>)</code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-8-3.png" width="672"></p>
 </div>
 </div>
 <div id="section-4-3-regression-and-causation" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#section-4-3-regression-and-causation" class="anchor"> </a></body></html>Section 4.3: Regression and Causation</h2>
+<a href="#section-4-3-regression-and-causation" class="anchor"></a>Section 4.3: Regression and Causation</h2>
 <div id="section-4-3-1-randomized-experiments" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-3-1-randomized-experiments" class="anchor"> </a></body></html>Section 4.3.1: Randomized Experiments</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"women"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<a href="#section-4-3-1-randomized-experiments" class="anchor"></a>Section 4.3.1: Randomized Experiments</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"women"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 ## proportion of female politicians in reserved GP vs. unreserved GP
-<span class="kw">mean</span>(women$female[women$reserved ==<span class="st"> </span><span class="dv">1</span>])</code></pre></div>
+<span class="kw">mean</span>(women$female[women$reserved ==<span class="st"> </span><span class="dv">1</span>])</code></pre>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(women$female[women$reserved ==<span class="st"> </span><span class="dv">0</span>])</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(women$female[women$reserved ==<span class="st"> </span><span class="dv">0</span>])</code></pre>
 <pre><code>## [1] 0.07476636</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## drinking-water facilities
+<pre class="sourceCode r"><code class="sourceCode r">## drinking-water facilities
 <span class="kw">mean</span>(women$water[women$reserved ==<span class="st"> </span><span class="dv">1</span>]) -
-<span class="st">    </span><span class="kw">mean</span>(women$water[women$reserved ==<span class="st"> </span><span class="dv">0</span>])</code></pre></div>
+<span class="st">    </span><span class="kw">mean</span>(women$water[women$reserved ==<span class="st"> </span><span class="dv">0</span>])</code></pre>
 <pre><code>## [1] 9.252423</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## irrigation facilities
+<pre class="sourceCode r"><code class="sourceCode r">## irrigation facilities
 <span class="kw">mean</span>(women$irrigation[women$reserved ==<span class="st"> </span><span class="dv">1</span>]) -
-<span class="st">    </span><span class="kw">mean</span>(women$irrigation[women$reserved ==<span class="st"> </span><span class="dv">0</span>])</code></pre></div>
+<span class="st">    </span><span class="kw">mean</span>(women$irrigation[women$reserved ==<span class="st"> </span><span class="dv">0</span>])</code></pre>
 <pre><code>## [1] -0.3693319</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(water ~<span class="st"> </span>reserved, <span class="dt">data =</span> women)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(water ~<span class="st"> </span>reserved, <span class="dt">data =</span> women)</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = water ~ reserved, data = women)
@@ -963,7 +621,7 @@ fit3</code></pre></div>
 ## Coefficients:
 ## (Intercept)     reserved  
 ##      14.738        9.252</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(irrigation ~<span class="st"> </span>reserved, <span class="dt">data =</span> women)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(irrigation ~<span class="st"> </span>reserved, <span class="dt">data =</span> women)</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = irrigation ~ reserved, data = women)
@@ -974,12 +632,12 @@ fit3</code></pre></div>
 </div>
 <div id="section-4-3-2-regression-with-multiple-predictors" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-3-2-regression-with-multiple-predictors" class="anchor"> </a></body></html>Section 4.3.2: Regression with Multiple Predictors</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"social"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
-<span class="kw">levels</span>(social$messages) <span class="co"># base level is `Civic'</span></code></pre></div>
+<a href="#section-4-3-2-regression-with-multiple-predictors" class="anchor"></a>Section 4.3.2: Regression with Multiple Predictors</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"social"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<span class="kw">levels</span>(social$messages) <span class="co"># base level is `Civic'</span></code></pre>
 <pre><code>## NULL</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit &lt;-<span class="st"> </span><span class="kw">lm</span>(primary2006 ~<span class="st"> </span>messages, <span class="dt">data =</span> social)
-fit</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">fit &lt;-<span class="st"> </span><span class="kw">lm</span>(primary2006 ~<span class="st"> </span>messages, <span class="dt">data =</span> social)
+fit</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = primary2006 ~ messages, data = social)
@@ -989,7 +647,7 @@ fit</code></pre></div>
 ##          0.314538          -0.017899           0.007837  
 ## messagesNeighbors  
 ##          0.063411</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## ## create indicator variables
+<pre class="sourceCode r"><code class="sourceCode r">## ## create indicator variables
 ## social$Control &lt;- ifelse(social$messages == "Control", 1, 0)
 ## social$Hawthorne &lt;- ifelse(social$messages == "Hawthorne", 1, 0)
 ## social$Neighbors &lt;- ifelse(social$messages == "Neighbors", 1, 0)
@@ -998,26 +656,23 @@ fit</code></pre></div>
 
 ## create a data frame with unique values of `messages'
 unique.messages &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">messages =</span> <span class="kw">unique</span>(social$messages))
-unique.messages</code></pre></div>
-</div>
-</div>
-<div id="messages" class="section level2">
-<h2 class="hasAnchor">
-<html><body><a href="#messages" class="anchor"> </a></body></html>messages</h2>
-<p>Civic Duty Hawthorne<br>
-Control<br>
-Neighbors</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## make prediction for each observation from this new data frame
-<span class="kw">predict</span>(fit, <span class="dt">newdata =</span> unique.messages)</code></pre></div>
+unique.messages</code></pre>
+<pre><code>##     messages
+## 1 Civic Duty
+## 2  Hawthorne
+## 3    Control
+## 4  Neighbors</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">## make prediction for each observation from this new data frame
+<span class="kw">predict</span>(fit, <span class="dt">newdata =</span> unique.messages)</code></pre>
 <pre><code>##         1         2         3         4 
 ## 0.3145377 0.3223746 0.2966383 0.3779482</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## sample average
-<span class="kw">tapply</span>(social$primary2006, social$messages, mean)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## sample average
+<span class="kw">tapply</span>(social$primary2006, social$messages, mean)</code></pre>
 <pre><code>## Civic Duty    Control  Hawthorne  Neighbors 
 ##  0.3145377  0.2966383  0.3223746  0.3779482</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## linear regression without intercept
+<pre class="sourceCode r"><code class="sourceCode r">## linear regression without intercept
 fit.noint &lt;-<span class="st"> </span><span class="kw">lm</span>(primary2006 ~<span class="st"> </span>-<span class="dv">1</span> +<span class="st"> </span>messages, <span class="dt">data =</span> social)
-fit.noint</code></pre></div>
+fit.noint</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = primary2006 ~ -1 + messages, data = social)
@@ -1027,15 +682,15 @@ fit.noint</code></pre></div>
 ##             0.3145              0.2966              0.3224  
 ##  messagesNeighbors  
 ##             0.3779</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## estimated average effect of `Neighbors' condition
-<span class="kw">coef</span>(fit)[<span class="st">"messagesNeighbors"</span>] -<span class="st"> </span><span class="kw">coef</span>(fit)[<span class="st">"messagesControl"</span>]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## estimated average effect of `Neighbors' condition
+<span class="kw">coef</span>(fit)[<span class="st">"messagesNeighbors"</span>] -<span class="st"> </span><span class="kw">coef</span>(fit)[<span class="st">"messagesControl"</span>]</code></pre>
 <pre><code>## messagesNeighbors 
 ##        0.08130991</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## difference in means
+<pre class="sourceCode r"><code class="sourceCode r">## difference in means
 <span class="kw">mean</span>(social$primary2006[social$messages ==<span class="st"> "Neighbors"</span>]) -
-<span class="st">    </span><span class="kw">mean</span>(social$primary2006[social$messages ==<span class="st"> "Control"</span>])</code></pre></div>
+<span class="st">    </span><span class="kw">mean</span>(social$primary2006[social$messages ==<span class="st"> "Control"</span>])</code></pre>
 <pre><code>## [1] 0.08130991</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## adjusted Rsquare
+<pre class="sourceCode r"><code class="sourceCode r">## adjusted Rsquare
 adjR2 &lt;-<span class="st"> </span>function(fit) {
     resid &lt;-<span class="st"> </span><span class="kw">resid</span>(fit) <span class="co"># residuals</span>
     y &lt;-<span class="st"> </span><span class="kw">fitted</span>(fit) +<span class="st"> </span>resid <span class="co"># outcome</span>
@@ -1045,42 +700,43 @@ adjR2 &lt;-<span class="st"> </span>function(fit) {
     R2.adj &lt;-<span class="st"> </span><span class="dv">1</span> -<span class="st"> </span>SSR.adj /<span class="st"> </span>TSS.adj
     <span class="kw">return</span>(R2.adj)
 }
-<span class="kw">adjR2</span>(fit)</code></pre></div>
+<span class="kw">adjR2</span>(fit)</code></pre>
 <pre><code>## [1] 0.003272788</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">R2</span>(fit) <span class="co"># unadjusted Rsquare calculation</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">R2</span>(fit) <span class="co"># unadjusted Rsquare calculation</span></code></pre>
 <pre><code>## [1] 0.003282564</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(fit)$adj.r.squared</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(fit)$adj.r.squared</code></pre>
 <pre><code>## [1] 0.003272788</code></pre>
+</div>
 <div id="section-4-3-3-heterogenous-treatment-effects" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-3-3-heterogenous-treatment-effects" class="anchor"> </a></body></html>Section 4.3.3: Heterogenous Treatment Effects</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## average treatment effect (ate) among those who voted in 2004 primary
+<a href="#section-4-3-3-heterogenous-treatment-effects" class="anchor"></a>Section 4.3.3: Heterogenous Treatment Effects</h3>
+<pre class="sourceCode r"><code class="sourceCode r">## average treatment effect (ate) among those who voted in 2004 primary
 social.voter &lt;-<span class="st"> </span><span class="kw">subset</span>(social, primary2004 ==<span class="st"> </span><span class="dv">1</span>)
 
 ate.voter &lt;-
 <span class="st">    </span><span class="kw">mean</span>(social.voter$primary2006[social.voter$messages ==<span class="st"> "Neighbors"</span>]) -
 <span class="st">        </span><span class="kw">mean</span>(social.voter$primary2006[social.voter$messages ==<span class="st"> "Control"</span>])
-ate.voter</code></pre></div>
+ate.voter</code></pre>
 <pre><code>## [1] 0.09652525</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## average effect among those who did not vote
+<pre class="sourceCode r"><code class="sourceCode r">## average effect among those who did not vote
 social.nonvoter &lt;-<span class="st"> </span><span class="kw">subset</span>(social, primary2004 ==<span class="st"> </span><span class="dv">0</span>)
 
 ate.nonvoter &lt;-
 <span class="st">    </span><span class="kw">mean</span>(social.nonvoter$primary2006[social.nonvoter$messages ==<span class="st"> "Neighbors"</span>]) -
 <span class="st">        </span><span class="kw">mean</span>(social.nonvoter$primary2006[social.nonvoter$messages ==<span class="st"> "Control"</span>])
-ate.nonvoter</code></pre></div>
+ate.nonvoter</code></pre>
 <pre><code>## [1] 0.06929617</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## difference
-ate.voter -<span class="st"> </span>ate.nonvoter</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## difference
+ate.voter -<span class="st"> </span>ate.nonvoter</code></pre>
 <pre><code>## [1] 0.02722908</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## subset neighbors and control groups
+<pre class="sourceCode r"><code class="sourceCode r">## subset neighbors and control groups
 social.neighbor &lt;-<span class="st"> </span><span class="kw">subset</span>(social, (messages ==<span class="st"> "Control"</span>) |
 <span class="st">                              </span>(messages ==<span class="st"> "Neighbors"</span>))
 
 ## standard way to generate main and interaction effects
 fit.int &lt;-<span class="st"> </span><span class="kw">lm</span>(primary2006 ~<span class="st"> </span>primary2004 +<span class="st"> </span>messages +<span class="st"> </span>primary2004:messages,
               <span class="dt">data =</span> social.neighbor)
-fit.int</code></pre></div>
+fit.int</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = primary2006 ~ primary2004 + messages + primary2004:messages, 
@@ -1091,30 +747,14 @@ fit.int</code></pre></div>
 ##                       0.23711                        0.14870  
 ##             messagesNeighbors  primary2004:messagesNeighbors  
 ##                       0.06930                        0.02723</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## lm(primary2006 ~ primary2004 * messages, data = social.neighbor)
+<pre class="sourceCode r"><code class="sourceCode r">## lm(primary2006 ~ primary2004 * messages, data = social.neighbor)
 
 social.neighbor$age &lt;-<span class="st"> </span><span class="dv">2008</span> -<span class="st"> </span>social.neighbor$yearofbirth
-<span class="kw">summary</span>(social.neighbor$age)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="right">Min.</th>
-<th align="right">1st Qu.</th>
-<th align="right">Median</th>
-<th align="right">Mean</th>
-<th align="right">3rd Qu.</th>
-<th align="right">Max.</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td align="right">22</td>
-<td align="right">43</td>
-<td align="right">52</td>
-<td align="right">51.82</td>
-<td align="right">61</td>
-<td align="right">108</td>
-</tr></tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit.age &lt;-<span class="st"> </span><span class="kw">lm</span>(primary2006 ~<span class="st"> </span>age *<span class="st"> </span>messages, <span class="dt">data =</span> social.neighbor)
-fit.age</code></pre></div>
+<span class="kw">summary</span>(social.neighbor$age)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   22.00   43.00   52.00   51.82   61.00  108.00</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">fit.age &lt;-<span class="st"> </span><span class="kw">lm</span>(primary2006 ~<span class="st"> </span>age *<span class="st"> </span>messages, <span class="dt">data =</span> social.neighbor)
+fit.age</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = primary2006 ~ age * messages, data = social.neighbor)
@@ -1124,7 +764,7 @@ fit.age</code></pre></div>
 ##             0.0894768              0.0039982              0.0485728  
 ## age:messagesNeighbors  
 ##             0.0006283</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## age = 25, 45, 65, 85 in Neighbors group
+<pre class="sourceCode r"><code class="sourceCode r">## age = 25, 45, 65, 85 in Neighbors group
 age.neighbor &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">age =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">25</span>, <span class="dt">to =</span> <span class="dv">85</span>, <span class="dt">by =</span> <span class="dv">20</span>),
                            <span class="dt">messages =</span> <span class="st">"Neighbors"</span>)
 
@@ -1136,13 +776,13 @@ age.control &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<sp
 ate.age &lt;-<span class="st"> </span><span class="kw">predict</span>(fit.age, <span class="dt">newdata =</span> age.neighbor) -
 <span class="st">    </span><span class="kw">predict</span>(fit.age, <span class="dt">newdata =</span> age.control)
 
-ate.age</code></pre></div>
+ate.age</code></pre>
 <pre><code>##          1          2          3          4 
 ## 0.06428051 0.07684667 0.08941283 0.10197899</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit.age2 &lt;-<span class="st"> </span><span class="kw">lm</span>(primary2006 ~<span class="st"> </span>age +<span class="st"> </span><span class="kw">I</span>(age^<span class="dv">2</span>) +<span class="st"> </span>messages +<span class="st"> </span>age:messages +
+<pre class="sourceCode r"><code class="sourceCode r">fit.age2 &lt;-<span class="st"> </span><span class="kw">lm</span>(primary2006 ~<span class="st"> </span>age +<span class="st"> </span><span class="kw">I</span>(age^<span class="dv">2</span>) +<span class="st"> </span>messages +<span class="st"> </span>age:messages +
 <span class="st">                 </span><span class="kw">I</span>(age^<span class="dv">2</span>):messages, <span class="dt">data =</span> social.neighbor)
 
-fit.age2</code></pre></div>
+fit.age2</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = primary2006 ~ age + I(age^2) + messages + age:messages + 
@@ -1155,7 +795,7 @@ fit.age2</code></pre></div>
 ##                 -7.389e-05                  -5.275e-02  
 ##      age:messagesNeighbors  I(age^2):messagesNeighbors  
 ##                  4.804e-03                  -3.961e-05</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## predicted turnout rate under the ``Neighbors'' treatment condition
+<pre class="sourceCode r"><code class="sourceCode r">## predicted turnout rate under the ``Neighbors'' treatment condition
 yT.hat &lt;-<span class="st"> </span><span class="kw">predict</span>(fit.age2,
                   <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">age =</span> <span class="dv">25</span>:<span class="dv">85</span>, <span class="dt">messages =</span> <span class="st">"Neighbors"</span>))
 
@@ -1169,18 +809,18 @@ yC.hat &lt;-<span class="st"> </span><span class="kw">predict</span>(fit.age2,
      <span class="dt">xlab =</span> <span class="st">"Age"</span>, <span class="dt">ylab =</span> <span class="st">"Predicted turnout rate"</span>)
 <span class="kw">lines</span>(<span class="dt">x =</span> <span class="dv">25</span>:<span class="dv">85</span>, <span class="dt">y =</span> yC.hat, <span class="dt">lty =</span> <span class="st">"dashed"</span>)
 <span class="kw">text</span>(<span class="dv">40</span>, <span class="fl">0.45</span>, <span class="st">"Neighbors condition"</span>)
-<span class="kw">text</span>(<span class="dv">45</span>, <span class="fl">0.15</span>, <span class="st">"Control condition"</span>)</code></pre></div>
+<span class="kw">text</span>(<span class="dv">45</span>, <span class="fl">0.15</span>, <span class="st">"Control condition"</span>)</code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-11-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## plotting the average treatment effect as a function of age
+<pre class="sourceCode r"><code class="sourceCode r">## plotting the average treatment effect as a function of age
 <span class="kw">plot</span>(<span class="dt">x =</span> <span class="dv">25</span>:<span class="dv">85</span>, <span class="dt">y =</span> yT.hat -<span class="st"> </span>yC.hat, <span class="dt">type =</span> <span class="st">"l"</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">90</span>),
      <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.1</span>), <span class="dt">xlab =</span> <span class="st">"Age"</span>,
-     <span class="dt">ylab =</span> <span class="st">"Estimated average treatment effect"</span>)</code></pre></div>
+     <span class="dt">ylab =</span> <span class="st">"Estimated average treatment effect"</span>)</code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-11-2.png" width="672"></p>
 </div>
 <div id="section-4-3-4-regression-discontinuity-design" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-4-3-4-regression-discontinuity-design" class="anchor"> </a></body></html>Section 4.3.4: Regression Discontinuity Design</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load the data and subset them into two parties
+<a href="#section-4-3-4-regression-discontinuity-design" class="anchor"></a>Section 4.3.4: Regression Discontinuity Design</h3>
+<pre class="sourceCode r"><code class="sourceCode r">## load the data and subset them into two parties
 <span class="kw">data</span>(<span class="st">"MPs"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 MPs.labour &lt;-<span class="st"> </span><span class="kw">subset</span>(MPs, <span class="dt">subset =</span> (party ==<span class="st"> "labour"</span>))
 MPs.tory &lt;-<span class="st"> </span><span class="kw">subset</span>(MPs, <span class="dt">subset =</span> (party ==<span class="st"> "tory"</span>))
@@ -1220,9 +860,9 @@ y2.tory &lt;-<span class="st"> </span><span class="kw">predict</span>(tory.fit2,
 
 ## add regression lines
 <span class="kw">lines</span>(y1l.range, y1.labour, <span class="dt">col =</span> <span class="st">"red"</span>)
-<span class="kw">lines</span>(y2l.range, y2.labour, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre></div>
+<span class="kw">lines</span>(y2l.range, y2.labour, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-12-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## scatterplot with regression lines for tory
+<pre class="sourceCode r"><code class="sourceCode r">## scatterplot with regression lines for tory
 <span class="kw">plot</span>(MPs.tory$margin, MPs.tory$ln.net, <span class="dt">main =</span> <span class="st">"Tory"</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(-<span class="fl">0.5</span>, <span class="fl">0.5</span>),
      <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">6</span>, <span class="dv">18</span>), <span class="dt">xlab =</span> <span class="st">"Margin of victory"</span>,
      <span class="dt">ylab =</span> <span class="st">"log net wealth at death"</span>)
@@ -1230,34 +870,34 @@ y2.tory &lt;-<span class="st"> </span><span class="kw">predict</span>(tory.fit2,
 
 ## add regression lines
 <span class="kw">lines</span>(y1t.range, y1.tory, <span class="dt">col =</span> <span class="st">"red"</span>)
-<span class="kw">lines</span>(y2t.range, y2.tory, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre></div>
+<span class="kw">lines</span>(y2t.range, y2.tory, <span class="dt">col =</span> <span class="st">"red"</span>)</code></pre>
 <p><img src="prediction_files/figure-html/unnamed-chunk-12-2.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## average net wealth for Tory MP
+<pre class="sourceCode r"><code class="sourceCode r">## average net wealth for Tory MP
 tory.MP &lt;-<span class="st"> </span><span class="kw">exp</span>(y2.tory[<span class="dv">1</span>])
-tory.MP</code></pre></div>
+tory.MP</code></pre>
 <pre><code>##        1 
 ## 533813.5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## average net wealth for Tory non-MP
+<pre class="sourceCode r"><code class="sourceCode r">## average net wealth for Tory non-MP
 tory.nonMP &lt;-<span class="st"> </span><span class="kw">exp</span>(y1.tory[<span class="dv">2</span>])
-tory.nonMP</code></pre></div>
+tory.nonMP</code></pre>
 <pre><code>##        2 
 ## 278762.5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## causal effect in pounds
-tory.MP -<span class="st"> </span>tory.nonMP</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## causal effect in pounds
+tory.MP -<span class="st"> </span>tory.nonMP</code></pre>
 <pre><code>##        1 
 ## 255050.9</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## two regressions for Tory: negative and positive margin
+<pre class="sourceCode r"><code class="sourceCode r">## two regressions for Tory: negative and positive margin
 tory.fit3 &lt;-<span class="st"> </span><span class="kw">lm</span>(margin.pre ~<span class="st"> </span>margin, <span class="dt">data =</span> MPs.tory[MPs.tory$margin &lt;<span class="st"> </span><span class="dv">0</span>, ])
 tory.fit4 &lt;-<span class="st"> </span><span class="kw">lm</span>(margin.pre ~<span class="st"> </span>margin, <span class="dt">data =</span> MPs.tory[MPs.tory$margin &gt;<span class="st"> </span><span class="dv">0</span>, ])
 ## the difference between two intercepts is the estimated effect
-<span class="kw">coef</span>(tory.fit4)[<span class="dv">1</span>] -<span class="st"> </span><span class="kw">coef</span>(tory.fit3)[<span class="dv">1</span>]</code></pre></div>
+<span class="kw">coef</span>(tory.fit4)[<span class="dv">1</span>] -<span class="st"> </span><span class="kw">coef</span>(tory.fit3)[<span class="dv">1</span>]</code></pre>
 <pre><code>## (Intercept) 
 ## -0.01725578</code></pre>
 </div>
 </div>
 <div id="section-4-4-summary" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#section-4-4-summary" class="anchor"> </a></body></html>Section 4.4: Summary</h2>
+<a href="#section-4-4-summary" class="anchor"></a>Section 4.4: Summary</h2>
 </div>
 </div>
 </div>
@@ -1265,15 +905,15 @@ tory.fit4 &lt;-<span class="st"> </span><span class="kw">lm</span>(margin.pre ~<
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
         <div id="tocnav">
-      <h2>Contents</h2>
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
 <li>
 <a href="#chapter-5-prediction">Chapter 5: Prediction</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#section-4.1-predicting-election-outcomes">Section 4.1: Predicting Election Outcomes</a></li>
-      <li><a href="#section-4.2-linear-regression">Section 4.2: Linear Regression</a></li>
-      <li><a href="#section-4.3-regression-and-causation">Section 4.3: Regression and Causation</a></li>
-      <li><a href="#messages">messages</a></li>
-      <li><a href="#section-4.4-summary">Section 4.4: Summary</a></li>
+<li><a href="#section-4-1-predicting-election-outcomes">Section 4.1: Predicting Election Outcomes</a></li>
+      <li><a href="#section-4-2-linear-regression">Section 4.2: Linear Regression</a></li>
+      <li><a href="#section-4-3-regression-and-causation">Section 4.3: Regression and Causation</a></li>
+      <li><a href="#section-4-4-summary">Section 4.4: Summary</a></li>
       </ul>
 </li>
       </ul>
@@ -1288,7 +928,7 @@ tory.fit4 &lt;-<span class="st"> </span><span class="kw">lm</span>(margin.pre ~<
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

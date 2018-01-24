@@ -9,7 +9,7 @@
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- mathjax --><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
+<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
@@ -29,10 +29,43 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/causality.html">Causality</a>
+    </li>
+    <li>
+      <a href="../articles/discovery.html">Discovery</a>
+    </li>
+    <li>
+      <a href="../articles/intro.html">Intro</a>
+    </li>
+    <li>
+      <a href="../articles/measurement.html">Measurement</a>
+    </li>
+    <li>
+      <a href="../articles/prediction.html">Prediction</a>
+    </li>
+    <li>
+      <a href="../articles/probability.html">Probability</a>
+    </li>
+    <li>
+      <a href="../articles/uncertainty.html">Uncertainty</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -59,111 +92,113 @@
 <div class="contents">
 <div id="chapter-5-discovery" class="section level1">
 <h1 class="hasAnchor">
-<html><body><a href="#chapter-5-discovery" class="anchor"> </a></body></html>Chapter 5: Discovery</h1>
+<a href="#chapter-5-discovery" class="anchor"></a>Chapter 5: Discovery</h1>
 <div id="section-5-1-textual-data" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#section-5-1-textual-data" class="anchor"> </a></body></html>Section 5.1: Textual Data</h2>
+<a href="#section-5-1-textual-data" class="anchor"></a>Section 5.1: Textual Data</h2>
 <div id="section-5-1-1-the-disputed-authorship-of-the-federalist-papers" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-1-1-the-disputed-authorship-of-the-federalist-papers" class="anchor"> </a></body></html>Section 5.1.1: The Disputed Authorship of ‘The Federalist Papers’</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load two required libraries
-<span class="kw">library</span>(tm)</code></pre></div>
+<a href="#section-5-1-1-the-disputed-authorship-of-the-federalist-papers" class="anchor"></a>Section 5.1.1: The Disputed Authorship of ‘The Federalist Papers’</h3>
+<pre class="sourceCode r"><code class="sourceCode r">## load two required libraries
+<span class="kw">library</span>(tm)</code></pre>
 <pre><code>## Loading required package: NLP</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(SnowballC)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(SnowballC)
 
 ## load the raw corpus
 corpus_dir &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">"extdata/federalist/"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
-corpus.raw &lt;-<span class="st"> </span><span class="kw">Corpus</span>(<span class="kw">DirSource</span>(corpus_dir, <span class="dt">pattern =</span> <span class="st">"</span><span class="ch">\\</span><span class="st">.txt$"</span>))
-corpus.raw</code></pre></div>
+corpus.raw &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/Corpus">Corpus</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/DirSource">DirSource</a></span>(corpus_dir, <span class="dt">pattern =</span> <span class="st">"</span><span class="ch">\\</span><span class="st">.txt$"</span>))
+corpus.raw</code></pre>
 <pre><code>## &lt;&lt;SimpleCorpus&gt;&gt;
 ## Metadata:  corpus specific: 1, document level (indexed): 0
 ## Content:  documents: 85</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## make lower case
-corpus.prep &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus.raw, <span class="kw">content_transformer</span>(tolower))
+<pre class="sourceCode r"><code class="sourceCode r">## make lower case
+corpus.prep &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/tm_map">tm_map</a></span>(corpus.raw, <span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/content_transformer">content_transformer</a></span>(tolower))
 ## remove white space
-corpus.prep &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus.prep, stripWhitespace)
+corpus.prep &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/tm_map">tm_map</a></span>(corpus.prep, stripWhitespace)
 ## remove punctuation
-corpus.prep &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus.prep, removePunctuation)
+corpus.prep &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/tm_map">tm_map</a></span>(corpus.prep, removePunctuation)
 
 ## remove numbers
-corpus.prep &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus.prep, removeNumbers)
+corpus.prep &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/tm_map">tm_map</a></span>(corpus.prep, removeNumbers)
 
-<span class="kw">head</span>(<span class="kw">stopwords</span>(<span class="st">"english"</span>))</code></pre></div>
+<span class="kw">head</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/stopwords">stopwords</a></span>(<span class="st">"english"</span>))</code></pre>
 <pre><code>## [1] "i"      "me"     "my"     "myself" "we"     "our"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## remove stop words
-corpus &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus.prep, removeWords, <span class="kw">stopwords</span>(<span class="st">"english"</span>))
+<pre class="sourceCode r"><code class="sourceCode r">## remove stop words
+corpus &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/tm_map">tm_map</a></span>(corpus.prep, removeWords, <span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/stopwords">stopwords</a></span>(<span class="st">"english"</span>))
 
 ## finally stem remaining words
-corpus &lt;-<span class="st"> </span><span class="kw">tm_map</span>(corpus, stemDocument)
+corpus &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/tm_map">tm_map</a></span>(corpus, stemDocument)
 
 ## the output is truncated here to save space
-<span class="kw">content</span>(corpus[[<span class="dv">10</span>]]) <span class="co"># Essay No. 10</span></code></pre></div>
+<span class="kw">content</span>(corpus[[<span class="dv">10</span>]]) <span class="co"># Essay No. 10</span></code></pre>
+<pre><code>## Warning in as.POSIXlt.POSIXct(Sys.time(), tz = "GMT"): unknown timezone
+## 'zone/tz/2017c.1.0/zoneinfo/America/New_York'</code></pre>
 <pre><code>## [1] "among numer advantag promis wellconstruct union none deserv accur develop tendenc break control violenc faction friend popular govern never find much alarm charact fate contempl propens danger vice will fail therefor set due valu plan without violat principl attach provid proper cure instabl injustic confus introduc public council truth mortal diseas popular govern everywher perish continu favorit fruit topic adversari liberti deriv specious declam valuabl improv made american constitut popular model ancient modern certain much admir unwarrant partial contend effectu obviat danger side wish expect complaint everywher heard consider virtuous citizen equal friend public privat faith public person liberti govern unstabl public good disregard conflict rival parti measur often decid accord rule justic right minor parti superior forc interest overbear major howev anxious may wish complaint foundat evid known fact will permit us deni degre true will found inde candid review situat distress labor erron charg oper govern will found time caus will alon account mani heaviest misfortun particular prevail increas distrust public engag alarm privat right echo one end contin must chiefli wholli effect unsteadi injustic factious spirit taint public administr faction understand number citizen whether amount major minor whole unit actuat common impuls passion interest advers right citizen perman aggreg interest communiti two method cure mischief faction one remov caus control effect two method remov caus faction one destroy liberti essenti exist give everi citizen opinion passion interest never truli said first remedi wors diseas liberti faction air fire aliment without instant expir less folli abolish liberti essenti polit life nourish faction wish annihil air essenti anim life impart fire destruct agenc second expedi impractic first unwis long reason man continu fallibl liberti exercis differ opinion will form long connect subsist reason selflov opinion passion will reciproc influenc former will object latter will attach divers faculti men right properti origin less insuper obstacl uniform interest protect faculti first object govern protect differ unequ faculti acquir properti possess differ degre kind properti immedi result influenc sentiment view respect proprietor ensu divis societi differ interest parti latent caus faction thus sown natur man see everywher brought differ degre activ accord differ circumst civil societi zeal differ opinion concern religion concern govern mani point well specul practic attach differ leader ambiti contend preemin power person descript whose fortun interest human passion turn divid mankind parti inflam mutual animos render much dispos vex oppress cooper common good strong propens mankind fall mutual animos substanti occas present frivol fanci distinct suffici kindl unfriend passion excit violent conflict common durabl sourc faction various unequ distribut properti hold without properti ever form distinct interest societi creditor debtor fall like discrimin land interest manufactur interest mercantil interest money interest mani lesser interest grow necess civil nation divid differ class actuat differ sentiment view regul various interf interest form princip task modern legisl involv spirit parti faction necessari ordinari oper govern man allow judg caus interest certain bias judgment improb corrupt integr equal nay greater reason bodi men unfit judg parti time yet mani import act legisl mani judici determin inde concern right singl person concern right larg bodi citizen differ class legisl advoc parti caus determin law propos concern privat debt question creditor parti one side debtor justic hold balanc yet parti must judg numer parti word power faction must expect prevail shall domest manufactur encourag degre restrict foreign manufactur question differ decid land manufactur class probabl neither sole regard justic public good apportion tax various descript properti act seem requir exact imparti yet perhap legisl act greater opportun temptat given predomin parti trampl rule justic everi shill overburden inferior number shill save pocket vain say enlighten statesmen will abl adjust clash interest render subservi public good enlighten statesmen will alway helm mani case can adjust made without take view indirect remot consider will rare prevail immedi interest one parti may find disregard right anoth good whole infer brought caus faction remov relief sought mean control effect faction consist less major relief suppli republican principl enabl major defeat sinist view regular vote may clog administr may convuls societi will unabl execut mask violenc form constitut major includ faction form popular govern hand enabl sacrific rule passion interest public good right citizen secur public good privat right danger faction time preserv spirit form popular govern great object inquiri direct let add great desideratum form govern can rescu opprobrium long labor recommend esteem adopt mankind mean object attain evid one two either exist passion interest major time must prevent major coexist passion interest must render number local situat unabl concert carri effect scheme oppress impuls opportun suffer coincid well know neither moral religi motiv can reli adequ control found injustic violenc individu lose efficaci proport number combin togeth proport efficaci becom need view subject may conclud pure democraci mean societi consist small number citizen assembl administ govern person can admit cure mischief faction common passion interest will almost everi case felt major whole communic concert result form govern noth check induc sacrific weaker parti obnoxi individu henc democraci ever spectacl turbul content ever found incompat person secur right properti general short live violent death theoret politician patron speci govern erron suppos reduc mankind perfect equal polit right time perfect equal assimil possess opinion passion republ mean govern scheme represent take place open differ prospect promis cure seek let us examin point vari pure democraci shall comprehend natur cure efficaci must deriv union two great point differ democraci republ first deleg govern latter small number citizen elect rest second greater number citizen greater sphere countri latter may extend effect first differ one hand refin enlarg public view pass medium chosen bodi citizen whose wisdom may best discern true interest countri whose patriot love justic will least like sacrific temporari partial consider regul may well happen public voic pronounc repres peopl will conson public good pronounc peopl conven purpos hand effect may invert men factious temper local prejudic sinist design may intrigu corrupt mean first obtain suffrag betray interest peopl question result whether small extens republ favor elect proper guardian public weal clear decid favor latter two obvious consider first place remark howev small republ may repres must rais certain number order guard cabal howev larg may must limit certain number order guard confus multitud henc number repres two case proport two constitu proport greater small republ follow proport fit charact less larg small republ former will present greater option consequ greater probabl fit choic next place repres will chosen greater number citizen larg small republ will difficult unworthi candid practic success vicious art elect often carri suffrag peopl free will like centr men possess attract merit diffus establish charact must confess case mean side inconveni will found lie enlarg much number elector render repres littl acquaint local circumst lesser interest reduc much render unduli attach littl fit comprehend pursu great nation object feder constitut form happi combin respect great aggreg interest refer nation local particular state legislatur point differ greater number citizen extent territori may brought within compass republican democrat govern circumst princip render factious combin less dread former latter smaller societi fewer probabl will distinct parti interest compos fewer distinct parti interest frequent will major found parti smaller number individu compos major smaller compass within place easili will concert execut plan oppress extend sphere take greater varieti parti interest make less probabl major whole will common motiv invad right citizen common motiv exist will difficult feel discov strength act unison besid impedi may remark conscious unjust dishonor purpos communic alway check distrust proport number whose concurr necessari henc clear appear advantag republ democraci control effect faction enjoy larg small republici enjoy union state compos advantag consist substitut repres whose enlighten view virtuous sentiment render superior local prejudic scheme injustic will deni represent union will like possess requisit endow consist greater secur afford greater varieti parti event one parti abl outnumb oppress rest equal degre increas varieti parti compris within union increas secur fine consist greater obstacl oppos concert accomplish secret wish unjust interest major extent union give palpabl advantag influenc factious leader may kindl flame within particular state will unabl spread general conflagr state religi sect may degener polit faction part confederaci varieti sect dispers entir face must secur nation council danger sourc rage paper money abolit debt equal divis properti improp wick project will less apt pervad whole bodi union particular member proport maladi like taint particular counti district entir state extent proper structur union therefor behold republican remedi diseas incid republican govern accord degre pleasur pride feel republican zeal cherish spirit support charact federalist"</code></pre>
 </div>
 <div id="section-5-1-2-document-term-matrix" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-1-2-document-term-matrix" class="anchor"> </a></body></html>Section 5.1.2: Document-Term Matrix</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dtm &lt;-<span class="st"> </span><span class="kw">DocumentTermMatrix</span>(corpus)
-dtm</code></pre></div>
+<a href="#section-5-1-2-document-term-matrix" class="anchor"></a>Section 5.1.2: Document-Term Matrix</h3>
+<pre class="sourceCode r"><code class="sourceCode r">dtm &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/matrix">DocumentTermMatrix</a></span>(corpus)
+dtm</code></pre>
 <pre><code>## &lt;&lt;DocumentTermMatrix (documents: 85, terms: 4849)&gt;&gt;
 ## Non-/sparse entries: 44917/367248
 ## Sparsity           : 89%
 ## Maximal term length: 18
 ## Weighting          : term frequency (tf)</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect</span>(dtm[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1</span>:<span class="dv">8</span>])</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/inspect">inspect</a></span>(dtm[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1</span>:<span class="dv">8</span>])</code></pre>
 <pre><code>## &lt;&lt;DocumentTermMatrix (documents: 5, terms: 8)&gt;&gt;
 ## Non-/sparse entries: 18/22
 ## Sparsity           : 55%
 ## Maximal term length: 10
 ## Weighting          : term frequency (tf)
 ## Sample             :
-##           Terms
-## Docs       abl absurd accid accord acknowledg act actuat add
-##   fp01.txt   1      1     1      1          1   1      1   1
-##   fp02.txt   0      0     0      0          0   0      0   0
-##   fp03.txt   2      0     0      1          2   1      1   1
-##   fp04.txt   1      0     0      1          0   1      0   0
-##   fp05.txt   0      0     0      0          0   1      0   0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dtm.mat &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(dtm)</code></pre></div>
+##     Terms
+## Docs abl absurd accid accord acknowledg act actuat add
+##    1   1      1     1      1          1   1      1   1
+##    2   0      0     0      0          0   0      0   0
+##    3   2      0     0      1          2   1      1   1
+##    4   1      0     0      1          0   1      0   0
+##    5   0      0     0      0          0   1      0   0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">dtm.mat &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(dtm)</code></pre>
 </div>
 <div id="section-5-1-3-topic-discovery" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-1-3-topic-discovery" class="anchor"> </a></body></html>Section 5.1.3: Topic Discovery</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(wordcloud)</code></pre></div>
+<a href="#section-5-1-3-topic-discovery" class="anchor"></a>Section 5.1.3: Topic Discovery</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(wordcloud)</code></pre>
 <pre><code>## Loading required package: RColorBrewer</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wordcloud</span>(<span class="kw">colnames</span>(dtm.mat), dtm.mat[<span class="dv">12</span>, ], <span class="dt">max.words =</span> <span class="dv">20</span>)  <span class="co"># essay No. 12</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/wordcloud/topics/wordcloud">wordcloud</a></span>(<span class="kw">colnames</span>(dtm.mat), dtm.mat[<span class="dv">12</span>, ], <span class="dt">max.words =</span> <span class="dv">20</span>)  <span class="co"># essay No. 12</span></code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-3-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wordcloud</span>(<span class="kw">colnames</span>(dtm.mat), dtm.mat[<span class="dv">24</span>, ], <span class="dt">max.words =</span> <span class="dv">20</span>)  <span class="co"># essay No. 24</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/wordcloud/topics/wordcloud">wordcloud</a></span>(<span class="kw">colnames</span>(dtm.mat), dtm.mat[<span class="dv">24</span>, ], <span class="dt">max.words =</span> <span class="dv">20</span>)  <span class="co"># essay No. 24</span></code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-3-2.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stemCompletion</span>(<span class="kw">c</span>(<span class="st">"revenu"</span>, <span class="st">"commerc"</span>, <span class="st">"peac"</span>, <span class="st">"army"</span>), corpus.prep)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/stemCompletion">stemCompletion</a></span>(<span class="kw">c</span>(<span class="st">"revenu"</span>, <span class="st">"commerc"</span>, <span class="st">"peac"</span>, <span class="st">"army"</span>), corpus.prep)</code></pre>
 <pre><code>##     revenu    commerc       peac       army 
 ##  "revenue" "commerce"    "peace"     "army"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dtm.tfidf &lt;-<span class="st"> </span><span class="kw">weightTfIdf</span>(dtm) <span class="co"># tf-idf calculation</span>
+<pre class="sourceCode r"><code class="sourceCode r">dtm.tfidf &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/weightTfIdf">weightTfIdf</a></span>(dtm) <span class="co"># tf-idf calculation</span>
 
 dtm.tfidf.mat &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(dtm.tfidf)  <span class="co"># convert to matrix</span>
 
 ## 10 most important words for Paper No. 12
-<span class="kw">head</span>(<span class="kw">sort</span>(dtm.tfidf.mat[<span class="dv">12</span>, ], <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">n =</span> <span class="dv">10</span>)</code></pre></div>
+<span class="kw">head</span>(<span class="kw">sort</span>(dtm.tfidf.mat[<span class="dv">12</span>, ], <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">n =</span> <span class="dv">10</span>)</code></pre>
 <pre><code>##     revenu contraband     patrol      excis      coast      trade 
 ## 0.01905877 0.01886965 0.01886965 0.01876560 0.01592559 0.01473504 
 ##        per        tax       cent     gallon 
 ## 0.01420342 0.01295466 0.01257977 0.01257977</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 10 most important words for Paper No. 24
-<span class="kw">head</span>(<span class="kw">sort</span>(dtm.tfidf.mat[<span class="dv">24</span>, ], <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">n =</span> <span class="dv">10</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## 10 most important words for Paper No. 24
+<span class="kw">head</span>(<span class="kw">sort</span>(dtm.tfidf.mat[<span class="dv">24</span>, ], <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">n =</span> <span class="dv">10</span>)</code></pre>
 <pre><code>##   garrison settlement   dockyard      spain       armi   frontier 
 ## 0.02965511 0.01962294 0.01962294 0.01649040 0.01544256 0.01482756 
 ##    arsenal    western       post     nearer 
 ## 0.01308196 0.01306664 0.01236780 0.01166730</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">k &lt;-<span class="st"> </span><span class="dv">4</span>  <span class="co"># number of clusters</span>
+<pre class="sourceCode r"><code class="sourceCode r">k &lt;-<span class="st"> </span><span class="dv">4</span>  <span class="co"># number of clusters</span>
 ## subset The Federalist papers written by Hamilton
 hamilton &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">6</span>:<span class="dv">9</span>, <span class="dv">11</span>:<span class="dv">13</span>, <span class="dv">15</span>:<span class="dv">17</span>, <span class="dv">21</span>:<span class="dv">36</span>, <span class="dv">59</span>:<span class="dv">61</span>, <span class="dv">65</span>:<span class="dv">85</span>)
 dtm.tfidf.hamilton &lt;-<span class="st"> </span>dtm.tfidf.mat[hamilton, ]
 
 ## run k-means
 km.out &lt;-<span class="st"> </span><span class="kw">kmeans</span>(dtm.tfidf.hamilton, <span class="dt">centers =</span> k)
-km.out$iter <span class="co"># check the convergence; number of iterations may vary</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## label each centroid with the corresponding term
+km.out$iter <span class="co"># check the convergence; number of iterations may vary</span></code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">## label each centroid with the corresponding term
 <span class="kw">colnames</span>(km.out$centers) &lt;-<span class="st"> </span><span class="kw">colnames</span>(dtm.tfidf.hamilton)
 
 for (i in <span class="dv">1</span>:k) { <span class="co"># loop for each cluster</span>
@@ -174,45 +209,30 @@ for (i in <span class="dv">1</span>:k) { <span class="co"># loop for each cluste
     <span class="kw">cat</span>(<span class="st">"Federalist Papers classified: </span><span class="ch">\n</span><span class="st">"</span>) <span class="co"># extract essays classified</span>
     <span class="kw">print</span>(<span class="kw">rownames</span>(dtm.tfidf.hamilton)[km.out$cluster ==<span class="st"> </span>i])
     <span class="kw">cat</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)
-}</code></pre></div>
+}</code></pre>
 <pre><code>## CLUSTER 1 
 ## Top 10 words:
-##       court       senat        upon        juri      presid       claus 
-## 0.006979236 0.004317092 0.003983231 0.003385189 0.002751280 0.002750835 
-##   jurisdict       offic         tax     impeach 
-## 0.002649711 0.002566185 0.002526463 0.002294396 
+##         tax       taxat      revenu       claus        land    merchant 
+## 0.011048535 0.010303867 0.008653646 0.008341649 0.006601163 0.005103442 
+##      export        upon         lay  manufactur 
+## 0.004999712 0.004907301 0.004799584 0.004781512 
 ## 
 ## Federalist Papers classified: 
-##  [1] "fp01.txt" "fp06.txt" "fp07.txt" "fp09.txt" "fp15.txt" "fp16.txt"
-##  [7] "fp17.txt" "fp21.txt" "fp22.txt" "fp23.txt" "fp27.txt" "fp30.txt"
-## [13] "fp31.txt" "fp32.txt" "fp33.txt" "fp34.txt" "fp36.txt" "fp59.txt"
-## [19] "fp60.txt" "fp61.txt" "fp65.txt" "fp66.txt" "fp68.txt" "fp70.txt"
-## [25] "fp71.txt" "fp72.txt" "fp73.txt" "fp75.txt" "fp76.txt" "fp77.txt"
-## [31] "fp78.txt" "fp79.txt" "fp80.txt" "fp81.txt" "fp82.txt" "fp83.txt"
-## [37] "fp84.txt" "fp85.txt"
+##  [1] "7"  "12" "21" "30" "31" "32" "33" "34" "35" "36"
 ## 
 ## CLUSTER 2 
 ## Top 10 words:
-##       trade    merchant    northern       navig  manufactur      revenu 
-## 0.013962253 0.012890018 0.010487956 0.010283154 0.009795735 0.009754859 
-##     commerc    southern      market confederaci 
-## 0.009501991 0.009303222 0.009179588 0.006984902 
+##       court       senat      presid        juri        upon       offic 
+## 0.008440690 0.005504293 0.004554328 0.004149586 0.003765824 0.003401184 
+##     impeach       nomin    governor   jurisdict 
+## 0.003313589 0.002831530 0.002752171 0.002684640 
 ## 
 ## Federalist Papers classified: 
-## [1] "fp11.txt" "fp12.txt" "fp13.txt" "fp35.txt"
+##  [1] "1"  "9"  "15" "16" "17" "22" "23" "27" "59" "60" "61" "65" "66" "68"
+## [15] "69" "70" "71" "72" "73" "74" "75" "76" "77" "78" "79" "80" "81" "82"
+## [29] "83" "84" "85"
 ## 
 ## CLUSTER 3 
-## Top 10 words:
-##     militia        armi    militari      pardon    governor     treason 
-## 0.014639288 0.014493183 0.010024167 0.007643664 0.007114050 0.005833538 
-##   disciplin        peac      presid    garrison 
-## 0.005567509 0.005053636 0.004940856 0.004717510 
-## 
-## Federalist Papers classified: 
-## [1] "fp08.txt" "fp24.txt" "fp25.txt" "fp26.txt" "fp28.txt" "fp29.txt"
-## [7] "fp69.txt" "fp74.txt"
-## 
-## CLUSTER 4 
 ## Top 10 words:
 ##     vacanc     recess      claus      senat    session       fill 
 ## 0.06953047 0.04437713 0.04082617 0.03408008 0.03313305 0.03101140 
@@ -220,13 +240,23 @@ for (i in <span class="dv">1</span>:k) { <span class="co"># loop for each cluste
 ## 0.02211662 0.01852025 0.01738262 0.01684465 
 ## 
 ## Federalist Papers classified: 
-## [1] "fp67.txt"</code></pre>
+## [1] "67"
+## 
+## CLUSTER 4 
+## Top 10 words:
+##        armi     militia    militari       navig   disciplin         war 
+## 0.011624485 0.011450433 0.008761049 0.005321748 0.004948897 0.004854514 
+##        peac    northern    frontier confederaci 
+## 0.004668017 0.004661314 0.004559462 0.004540867 
+## 
+## Federalist Papers classified: 
+## [1] "6"  "8"  "11" "13" "24" "25" "26" "28" "29"</code></pre>
 </div>
 <div id="section-5-1-4-authorship-prediction" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-1-4-authorship-prediction" class="anchor"> </a></body></html>Section 5.1.4: Authorship Prediction</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## document-term matrix converted to matrix for manipulation
-dtm1 &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(<span class="kw">DocumentTermMatrix</span>(corpus.prep))
+<a href="#section-5-1-4-authorship-prediction" class="anchor"></a>Section 5.1.4: Authorship Prediction</h3>
+<pre class="sourceCode r"><code class="sourceCode r">## document-term matrix converted to matrix for manipulation
+dtm1 &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/tm/topics/matrix">DocumentTermMatrix</a></span>(corpus.prep))
 tfm &lt;-<span class="st"> </span>dtm1 /<span class="st"> </span><span class="kw">rowSums</span>(dtm1) *<span class="st"> </span><span class="dv">1000</span> <span class="co"># term frequency per 1000 words</span>
 
 ## words of interest
@@ -242,48 +272,14 @@ madison &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv"
 ## average among Hamilton/Madison essays
 tfm.ave &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">colSums</span>(tfm[hamilton, ]) /<span class="st"> </span><span class="kw">length</span>(hamilton),
                  <span class="kw">colSums</span>(tfm[madison, ]) /<span class="st"> </span><span class="kw">length</span>(madison))
-tfm.ave</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="right">although</th>
-<th align="right">always</th>
-<th align="right">commonly</th>
-<th align="right">consequently</th>
-<th align="right">considerable</th>
-<th align="right">enough</th>
-<th align="right">there</th>
-<th align="right">upon</th>
-<th align="right">while</th>
-<th align="right">whilst</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="right">0.0175698</td>
-<td align="right">0.7527744</td>
-<td align="right">0.2630876</td>
-<td align="right">0.0260086</td>
-<td align="right">0.5435127</td>
-<td align="right">0.3955031</td>
-<td align="right">4.417750</td>
-<td align="right">4.3986828</td>
-<td align="right">0.3700484</td>
-<td align="right">0.0070557</td>
-</tr>
-<tr class="even">
-<td align="right">0.2705881</td>
-<td align="right">0.2006710</td>
-<td align="right">0.0000000</td>
-<td align="right">0.4487847</td>
-<td align="right">0.1601669</td>
-<td align="right">0.0000000</td>
-<td align="right">1.113252</td>
-<td align="right">0.2000269</td>
-<td align="right">0.0000000</td>
-<td align="right">0.3801131</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">author &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="kw">nrow</span>(dtm1)) <span class="co"># a vector with missing values</span>
+tfm.ave</code></pre>
+<pre><code>##        although    always  commonly consequently considerable    enough
+## [1,] 0.01756975 0.7527744 0.2630876   0.02600857    0.5435127 0.3955031
+## [2,] 0.27058809 0.2006710 0.0000000   0.44878468    0.1601669 0.0000000
+##         there      upon     while      whilst
+## [1,] 4.417750 4.3986828 0.3700484 0.007055719
+## [2,] 1.113252 0.2000269 0.0000000 0.380113114</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">author &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="kw">nrow</span>(dtm1)) <span class="co"># a vector with missing values</span>
 author[hamilton] &lt;-<span class="st"> </span><span class="dv">1</span>  <span class="co"># 1 if Hamilton</span>
 author[madison] &lt;-<span class="st"> </span>-<span class="dv">1</span>  <span class="co"># -1 if Madison</span>
 
@@ -293,7 +289,7 @@ author.data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<sp
 
 hm.fit &lt;-<span class="st"> </span><span class="kw">lm</span>(author ~<span class="st"> </span>upon +<span class="st"> </span>there +<span class="st"> </span>consequently +<span class="st"> </span>whilst,
              <span class="dt">data =</span> author.data)
-hm.fit</code></pre></div>
+hm.fit</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = author ~ upon + there + consequently + whilst, data = author.data)
@@ -301,20 +297,20 @@ hm.fit</code></pre></div>
 ## Coefficients:
 ##  (Intercept)          upon         there  consequently        whilst  
 ##     -0.26288       0.16678       0.09494      -0.44012      -0.65875</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hm.fitted &lt;-<span class="st"> </span><span class="kw">fitted</span>(hm.fit) <span class="co"># fitted values</span>
-<span class="kw">sd</span>(hm.fitted)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">hm.fitted &lt;-<span class="st"> </span><span class="kw">fitted</span>(hm.fit) <span class="co"># fitted values</span>
+<span class="kw">sd</span>(hm.fitted)</code></pre>
 <pre><code>## [1] 0.7180769</code></pre>
 </div>
 <div id="section-5-1-5-cross-validation" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-1-5-cross-validation" class="anchor"> </a></body></html>Section 5.1.5: Cross-Validation</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Hamilton
-<span class="kw">mean</span>(hm.fitted[author.data$author ==<span class="st"> </span><span class="dv">1</span>] &gt;<span class="st"> </span><span class="dv">0</span>)</code></pre></div>
+<a href="#section-5-1-5-cross-validation" class="anchor"></a>Section 5.1.5: Cross-Validation</h3>
+<pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Hamilton
+<span class="kw">mean</span>(hm.fitted[author.data$author ==<span class="st"> </span><span class="dv">1</span>] &gt;<span class="st"> </span><span class="dv">0</span>)</code></pre>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Madison
-<span class="kw">mean</span>(hm.fitted[author.data$author ==<span class="st"> </span>-<span class="dv">1</span>] &lt;<span class="st"> </span><span class="dv">0</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Madison
+<span class="kw">mean</span>(hm.fitted[author.data$author ==<span class="st"> </span>-<span class="dv">1</span>] &lt;<span class="st"> </span><span class="dv">0</span>)</code></pre>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(author.data)
+<pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(author.data)
 hm.classify &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, n) <span class="co"># a container vector with missing values</span>
 
 for (i in <span class="dv">1</span>:n) {
@@ -326,22 +322,22 @@ for (i in <span class="dv">1</span>:n) {
 }
 
 ## proportion of correctly classified essays by Hamilton
-<span class="kw">mean</span>(hm.classify[author.data$author ==<span class="st"> </span><span class="dv">1</span>] &gt;<span class="st"> </span><span class="dv">0</span>)</code></pre></div>
+<span class="kw">mean</span>(hm.classify[author.data$author ==<span class="st"> </span><span class="dv">1</span>] &gt;<span class="st"> </span><span class="dv">0</span>)</code></pre>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Madison
-<span class="kw">mean</span>(hm.classify[author.data$author ==<span class="st"> </span>-<span class="dv">1</span>] &lt;<span class="st"> </span><span class="dv">0</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## proportion of correctly classified essays by Madison
+<span class="kw">mean</span>(hm.classify[author.data$author ==<span class="st"> </span>-<span class="dv">1</span>] &lt;<span class="st"> </span><span class="dv">0</span>)</code></pre>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">disputed &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">49</span>, <span class="dv">50</span>:<span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">63</span>) <span class="co"># 11 essays with disputed authorship</span>
+<pre class="sourceCode r"><code class="sourceCode r">disputed &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">49</span>, <span class="dv">50</span>:<span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">63</span>) <span class="co"># 11 essays with disputed authorship</span>
 tf.disputed &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(tfm[disputed, ])
 
 ## prediction of disputed authorship
 pred &lt;-<span class="st"> </span><span class="kw">predict</span>(hm.fit, <span class="dt">newdata =</span> tf.disputed)
-pred <span class="co"># predicted values</span></code></pre></div>
-<pre><code>##    fp49.txt    fp50.txt    fp51.txt    fp52.txt    fp53.txt    fp54.txt 
+pred <span class="co"># predicted values</span></code></pre>
+<pre><code>##          49          50          51          52          53          54 
 ## -0.99831799 -0.06759254 -1.53243206 -0.26288400 -0.54584900 -0.56566555 
-##    fp55.txt    fp56.txt    fp57.txt    fp62.txt    fp63.txt 
+##          55          56          57          62          63 
 ##  0.04376632 -0.57115610 -1.22289415 -1.00675456 -0.21939646</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 ## fitted values for essays authored by Hamilton; red squares
 <span class="kw">plot</span>(hamilton, hm.fitted[author.data$author ==<span class="st"> </span><span class="dv">1</span>], <span class="dt">pch =</span> <span class="dv">15</span>,
      <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">85</span>), <span class="dt">ylim  =</span> <span class="kw">c</span>(-<span class="dv">2</span>, <span class="dv">2</span>), <span class="dt">col =</span> <span class="st">"red"</span>,
@@ -353,75 +349,29 @@ pred <span class="co"># predicted values</span></code></pre></div>
        <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">"blue"</span>)
 
 ## disputed authorship; black triangles
-<span class="kw">points</span>(disputed, pred, <span class="dt">pch =</span> <span class="dv">17</span>)</code></pre></div>
+<span class="kw">points</span>(disputed, pred, <span class="dt">pch =</span> <span class="dv">17</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
 </div>
 </div>
 <div id="section-5-2-network-data" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#section-5-2-network-data" class="anchor"> </a></body></html>Section 5.2: Network Data</h2>
+<a href="#section-5-2-network-data" class="anchor"></a>Section 5.2: Network Data</h2>
 <div id="section-5-2-1-marriage-network-in-renaissance-florence" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-2-1-marriage-network-in-renaissance-florence" class="anchor"> </a></body></html>Section 5.2.1: Marriage Network in Renaissance Florence</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## the first column "FAMILY" of the CSV file represents row names
+<a href="#section-5-2-1-marriage-network-in-renaissance-florence" class="anchor"></a>Section 5.2.1: Marriage Network in Renaissance Florence</h3>
+<pre class="sourceCode r"><code class="sourceCode r">## the first column "FAMILY" of the CSV file represents row names
 <span class="kw">data</span>(<span class="st">"florentine"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 florence &lt;-<span class="st"> </span><span class="kw">data.frame</span>(florentine, <span class="dt">row.names =</span> <span class="st">"FAMILY"</span>)
 
 ## print out the adjacency (sub)matrix for the first 5 families
-florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1</span>:<span class="dv">5</span>]</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th></th>
-<th align="right">ACCIAIUOL</th>
-<th align="right">ALBIZZI</th>
-<th align="right">BARBADORI</th>
-<th align="right">BISCHERI</th>
-<th align="right">CASTELLAN</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>ACCIAIUOL</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td>ALBIZZI</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td>BARBADORI</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td>BISCHERI</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td>CASTELLAN</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rowSums</span>(florence)</code></pre></div>
+florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1</span>:<span class="dv">5</span>]</code></pre>
+<pre><code>##           ACCIAIUOL ALBIZZI BARBADORI BISCHERI CASTELLAN
+## ACCIAIUOL         0       0         0        0         0
+## ALBIZZI           0       0         0        0         0
+## BARBADORI         0       0         0        0         1
+## BISCHERI          0       0         0        0         0
+## CASTELLAN         0       0         1        0         0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rowSums</span>(florence)</code></pre>
 <pre><code>## ACCIAIUOL   ALBIZZI BARBADORI  BISCHERI CASTELLAN    GINORI  GUADAGNI 
 ##         1         3         2         3         3         1         4 
 ## LAMBERTES    MEDICI     PAZZI   PERUZZI     PUCCI   RIDOLFI  SALVIATI 
@@ -431,10 +381,10 @@ florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1
 </div>
 <div id="section-5-2-2-undirected-graph-and-centrality-measures" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-2-2-undirected-graph-and-centrality-measures" class="anchor"> </a></body></html>Section 5.2.2: Undirected Graph and Centrality Measures</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<a href="#section-5-2-2-undirected-graph-and-centrality-measures" class="anchor"></a>Section 5.2.2: Undirected Graph and Centrality Measures</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 
-<span class="kw">library</span>(<span class="st">"igraph"</span>)  <span class="co"># load the package</span></code></pre></div>
+<span class="kw">library</span>(<span class="st">"igraph"</span>)  <span class="co"># load the package</span></code></pre>
 <pre><code>## 
 ## Attaching package: 'igraph'</code></pre>
 <pre><code>## The following objects are masked from 'package:stats':
@@ -443,51 +393,51 @@ florence[<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">1
 <pre><code>## The following object is masked from 'package:base':
 ## 
 ##     union</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">florence &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(florence) <span class="co"># coerce into a matrix</span>
-florence &lt;-<span class="st"> </span><span class="kw">graph.adjacency</span>(florence, <span class="dt">mode =</span> <span class="st">"undirected"</span>, <span class="dt">diag =</span> <span class="ot">FALSE</span>)
+<pre class="sourceCode r"><code class="sourceCode r">florence &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(florence) <span class="co"># coerce into a matrix</span>
+florence &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/graph_from_adjacency_matrix">graph.adjacency</a></span>(florence, <span class="dt">mode =</span> <span class="st">"undirected"</span>, <span class="dt">diag =</span> <span class="ot">FALSE</span>)
 
-<span class="kw">plot</span>(florence) <span class="co"># plot the graph</span></code></pre></div>
+<span class="kw">plot</span>(florence) <span class="co"># plot the graph</span></code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">degree</span>(florence)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/degree">degree</a></span>(florence)</code></pre>
 <pre><code>## ACCIAIUOL   ALBIZZI BARBADORI  BISCHERI CASTELLAN    GINORI  GUADAGNI 
 ##         1         3         2         3         3         1         4 
 ## LAMBERTES    MEDICI     PAZZI   PERUZZI     PUCCI   RIDOLFI  SALVIATI 
 ##         1         6         1         3         0         3         2 
 ##   STROZZI TORNABUON 
 ##         4         3</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">closeness</span>(florence)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/closeness">closeness</a></span>(florence)</code></pre>
 <pre><code>##   ACCIAIUOL     ALBIZZI   BARBADORI    BISCHERI   CASTELLAN      GINORI 
 ## 0.018518519 0.022222222 0.020833333 0.019607843 0.019230769 0.017241379 
 ##    GUADAGNI   LAMBERTES      MEDICI       PAZZI     PERUZZI       PUCCI 
 ## 0.021739130 0.016949153 0.024390244 0.015384615 0.018518519 0.004166667 
 ##     RIDOLFI    SALVIATI     STROZZI   TORNABUON 
 ## 0.022727273 0.019230769 0.020833333 0.022222222</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> /<span class="st"> </span>(<span class="kw">closeness</span>(florence) *<span class="st"> </span><span class="dv">15</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> /<span class="st"> </span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/closeness">closeness</a></span>(florence) *<span class="st"> </span><span class="dv">15</span>)</code></pre>
 <pre><code>## ACCIAIUOL   ALBIZZI BARBADORI  BISCHERI CASTELLAN    GINORI  GUADAGNI 
 ##  3.600000  3.000000  3.200000  3.400000  3.466667  3.866667  3.066667 
 ## LAMBERTES    MEDICI     PAZZI   PERUZZI     PUCCI   RIDOLFI  SALVIATI 
 ##  3.933333  2.733333  4.333333  3.600000 16.000000  2.933333  3.466667 
 ##   STROZZI TORNABUON 
 ##  3.200000  3.000000</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">betweenness</span>(florence)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/betweenness">betweenness</a></span>(florence)</code></pre>
 <pre><code>## ACCIAIUOL   ALBIZZI BARBADORI  BISCHERI CASTELLAN    GINORI  GUADAGNI 
 ##  0.000000 19.333333  8.500000  9.500000  5.000000  0.000000 23.166667 
 ## LAMBERTES    MEDICI     PAZZI   PERUZZI     PUCCI   RIDOLFI  SALVIATI 
 ##  0.000000 47.500000  0.000000  2.000000  0.000000 10.333333 13.000000 
 ##   STROZZI TORNABUON 
 ##  9.333333  8.333333</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
-<span class="kw">plot</span>(florence, <span class="dt">vertex.size =</span> <span class="kw">closeness</span>(florence) *<span class="st"> </span><span class="dv">1000</span>,
-     <span class="dt">main =</span> <span class="st">"Closeness"</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<span class="kw">plot</span>(florence, <span class="dt">vertex.size =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/closeness">closeness</a></span>(florence) *<span class="st"> </span><span class="dv">1000</span>,
+     <span class="dt">main =</span> <span class="st">"Closeness"</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-7-2.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(florence, <span class="dt">vertex.size =</span> <span class="kw">betweenness</span>(florence),
-     <span class="dt">main =</span> <span class="st">"Betweenness"</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(florence, <span class="dt">vertex.size =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/betweenness">betweenness</a></span>(florence),
+     <span class="dt">main =</span> <span class="st">"Betweenness"</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-7-3.png" width="672"></p>
 </div>
 <div id="section-5-2-3-twitter-following-network" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-2-3-twitter-following-network" class="anchor"> </a></body></html>Section 5.2.3: Twitter-Following Network</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"twitter.following"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<a href="#section-5-2-3-twitter-following-network" class="anchor"></a>Section 5.2.3: Twitter-Following Network</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"twitter.following"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 <span class="kw">data</span>(<span class="st">"twitter.senator"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 n &lt;-<span class="st"> </span><span class="kw">nrow</span>(twitter.senator) <span class="co"># number of senators</span>
@@ -503,102 +453,30 @@ for (i in <span class="dv">1</span>:<span class="kw">nrow</span>(twitter.adj)) {
     twitter.adj[twitter.following$following[i], twitter.following$followed[i]] &lt;-<span class="st"> </span><span class="dv">1</span>
 }
 
-twitter.adj &lt;-<span class="st"> </span><span class="kw">graph.adjacency</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"directed"</span>, <span class="dt">diag =</span> <span class="ot">FALSE</span>)</code></pre></div>
+twitter.adj &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/graph_from_adjacency_matrix">graph.adjacency</a></span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"directed"</span>, <span class="dt">diag =</span> <span class="ot">FALSE</span>)</code></pre>
 </div>
 <div id="section-5-2-4-directed-graph-and-centrality" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-2-4-directed-graph-and-centrality" class="anchor"> </a></body></html>Section 5.2.4: Directed Graph and Centrality</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">twitter.senator$indegree &lt;-<span class="st"> </span><span class="kw">degree</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"in"</span>)
-twitter.senator$outdegree &lt;-<span class="st"> </span><span class="kw">degree</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"out"</span>)
+<a href="#section-5-2-4-directed-graph-and-centrality" class="anchor"></a>Section 5.2.4: Directed Graph and Centrality</h3>
+<pre class="sourceCode r"><code class="sourceCode r">twitter.senator$indegree &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/degree">degree</a></span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"in"</span>)
+twitter.senator$outdegree &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/degree">degree</a></span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"out"</span>)
 
 in.order &lt;-<span class="st"> </span><span class="kw">order</span>(twitter.senator$indegree, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)
 out.order &lt;-<span class="st"> </span><span class="kw">order</span>(twitter.senator$outdegree, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)
 
 ## 3 greatest indegree
-twitter.senator[in.order[<span class="dv">1</span>:<span class="dv">3</span>], ]</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th></th>
-<th align="left">screen_name</th>
-<th align="left">name</th>
-<th align="left">party</th>
-<th align="left">state</th>
-<th align="right">indegree</th>
-<th align="right">outdegree</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>5</td>
-<td align="left">SenatorBurr</td>
-<td align="left">Richard Burr</td>
-<td align="left">R</td>
-<td align="left">NC</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td align="left">JohnBoozman</td>
-<td align="left">John Boozman</td>
-<td align="left">R</td>
-<td align="left">AR</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td align="left">SenJohnBarrasso</td>
-<td align="left">John Barrasso</td>
-<td align="left">R</td>
-<td align="left">WY</td>
-<td align="right">2</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## 3 greatest outdegree
-twitter.senator[out.order[<span class="dv">1</span>:<span class="dv">3</span>], ]</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th></th>
-<th align="left">screen_name</th>
-<th align="left">name</th>
-<th align="left">party</th>
-<th align="left">state</th>
-<th align="right">indegree</th>
-<th align="right">outdegree</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>2</td>
-<td align="left">RoyBlunt</td>
-<td align="left">Roy Blunt</td>
-<td align="left">R</td>
-<td align="left">MO</td>
-<td align="right">1</td>
-<td align="right">46</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td align="left">SenAlexander</td>
-<td align="left">Lamar Alexander</td>
-<td align="left">R</td>
-<td align="left">TN</td>
-<td align="right">1</td>
-<td align="right">38</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td align="left">SenatorBoxer</td>
-<td align="left">Barbara Boxer</td>
-<td align="left">D</td>
-<td align="left">CA</td>
-<td align="right">0</td>
-<td align="right">7</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(twitter.senator)
+twitter.senator[in.order[<span class="dv">1</span>:<span class="dv">3</span>], ]</code></pre>
+<pre><code>##       screen_name          name party state indegree outdegree
+## 5     SenatorBurr  Richard Burr     R    NC        2         0
+## 7     JohnBoozman  John Boozman     R    AR        2         0
+## 8 SenJohnBarrasso John Barrasso     R    WY        2         0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">## 3 greatest outdegree
+twitter.senator[out.order[<span class="dv">1</span>:<span class="dv">3</span>], ]</code></pre>
+<pre><code>##    screen_name            name party state indegree outdegree
+## 2     RoyBlunt       Roy Blunt     R    MO        1        46
+## 1 SenAlexander Lamar Alexander     R    TN        1        38
+## 3 SenatorBoxer   Barbara Boxer     D    CA        0         7</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(twitter.senator)
 ## color: Democrats = `blue', Republicans = `red', Independent = `black'
 col &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="st">"red"</span>, n)
 col[twitter.senator$party ==<span class="st"> "D"</span>] &lt;-<span class="st"> "blue"</span>
@@ -611,16 +489,16 @@ pch[twitter.senator$party ==<span class="st"> "I"</span>] &lt;-<span class="st">
 
 <span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 ## plot for comparing two closeness measures (incoming vs. outgoing)
-<span class="kw">plot</span>(<span class="kw">closeness</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"in"</span>),
-     <span class="kw">closeness</span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"out"</span>), <span class="dt">pch =</span> pch, <span class="dt">col =</span> col,
-     <span class="dt">main =</span> <span class="st">"Closeness"</span>, <span class="dt">xlab =</span> <span class="st">"Incoming path"</span>, <span class="dt">ylab =</span> <span class="st">"Outgoing path"</span>)</code></pre></div>
+<span class="kw">plot</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/closeness">closeness</a></span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"in"</span>),
+     <span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/closeness">closeness</a></span>(twitter.adj, <span class="dt">mode =</span> <span class="st">"out"</span>), <span class="dt">pch =</span> pch, <span class="dt">col =</span> col,
+     <span class="dt">main =</span> <span class="st">"Closeness"</span>, <span class="dt">xlab =</span> <span class="st">"Incoming path"</span>, <span class="dt">ylab =</span> <span class="st">"Outgoing path"</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-9-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## plot for comparing directed and undirected betweenness
-<span class="kw">plot</span>(<span class="kw">betweenness</span>(twitter.adj, <span class="dt">directed =</span> <span class="ot">TRUE</span>),
-     <span class="kw">betweenness</span>(twitter.adj, <span class="dt">directed =</span> <span class="ot">FALSE</span>), <span class="dt">pch =</span> pch, <span class="dt">col =</span> col,
-     <span class="dt">main =</span> <span class="st">"Betweenness"</span>, <span class="dt">xlab =</span> <span class="st">"Directed"</span>, <span class="dt">ylab =</span> <span class="st">"Undirected"</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## plot for comparing directed and undirected betweenness
+<span class="kw">plot</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/betweenness">betweenness</a></span>(twitter.adj, <span class="dt">directed =</span> <span class="ot">TRUE</span>),
+     <span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/betweenness">betweenness</a></span>(twitter.adj, <span class="dt">directed =</span> <span class="ot">FALSE</span>), <span class="dt">pch =</span> pch, <span class="dt">col =</span> col,
+     <span class="dt">main =</span> <span class="st">"Betweenness"</span>, <span class="dt">xlab =</span> <span class="st">"Directed"</span>, <span class="dt">ylab =</span> <span class="st">"Undirected"</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-9-2.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">twitter.senator$pagerank &lt;-<span class="st"> </span><span class="kw">page.rank</span>(twitter.adj)$vector
+<pre class="sourceCode r"><code class="sourceCode r">twitter.senator$pagerank &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/page_rank">page.rank</a></span>(twitter.adj)$vector
 
 <span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 ## `col' parameter is defined earlier
@@ -629,7 +507,7 @@ pch[twitter.senator$party ==<span class="st"> "I"</span>] &lt;-<span class="st">
      <span class="dt">edge.arrow.size =</span> <span class="fl">0.1</span>, <span class="dt">edge.width =</span> <span class="fl">0.5</span>)
 
 PageRank &lt;-<span class="st"> </span>function(n, A, d, pr) { <span class="co"># function takes 4 inputs</span>
-    deg &lt;-<span class="st"> </span><span class="kw">degree</span>(A, <span class="dt">mode =</span> <span class="st">"out"</span>) <span class="co"># outdegree calculation</span>
+    deg &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/degree">degree</a></span>(A, <span class="dt">mode =</span> <span class="st">"out"</span>) <span class="co"># outdegree calculation</span>
     for (j in <span class="dv">1</span>:n) {
         pr[j] &lt;-<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>d) /<span class="st"> </span>n +<span class="st">  </span>d *<span class="st"> </span><span class="kw">sum</span>(A[ ,j] *<span class="st"> </span>pr /<span class="st"> </span>deg)
     }
@@ -641,34 +519,13 @@ nodes &lt;-<span class="st"> </span><span class="dv">4</span>
 ## adjacency matrix with arbitrary values
 adj &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),
               <span class="dt">ncol =</span> nodes, <span class="dt">nrow =</span> nodes, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
-adj</code></pre></div>
-<table class="table"><tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody></table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">adj &lt;-<span class="st"> </span><span class="kw">graph.adjacency</span>(adj)  <span class="co"># turn it into an igraph object</span>
+adj</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    0    1    0    1
+## [2,]    1    0    1    0
+## [3,]    0    1    0    0
+## [4,]    0    1    0    0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">adj &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/graph_from_adjacency_matrix">graph.adjacency</a></span>(adj)  <span class="co"># turn it into an igraph object</span>
 
 d &lt;-<span class="st"> </span><span class="fl">0.85</span>  <span class="co"># typical choice of constant</span>
 pr &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span> /<span class="st"> </span>nodes, nodes) <span class="co"># starting values</span>
@@ -681,166 +538,94 @@ while (diff &gt;<span class="st"> </span><span class="fl">0.001</span>) {
     pr.pre &lt;-<span class="st"> </span>pr <span class="co"># save the previous iteration</span>
     pr &lt;-<span class="st"> </span><span class="kw">PageRank</span>(<span class="dt">n =</span> nodes, <span class="dt">A =</span> adj, <span class="dt">d =</span> d, <span class="dt">pr =</span> pr)
     diff &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw">abs</span>(pr -<span class="st"> </span>pr.pre))
-}</code></pre></div>
+}</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-9-3.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pr</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">pr</code></pre>
 <pre><code>## [1] 0.2213090 0.4316623 0.2209565 0.1315563</code></pre>
 </div>
 </div>
 <div id="section-5-3-spatial-data" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#section-5-3-spatial-data" class="anchor"> </a></body></html>Section 5.3: Spatial Data</h2>
+<a href="#section-5-3-spatial-data" class="anchor"></a>Section 5.3: Spatial Data</h2>
 <div id="section-5-3-1-the-1854-cholera-outbreak-in-action" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-3-1-the-1854-cholera-outbreak-in-action" class="anchor"> </a></body></html>Section 5.3.1: The 1854 Cholera Outbreak in Action</h3>
+<a href="#section-5-3-1-the-1854-cholera-outbreak-in-action" class="anchor"></a>Section 5.3.1: The 1854 Cholera Outbreak in Action</h3>
 </div>
 <div id="section-5-3-2-spatial-data-in-r" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-3-2-spatial-data-in-r" class="anchor"> </a></body></html>Section 5.3.2: Spatial Data in R</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(maps)
+<a href="#section-5-3-2-spatial-data-in-r" class="anchor"></a>Section 5.3.2: Spatial Data in R</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(maps)
 <span class="kw">data</span>(us.cities)
-<span class="kw">head</span>(us.cities)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="left">name</th>
-<th align="left">country.etc</th>
-<th align="right">pop</th>
-<th align="right">lat</th>
-<th align="right">long</th>
-<th align="right">capital</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">Abilene TX</td>
-<td align="left">TX</td>
-<td align="right">113888</td>
-<td align="right">32.45</td>
-<td align="right">-99.74</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">Akron OH</td>
-<td align="left">OH</td>
-<td align="right">206634</td>
-<td align="right">41.08</td>
-<td align="right">-81.52</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Alameda CA</td>
-<td align="left">CA</td>
-<td align="right">70069</td>
-<td align="right">37.77</td>
-<td align="right">-122.26</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">Albany GA</td>
-<td align="left">GA</td>
-<td align="right">75510</td>
-<td align="right">31.58</td>
-<td align="right">-84.18</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Albany NY</td>
-<td align="left">NY</td>
-<td align="right">93576</td>
-<td align="right">42.67</td>
-<td align="right">-73.80</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">Albany OR</td>
-<td align="left">OR</td>
-<td align="right">45535</td>
-<td align="right">44.62</td>
-<td align="right">-123.09</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<span class="kw">head</span>(us.cities)</code></pre>
+<pre><code>##         name country.etc    pop   lat    long capital
+## 1 Abilene TX          TX 113888 32.45  -99.74       0
+## 2   Akron OH          OH 206634 41.08  -81.52       0
+## 3 Alameda CA          CA  70069 37.77 -122.26       0
+## 4  Albany GA          GA  75510 31.58  -84.18       0
+## 5  Albany NY          NY  93576 42.67  -73.80       2
+## 6  Albany OR          OR  45535 44.62 -123.09       0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 
-<span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"usa"</span>)
+<span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"usa"</span>)
 capitals &lt;-<span class="st"> </span><span class="kw">subset</span>(us.cities, capital ==<span class="st"> </span><span class="dv">2</span>) <span class="co"># subset state capitals</span>
 
 ## add points proportional to population using latitude and longitude
 <span class="kw">points</span>(<span class="dt">x =</span> capitals$long, <span class="dt">y =</span> capitals$lat,
        <span class="dt">cex =</span> capitals$pop /<span class="st"> </span><span class="dv">500000</span>, <span class="dt">pch =</span> <span class="dv">19</span>)
-<span class="kw">title</span>(<span class="st">"US state capitals"</span>) <span class="co"># add a title</span></code></pre></div>
+<span class="kw">title</span>(<span class="st">"US state capitals"</span>) <span class="co"># add a title</span></code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-10-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
-<span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>)
 
 cal.cities &lt;-<span class="st"> </span><span class="kw">subset</span>(us.cities, <span class="dt">subset =</span> (country.etc ==<span class="st"> "CA"</span>))
 sind &lt;-<span class="st"> </span><span class="kw">order</span>(cal.cities$pop, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>) <span class="co"># order by population</span>
 top7 &lt;-<span class="st"> </span>sind[<span class="dv">1</span>:<span class="dv">7</span>] <span class="co"># seven cities with largest population</span>
 
-<span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>)
+<span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>)
 
 <span class="kw">points</span>(<span class="dt">x =</span> cal.cities$long[top7], <span class="dt">y =</span> cal.cities$lat[top7], <span class="dt">pch =</span> <span class="dv">19</span>)
 
 ## add a constant to latitude to avoid overlapping with circles
 <span class="kw">text</span>(<span class="dt">x =</span> cal.cities$long[top7] +<span class="st"> </span><span class="fl">2.25</span>, <span class="dt">y =</span> cal.cities$lat[top7],
      <span class="dt">label =</span> cal.cities$name[top7])
-<span class="kw">title</span>(<span class="st">"Largest cities of California"</span>)</code></pre></div>
+<span class="kw">title</span>(<span class="st">"Largest cities of California"</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-10-2.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">usa &lt;-<span class="st"> </span><span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"usa"</span>, <span class="dt">plot =</span> <span class="ot">FALSE</span>) <span class="co"># save map</span>
-<span class="kw">names</span>(usa)  <span class="co"># list elements</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">usa &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"usa"</span>, <span class="dt">plot =</span> <span class="ot">FALSE</span>) <span class="co"># save map</span>
+<span class="kw">names</span>(usa)  <span class="co"># list elements</span></code></pre>
 <pre><code>## [1] "x"     "y"     "range" "names"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(usa$x)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(usa$x)</code></pre>
 <pre><code>## [1] 7252</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">cbind</span>(usa$x, usa$y)) <span class="co"># first five coordinates of a polygon</span></code></pre></div>
-<table class="table"><tbody>
-<tr class="odd">
-<td align="right">-101.4078</td>
-<td align="right">29.74224</td>
-</tr>
-<tr class="even">
-<td align="right">-101.3906</td>
-<td align="right">29.74224</td>
-</tr>
-<tr class="odd">
-<td align="right">-101.3620</td>
-<td align="right">29.65056</td>
-</tr>
-<tr class="even">
-<td align="right">-101.3505</td>
-<td align="right">29.63911</td>
-</tr>
-<tr class="odd">
-<td align="right">-101.3219</td>
-<td align="right">29.63338</td>
-</tr>
-<tr class="even">
-<td align="right">-101.3047</td>
-<td align="right">29.64484</td>
-</tr>
-</tbody></table>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">cbind</span>(usa$x, usa$y)) <span class="co"># first five coordinates of a polygon</span></code></pre>
+<pre><code>##           [,1]     [,2]
+## [1,] -101.4078 29.74224
+## [2,] -101.3906 29.74224
+## [3,] -101.3620 29.65056
+## [4,] -101.3505 29.63911
+## [5,] -101.3219 29.63338
+## [6,] -101.3047 29.64484</code></pre>
 </div>
 <div id="section-5-3-3-colors-in-r" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-3-3-colors-in-r" class="anchor"> </a></body></html>Section 5.3.3: Colors in R</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">allcolors &lt;-<span class="st"> </span><span class="kw">colors</span>()
+<a href="#section-5-3-3-colors-in-r" class="anchor"></a>Section 5.3.3: Colors in R</h3>
+<pre class="sourceCode r"><code class="sourceCode r">allcolors &lt;-<span class="st"> </span><span class="kw">colors</span>()
 
-<span class="kw">head</span>(allcolors)   <span class="co"># some colors</span></code></pre></div>
+<span class="kw">head</span>(allcolors)   <span class="co"># some colors</span></code></pre>
 <pre><code>## [1] "white"         "aliceblue"     "antiquewhite"  "antiquewhite1"
 ## [5] "antiquewhite2" "antiquewhite3"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(allcolors) <span class="co"># number of color names</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(allcolors) <span class="co"># number of color names</span></code></pre>
 <pre><code>## [1] 657</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">red &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">1</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">0</span>) <span class="co"># red</span>
+<pre class="sourceCode r"><code class="sourceCode r">red &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">1</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">0</span>) <span class="co"># red</span>
 green &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">0</span>, <span class="dt">green =</span> <span class="dv">1</span>, <span class="dt">blue =</span> <span class="dv">0</span>) <span class="co"># green</span>
 blue &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">0</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">1</span>) <span class="co"># blue</span>
-<span class="kw">c</span>(red, green, blue) <span class="co"># results</span></code></pre></div>
+<span class="kw">c</span>(red, green, blue) <span class="co"># results</span></code></pre>
 <pre><code>## [1] "#FF0000" "#00FF00" "#0000FF"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">black &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">0</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">0</span>) <span class="co"># black</span>
+<pre class="sourceCode r"><code class="sourceCode r">black &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">0</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">0</span>) <span class="co"># black</span>
 white &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">1</span>, <span class="dt">green =</span> <span class="dv">1</span>, <span class="dt">blue =</span> <span class="dv">1</span>) <span class="co"># white</span>
-<span class="kw">c</span>(black, white) <span class="co"># results</span></code></pre></div>
+<span class="kw">c</span>(black, white) <span class="co"># results</span></code></pre>
 <pre><code>## [1] "#000000" "#FFFFFF"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>), <span class="dt">green =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">blue =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">0</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>), <span class="dt">green =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">blue =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">0</span>))</code></pre>
 <pre><code>## [1] "#800080" "#FFFF00"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## semi-transparent blue
+<pre class="sourceCode r"><code class="sourceCode r">## semi-transparent blue
 blue.trans &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">0</span>, <span class="dt">green =</span> <span class="dv">0</span>, <span class="dt">blue =</span> <span class="dv">1</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)
 
 ## semi-transparent black
@@ -855,13 +640,13 @@ black.trans &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span clas
 
 ## semi-transparent; easy to distinguish
 <span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="fl">2.2</span>), <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">cex =</span> <span class="dv">5</span>, <span class="dt">col =</span> black.trans)
-<span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="fl">4.2</span>), <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">cex =</span> <span class="dv">5</span>, <span class="dt">col =</span> blue.trans)</code></pre></div>
+<span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="fl">4.2</span>), <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">cex =</span> <span class="dv">5</span>, <span class="dt">col =</span> blue.trans)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-11-1.png" width="672"></p>
 </div>
 <div id="section-5-3-4-us-presidential-elections" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-3-4-us-presidential-elections" class="anchor"> </a></body></html>Section 5.3.4: US Presidential Elections</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"pres08"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<a href="#section-5-3-4-us-presidential-elections" class="anchor"></a>Section 5.3.4: US Presidential Elections</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"pres08"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 ## two-party vote share
 pres08$Dem &lt;-<span class="st"> </span>pres08$Obama /<span class="st"> </span>(pres08$Obama +<span class="st"> </span>pres08$McCain)
 pres08$Rep &lt;-<span class="st"> </span>pres08$McCain /<span class="st"> </span>(pres08$Obama +<span class="st"> </span>pres08$McCain)
@@ -873,41 +658,41 @@ cal.color &lt;-<span class="st"> </span><span class="kw">rgb</span>(<span class=
 
 <span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 ## California as a blue state
-<span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>, <span class="dt">col =</span> <span class="st">"blue"</span>,
-    <span class="dt">fill =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>, <span class="dt">col =</span> <span class="st">"blue"</span>,
+    <span class="dt">fill =</span> <span class="ot">TRUE</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-12-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## California as a purple state
-<span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>, <span class="dt">col =</span> cal.color,
-    <span class="dt">fill =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">## California as a purple state
+<span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> <span class="st">"California"</span>, <span class="dt">col =</span> cal.color,
+    <span class="dt">fill =</span> <span class="ot">TRUE</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-12-2.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 ## America as red and blue states
-<span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>) <span class="co"># create a map</span>
+<span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"state"</span>) <span class="co"># create a map</span>
 for (i in <span class="dv">1</span>:<span class="kw">nrow</span>(pres08)) {
     if ((pres08$state[i] !=<span class="st"> "HI"</span>) &amp;<span class="st"> </span>(pres08$state[i] !=<span class="st"> "AK"</span>) &amp;
 <span class="st">        </span>(pres08$state[i] !=<span class="st"> "DC"</span>)) {
-        <span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> pres08$state.name[i],
+        <span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> pres08$state.name[i],
             <span class="dt">col =</span> <span class="kw">ifelse</span>(pres08$Rep[i] &gt;<span class="st"> </span>pres08$Dem[i], <span class="st">"red"</span>, <span class="st">"blue"</span>),
             <span class="dt">fill =</span> <span class="ot">TRUE</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)
     }
-}</code></pre></div>
+}</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-12-3.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## America as purple states
-<span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>) <span class="co"># create a map</span>
+<pre class="sourceCode r"><code class="sourceCode r">## America as purple states
+<span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"state"</span>) <span class="co"># create a map</span>
 for (i in <span class="dv">1</span>:<span class="kw">nrow</span>(pres08)) {
     if ((pres08$state[i] !=<span class="st"> "HI"</span>) &amp;<span class="st"> </span>(pres08$state[i] !=<span class="st"> "AK"</span>) &amp;
 <span class="st">        </span>(pres08$state[i] !=<span class="st"> "DC"</span>)) {
-        <span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> pres08$state.name[i],
+        <span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"state"</span>, <span class="dt">regions =</span> pres08$state.name[i],
             <span class="dt">col =</span> <span class="kw">rgb</span>(<span class="dt">red =</span> pres08$Rep[i], <span class="dt">blue =</span> pres08$Dem[i],
                 <span class="dt">green =</span> <span class="dv">0</span>), <span class="dt">fill =</span> <span class="ot">TRUE</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)
     }
-}</code></pre></div>
+}</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-12-4.png" width="672"></p>
 </div>
 <div id="section-5-3-5-expansion-of-walmart" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-3-5-expansion-of-walmart" class="anchor"> </a></body></html>Section 5.3.5: Expansion of Walmart</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"walmart"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
+<a href="#section-5-3-5-expansion-of-walmart" class="anchor"></a>Section 5.3.5: Expansion of Walmart</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"walmart"</span>, <span class="dt">package =</span> <span class="st">"qss"</span>)
 
 ## red = WalMartStore, green = SuperCenter, blue = DistributionCenter
 walmart$storecolors &lt;-<span class="st"> </span><span class="ot">NA</span> <span class="co"># create an empty vector</span>
@@ -924,7 +709,7 @@ walmart$storesize &lt;-<span class="st"> </span><span class="kw">ifelse</span>(w
 
 <span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.25</span>)
 ## map with legend
-<span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>)
+<span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"state"</span>)
 
 <span class="kw">points</span>(walmart$long, walmart$lat, <span class="dt">col =</span> walmart$storecolors,
        <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> walmart$storesize)
@@ -932,15 +717,15 @@ walmart$storesize &lt;-<span class="st"> </span><span class="kw">ifelse</span>(w
 <span class="kw">legend</span>(<span class="dt">x =</span> -<span class="dv">120</span>, <span class="dt">y =</span> <span class="dv">32</span>, <span class="dt">bty =</span> <span class="st">"n"</span>,
        <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">"Wal-Mart"</span>, <span class="st">"Supercenter"</span>, <span class="st">"Distrib. Center"</span>),
        <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="co"># solid circles</span>
-       <span class="dt">pt.cex =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)) <span class="co"># size of circles</span></code></pre></div>
+       <span class="dt">pt.cex =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)) <span class="co"># size of circles</span></code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-13-1.png" width="672"></p>
 </div>
 <div id="section-5-3-6-animation-in-r" class="section level3">
 <h3 class="hasAnchor">
-<html><body><a href="#section-5-3-6-animation-in-r" class="anchor"> </a></body></html>Section 5.3.6: Animation in R</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">walmart.map &lt;-<span class="st"> </span>function(data, date) {
+<a href="#section-5-3-6-animation-in-r" class="anchor"></a>Section 5.3.6: Animation in R</h3>
+<pre class="sourceCode r"><code class="sourceCode r">walmart.map &lt;-<span class="st"> </span>function(data, date) {
     walmart &lt;-<span class="st"> </span><span class="kw">subset</span>(data, <span class="dt">subset =</span> (opendate &lt;=<span class="st"> </span>date))
-    <span class="kw">map</span>(<span class="dt">database =</span> <span class="st">"state"</span>)
+    <span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="dt">database =</span> <span class="st">"state"</span>)
     <span class="kw">points</span>(walmart$long, walmart$lat, <span class="dt">col =</span> walmart$storecolors,
            <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> walmart$storesize)
 }
@@ -950,18 +735,18 @@ walmart$storesize &lt;-<span class="st"> </span><span class="kw">ifelse</span>(w
 walmart$opendate &lt;-<span class="st"> </span><span class="kw">as.Date</span>(walmart$opendate)
 
 <span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"1974-12-31"</span>))
-<span class="kw">title</span>(<span class="st">"1975"</span>)</code></pre></div>
+<span class="kw">title</span>(<span class="st">"1975"</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-14-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"1984-12-31"</span>))
-<span class="kw">title</span>(<span class="st">"1985"</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"1984-12-31"</span>))
+<span class="kw">title</span>(<span class="st">"1985"</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-14-2.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"1994-12-31"</span>))
-<span class="kw">title</span>(<span class="st">"1995"</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"1994-12-31"</span>))
+<span class="kw">title</span>(<span class="st">"1995"</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-14-3.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"2004-12-31"</span>))
-<span class="kw">title</span>(<span class="st">"2005"</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">walmart.map</span>(walmart, <span class="kw">as.Date</span>(<span class="st">"2004-12-31"</span>))
+<span class="kw">title</span>(<span class="st">"2005"</span>)</code></pre>
 <p><img src="discovery_files/figure-html/unnamed-chunk-14-4.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">25</span> <span class="co"># number of maps to animate</span>
+<pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">25</span> <span class="co"># number of maps to animate</span>
 dates &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="kw">min</span>(walmart$opendate),
              <span class="dt">to =</span> <span class="kw">max</span>(walmart$opendate), <span class="dt">length.out =</span> n)
 ## library("animation")
@@ -971,12 +756,12 @@ dates &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt"
 ##         title(dates[i])
 ##     }
 ## }, title = "Expansion of Walmart", htmlfile = "walmart.html",
-##          outdir = getwd(), autobrowse = FALSE)</code></pre></div>
+##          outdir = getwd(), autobrowse = FALSE)</code></pre>
 </div>
 </div>
 <div id="summary" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#summary" class="anchor"> </a></body></html>5.4: Summary</h2>
+<a href="#summary" class="anchor"></a>5.4: Summary</h2>
 </div>
 </div>
 </div>
@@ -984,13 +769,14 @@ dates &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt"
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
         <div id="tocnav">
-      <h2>Contents</h2>
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
 <li>
 <a href="#chapter-5-discovery">Chapter 5: Discovery</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#section-5.1-textual-data">Section 5.1: Textual Data</a></li>
-      <li><a href="#section-5.2-network-data">Section 5.2: Network Data</a></li>
-      <li><a href="#section-5.3-spatial-data">Section 5.3: Spatial Data</a></li>
+<li><a href="#section-5-1-textual-data">Section 5.1: Textual Data</a></li>
+      <li><a href="#section-5-2-network-data">Section 5.2: Network Data</a></li>
+      <li><a href="#section-5-3-spatial-data">Section 5.3: Spatial Data</a></li>
       <li><a href="#summary">5.4: Summary</a></li>
       </ul>
 </li>
@@ -1006,7 +792,7 @@ dates &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt"
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
