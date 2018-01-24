@@ -1,5 +1,5 @@
 ---
-output: md_document
+output: github_document
 ---
 <!-- DO NOT EDIT README.md directly. Edit README.Rmd -->
 
