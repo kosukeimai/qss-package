@@ -4,7 +4,8 @@
 \name{Kenya}
 \alias{Kenya}
 \title{Fertility and Mortality estimates data (Kenya)}
-\format{A data frame with 30 rows and 8 variables:
+\format{
+A data frame with 30 rows and 8 variables:
 \describe{
  \item{ country }{ character: abbreviated country name }
  \item{ period }{ characte: period during which data are collectedr }
@@ -14,7 +15,8 @@
  \item{ py.men }{ numeric: person-years for men (in thousands) }
  \item{ py.women }{ numeric: person-years for women (in thousands) }
  \item{ l_x }{ numeric }#'
-}}
+}
+}
 \usage{
 Kenya
 }

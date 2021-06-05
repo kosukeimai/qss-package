@@ -4,14 +4,16 @@
 \name{trade}
 \alias{trade}
 \title{International Trade Network Data}
-\format{A data frame with 114980 rows and 5 variables:
+\format{
+A data frame with 114980 rows and 5 variables:
 \describe{
  \item{ .row }{ integer: row number }
  \item{ country1 }{ character: country name of exporter }
  \item{ country2 }{ character: country name of importer }
  \item{ year }{ integer: year }
  \item{ exports }{ numeric: total value of exports (in tens of millions of dollars) }
-}}
+}
+}
 \usage{
 trade
 }

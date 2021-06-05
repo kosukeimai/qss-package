@@ -4,12 +4,14 @@
 \name{russia2011}
 \alias{russia2011}
 \title{Russian Election Data (2011)}
-\format{A data frame with 94995 rows and 3 variables:
+\format{
+A data frame with 94995 rows and 3 variables:
 \describe{
  \item{ N }{ integer: total number of voters in a precinct }
  \item{ turnout }{ integer: total turnout in a precinct }
  \item{ votes }{ integer: total number of votes for the winner in a precinct }
-}}
+}
+}
 \usage{
 russia2011
 }

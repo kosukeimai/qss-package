@@ -4,7 +4,8 @@
 \name{florida}
 \alias{florida}
 \title{1996 and 2000 US Presidential Election Data for Florida Counties}
-\format{A data frame with 67 rows and 7 variables:
+\format{
+A data frame with 67 rows and 7 variables:
 \describe{
  \item{ county }{ character: county name }
  \item{ Clinton96 }{ integer: Clinton’s votes in 1996 }
@@ -13,7 +14,8 @@
  \item{ Bush00 }{ integer: Bush’s votes in 2000 }
  \item{ Gore00 }{ integer: Gore’s votes in 2000 }
  \item{ Buchanan00 }{ integer: Buchanan’s votes in 2000 }
-}}
+}
+}
 \usage{
 florida
 }

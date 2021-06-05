@@ -4,7 +4,8 @@
 \name{turnout}
 \alias{turnout}
 \title{US election turnout data}
-\format{A data frame with 14 rows and 9 variables:
+\format{
+A data frame with 14 rows and 9 variables:
 \describe{
  \item{ year }{ integer: election year }
  \item{ VEP }{ integer: voting eligible population (in thousands) }
@@ -15,7 +16,8 @@
  \item{ noncit }{ integer: total noncitizens (in thousands) }
  \item{ overseas }{ integer: total eligible overseas voters (in thousands) }
  \item{ osvoters }{ integer: total ballots counted by overseas voters (in thousands) }
-}}
+}
+}
 \usage{
 turnout
 }

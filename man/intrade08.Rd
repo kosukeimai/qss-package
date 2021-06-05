@@ -4,7 +4,8 @@
 \name{intrade08}
 \alias{intrade08}
 \title{Intrade Betting Market Data}
-\format{A data frame with 36891 rows and 10 variables:
+\format{
+A data frame with 36891 rows and 10 variables:
 \describe{
  \item{ .row }{ integer: row number }
  \item{ day }{ Date: date of the session }
@@ -16,7 +17,8 @@
  \item{ PriceR }{ numeric: closing price (predicted vote share) of the Republican nominee’s market }
  \item{ VolumeR }{ integer: total session trades of the Republican Party nominee’s market }
  \item{ state }{ character: abbreviation of each state (including District of Columbia in 2008) }
-}}
+}
+}
 \usage{
 intrade08
 }

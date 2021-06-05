@@ -4,7 +4,8 @@
 \name{vignettes}
 \alias{vignettes}
 \title{Political Efficacy Data}
-\format{A data frame with 781 rows and 6 variables:
+\format{
+A data frame with 781 rows and 6 variables:
 \describe{
  \item{ self }{ integer: self-assessment response }
  \item{ alison }{ integer: response to the Alison vignette }
@@ -12,7 +13,8 @@
  \item{ moses }{ integer: response to the Moses vignette }
  \item{ china }{ integer: 1 for China and 0 for Mexico }
  \item{ age }{ integer: age of respondent in years }
-}}
+}
+}
 \usage{
 vignettes
 }

@@ -4,7 +4,8 @@
 \name{transfer}
 \alias{transfer}
 \title{Brazilian Government Transfer Data}
-\format{A data frame with 1787 rows and 9 variables:
+\format{
+A data frame with 1787 rows and 9 variables:
 \describe{
  \item{ .row }{ integer: row number }
  \item{ state }{ character: state name }
@@ -15,7 +16,8 @@
  \item{ poverty80 }{ numeric: poverty rate of the state in 1980 }
  \item{ educ80 }{ numeric: average years in education of the state in 1980 }
  \item{ pop82 }{ integer: population in 1982 }
-}}
+}
+}
 \usage{
 transfer
 }

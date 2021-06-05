@@ -4,11 +4,13 @@
 \name{twitter.following}
 \alias{twitter.following}
 \title{Senator Follow / Following Data}
-\format{A data frame with 3859 rows and 2 variables:
+\format{
+A data frame with 3859 rows and 2 variables:
 \describe{
  \item{ following }{ character: Twitter screen name of the following senator }
  \item{ followed }{ character: Twitter screen name of the followed senator }
-}}
+}
+}
 \usage{
 twitter.following
 }

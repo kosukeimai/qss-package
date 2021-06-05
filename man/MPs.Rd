@@ -4,7 +4,8 @@
 \name{MPs}
 \alias{MPs}
 \title{British Parliament Personal Wealth Data}
-\format{A data frame with 427 rows and 10 variables:
+\format{
+A data frame with 427 rows and 10 variables:
 \describe{
  \item{ surname }{ character: surname of the candidate }
  \item{ firstname }{ character: first name of the candidate }
@@ -16,7 +17,8 @@
  \item{ margin.pre }{ numeric: margin of the candidate’s party in the previous election }
  \item{ region }{ character: electoral region }
  \item{ margin }{ numeric: margin of victory (vote share) }
-}}
+}
+}
 \usage{
 MPs
 }

@@ -4,7 +4,8 @@
 \name{cnames}
 \alias{cnames}
 \title{US Census Bureau Surname List Data}
-\format{A data frame with 151671 rows and 7 variables:
+\format{
+A data frame with 151671 rows and 7 variables:
 \describe{
  \item{ surname }{ character: surname }
  \item{ count }{ integer: number of individuals with a specific surname }
@@ -13,7 +14,8 @@
  \item{ pctapi }{ numeric: percentage of non-Hispanic Asians and Pacific Islanders among those who have a specific surname }
  \item{ pcthispanic }{ numeric: percentage of Hispanic origin among those who have a specific surname }
  \item{ pctothers }{ numeric: percentage of the other racial groups among those who have a specific surname }
-}}
+}
+}
 \usage{
 cnames
 }

@@ -4,14 +4,16 @@
 \name{pres08}
 \alias{pres08}
 \title{2008 US Presidential Election Data}
-\format{A data frame with 51 rows and 5 variables:
+\format{
+A data frame with 51 rows and 5 variables:
 \describe{
  \item{ state.name }{ character: unabbreviated name of the state }
  \item{ state }{ character: abbreviated name of the state }
  \item{ Obama }{ integer: Obama’s vote share (percentage) }
  \item{ McCain }{ integer: McCain’s vote share (percentage) }
  \item{ EV }{ integer: number of Electoral College votes for the state }
-}}
+}
+}
 \usage{
 pres08
 }

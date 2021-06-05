@@ -4,7 +4,8 @@
 \name{women}
 \alias{women}
 \title{Women as Policy Makers Experiment}
-\format{A data frame with 322 rows and 6 variables:
+\format{
+A data frame with 322 rows and 6 variables:
 \describe{
  \item{ GP }{ integer: identifier for the Gram Panchayat (GP) }
  \item{ village }{ integer: identifier for each village }
@@ -12,7 +13,8 @@
  \item{ female }{ integer: binary variable indicating whether the GP had a female leader or not }
  \item{ irrigation }{ integer: variable measuring the number of new or repaired irrigation facilities in the village since the reserve policy started }
  \item{ water }{ integer: variable measuring the number of new or repaired drinking water facilities in the village since the reservation policy started }
-}}
+}
+}
 \usage{
 women
 }

@@ -4,7 +4,8 @@
 \name{walmart}
 \alias{walmart}
 \title{Walmart Store Opening Data}
-\format{A data frame with 3251 rows and 7 variables:
+\format{
+A data frame with 3251 rows and 7 variables:
 \describe{
  \item{ opendate }{ Date: opening date for the store }
  \item{ st.address }{ character: street address of the store }
@@ -13,7 +14,8 @@
  \item{ long }{ numeric: longitude of the store }
  \item{ lat }{ numeric: latitude of the store }
  \item{ type }{ character: store type (Wal-MartStore, SuperCenter, DistributionCenter) }
-}}
+}
+}
 \usage{
 walmart
 }

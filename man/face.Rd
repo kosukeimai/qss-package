@@ -4,7 +4,8 @@
 \name{face}
 \alias{face}
 \title{Facial Appearanace Experiment Data}
-\format{A data frame with 119 rows and 10 variables:
+\format{
+A data frame with 119 rows and 10 variables:
 \describe{
  \item{ year }{ integer: year of the election }
  \item{ state }{ character: state of the election }
@@ -16,7 +17,8 @@
  \item{ r.comp }{ numeric: competence measure for the Republican candidate }
  \item{ d.votes }{ integer: number of votes for the Democratic candidate }
  \item{ r.votes }{ integer: number of votes for the Republican candidate }
-}}
+}
+}
 \usage{
 face
 }

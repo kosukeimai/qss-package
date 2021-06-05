@@ -4,13 +4,15 @@
 \name{twitter.senator}
 \alias{twitter.senator}
 \title{Senator Information Data}
-\format{A data frame with 91 rows and 4 variables:
+\format{
+A data frame with 91 rows and 4 variables:
 \describe{
  \item{ screen_name }{ character: Twitter screen name }
  \item{ name }{ character: name of senator }
  \item{ party }{ character: party (D = Democrat, R = Republican, I = Independent) }
  \item{ state }{ character: state abbreviation }
-}}
+}
+}
 \usage{
 twitter.senator
 }

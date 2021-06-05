@@ -3,8 +3,9 @@
 \docType{data}
 \name{nazis}
 \alias{nazis}
-\title{Analysis of the 1932 German Election}
-\format{A data frame with 681 rows and 7 variables:
+\title{Analysis of the 1933 German Election}
+\format{
+A data frame with 681 rows and 7 variables:
 \describe{
  \item{ shareself }{ numeric: proportion of self-employed potential voters }
  \item{ shareblue }{ numeric: proportion of blue-collar potential voters }
@@ -13,12 +14,13 @@
  \item{ shareunemployed }{ numeric: proportion of unemployed potential voters }
  \item{ nvoter }{ integer: number of eligible voters }
  \item{ nazivote }{ integer: number of votes for Nazis }
-}}
+}
+}
 \usage{
 nazis
 }
 \description{
-1932 German election data.
+1933 German election data.
 }
 \details{
 See \emph{QSS} Table 7.7.

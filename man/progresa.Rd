@@ -4,7 +4,8 @@
 \name{progresa}
 \alias{progresa}
 \title{Progresa Program Data}
-\format{A data frame with 417 rows and 20 variables:
+\format{
+A data frame with 417 rows and 20 variables:
 \describe{
  \item{ treatment }{ integer: whether an electoral precinct contains a village where households received early Progresa }
  \item{ pri2000s }{ numeric: PRI votes in the 2000 election as a share of precinct population above 18 }
@@ -26,7 +27,8 @@
  \item{ avgpoverty }{ numeric: precinct average of village poverty index }
  \item{ pobtot1994 }{ integer: total population in the precinct }
  \item{ villages }{ integer: number of villages in the precinct }
-}}
+}
+}
 \usage{
 progresa
 }

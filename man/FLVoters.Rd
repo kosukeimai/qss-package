@@ -4,7 +4,8 @@
 \name{FLVoters}
 \alias{FLVoters}
 \title{Florida Registered Voter List Sample Data}
-\format{A data frame with 10000 rows and 6 variables:
+\format{
+A data frame with 10000 rows and 6 variables:
 \describe{
  \item{ surname }{ character: surname }
  \item{ county }{ integer: county ID of the voter’s residence }
@@ -12,7 +13,8 @@
  \item{ age }{ integer: age }
  \item{ gender }{ character: gender: m = male and f = female }
  \item{ race }{ character: self-reported race }
-}}
+}
+}
 \usage{
 FLVoters
 }

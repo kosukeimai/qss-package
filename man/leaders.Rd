@@ -4,7 +4,8 @@
 \name{leaders}
 \alias{leaders}
 \title{Leader Assassination Data}
-\format{A data frame with 250 rows and 11 variables:
+\format{
+A data frame with 250 rows and 11 variables:
 \describe{
  \item{ year }{ integer: year }
  \item{ country }{ character: name of the country }
@@ -17,7 +18,8 @@
  \item{ civilwarbefore }{ integer: 1 if the country is in civil war during the three-year period prior to the attempt, 0 otherwise }
  \item{ civilwarafter }{ integer: 1 if the country is in civil war during the three-year period after the attempt, 0 otherwise }
  \item{ result }{ character: result of the assassination attempt }
-}}
+}
+}
 \usage{
 leaders
 }

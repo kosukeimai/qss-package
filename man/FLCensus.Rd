@@ -4,7 +4,8 @@
 \name{FLCensus}
 \alias{FLCensus}
 \title{Florida Census Data at the Voting District Level}
-\format{A data frame with 8871 rows and 8 variables:
+\format{
+A data frame with 8871 rows and 8 variables:
 \describe{
  \item{ county }{ integer: county census ID of the voting district }
  \item{ VTD }{ integer: voting district census ID (only unique within the county) }
@@ -14,7 +15,8 @@
  \item{ hispanic }{ numeric: proportion of voters of Hispanic origin in the voting district }
  \item{ api }{ numeric: proportion of non-Hispanic Asians and Pacific Islanders in the voting district }
  \item{ others }{ numeric: proportion of the other racial groups in the voting district }
-}}
+}
+}
 \usage{
 FLCensus
 }

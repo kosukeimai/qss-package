@@ -4,7 +4,8 @@
 \name{social}
 \alias{social}
 \title{Social Pressure Experiment Data}
-\format{A data frame with 305866 rows and 6 variables:
+\format{
+A data frame with 305866 rows and 6 variables:
 \describe{
  \item{ sex }{ character: sex of the voter (female or male) }
  \item{ yearofbirth }{ integer: year of birth of the voter }
@@ -12,7 +13,8 @@
  \item{ messages }{ character: GOTV messages the voter received (Civic Duty, Control, Neighbors, Hawthorne) }
  \item{ primary2006 }{ integer: whether the voter turned out in the 2006 primary election (1=voted, 0=abstained) }
  \item{ hhsize }{ integer: household size of the voter }
-}}
+}
+}
 \usage{
 social
 }

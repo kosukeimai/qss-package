@@ -4,14 +4,16 @@
 \name{filedrawer}
 \alias{filedrawer}
 \title{TESS Program Academic Research Data}
-\format{A data frame with 221 rows and 5 variables:
+\format{
+A data frame with 221 rows and 5 variables:
 \describe{
  \item{ id }{ integer: study identifier }
  \item{ journal }{ character: discipline of the journal for published articles }
  \item{ DV }{ character: publication status }
  \item{ IV }{ character: statistical significance of the main findings }
  \item{ max.h }{ integer: H-index (highest among authors) }
-}}
+}
+}
 \usage{
 filedrawer
 }

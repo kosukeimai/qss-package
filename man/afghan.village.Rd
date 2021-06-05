@@ -4,12 +4,14 @@
 \name{afghan.village}
 \alias{afghan.village}
 \title{Afghanistan Village Data}
-\format{A data frame with 1864 rows and 3 variables:
+\format{
+A data frame with 1864 rows and 3 variables:
 \describe{
  \item{ altitude }{ numeric: altitude of the village }
  \item{ population }{ integer: population of the village }
  \item{ village.surveyed }{ integer: whether a village is sampled for survey }
-}}
+}
+}
 \usage{
 afghan.village
 }

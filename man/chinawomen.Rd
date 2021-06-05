@@ -4,7 +4,8 @@
 \name{chinawomen}
 \alias{chinawomen}
 \title{Sex Ratio and the Price of Agricultural Crops in China}
-\format{A data frame with 51766 rows and 9 variables:
+\format{
+A data frame with 51766 rows and 9 variables:
 \describe{
  \item{ admin }{ integer: unique county identifier }
  \item{ biryr }{ integer: year of cohort (birth year) }
@@ -15,7 +16,8 @@
  \item{ orch }{ numeric: quantity of orchard-type crops planted in the county }
  \item{ cashcrop }{ numeric: quantity of cash crops planted in the county }
  \item{ post }{ integer: indicator variable for the introduction of price reforms }
-}}
+}
+}
 \usage{
 chinawomen
 }

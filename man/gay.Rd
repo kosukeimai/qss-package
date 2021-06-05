@@ -4,13 +4,15 @@
 \name{gay}
 \alias{gay}
 \title{Gay Marriage Study Data}
-\format{A data frame with 69592 rows and 4 variables:
+\format{
+A data frame with 69592 rows and 4 variables:
 \describe{
  \item{ study }{ integer: source of the data (1 = study 1, 2 = study 2) }
  \item{ treatment }{ character: five possible treatment assignment options }
  \item{ wave }{ integer: survey wave (a total of seven waves)}
  \item{ ssm }{ integer: five-point scale on same-sex marriage, higher scores indicate support }
-}}
+}
+}
 \usage{
 gay
 }

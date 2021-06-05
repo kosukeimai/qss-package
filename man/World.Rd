@@ -4,7 +4,8 @@
 \name{World}
 \alias{World}
 \title{Fertility and Mortality estimates data (World)}
-\format{A data frame with 30 rows and 7 variables:
+\format{
+A data frame with 30 rows and 7 variables:
 \describe{
  \item{ country }{ character: abbreviated country name }
  \item{ period }{ characte: period during which data are collectedr }
@@ -13,7 +14,8 @@
  \item{ deaths }{ numeric: number of deaths (in thousands) }
  \item{ py.men }{ numeric: person-years for men (in thousands) }
  \item{ py.women }{ numeric: person-years for women (in thousands) }
-}}
+}
+}
 \usage{
 World
 }

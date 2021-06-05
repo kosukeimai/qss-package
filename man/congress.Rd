@@ -4,7 +4,8 @@
 \name{congress}
 \alias{congress}
 \title{Legislative Ideal Points Data}
-\format{A data frame with 14552 rows and 7 variables:
+\format{
+A data frame with 14552 rows and 7 variables:
 \describe{
  \item{ congress }{ integer: congressional session number }
  \item{ district }{ integer: district number of the congressional representative }
@@ -13,7 +14,8 @@
  \item{ name }{ character: name of the congressional representative }
  \item{ dwnom1 }{ numeric: DW-NOMINATE score (first dimension) }
  \item{ dwnom2 }{ numeric: DW-NOMINATE score (second dimension) }
-}}
+}
+}
 \usage{
 congress
 }

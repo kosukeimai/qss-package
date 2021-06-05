@@ -4,13 +4,15 @@
 \name{pollsUS08}
 \alias{pollsUS08}
 \title{2008 US Presidential National Polls Data}
-\format{A data frame with 526 rows and 4 variables:
+\format{
+A data frame with 526 rows and 4 variables:
 \describe{
  \item{ Pollster }{ character: name of the organization conducting the poll }
  \item{ McCain }{ integer: predicted support for McCain (percentage) }
  \item{ Obama }{ integer: predicted support for Obama (percentage) }
  \item{ middate }{ Date: middate of the period when the poll was conducted }
-}}
+}
+}
 \usage{
 pollsUS08
 }

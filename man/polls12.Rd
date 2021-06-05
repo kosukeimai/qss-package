@@ -4,7 +4,8 @@
 \name{polls12}
 \alias{polls12}
 \title{2012 US Presidential Polls Data}
-\format{A data frame with 1227 rows and 6 variables:
+\format{
+A data frame with 1227 rows and 6 variables:
 \describe{
  \item{ .row }{ integer: row number }
  \item{ state }{ character: abbreviated name of the state in which the poll was conducted }
@@ -12,7 +13,8 @@
  \item{ Romney }{ integer: predicted support for Romney (percentage) }
  \item{ Pollster }{ character: name of the organization conducting the poll }
  \item{ middate }{ Date: middate of the period when the poll was conducted }
-}}
+}
+}
 \usage{
 polls12
 }

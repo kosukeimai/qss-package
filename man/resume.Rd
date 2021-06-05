@@ -4,13 +4,15 @@
 \name{resume}
 \alias{resume}
 \title{Resume Experiment Data}
-\format{A data frame with 4870 rows and 4 variables:
+\format{
+A data frame with 4870 rows and 4 variables:
 \describe{
  \item{ firstname }{ character: first name of the fictitious job applicant }
  \item{ sex }{ character: sex of applicant (female or male) }
  \item{ race }{ character: race of applicant (black or white) }
  \item{ call }{ integer: whether a callback was made (1 = yes, 0 = no) }
-}}
+}
+}
 \usage{
 resume
 }

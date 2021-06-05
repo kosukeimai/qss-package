@@ -4,7 +4,8 @@
 \name{STAR}
 \alias{STAR}
 \title{STAR Project Data}
-\format{A data frame with 6325 rows and 6 variables:
+\format{
+A data frame with 6325 rows and 6 variables:
 \describe{
  \item{ race }{ integer: student’s race (white = 1, black = 2, Asian = 3, Hispanic = 4, Native American = 5, others = 6) }
  \item{ classtype }{ integer: type of kindergarten class (small = 1, regular = 2, regular with aid = 3) }
@@ -12,7 +13,8 @@
  \item{ hsgrad }{ integer: high-school graduation (did graduate = 1, did not graduate = 0) }
  \item{ g4math }{ integer: total scaled score for the math portion of the fourth-grade standardized test }
  \item{ g4reading }{ integer: total scaled score for the reading portion of the fourth-grade standardized test }
-}}
+}
+}
 \usage{
 STAR
 }

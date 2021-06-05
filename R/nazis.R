@@ -1,6 +1,6 @@
-#' Analysis of the 1932 German Election
+#' Analysis of the 1933 German Election
 #'
-#' 1932 German election data.
+#' 1933 German election data.
 #'
 #' @format A data frame with 681 rows and 7 variables:
 #' \describe{

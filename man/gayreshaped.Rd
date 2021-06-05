@@ -4,7 +4,8 @@
 \name{gayreshaped}
 \alias{gayreshaped}
 \title{Reshaped Gay Marrige Study Data}
-\format{A data frame with 11948 rows and 6 variables:
+\format{
+A data frame with 11948 rows and 6 variables:
 \describe{
  \item{ study }{ integer: which study the data set is from (1 = study 1, 2 = study 2) }
  \item{ treatment }{ character: five possible treatment assignment options }
@@ -12,7 +13,8 @@
  \item{ therm2 }{ integer: survey thermometer rating of feeling towards gay couples in wave 2 (0–100) }
  \item{ therm3 }{ integer: survey thermometer rating of feeling towards gay couples in wave 3 (0–100) }
  \item{ therm4 }{ integer: survey thermometer rating of feeling towards gay couples in wave 4 (0–100) }
-}}
+}
+}
 \usage{
 gayreshaped
 }
