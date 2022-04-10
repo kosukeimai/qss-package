@@ -213,10 +213,12 @@ closeness(florence)
 betweenness(florence)
 
 par(cex = 1.25)
-plot(florence, vertex.size = closeness(florence) * 1000,
+close <- closeness(florence)
+close["PUCCI"] <- 0
+plot(florence, vertex.size = closen*100,
      main = "Closeness")
 
-plot(florence, vertex.size = betweenness(florence),
+plot(florence, vertex.size = between,
      main = "Betweenness")
 ```
 
